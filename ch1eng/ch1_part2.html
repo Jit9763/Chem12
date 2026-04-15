@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Part 2 - Concentration of Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* EMERALD EARTH STYLE & MASTER PLAN SPECIFICATIONS */
+        :root {
+            --primary: #059669;
+            --primary-dark: #064e3b;
+            --secondary: #10b981;
+            --accent: #38bdf8;
+            --molarity-red: #e11d48;
+            --molality-teal: #0d9488;
+            --fraction-purple: #7c3aed;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --font-main: #000000;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Outfit', sans-serif; 
+            background: var(--slate-50); 
+            color: var(--font-main); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 600;
+        }
+
+        .header-banner { 
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #065f46 100%); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-radius: 0 0 60px 60px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .premium-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .header-banner h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            margin: 0; 
+            font-weight: 950; 
+            line-height: 1.1;
+        }
+
+        .part-container { 
+            width: 100%;
+            max-width: 100vw;
+            padding: 80px 6vw; 
+            box-sizing: border-box;
+            background: white; 
+            margin-top: -40px;
+            border-radius: 60px 60px 0 0;
+            box-shadow: 0 -20px 60px rgba(0,0,0,0.1);
+        }
+
+        h2 { 
+            color: var(--primary-dark); 
+            font-size: clamp(2rem, 5.5vw, 3.5rem); 
+            border-left: 20px solid var(--primary); 
+            padding: 25px 40px; 
+            background: linear-gradient(to right, #f0fdf4, transparent); 
+            border-radius: 0 40px 40px 0; 
+            margin: 100px 0 60px 0;
+            font-weight: 900;
+        }
+
+        h3 { 
+            color: var(--primary); 
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem); 
+            border-bottom: 6px solid #d1fae5; 
+            display: inline-block; 
+            padding-bottom: 15px; 
+            margin: 80px 0 40px 0; 
+            font-weight: 900;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 50px;
+            padding: 50px;
+            border: 3px solid var(--slate-100);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .formula-box {
+            background: var(--slate-900);
+            color: white;
+            padding: 40px;
+            border-radius: 35px;
+            text-align: center;
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            line-height: 2;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border: 3px solid var(--primary);
+        }
+
+        .sim-container {
+            background: #020617;
+            padding: 50px;
+            border-radius: 50px;
+            color: white;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+            margin-bottom: 80px;
+        }
+
+        .sim-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .sim-header {
+            color: var(--accent);
+            font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+            margin: 60px 0 20px 0;
+            padding-left: 20px;
+            border-left: 10px solid var(--accent);
+            font-weight: 900;
+        }
+
+        .nav-buttons { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 60px 0vw 40px; 
+            background: transparent; 
+            margin-top: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-btn { 
+            background: var(--primary); 
+            color: white; 
+            padding: 22px 50px; 
+            border-radius: 100px; 
+            text-decoration: none; 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+            transition: 0.3s;
+        }
+
+        input[type=range] {
+            width: 100%;
+            height: 12px;
+            -webkit-appearance: none;
+            background: #334155;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 25px;
+            height: 25px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            border: 4px solid white;
+        }
+
+        /* MATH FRACTION SYSTEM */
+        .math-frac {
+            display: inline-flex;
+            flex-direction: column;
+            vertical-align: middle;
+            text-align: center;
+            font-weight: 850;
+            margin: 0 15px;
+            line-height: 1.2;
+        }
+        .math-num {
+            border-bottom: 3px solid currentColor;
+            padding: 0 15px 5px 15px;
+        }
+        .math-den {
+            padding: 5px 15px 0 15px;
+        }
+
+        .highlight-text {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        @media (max-width: 1000px) {
+            .part-container { padding: 40px 0; border-radius: 0; }
+            .content-card { border-radius: 0; border-left: none; border-right: none; }
+            .sim-grid { grid-template-columns: 1fr; }
+            .nav-buttons { justify-content: center; padding: 40px 20px; }
+            h2 { border-radius: 0; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <div class="premium-badge">Premium Projector Edition</div>
+        <h1>Expressing Concentration of Solutions<br><span style="font-size: 0.5em; opacity: 0.8; font-weight: 800;">(Chapter 1)</span></h1>
+    </div>
+
+    <div class="part-container">
+        
+        <h2 style="margin-top: 0;">1.3 Introduction to Concentration</h2>
+        
+        <div class="content-card">
+            <p style="font-size: 1.6rem; color: #334155; line-height: 1.8;">
+                The amount of solute dissolved in a specific volume or mass of a solvent is called the <b>Concentration</b> of a solution.<br><br>
+                Concentration expresses the <span class="highlight-text">Qualitative</span> and <span class="highlight-text">Quantitative</span> composition of a solution.
+            </p>
+            
+            <div style="background: #f0fdf4; padding: 30px; border-radius: 20px; margin: 30px 0; border-left: 8px solid var(--primary);">
+                <h4 style="font-size: 1.8rem; color: var(--primary-dark); margin-top:0;">Methods to Express Concentration:</h4>
+                <ul style="font-size: 1.5rem; color: #1e293b; line-height: 2.0; list-style-type: square; padding-left: 20px;">
+                    <li style="margin-bottom: 20px;"><b>Qualitative:</b> Dilute solutions and Concentrated solutions.</li>
+                    <li><b>Quantitative:</b> This provides the exact ratio of solute to solvent. It is divided into three types of units:
+                        <ul style="margin-top: 10px; color: #475569;">
+                            <li><b>Weight-Weight Units:</b> Mass percentage, Mole fraction, Molality, ppm (These are <i>independent of temperature</i>).</li>
+                            <li><b>Weight-Volume Units:</b> Mass-Volume percentage, Molarity (These are <i>dependent on temperature</i>).</li>
+                            <li><b>Volume-Volume Units:</b> Volume percentage.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ==================== MASS % ======================== -->
+        <h2>1.4 Mass Percentage (w/W %)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.6rem; color: #334155; line-height: 1.8;">
+                The mass of the solute in grams present in <b>100 g mass</b> of the solution is called its <span class="highlight-text">Mass Percentage</span>.
+            </p>
+
+            <div class="formula-box" style="margin-top: 40px; border-color: #f59e0b;">
+                <span style="color: #fcd34d;">Mass Percentage (w/W %)</span> = 
+                <div class="math-frac">
+                    <span class="math-num">Mass of solute (g)</span>
+                    <span class="math-den">Total mass of solution (g)</span>
+                </div>
+                &nbsp; <b>× 100</b>
+            </div>
+            
+            <div style="background: white; border: 3px solid #e2e8f0; padding: 30px; border-radius: 25px; margin-top: 30px;">
+                <h4 style="font-size: 1.6rem; color: var(--slate-800); margin-top: 0;">Commercial Use (Example):</h4>
+                <p style="font-size: 1.5rem; color: #475569; margin-bottom: 0; line-height: 1.6;">
+                    Commercial bleaching solution contains <b>3.62 mass percentage</b> of sodium hypochlorite in water.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="sim-header">Interactive Lab: Mass Percentage Calculator (w/W %)</h3>
+        <div class="sim-container" style="border-top: 5px solid #f59e0b;">
+            <div class="sim-grid">
+                <!-- Controls -->
+                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 30px; border: 2px solid var(--slate-800);">
+                    <div style="margin-top: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.4rem;">
+                            <span style="color: #fcd34d;">Mass of Solute (W<sub>B</sub>)</span>
+                            <b><span id="ww_solute" style="color: white;">10</span> g</b>
+                        </div>
+                        <input type="range" id="ww_slider1" min="1" max="100" step="1" value="10">
+                    </div>
+                    <div style="margin-top: 40px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.4rem;">
+                            <span style="color: #93c5fd;">Mass of Solvent (W<sub>A</sub>)</span>
+                            <b><span id="ww_solvent" style="color: white;">90</span> g</b>
+                        </div>
+                        <input type="range" id="ww_slider2" min="50" max="500" step="10" value="90">
+                    </div>
+                </div>
+                <!-- Logic -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div style="background: var(--slate-900); padding: 30px 40px; border-radius: 30px; border: 4px solid #f59e0b; text-align: center; box-shadow: 0 0 40px rgba(245, 158, 11, 0.2); min-width: 300px;">
+                        <div style="font-size: 2.2rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                            <span style="color: #fcd34d;" id="ww_num">10</span>
+                            <span style="font-size: 3rem; font-weight: 300; color: #475569;">/</span>
+                            <span style="color: #93c5fd;" id="ww_den">100</span>
+                            <span style="color: white;">× 100</span>
+                        </div>
+                        <div style="margin: 20px 0; border-top: 2px dashed #334155;"></div>
+                        <div style="font-size: 3.5rem; font-weight: 950; color: #fcd34d;">
+                            <span id="ww_res">10.0</span>%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ==================== VOLUME % ======================== -->
+        <h2>1.5 Volume Percentage (v/V %)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.6rem; color: #334155; line-height: 1.8;">
+                The volume of the solute in ml present in <b>100 ml volume</b> of the solution is called its <span class="highlight-text">Volume Percentage</span>.
+            </p>
+
+            <div class="formula-box" style="margin-top: 40px; border-color: #3b82f6;">
+                <span style="color: #93c5fd;">Volume Percentage (v/V %)</span> = 
+                <div class="math-frac">
+                    <span class="math-num">Volume of solute (ml)</span>
+                    <span class="math-den">Total volume of solution (ml)</span>
+                </div>
+                &nbsp; <b>× 100</b>
+            </div>
+            
+            <div style="background: white; border: 3px solid #e2e8f0; padding: 30px; border-radius: 25px; margin-top: 30px;">
+                <h4 style="font-size: 1.6rem; color: var(--slate-800); margin-top: 0;">Commercial Use (Example):</h4>
+                <p style="font-size: 1.5rem; color: #475569; margin-bottom: 0; line-height: 1.6;">
+                    A <b>35% v/V</b> solution of ethylene glycol is used as an antifreeze in car engines. It lowers the freezing point of water to 255.4 K (-17.6 °C).
+                </p>
+            </div>
+        </div>
+
+        <h3 class="sim-header">Interactive Lab: Volume Percentage Calculator (v/V %)</h3>
+        <div class="sim-container" style="border-top: 5px solid #3b82f6;">
+            <div class="sim-grid">
+                <!-- Controls -->
+                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 30px; border: 2px solid var(--slate-800);">
+                    <div style="margin-top: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.4rem;">
+                            <span style="color: #93c5fd;">Volume of Alcohol (V<sub>B</sub>)</span>
+                            <b><span id="vv_solute" style="color: white;">25</span> ml</b>
+                        </div>
+                        <input type="range" id="vv_slider1" min="5" max="100" step="5" value="25">
+                    </div>
+                    <div style="margin-top: 40px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.4rem;">
+                            <span style="color: #38bdf8;">Volume of Water (V<sub>A</sub>)</span>
+                            <b><span id="vv_solvent" style="color: white;">75</span> ml</b>
+                        </div>
+                        <input type="range" id="vv_slider2" min="50" max="500" step="25" value="75">
+                    </div>
+                </div>
+                <!-- Logic -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div style="background: var(--slate-900); padding: 30px 40px; border-radius: 30px; border: 4px solid #3b82f6; text-align: center; box-shadow: 0 0 40px rgba(59, 130, 246, 0.2); min-width: 300px;">
+                        <div style="font-size: 2.2rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                            <span style="color: #93c5fd;" id="vv_num">25</span>
+                            <span style="font-size: 3rem; font-weight: 300; color: #475569;">/</span>
+                            <span style="color: #38bdf8;" id="vv_den">100</span>
+                            <span style="color: white;">× 100</span>
+                        </div>
+                        <div style="margin: 20px 0; border-top: 2px dashed #334155;"></div>
+                        <div style="font-size: 3.5rem; font-weight: 950; color: #60a5fa;">
+                            <span id="vv_res">25.0</span>%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ==================== MASS-VOLUME % ======================== -->
+        <h2>1.6 Mass-Volume Percentage (w/V %)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.6rem; color: #334155; line-height: 1.8;">
+                The mass of the solute in <i>grams (g)</i> present in <b>100 ml volume</b> of the solution is called its <span class="highlight-text">Mass-Volume Percentage</span>.<br><br>
+                <b>Significance / Utility:</b> It is highly useful and commonly used in the medicine and Pharmacy industries.
+            </p>
+
+            <div class="formula-box" style="margin-top: 40px; border-color: #8b5cf6;">
+                <span style="color: #c4b5fd;">Mass-Volume (w/V %)</span> = 
+                <div class="math-frac">
+                    <span class="math-num">Mass of solute (g)</span>
+                    <span class="math-den">Total volume of solution (ml)</span>
+                </div>
+                &nbsp; <b>× 100</b>
+            </div>
+            
+            <div style="background: white; border: 3px solid #e2e8f0; padding: 30px; border-radius: 25px; margin-top: 30px;">
+                <h4 style="font-size: 1.6rem; color: var(--slate-800); margin-top: 0;">Commercial Use (Example):</h4>
+                <p style="font-size: 1.5rem; color: #475569; margin-bottom: 0; line-height: 1.6;">
+                    For making 500 ml of an aqueous solution of <b>2% w/V NaCl</b>, we require 10 grams of NaCl. (2 = W × 100 / 500)
+                </p>
+            </div>
+        </div>
+
+        <h3 class="sim-header">Interactive Lab: Pharmacy Calculator (w/V %)</h3>
+        <div class="sim-container" style="border-top: 5px solid #8b5cf6;">
+            <div class="sim-grid">
+                <!-- Controls -->
+                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 30px; border: 2px solid var(--slate-800);">
+                    <div style="margin-top: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.4rem;">
+                            <span style="color: #c4b5fd;">Mass of Medicine (W<sub>B</sub>)</span>
+                            <b><span id="wv_solute" style="color: white;">2</span> g</b>
+                        </div>
+                        <input type="range" id="wv_slider1" min="1" max="50" step="1" value="2">
+                    </div>
+                    <div style="margin-top: 40px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.4rem;">
+                            <span style="color: #a78bfa;">Total Solution Vol (V<sub>S</sub>)</span>
+                            <b><span id="wv_solution" style="color: white;">100</span> ml</b>
+                        </div>
+                        <input type="range" id="wv_slider2" min="100" max="1000" step="50" value="100">
+                    </div>
+                </div>
+                <!-- Logic -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div style="background: var(--slate-900); padding: 30px 40px; border-radius: 30px; border: 4px solid #8b5cf6; text-align: center; box-shadow: 0 0 40px rgba(139, 92, 246, 0.2); min-width: 300px;">
+                        <div style="font-size: 2.2rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                            <span style="color: #c4b5fd;" id="wv_num">2</span>
+                            <span style="font-size: 3rem; font-weight: 300; color: #475569;">/</span>
+                            <span style="color: #a78bfa;" id="wv_den">100</span>
+                            <span style="color: white;">× 100</span>
+                        </div>
+                        <div style="margin: 20px 0; border-top: 2px dashed #334155;"></div>
+                        <div style="font-size: 3.5rem; font-weight: 950; color: #a78bfa;">
+                            <span id="wv_res">2.0</span>%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== PPM ======================== -->
+        <h2>1.7 Parts Per Million (ppm)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.6rem; color: #334155; line-height: 1.8;">
+                When a solute is present in <i>trace quantities</i>, it is convenient to express concentration in ppm.<br><br>
+                The mass of the solute in grams present in <b>10⁶ (one million) g</b> mass of the solution is known as <b>ppm (parts per million)</b>.
+            </p>
+
+            <div class="formula-box" style="margin-top: 40px; border-color: #ef4444;">
+                <span style="color: #fca5a5;">ppm</span> = 
+                <div class="math-frac">
+                    <span class="math-num">Mass of solute (g)</span>
+                    <span class="math-den">Total mass of solution (g)</span>
+                </div>
+                &nbsp; <b>× 10⁶</b>
+            </div>
+        </div>
+
+        <h3 class="sim-header">Interactive Lab: Trace Concentration Calculator (ppm)</h3>
+        <div class="sim-container" style="border-top: 5px solid #ef4444;">
+            <div class="sim-grid">
+                <!-- Controls -->
+                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 30px; border: 2px solid var(--slate-800);">
+                    <div style="margin-top: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.4rem;">
+                            <span style="color: #fca5a5;">Mass of Solute (W<sub>B</sub>)</span>
+                            <b><span id="ppm_solute" style="color: white;">0.005</span> g</b>
+                        </div>
+                        <input type="range" id="ppm_slider1" min="1" max="50" step="1" value="5">
+                        <small style="color: #94a3b8; display: block; margin-top: 5px;">* (x 10⁻³ g) Very trace amount</small>
+                    </div>
+                    <div style="margin-top: 40px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.4rem;">
+                            <span style="color: #f87171;">Mass of Water (W<sub>A</sub>)</span>
+                            <b><span id="ppm_solvent" style="color: white;">1000</span> g</b>
+                        </div>
+                        <input type="range" id="ppm_slider2" min="1000" max="10000" step="1000" value="1000">
+                        <small style="color: #94a3b8; display: block; margin-top: 5px;">* (Large quantity of solvent)</small>
+                    </div>
+                </div>
+                <!-- Logic -->
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div style="background: var(--slate-900); padding: 30px 40px; border-radius: 30px; border: 4px solid #ef4444; text-align: center; box-shadow: 0 0 40px rgba(239, 68, 68, 0.2); min-width: 300px;">
+                        <div style="font-size: 2.2rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 15px;">
+                            <span style="color: #fca5a5;" id="ppm_num">0.005</span>
+                            <span style="font-size: 3rem; font-weight: 300; color: #475569;">/</span>
+                            <span style="color: #f87171;" id="ppm_den">1000.005</span>
+                            <span style="color: white;">× 10⁶</span>
+                        </div>
+                        <div style="margin: 20px 0; border-top: 2px dashed #334155;"></div>
+                        <div style="font-size: 3.5rem; font-weight: 950; color: #f87171;">
+                            <span id="ppm_res">5.0</span> ppm
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION CONFORMS TO FLOATING PILLS UI -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn" style="background: #1e293b;">🏠 Main Hub</a>
+        <div style="display: flex; gap: 20px;">
+            <a href="ch1_part1.html" class="nav-btn" style="background: #94a3b8;">⬅️ Previous Part 1</a>
+            <a href="ch1_part3.html" class="nav-btn" style="background: #059669;">Next Part 3 ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        // SIM 1: w/W %
+        const w1 = document.getElementById('ww_slider1');
+        const w2 = document.getElementById('ww_slider2');
+        const ws1 = document.getElementById('ww_solute');
+        const ws2 = document.getElementById('ww_solvent');
+        const wn = document.getElementById('ww_num');
+        const wd = document.getElementById('ww_den');
+        const wr = document.getElementById('ww_res');
+
+        function updateWW() {
+            let solute = parseInt(w1.value);
+            let solvent = parseInt(w2.value);
+            let total = solute + solvent;
+            ws1.innerText = solute;
+            ws2.innerText = solvent;
+            wn.innerText = solute;
+            wd.innerText = total;
+            wr.innerText = ((solute / total) * 100).toFixed(1);
+        }
+        w1.addEventListener('input', updateWW);
+        w2.addEventListener('input', updateWW);
+        updateWW();
+
+        // SIM 2: v/V %
+        const v1 = document.getElementById('vv_slider1');
+        const v2 = document.getElementById('vv_slider2');
+        const vs1 = document.getElementById('vv_solute');
+        const vs2 = document.getElementById('vv_solvent');
+        const vn = document.getElementById('vv_num');
+        const vd = document.getElementById('vv_den');
+        const vr = document.getElementById('vv_res');
+
+        function updateVV() {
+            let solute = parseInt(v1.value);
+            let solvent = parseInt(v2.value);
+            let total = solute + solvent;
+            vs1.innerText = solute;
+            vs2.innerText = solvent;
+            vn.innerText = solute;
+            vd.innerText = total;
+            vr.innerText = ((solute / total) * 100).toFixed(1);
+        }
+        v1.addEventListener('input', updateVV);
+        v2.addEventListener('input', updateVV);
+        updateVV();
+
+        // SIM 3: w/V %
+        const wv1 = document.getElementById('wv_slider1');
+        const wv2 = document.getElementById('wv_slider2');
+        const wvs1 = document.getElementById('wv_solute');
+        const wvs2 = document.getElementById('wv_solution'); // This is total volume directly usually
+        const wvn = document.getElementById('wv_num');
+        const wvd = document.getElementById('wv_den');
+        const wvr = document.getElementById('wv_res');
+
+        function updateWV() {
+            let solute = parseInt(wv1.value);
+            let vol = parseInt(wv2.value); // volume of solution
+            wvs1.innerText = solute;
+            wvs2.innerText = vol;
+            wvn.innerText = solute;
+            wvd.innerText = vol;
+            wvr.innerText = ((solute / vol) * 100).toFixed(1);
+        }
+        wv1.addEventListener('input', updateWV);
+        wv2.addEventListener('input', updateWV);
+        updateWV();
+
+        // SIM 4: ppm
+        const p1 = document.getElementById('ppm_slider1');
+        const p2 = document.getElementById('ppm_slider2');
+        const ps1 = document.getElementById('ppm_solute');
+        const ps2 = document.getElementById('ppm_solvent');
+        const pn = document.getElementById('ppm_num');
+        const pd = document.getElementById('ppm_den');
+        const pr = document.getElementById('ppm_res');
+
+        function updatePPM() {
+            // Slider 1 is in mg (1 = 0.001 g) for realistic ppm
+            let soluteReal = parseInt(p1.value) * 0.001; 
+            let solventReal = parseInt(p2.value);
+            let total = soluteReal + solventReal;
+            
+            ps1.innerText = soluteReal.toFixed(3);
+            ps2.innerText = solventReal;
+            pn.innerText = soluteReal.toFixed(3);
+            pd.innerText = total.toFixed(3);
+            
+            let ppmVal = (soluteReal / total) * 1000000;
+            pr.innerText = ppmVal.toFixed(1);
+        }
+        p1.addEventListener('input', updatePPM);
+        p2.addEventListener('input', updatePPM);
+        updatePPM();
+
+    </script>
+</body>
+</html>

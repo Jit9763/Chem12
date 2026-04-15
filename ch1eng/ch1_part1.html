@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Part 1 - Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* EMERALD EARTH STYLE & MASTER PLAN SPECIFICATIONS */
+        :root {
+            --primary: #059669;
+            --primary-dark: #064e3b;
+            --secondary: #10b981;
+            --accent: #38bdf8;
+            --molarity-red: #e11d48;
+            --molality-teal: #0d9488;
+            --fraction-purple: #7c3aed;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --font-main: #000000;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Outfit', sans-serif; 
+            background: var(--slate-50); 
+            color: var(--font-main); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 600;
+        }
+
+        .header-banner { 
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #065f46 100%); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-radius: 0 0 60px 60px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .premium-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .header-banner h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            margin: 0; 
+            font-weight: 950; 
+            line-height: 1.1;
+        }
+
+        .part-container { 
+            width: 100%;
+            max-width: 100vw;
+            padding: 80px 6vw; 
+            box-sizing: border-box;
+            background: white; 
+            margin-top: -40px;
+            border-radius: 60px 60px 0 0;
+            box-shadow: 0 -20px 60px rgba(0,0,0,0.1);
+        }
+
+        h2 { 
+            color: var(--primary-dark); 
+            font-size: clamp(2rem, 5.5vw, 3.5rem); 
+            border-left: 20px solid var(--primary); 
+            padding: 25px 40px; 
+            background: linear-gradient(to right, #f0fdf4, transparent); 
+            border-radius: 0 40px 40px 0; 
+            margin: 100px 0 60px 0;
+            font-weight: 900;
+        }
+
+        h3 { 
+            color: var(--primary); 
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem); 
+            border-bottom: 6px solid #d1fae5; 
+            display: inline-block; 
+            padding-bottom: 15px; 
+            margin: 80px 0 40px 0; 
+            font-weight: 900;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 50px;
+            padding: 50px;
+            border: 3px solid var(--slate-100);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .formula-box {
+            background: var(--slate-900);
+            color: white;
+            padding: 40px;
+            border-radius: 35px;
+            text-align: center;
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            line-height: 2;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border: 3px solid var(--primary);
+        }
+
+        .math-frac {
+            display: inline-flex;
+            flex-direction: column;
+            vertical-align: middle;
+            text-align: center;
+            font-weight: 850;
+            margin: 0 15px;
+            line-height: 1;
+        }
+        .math-num {
+            border-bottom: 3px solid currentColor;
+            padding: 0 15px 5px 15px;
+        }
+        .math-den {
+            padding: 5px 15px 0 15px;
+        }
+
+        /* --- CLASSIFICATION LIST STYLES --- */
+        .classification-group {
+            background: var(--slate-50);
+            border-radius: 30px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 10px solid var(--primary);
+        }
+        .classification-group h4 {
+            font-size: 2rem;
+            color: var(--slate-900);
+            margin: 0 0 20px 0;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .class-item {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            color: #334155;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: all 0.3s;
+        }
+        .class-item:hover {
+            border-color: var(--primary);
+            transform: translateX(10px);
+        }
+        .class-header {
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+        .class-example {
+            color: #475569;
+            font-style: italic;
+        }
+        .class-example b {
+            color: var(--molarity-red);
+            font-style: normal;
+        }
+
+        .sim-container {
+            background: #020617;
+            padding: 50px;
+            border-radius: 50px;
+            color: white;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+            margin: 80px 0;
+        }
+
+        .sim-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .nav-buttons { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 60px 0vw 40px; 
+            background: transparent; 
+            margin-top: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-btn { 
+            background: var(--primary); 
+            color: white; 
+            padding: 22px 50px; 
+            border-radius: 100px; 
+            text-decoration: none; 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+            transition: 0.3s;
+        }
+
+        input[type=range] {
+            width: 100%;
+            height: 12px;
+            -webkit-appearance: none;
+            background: #334155;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 25px;
+            height: 25px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            border: 4px solid white;
+        }
+
+        @media (max-width: 1000px) {
+            .part-container { padding: 40px 0; border-radius: 0; }
+            .content-card { border-radius: 0; border-left: none; border-right: none; }
+            .sim-grid { grid-template-columns: 1fr; }
+            .nav-buttons { justify-content: center; padding: 40px 20px; }
+            h2 { border-radius: 0; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <div class="premium-badge">Premium Projector Edition</div>
+        <h1>Solutions<br><span style="font-size: 0.5em; opacity: 0.8; font-weight: 800;">(Chapter 1)</span></h1>
+    </div>
+
+    <div class="part-container">
+        
+        <h2 style="margin-top: 0;">1.1 Concept of Solutions</h2>
+        
+        <div class="content-card">
+            <h3 style="margin-top:0;">What is a Solution?</h3>
+            <p style="font-size: 1.5rem; color: #334155; line-height: 1.8;">
+                A homogeneous mixture of two or more substances is called a <b>Solution</b>.<br><br>
+                In a homogeneous mixture, the composition and properties remain uniform throughout the mixture.
+            </p>
+            
+            <div style="background: #f0fdf4; padding: 30px; border-radius: 20px; margin: 30px 0; border-left: 8px solid var(--primary);">
+                <h4 style="font-size: 1.8rem; color: var(--primary-dark); margin-top:0;">Components of a Solution:</h4>
+                <ul style="font-size: 1.5rem; color: #1e293b; line-height: 2.0; list-style-type: square; padding-left: 20px;">
+                    <li style="margin-bottom: 20px;"><b>Solvent:</b> The component present in a larger quantity, which dissolves the other substance and determines the physical state of the solution.</li>
+                    <li><b>Solute:</b> The component present in a smaller quantity, which is dissolved in the solvent, is called the solute.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="formula-box">
+            <b>Solvent</b> + <b>Solute</b> &nbsp; ➔ &nbsp; <b>Solution</b>
+        </div>
+
+        <div class="content-card">
+            <h3 style="margin-top:0;">Properties of a Solution</h3>
+            <ul style="font-size: 1.5rem; color: #334155; line-height: 1.8; padding-left: 20px;">
+                <li style="margin-bottom: 20px;">A solution is a <b>single-phase</b> system consisting of more than one component. Based on components, it can be Binary (2), Ternary (3), or Quaternary (4).</li>
+                <li style="margin-bottom: 20px;">It is a homogeneous mixture whose composition can only be varied within <b>certain limits</b>.</li>
+                <li><b>Examples:</b> Sugar in water, lemonade, air, etc.</li>
+            </ul>
+        </div>
+
+        <h2>1.2 Types of Solutions</h2>
+        
+        <div class="content-card">
+            <p style="font-size: 1.5rem; color: #334155; line-height: 1.8;">
+                Based on the physical state of the solvent and solute, solutions are classified into 9 types:
+            </p>
+
+            <!-- 1. GASEOUS SOLUTIONS -->
+            <div class="classification-group" style="border-left-color: #f59e0b;">
+                <h4 style="color: #d97706; border-bottom-color: #f59e0b;">Gaseous Solutions</h4>
+                <p style="font-size:1.3rem; color:#64748b; margin-top:-10px;">The solvent is always a Gas.</p>
+                
+                <div class="class-item">
+                    <span class="class-header">Gas + Gas (Gas in Gas)</span>
+                    <span class="class-example">Example: Mixture of <b>Oxygen and Nitrogen</b>, air.</span>
+                </div>
+                <div class="class-item">
+                    <span class="class-header">Gas (Solvent) + Liquid (Solute)</span>
+                    <span class="class-example">Example: Mixture of Chloroform (CHCl₃) in <b>Nitrogen gas</b>.</span>
+                </div>
+                <div class="class-item">
+                    <span class="class-header">Gas (Solvent) + Solid (Solute)</span>
+                    <span class="class-example">Example: Camphor dissolved in <b>Nitrogen gas</b>.</span>
+                </div>
+            </div>
+
+            <!-- 2. LIQUID SOLUTIONS -->
+            <div class="classification-group" style="border-left-color: #3b82f6;">
+                <h4 style="color: #2563eb; border-bottom-color: #3b82f6;">Liquid Solutions</h4>
+                <p style="font-size:1.3rem; color:#64748b; margin-top:-10px;">The solvent is always a Liquid.</p>
+
+                <div class="class-item">
+                    <span class="class-header">Liquid (Solvent) + Gas (Solute)</span>
+                    <span class="class-example">Example: <b>Oxygen</b> dissolved in water, Soda water (CO₂ in water), ammoniated water.</span>
+                </div>
+                <div class="class-item">
+                    <span class="class-header">Liquid + Liquid (Liquid in Liquid)</span>
+                    <span class="class-example">Example: <b>Ethanol (Alcohol)</b> dissolved in water.</span>
+                </div>
+                <div class="class-item">
+                    <span class="class-header">Liquid (Solvent) + Solid (Solute)</span>
+                    <span class="class-example">Example: <b>Sugar</b> or <b>Glucose</b> dissolved in water.</span>
+                </div>
+            </div>
+
+            <!-- 3. SOLID SOLUTIONS -->
+            <div class="classification-group" style="border-left-color: #8b5cf6;">
+                <h4 style="color: #7c3aed; border-bottom-color: #8b5cf6;">Solid Solutions</h4>
+                <p style="font-size:1.3rem; color:#64748b; margin-top:-10px;">The solvent is always a Solid.</p>
+
+                <div class="class-item">
+                    <span class="class-header">Solid (Solvent) + Gas (Solute)</span>
+                    <span class="class-example">Example: Gaseous adsorption on metal surfaces (e.g., <b>Pd + H₂</b>, Ti + N₂).</span>
+                </div>
+                <div class="class-item">
+                    <span class="class-header">Solid (Solvent) + Liquid (Solute)</span>
+                    <span class="class-example">Example: Amalgams like <b>Na + Hg</b>, Cu + Hg, Zn + Hg.</span>
+                </div>
+                <div class="class-item">
+                    <span class="class-header">Solid + Solid (Solid in Solid)</span>
+                    <span class="class-example">Example: <b>Alloys</b> such as Cu + Au, Brass (Zn + Cu), Bronze (Zn + Sn).</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MIXING SIMULATOR -->
+        <h2 id="simulator">Interactive Lab: Making a Solution</h2>
+        <div class="sim-container">
+            <div class="sim-grid">
+                <!-- Beaker Visualization -->
+                <div style="background: #0f172a; padding: 40px; border-radius: 30px; position: relative; height: 350px; display: flex; align-items: flex-end; justify-content: center; box-shadow: inset 0 0 50px rgba(0,0,0,0.8); border: 4px solid var(--slate-800);">
+                    
+                    <!-- Beaker Glass -->
+                    <div style="width: 200px; height: 250px; border: 6px solid rgba(255,255,255,0.3); border-top: none; border-radius: 0 0 20px 20px; position: relative; overflow: hidden; background: rgba(255,255,255,0.05);">
+                        
+                        <!-- Measurement Marks -->
+                        <div style="position: absolute; left: 0; bottom: 50px; width: 20px; border-top: 2px solid rgba(255,255,255,0.4);"></div>
+                        <div style="position: absolute; left: 0; bottom: 100px; width: 20px; border-top: 2px solid rgba(255,255,255,0.4);"></div>
+                        <div style="position: absolute; left: 0; bottom: 150px; width: 30px; border-top: 2px solid rgba(255,255,255,0.8);"><span style="color: white; font-size: 0.8rem; position: absolute; left: 35px; top: -10px;">1 L</span></div>
+                        <div style="position: absolute; left: 0; bottom: 200px; width: 20px; border-top: 2px solid rgba(255,255,255,0.4);"></div>
+
+                        <!-- Liquid (Solvent) -->
+                        <div id="ch1_p1_liquid" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: #0ea5e9; opacity: 0.6; transition: all 0.5s ease;"></div>
+                        
+                        <!-- Solute Particles -->
+                        <div id="ch1_p1_particles" style="position: absolute; bottom: 10px; left: 0; width: 100%; height: 50px; display: flex; flex-wrap: wrap; justify-content: space-around; opacity: 0; transition: 0.5s;">
+                            <!-- Particles generated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 30px; border: 2px solid var(--slate-800);">
+                    <h3 style="color: var(--accent); margin-top: 0; border: none; padding: 0;">Experiment Controls</h3>
+
+                    <div style="margin-top: 20px;">
+                        <span style="font-size: 1.2rem; margin-bottom: 10px; display: block;">Select Solute Type:</span>
+                        <select id="ch1_p1_soluteType" style="width: 100%; padding: 10px; border-radius: 10px; background: #1e293b; color: white; border: 2px solid var(--accent); font-family: 'Outfit'; font-size: 1.1rem; outline: none; margin-bottom: 10px;">
+                            <option value="sugar">Salt / Sugar (Colorless)</option>
+                            <option value="cuso4">Copper Sulphate CuSO₄ (Blue)</option>
+                            <option value="kmno4">Potassium Permanganate KMnO₄ (Purple/Pink)</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-top: 20px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.2rem;">
+                            <span>Solute Amount:</span>
+                            <b><span id="ch1_p1_soluteVal" style="color: #ef4444;">0</span> g</b>
+                        </div>
+                        <input type="range" id="ch1_p1_soluteSlider" min="0" max="100" step="10" value="0">
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <button id="ch1_p1_mixBtn" style="background: var(--slate-800); color: white; border: 2px solid var(--accent); padding: 10px 20px; border-radius: 20px; cursor: pointer; width: 100%; font-family: 'Outfit'; font-weight: 700; font-size: 1.1rem; transition: 0.3s;">
+                            Mix & Stir 🌀
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="ch1_p1_msg" style="margin-top: 30px; padding: 20px; background: rgba(56, 189, 248, 0.2); border-left: 5px solid #38bdf8; font-size: 1.3rem; border-radius: 10px;">
+                <b>Status:</b> Only Water (Solvent) is present in the beaker.
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION CONFORMS TO FLOATING PILLS UI -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn" style="background: #1e293b;">🏠 Main Hub</a>
+        <div style="display: flex; gap: 20px;">
+            <a href="#" class="nav-btn" style="background: #94a3b8; pointer-events: none;">⬅️ Previous</a>
+            <a href="ch1_part2.html" class="nav-btn" style="background: #059669;">Next Part ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        const solSlider = document.getElementById('ch1_p1_soluteSlider');
+        const solType = document.getElementById('ch1_p1_soluteType');
+        const solVal = document.getElementById('ch1_p1_soluteVal');
+        const mixBtn = document.getElementById('ch1_p1_mixBtn');
+        const liquid = document.getElementById('ch1_p1_liquid');
+        const msg = document.getElementById('ch1_p1_msg');
+        
+        let ch1_p1_isMixed = false;
+        let ch1_p1_soluteAmount = 0;
+
+        function resetSim() {
+            ch1_p1_isMixed = false;
+            mixBtn.innerText = "Mix & Stir 🌀";
+            mixBtn.style.background = "var(--slate-800)";
+            mixBtn.style.borderColor = "var(--accent)";
+            liquid.style.background = "#0ea5e9"; // Base water color
+            
+            if (ch1_p1_soluteAmount === 0){
+                msg.innerHTML = "<b>Status:</b> Only Water (Solvent) is present in the beaker.";
+                msg.style.background = "rgba(56, 189, 248, 0.2)";
+                msg.style.borderLeftColor = "#38bdf8";
+            } else {
+                let sName = solType.options[solType.selectedIndex].text.split(' ')[0];
+                msg.innerHTML = `<b>Status:</b> ${ch1_p1_soluteAmount}g of ${sName} added, but not dissolved yet.`;
+                msg.style.background = "rgba(245, 158, 11, 0.2)";
+                msg.style.borderLeftColor = "#f59e0b";
+            }
+        }
+
+        solSlider.addEventListener('input', () => {
+            ch1_p1_soluteAmount = parseInt(solSlider.value);
+            solVal.innerText = ch1_p1_soluteAmount;
+            resetSim();
+        });
+
+        solType.addEventListener('change', () => {
+            resetSim();
+        });
+
+        mixBtn.addEventListener('click', () => {
+            if(ch1_p1_soluteAmount > 0) {
+                ch1_p1_isMixed = true;
+                mixBtn.innerText = "Mixed ✅";
+                mixBtn.style.background = "#059669";
+                mixBtn.style.borderColor = "#10b981";
+                
+                let sType = solType.value;
+                let sName = solType.options[solType.selectedIndex].text.split(' ')[0];
+                
+                let baseR = 14, baseG = 165, baseB = 233; // Default water
+
+                if (sType === 'sugar') {
+                    // Sugar/Salt: gets slightly cloudy/dense but same hue
+                    baseG = 165 - Math.floor(ch1_p1_soluteAmount * 0.3);
+                    baseB = 233 - Math.floor(ch1_p1_soluteAmount * 0.3);
+                } else if (sType === 'cuso4') {
+                    // CuSO4: Turns deep blue
+                    baseR = 14; 
+                    baseG = 50 + Math.floor(ch1_p1_soluteAmount * 0.5); 
+                    baseB = 233 + Math.floor(ch1_p1_soluteAmount * 0.2);
+                    if(baseB > 255) baseB = 255;
+                } else if (sType === 'kmno4') {
+                    // KMnO4: Turns bright purple/pink
+                    baseR = 14 + Math.floor(ch1_p1_soluteAmount * 2.0);
+                    baseG = 165 - Math.floor(ch1_p1_soluteAmount * 1.5);
+                    baseB = 233 + Math.floor(ch1_p1_soluteAmount * 0.2);
+                    if(baseR > 255) baseR = 255;
+                    if(baseG < 0) baseG = 0;
+                    if(baseB > 255) baseB = 255;
+                }
+
+                liquid.style.background = `rgb(${baseR}, ${baseG}, ${baseB})`;
+
+                msg.innerHTML = `<b>Conclusion:</b> ${sName} (${ch1_p1_soluteAmount}g) has completely dissolved into the solvent, forming a <b>Homogeneous Solution</b>.`;
+                msg.style.background = "rgba(16, 185, 129, 0.2)";
+                msg.style.borderLeftColor = "#10b981";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+/**
+ * CSS Styling for NCERT Chemistry Interactive Portal
+ * Aesthetics: Emerald Earth (Premium Projector Edition)
+ * Based on Chapter 1: Part 1 Design System
+ */
+
+:root {
+    --primary: #059669;
+    --primary-dark: #064e3b;
+    --secondary: #10b981;
+    --accent: #38bdf8;
+    --raoult-blue: #3b82f6;
+    --raoult-purple: #8b5cf6;
+    --molarity-red: #e11d48;
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --font-main: #000000;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--slate-50);
+    color: var(--font-main);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Background Animation */
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background:
+        radial-gradient(2px 2px at 20px 30px, var(--primary), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, var(--accent), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, var(--primary), rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    opacity: 0.05;
+    animation: bgScroll 60s linear infinite;
+}
+
+@keyframes bgScroll {
+    from { transform: translateY(0); }
+    to { transform: translateY(-300px); }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #065f46 100%);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    border-radius: 0 0 80px 80px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    margin-bottom: 60px;
+}
+
+.badge {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 8px 24px;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 25px;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 950;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #fef3c7, var(--accent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--slate-100);
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Main Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4vw 80px;
+}
+
+.filter-section {
+    margin-top: -110px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+#searchBar {
+    width: 100%;
+    max-width: 700px;
+    padding: 25px 40px;
+    border-radius: 40px;
+    border: 4px solid white;
+    background: white;
+    color: var(--slate-900);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    outline: none;
+    transition: var(--transition);
+}
+
+#searchBar:focus {
+    transform: scale(1.02);
+    border-color: var(--primary);
+}
+
+/* Chapter Grid */
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.chapter-card {
+    background: white;
+    border: 3px solid var(--slate-100);
+    border-radius: 50px;
+    padding: 50px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.chapter-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+    border-color: var(--primary);
+}
+
+.chapter-num {
+    font-size: 6rem;
+    font-weight: 950;
+    color: var(--slate-100);
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.chapter-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-secondary {
+    padding: 18px 25px;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--slate-800);
+    font-weight: 700;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--slate-50); }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; border: 4px solid var(--slate-50); }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
