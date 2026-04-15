@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function renderChapters(data) {
   const grid = document.getElementById('chapter-grid');
-  if(!grid) return; // If on notes_view.html, grid might not exist, that's fine.
+  if(!grid) return;
 
   grid.innerHTML = '';
 
@@ -39,10 +39,14 @@ function renderChapters(data) {
     card.className = 'chapter-card';
     
     let mobileBtn = '';
-    let hindiRoute = `notes_html_view.html?id=${chapter.id}`;
+    let hindiRoute = `coming_soon.html`;
+    let englishRoute = `coming_soon.html`;
+    let qaRoute = `coming_soon.html`;
     
     if (chapter.id === 1) {
       hindiRoute = `ch1_parts/ch1_part1.html`;
+      englishRoute = `ch1eng/ch1_part1.html`;
+      qaRoute = `coming_soon.html`;
       mobileBtn = `
         <div style="margin-top: 20px;">
           <p style="color: var(--primary-dark); font-weight: 800; margin-bottom: 10px; font-size: 1.1rem;">📑 सीधा भाग चुनें (Select Part):</p>
@@ -55,19 +59,27 @@ function renderChapters(data) {
             <button class="btn-secondary" onclick="window.location.href='ch1_parts/ch1_part6.html'" style="font-size: 0.85rem; padding: 8px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P6</button>
           </div>
         </div>
-        <button class="btn-secondary" onclick="window.location.href='ch1eng/ch1_part1.html'" style="background: linear-gradient(135deg, #3b82f6, #2563eb); border-color: #60a5fa; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 15px;">🇬🇧 English Version</button>
+        <button class="btn-secondary" onclick="window.location.href='${englishRoute}'" style="background: linear-gradient(135deg, #3b82f6, #2563eb); border-color: #60a5fa; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 15px;">🇬🇧 English Version</button>
       `;
     }
 
+    // Badge for coming soon chapters
+    let badge = '';
+    if (chapter.id > 1) {
+      badge = `<div style="position: absolute; top: 12px; right: 12px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; z-index: 5;">🔜 COMING SOON</div>`;
+    }
+
     card.innerHTML = `
+      ${badge}
       <div class="chapter-num">${String(chapter.id).padStart(2, '0')}</div>
       <h3 class="chapter-title">${chapter.title}</h3>
       <div class="chapter-actions" style="display:flex; gap:10px; flex-direction: column; margin-top:10px; position:relative; z-index:10;">
         <button class="btn-secondary" onclick="window.location.href='${hindiRoute}'" style="background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #fcd34d; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">🇮🇳 Hindi Version (Premium)</button>
         ${mobileBtn}
-        <button class="btn-secondary" onclick="window.location.href='qa_view.html?id=${chapter.id}'" style="background: #8b5cf6; border-color: #7c3aed; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">❓ प्रश्न-उत्तर (Master Q&A)</button>
+        <button class="btn-secondary" onclick="window.location.href='${qaRoute}'" style="background: #8b5cf6; border-color: #7c3aed; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">❓ प्रश्न-उत्तर (Master Q&A)</button>
       </div>
     `;
     grid.appendChild(card);
   });
 }
+
