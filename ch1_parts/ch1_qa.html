@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Master Q&A (Hindi) - Chemistry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #059669;
+            --primary-dark: #064e3b;
+            --secondary: #10b981;
+            --accent: #8b5cf6;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --font-main: #000000;
+        }
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: var(--slate-50); color: var(--font-main); overflow-x: hidden; font-weight: 600; }
+        .header-banner { background: linear-gradient(135deg, var(--accent) 0%, #6d28d9 100%); color: white; padding: 60px 20px; text-align: center; border-radius: 0 0 60px 60px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .premium-badge { background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 100px; font-size: 1rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 15px; }
+        h1 { font-size: clamp(2rem, 6vw, 3.5rem); margin: 0; font-weight: 950; }
+        .part-container { padding: 50px 5vw; background: white; margin-top: -30px; border-radius: 60px 60px 0 0; box-shadow: 0 -20px 60px rgba(0,0,0,0.1); }
+        .qa-section-title { color: #1e293b; font-size: clamp(2rem, 5vw, 2.5rem); margin: 60px 0 30px 0; padding: 20px 30px; background: var(--slate-100); border-left: 15px solid var(--accent); border-radius: 0 30px 30px 0; font-weight: 900; }
+        .q-card { background: #ffffff; border: 2px solid #e2e8f0; border-radius: 20px; padding: 30px; margin-bottom: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
+        .q-num { background: var(--accent); color: white; padding: 5px 15px; border-radius: 10px; font-weight: 900; font-size: 1.2rem; margin-right: 15px; }
+        .q-text { font-size: 1.6rem; color: #0f172a; font-weight: 700; line-height: 1.6; margin-bottom: 10px; }
+        .ans-text { font-size: 1.5rem; color: #059669; font-weight: 600; margin-top: 15px; padding-top: 15px; border-top: 2px dashed #e2e8f0; }
+        
+        /* Math Fract Classes */
+        .math-frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-size: 0.9em; margin: 0 5px; font-weight: 850; line-height: 1.1; }
+        .math-top { border-bottom: 3px solid currentColor; padding: 0 5px 2px 5px; }
+        .math-bot { padding: 2px 5px 0 5px; }
+        
+        .mcq-options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .mcq-opt { background: #f8fafc; padding: 15px 20px; border-radius: 12px; border: 2px solid #cbd5e1; font-size: 1.4rem; font-weight: 600; transition: 0.3s; }
+        .mcq-opt.correct { background: #d1fae5; border-color: #10b981; color: #064e3b; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2); position:relative;}
+        .mcq-opt.correct::after { content: "✓ Correct"; position:absolute; right: 15px; background: #059669; color: white; padding: 2px 8px; border-radius: 10px; font-size: 1rem; }
+        .nav-buttons { display: flex; justify-content: center; padding: 40px; }
+        .nav-btn { background: #1e293b; color: white; padding: 20px 40px; border-radius: 100px; text-decoration: none; font-weight: 900; font-size: 1.4rem; }
+        
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <div class="premium-badge">Class 12 - Chapter 1</div>
+        <h1>Master Q&A Bank (प्रश्न-उत्तर)</h1>
+        <p style="font-size: 1.3rem; margin-top: 15px; font-weight: 600; opacity: 0.9;">विलयन (Solutions) - Board Exam Preparation</p>
+    </div>
+    <div class="part-container">
+
+        <div class="qa-section-title" style="border-left-color: #f43f5e; background: #fff1f2;">🔴 बहुविकल्पीय प्रश्न (Multiple Choice Questions) - 20</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q1</span>
+                <div class="q-text">मोलरता की इकाई है:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. mol/L</div><div class="mcq-opt ">B. mol/kg</div><div class="mcq-opt ">C. g/L</div><div class="mcq-opt ">D. mol</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q2</span>
+                <div class="q-text">ताप बढाने पर कौनसी सांद्रता इकाई प्रभावित होती है?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. मोलरता</div><div class="mcq-opt ">B. मोललता</div><div class="mcq-opt ">C. मोल अंश</div><div class="mcq-opt ">D. भार प्रतिशत</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q3</span>
+                <div class="q-text">राउल्ट के नियम का पालन करने वाले विलयन कहलाते है:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. आदर्श विलयन</div><div class="mcq-opt ">B. अनादर्श विलयन</div><div class="mcq-opt ">C. अतिसंतृप्त विलयन</div><div class="mcq-opt ">D. कोलॉइडी विलयन</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q4</span>
+                <div class="q-text">निम्न में से कौन अणुसंख्यक गुणधर्म नहीं है?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. परासरण दाब</div><div class="mcq-opt ">B. हिमांक अवनमन</div><div class="mcq-opt correct">C. वाष्पदाब</div><div class="mcq-opt ">D. क्वथनांक उन्नयन</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q5</span>
+                <div class="q-text">रक्त का परासरण दाब किसके समान होता है?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. 0.9% NaCl</div><div class="mcq-opt ">B. 0.1% NaCl</div><div class="mcq-opt ">C. 9.0% NaCl</div><div class="mcq-opt ">D. 1.0% NaCl</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q6</span>
+                <div class="q-text">NaCl का जलीय विलयन में वांटहॉफ गुणांक (i) लगभग होता है:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. 1</div><div class="mcq-opt correct">B. 2</div><div class="mcq-opt ">C. 0.5</div><div class="mcq-opt ">D. 3</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q7</span>
+                <div class="q-text">विलयन का वाष्पदाब होता है:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. विलायक से अधिक</div><div class="mcq-opt correct">B. विलायक से कम</div><div class="mcq-opt ">C. विलायक के बराबर</div><div class="mcq-opt ">D. शून्य</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q8</span>
+                <div class="q-text">हेनरी का नियम सम्बंधित है:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. गैसों की द्रवों में विलेयता से</div><div class="mcq-opt ">B. ठोसों की द्रवों में विलेयता से</div><div class="mcq-opt ">C. द्रवों की द्रवों में विलेयता से</div><div class="mcq-opt ">D. वाष्पदाब से</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q9</span>
+                <div class="q-text">एसीटिक अम्ल का बेंजीन में वांटहॉफ गुणांक क्या होगा?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. 1.0</div><div class="mcq-opt ">B. 2.0</div><div class="mcq-opt correct">C. 0.5</div><div class="mcq-opt ">D. 0.0</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q10</span>
+                <div class="q-text">गोताखोरों के सिलेंडर में हीलियम क्यों मिलाई जाती है?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. स्वाद के लिए</div><div class="mcq-opt correct">B. विलेयता कम करने के लिए</div><div class="mcq-opt ">C. रंग के लिए</div><div class="mcq-opt ">D. दबाव बढ़ाने के लिए</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q11</span>
+                <div class="q-text">विलेय के मोल अंश का सूत्र है:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. n/(n+N)</div><div class="mcq-opt ">B. N/(n+N)</div><div class="mcq-opt ">C. n/V</div><div class="mcq-opt ">D. W/M</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q12</span>
+                <div class="q-text">शुद्ध जल की मोलरता कितनी होती है?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. 18 M</div><div class="mcq-opt ">B. 50 M</div><div class="mcq-opt correct">C. 55.5 M</div><div class="mcq-opt ">D. 100 M</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q13</span>
+                <div class="q-text">अणुसंख्यक गुणधर्म निर्भर करते हैं:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. कणों की प्रकृति पर</div><div class="mcq-opt ">B. कणों के आकार पर</div><div class="mcq-opt correct">C. कणों की संख्या पर</div><div class="mcq-opt ">D. तापमान पर</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q14</span>
+                <div class="q-text">परासरण में अर्द्धपारगम्य झिल्ली से प्रवाहित होते हैं:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. विलेय के कण</div><div class="mcq-opt correct">B. विलायक के कण</div><div class="mcq-opt ">C. जटिल आयन</div><div class="mcq-opt ">D. गैस के अणु</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q15</span>
+                <div class="q-text">यूरिया का वांटहॉफ गुणांक होता है:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. 1</div><div class="mcq-opt ">B. 2</div><div class="mcq-opt ">C. 3</div><div class="mcq-opt ">D. 0.5</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q16</span>
+                <div class="q-text">अनादर्श विलयन जो धनात्मक विचलन दर्शाते हैं:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. ∆H mix > 0</div><div class="mcq-opt ">B. ∆H mix < 0</div><div class="mcq-opt ">C. ∆H mix = 0</div><div class="mcq-opt ">D. ∆V mix < 0</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q17</span>
+                <div class="q-text">स्थिरक्वाथी मिश्रण का क्वथनांक होता है:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. परिवर्तनशील</div><div class="mcq-opt correct">B. स्थिर</div><div class="mcq-opt ">C. शून्य</div><div class="mcq-opt ">D. अनंत</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q18</span>
+                <div class="q-text">क्वथनांक उन्नयन स्थिरांक (Kb) की इकाई है:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. K kg mol⁻¹</div><div class="mcq-opt ">B. K mol kg⁻¹</div><div class="mcq-opt ">C. K kg⁻¹ mol</div><div class="mcq-opt ">D. mol kg⁻¹</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q19</span>
+                <div class="q-text">किसका परासरण दाब अधिकतम होगा (सभी 0.1M)?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. NaCl</div><div class="mcq-opt ">B. Glucose</div><div class="mcq-opt correct">C. BaCl₂</div><div class="mcq-opt ">D. Urea</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q20</span>
+                <div class="q-text">ठंडे देशों में सड़कों से बर्फ हटाने के लिए किसका उपयोग होता है?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. NaCl / CaCl₂</div><div class="mcq-opt ">B. Urea</div><div class="mcq-opt ">C. Glucose</div><div class="mcq-opt ">D. Aluminium</div></div>
+        </div>
+        
+        <div class="qa-section-title" style="border-left-color: #10b981; background: #ecfdf5;">🟢 अतिलघूत्तरात्मक प्रश्न (Short Answer) - 10</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q1</span>
+                <div class="q-text">मोलरता व मोललता में से ताप द्वारा कौन प्रभावित होता है और क्यों?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>उत्तर:</b> मोलरता (Molarity) ताप से प्रभावित होती है क्योंकि यह आयतन (Volume) पर निर्भर करती है, और ताप (Temperature) बदलने पर आयतन प्रभावित होता है। मोललता (Molality) भार (Mass) पर निर्भर होने के कारण ताप से पूरी तरह अप्रभावित रहती है।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q2</span>
+                <div class="q-text">हेनरी के नियम की कोई दो सीमाएं लिखिए।</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>उत्तर:</b> (1) गैस का दाब (Pressure) बहुत अधिक नहीं होना चाहिए तथा तापमान बहुत कम नहीं होना चाहिए। (2) गैस विलायक के साथ कोई रासायनिक अभिक्रिया (Chemical reaction) नहीं करनी चाहिए, जैसे अमोनिया (NH₃) जल के साथ अभिक्रिया करके NH₄OH बना लेती है, यहाँ हेनरी का नियम लागू नहीं होगा।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q3</span>
+                <div class="q-text">अणुसंख्यक गुणधर्म किसे कहते हैं?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>उत्तर:</b> विलयन के वे सभी भौतिक गुण जो विलयन में उपस्थित विलेय के कुल कणों की संख्या (आयनों या अणुओं की संख्या) पर निर्भर करते हैं, और विलेय की रासायनिक प्रकृति पर निर्भर नहीं करते, अणुसंख्यक गुणधर्म (Colligative Properties) कहलाते हैं।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q4</span>
+                <div class="q-text">अर्द्धपारगम्य झिल्ली (SPM) क्या है?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>उत्तर:</b> यह एक विशेष प्रकार की झिल्ली होती है जो केवल विलायक (Solvent) के छोटे अणुओं को अपने छिद्रों में से आर-पार जाने देती है, परन्तु विलेय (Solute) के बड़े अणुओं को रोक लेती है। उदाहरण: कॉपर फेरोसायनाइड (Cu₂[Fe(CN)₆]) की रासायनिक झिल्ली।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q5</span>
+                <div class="q-text">वांटहॉफ गुणांक (i) को परिभाषित कीजिए।</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>उत्तर:</b> किसी विलयन में विलेय के अणुसंख्यक गुणधर्म के वास्तविक (प्रेक्षित) मान तथा सैद्धांतिक (परिकलित) मान के अनुपात को वांटहॉफ गुणांक कहते हैं। इसे 'i' से दर्शाते हैं।<br><br> i = <span class='math-frac'><span class='math-top'>प्रेक्षित अणुसंख्यक गुणधर्म</span><span class='math-bot'>परिकलित अणुसंख्यक गुणधर्म</span></span> &nbsp; या &nbsp; i = <span class='math-frac'><span class='math-top'>सामान्य मोलर द्रव्यमान</span><span class='math-bot'>असामान्य मोलर द्रव्यमान</span></span></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q6</span>
+                <div class="q-text">आदर्श विलयन किसे कहते हैं?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>उत्तर:</b> वे विलयन जो ताप और सांद्रता की सभी परासों (सभी स्थितियों) में राउल्ट के नियम (Raoult's Law) का सख्ती से पालन करते हैं, आदर्श विलयन कहलाते हैं। आदर्श विलयन बनने पर एन्थैल्पी परिवर्तन (∆H_mix) शून्य और आयतन परिवर्तन (∆V_mix) भी शून्य होता है।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q7</span>
+                <div class="q-text">राउल्ट का नियम लिखिए।</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>उत्तर:</b> राउल्ट के नियम के अनुसार, किसी निश्चित ताप पर वाष्पशील द्रवों के विलयन में उपस्थित प्रत्येक द्रव अवयव का आंशिक वाष्पदाब, विलयन में उस विशिष्ट अवयव के मोल अंश (Mole fraction) के सीधा समानुपाती होता है (P₁ = P₁° × X₁)।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q8</span>
+                <div class="q-text">परासरण दाब का सूत्र लिखिए।</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>उत्तर:</b> वांटहॉफ समीकरण के अनुसार, परासरण दाब का सूत्र: π = CRT है। (जहाँ π = परासरण दाब, C = विलयन की मोलर सांद्रता, R = गैस या विलयन स्थिरांक, T = परम ताप (केल्विन))। यदि विलेय का वियोजन/संगुणन हो रहा हो तो शुद्ध सूत्र π = iCRT होता है।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q9</span>
+                <div class="q-text">प्रतिलोम परासरण (RO) क्या है?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>उत्तर:</b> यदि विलयन की तरफ (यानी अधिक सांद्रण वाले भाग पर) उसके परासरण दाब (π) से अधिक बाह्य दाब (External pressure) लगाया जाए, तो विलायक के अणु उल्टी दिशा में अर्थात् विलयन (Solution) से शुद्ध विलायक (Pure solvent) की ओर बहने लगते हैं। इस क्रिया को प्रतिलोम परासरण (Reverse Osmosis) कहते हैं। इसका मुख्य उपयोग समुद्री जल के विलवणीकरण (Desalination) में किया जाता है।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q10</span>
+                <div class="q-text">स्थिरक्वाथी मिश्रण किसे कहते हैं?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>उत्तर:</b> दो या दो से अधिक भिन्न-भिन्न द्रवों का ऐसा तरल मिश्रण जिसका द्रव अवस्था और वाष्प अवस्था दोनों में संघटन (Composition) बिल्कुल समान रहता है तथा जो बिना किसी आंशिक परिवर्तन के एक निश्चित (समान) ताप पर उबलता है, उसे स्थिरक्वाथी मिश्रण (Azeotropic Mixture) कहा जाता है।</div>
+        </div>
+        
+        <div class="qa-section-title" style="border-left-color: #3b82f6; background: #eff6ff;">🔵 निबंधात्मक प्रश्न (Long Answer) - 5</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q1</span>
+                <div class="q-text">राउल्ट के नियम को समझाइए तथा इसके आधार पर आदर्श और अनादर्श विलयनों में अंतर स्पष्ट कीजिए।</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>उत्तर:</b> <br><br>
+<b>राउल्ट का नियम (Raoult's Law):</b><br>
+फ़्रांसीसी रसायनज्ञ राउल्ट ने 1886 में वाष्पशील द्रवों के विलयनों के लिए एक नियम प्रतिपादित किया। इसके अनुसार — 'एक निश्चित ताप पर, वाष्पशील द्रवों के विलयन में प्रत्येक अवयव का आंशिक वाष्पदाब, विलयन में उसके मोल अंश के सीधे समानुपाती होता है।'<br>
+यदि विलयन में दो वाष्पशील अवयव A और B हैं, तो राउल्ट के नियमानुसार: <br>
+<span style="font-family:serif; font-size:1.9rem; font-weight:800; background:#f1f5f9; padding:5px 15px; border-radius:8px;">P_A ∝ X_A  ⟹  P_A = P_A° × X_A</span> <br>
+<span style="font-family:serif; font-size:1.9rem; font-weight:800; background:#f1f5f9; padding:5px 15px; border-radius:8px;">P_B ∝ X_B  ⟹  P_B = P_B° × X_B</span> <br>
+जहाँ P_A° और P_B° शुद्ध अवस्था में वाष्पदाब हैं। डाल्टन के आंशिक दाब के नियमानुसार विलयन का कुल वाष्पदाब P_total = P_A + P_B = P_A°X_A + P_B°X_B <br><br>
+
+<b>आदर्श व अनादर्श विलयनों में अंतर:</b><br><br>
+<table border="1" cellspacing="0" cellpadding="10" style="width:100%; border-collapse:collapse; font-size:1.5rem; text-align:left;">
+  <tr style="background:#dbeafe; color:#1e3a8a;">
+    <th>गुणधर्म</th>
+    <th>आदर्श विलयन (Ideal Solution)</th>
+    <th>अनादर्श विलयन (Non-Ideal Solution)</th>
+  </tr>
+  <tr>
+    <td style="font-weight:bold;">1. राउल्ट का नियम</td>
+    <td>ये प्रत्येक ताप व सांद्रता पर राउल्ट के नियम का पूर्णतः पालन करते हैं (P_A = P_A°X_A)।</td>
+    <td>ये राउल्ट के नियम का पालन नहीं करते हैं (P_A ≠ P_A°X_A)।</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold;">2. एन्थैल्पी परिवर्तन (∆H)</td>
+    <td>अवयवों को मिलाने पर शून्य होता है (∆H_mix = 0)। कोई ऊष्मा मुक्त/अवशोषित नहीं होती।</td>
+    <td>∆H_mix ≠ 0 होता है। (ऊष्मा मुक्त या अवशोषित होती है)।</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold;">3. आयतन परिवर्तन (∆V)</td>
+    <td>आयतन परिवर्तन नहीं होता (∆V_mix = 0)।</td>
+    <td>आयतन परिवर्तन होता है (∆V_mix ≠ 0)। आयतन बढ़ या घट सकता है।</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold;">4. अंतराआण्विक बल</td>
+    <td>A-A तथा B-B के मध्य आकर्षण बल ठीक A-B के मध्य आकर्षण बल के समान होते हैं।</td>
+    <td>A-A तथा B-B के मध्य आकर्षण बल, A-B के मध्य आकर्षण बल से कम या ज्यादा होते हैं।</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold;">5. उदाहरण</td>
+    <td>बेंजीन + टॉलुईन, n-हेक्सेन + n-हेप्टेन</td>
+    <td>एथेनॉल + एसीटोन (धनात्मक), क्लोरोफॉर्म + एसीटोन (ऋणात्मक)</td>
+  </tr>
+</table>
+</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q2</span>
+                <div class="q-text">क्वथनांक के उन्नयन से आप क्या समझते हैं? विलेय के अणुभार की गणना का सूत्र व्युत्पन्न कीजिए।</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>उत्तर:</b> <br><br>
+<b>क्वथनांक का उन्नयन (Elevation of Boiling Point):</b><br>
+किसी द्रव का क्वथनांक वह ताप है जिस पर उस द्रव का वाष्पदाब वायुमंडलीय दाब (1 atm) के बराबर हो जाता है। 
+जब किसी शुद्ध वाष्पशील विलायक में कोई अवाष्पशील विलेय (Non-volatile solute) मिलाया जाता है, तो विलयन का वाष्पदाब हमेशा शुद्ध विलायक के वाष्पदाब से कम हो जाता है। 
+वाष्पदाब कम होने के कारण, विलयन को वायुमंडलीय दाब तक पहुँचने के लिए अधिक उच्च ताप तक गर्म करना पड़ता है। इस प्रकार विलयन का क्वथनांक शुद्ध विलायक से अधिक होता है। 
+क्वथनांक में होने वाली इस प्राकृतिक वृद्धि को ही <b>क्वथनांक का उन्नयन (∆T_b)</b> कहते हैं।<br>
+<b>∆T_b = T_b (विलयन का क्वथनांक) – T_b° (शुद्ध विलायक का क्वथनांक)</b><br><br>
+
+<b>अणुभार की गणना का व्युत्पन्न (Derivation):</b><br>
+प्रयोगों द्वारा यह सिद्ध हो चुका है कि तनु विलयनों के लिए क्वथनांक का उन्नयन (∆T_b), विलयन की मोललता (m) के सीधा समानुपाती होता है।<br>
+∆T_b ∝ m <br>
+<b style="color:#1d4ed8;">∆T_b = K_b × m</b> &nbsp;&nbsp; ......(समीकरण 1)<br>
+(जहाँ K_b = मोलल उन्नयन स्थिरांक है, और मोललता (m) 1000 ग्राम विलायक में विलेय के मोलों की संख्या है)।<br><br>
+मोललता (m) = <span class="math-frac"><span class="math-top">विलेय का भार (W_B)</span><span class="math-bot">विलेय का मोलर द्रव्यमान (M_B)</span></span> × <span class="math-frac"><span class="math-top">1000</span><span class="math-bot">विलायक का भार (W_A)</span></span> <br><br>
+इस (m) के मान को समीकरण 1 में रखने पर:<br>
+∆T_b = K_b × <div class="math-frac"><div class="math-top">W_B × 1000</div><div class="math-bot">M_B × W_A</div></div> <br><br>
+अतः विलेय का मोलर द्रव्यमान (M_B) निकालने का सूत्र होगा:<br>
+<div style="background:#bfdbfe; border: 2px solid #3b82f6; padding: 15px; border-radius:10px; font-weight:800; font-size:1.8rem; font-family:serif; display:inline-block; margin-top:10px;">
+  M_B = <div class="math-frac"><div class="math-top">1000 × K_b × W_B</div><div class="math-bot">∆T_b × W_A</div></div>
+</div>
+</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q3</span>
+                <div class="q-text">परासरण दाब किसे कहते हैं? बर्कले-हार्टले (Berkeley-Hartley) विधि का वर्णन कीजिए।</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>उत्तर:</b> <br><br>
+<b>परासरण दाब (Osmotic Pressure):</b><br>
+जब किसी विलयन को शुद्ध विलायक से अर्द्धपारगम्य झिल्ली (SPM) द्वारा पृथक रखा जाता है, तो विलायक के अणु झिल्ली को पार करके विलयन की ओर जाने लगते हैं (परासरण)। 
+इस परासरण की क्रिया को पूर्णतया रोकने के लिए विलयन की सतह पर जो <b>न्यूनतम अतिरिक्त बाह्य दाब</b> लगाया जाता है, वह परासरण दाब (π) कहलाता है।<br><br>
+
+<b>बर्कले-हार्टले विधि (Berkeley-Hartley Method):</b><br>
+परासरण दाब को सटीकता से नापने की यह सबसे बेहतरीन और आधुनिक विधि है।<br>
+<b>सिद्धांत:</b> इस विधि में कॉपर फेरोसायनाइड (Cu₂[Fe(CN)₆]) की एक मजबूत कृत्रिम अर्द्धपारगम्य झिल्ली का उपयोग किया जाता है।<br>
+<b>उपकरण व कार्यप्रणाली:</b><br>
+1. उपकरण में एक सरंध्र नली (Porous tube) होती है जिसकी दीवारों पर कॉपर फेरोसायनाइड की झिल्ली जमी होती है। इस अंदरूनी नली में शुद्ध जल (विलायक) भरा होता है।<br>
+2. इस सरंध्र नली के एक सिरे पर जल-कुंड (Thistle funnel/Reservoir) और दूसरे सिरे पर केशिका नली (Capillary tube) लगी होती है।<br>
+3. इसके बाहर एक बड़ा गन-मेटल (Gun metal) का जैकेट / बर्तन होता है जिसमें वह विलयन रखा जाता है जिसका दाब नापना है। इस जैकेट पर दाब डालने के लिए एक मजबूत पिस्टन और दाब-मापी (Pressure Gauge) लगा होता है।<br>
+4. जैसे ही प्रयोग शुरू होता है, अंदर की नली के जल के अणु परासरण के कारण बाहर के विलयन में जाने का प्रयास करते हैं, जिससे केशिका नली में जल का स्तर (Water level) गिरने लगता है।<br>
+5. अब पिस्टन की सहायता से विलयन पर इतना बाह्य दाब धीरे-धीरे बढ़ाया जाता है कि केशिका नली में गिरता हुआ जल वापस अपने बिलकुल प्रारंभिक स्थिर तल पर आ जाए।<br>
+6. यह स्थिति यह दर्शाती है कि पिस्टन द्वारा लगाया गया बाहरी दाब जल के अंदर आने वाले परासरण दाब के ठीक बराबर हो गया है। इसे दाब-मापी से पढ़ लिया जाता है, यही सटीक परासरण दाब है।
+</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q4</span>
+                <div class="q-text">हिमांंक में अवनमन क्या है? इसके आधार पर किसी अवाष्पशील विलेय का मोलर द्रव्यमान कैसे ज्ञात करेंगे?</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>उत्तर:</b> <br><br>
+<b>हिमांंक में अवनमन (Depression in Freezing Point):</b><br>
+किसी पदार्थ का हिमांंक (Freezing Point) वह ताप है जिस पर उसकी ठोस एवं द्रव अवस्थाओं का वाष्पदाब बिल्कुल बराबर हो जाता है। 
+जब किसी शुद्ध विलायक में एक अवाष्पशील विलेय मिला दिया जाता है, तो विलयन का कुल वाष्पदाब शुद्ध विलायक के वाष्पदाब से कम हो जाता है। 
+वाष्पदाब में इस भयंकर कमी के परिणामस्वरूप विलयन अब शुद्ध विलायक की तुलना में बहुत कम ताप पर जमता है। 
+हिमांंक में होने वाली इसी गिरावट या कमी को <b>हिमांंक में अवनमन (∆T_f)</b> कहते हैं।<br>
+<b>∆T_f = T_f° (शुद्ध विलायक का हिमांंक) – T_f (विलयन का हिमांंक)</b><br><br>
+
+<b>मोलर द्रव्यमान की गणना:</b><br>
+प्रयोगों द्वारा और राउल्ट के नियम अनुसार, तनु विलयन के लिए हिमांंक का यह अवनमन सदैव विलयन की मोललता (m) के सीधा समानुपाती होता है।<br>
+∆T_f ∝ m <br>
+<b style="color:#1d4ed8;">∆T_f = K_f × m</b> &nbsp;&nbsp; (जहाँ K_f = मोलल अवनमन स्थिरांक या Cryoscopic constant है)।<br><br>
+हम जानते हैं कि मोललता (m) = <span class="math-frac"><span class="math-top">W_B × 1000</span><span class="math-bot">M_B × W_A</span></span> <br>
+समीकरण में रखने पर: <br>
+∆T_f = K_f × <span class="math-frac"><span class="math-top">W_B × 1000</span><span class="math-bot">M_B × W_A</span></span> <br><br>
+अतः अवाष्पशील विलेय का मोलर द्रव्यमान (M_B):<br>
+<div style="background:#bfdbfe; border: 2px solid #3b82f6; padding: 15px; border-radius:10px; font-weight:800; font-size:1.8rem; font-family:serif; display:inline-block; margin-top:10px;">
+  M_B = <div class="math-frac"><div class="math-top">1000 × K_f × W_B</div><div class="math-bot">∆T_f × W_A</div></div>
+</div>
+</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q5</span>
+                <div class="q-text">असामान्य मोलर द्रव्यमान से क्या तात्पर्य है? वांटहॉफ गुणांक की सहायता से वियोजन व संगुणन की मात्रा कैसे ज्ञात की जाती है?</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>उत्तर:</b> <br><br>
+<b>असामान्य मोलर द्रव्यमान (Abnormal Molar Mass):</b><br>
+जब किसी विलेय पदार्थ को किसी विलायक में घोला जाता है, और वह विलयन में जाकर या तो आयनों में टूट जाता है (वियोजन/Dissociation) या आपस में जुड़कर बड़े अणु बना लेता है (संगुणन/Association), तो विलयन में कणों की कुल संख्या बदल जाती है। 
+चूँकि मोलर द्रव्यमान, कणों की संख्या (अणुसंख्यक गुणधर्म) के हमेशा व्युत्क्रमानुपाती होता है, इसलिए विलेय का प्रायोगिक (Observed) अणुभार उसके असली (Normal) अणुभार से एकदम अलग (ज्यादा या कम) प्राप्त होता है। 
+इस बदले हुए गलत द्रव्यमान को ही 'असामान्य मोलर द्रव्यमान' कहते हैं।<br><br>
+
+<b>वांटहॉफ गुणांक (i):</b><br>
+डच वैज्ञानिक जैकब वांटहॉफ ने इस विसंगति को सुलझाने के लिए 'i' गुणांक प्रस्तुत किया।<br>
+i = <span class="math-frac"><span class="math-top">वियोजन/संगुणन के बाद कणों के प्रेक्षित मोल</span><span class="math-bot">वियोजन/संगुणन से पूर्व कणों के सामान्य मोल</span></span><br><br>
+
+<b>1. वियोजन की मात्रा (Degree of Dissociation, α) ज्ञात करना:</b><br>
+यदि कोई अणु टूट कर n आयन उत्पन्न करता है (जैसे NaCl बनाता है 2 आयन, n=2):<br>
+सूत्र: <b style="background:#dbeafe; padding:5px 8px; border-radius:5px; display:inline-block; margin:5px 0;">α = <span class="math-frac"><span class="math-top">i - 1</span><span class="math-bot">n - 1</span></span></b><br>
+यदि विलेय 100% वियोजित होता है (α = 1), तो i = n होता है।<br><br>
+
+<b>2. संगुणन की मात्रा (Degree of Association, α) ज्ञात करना:</b><br>
+यदि n अणु आपस में जुड़कर 1 द्विलक या बहुलक बनाते हैं (जैसे एसिटिक अम्ल के 2 अणु मिलकर 1 Dimer बनाते हैं, n=2):<br>
+सूत्र: <b style="background:#dbeafe; padding:5px 8px; border-radius:5px; display:inline-block; margin:5px 0;">α = <span class="math-frac"><span class="math-top">1 - i</span><span class="math-bot">1 - <span class="math-frac"><span class="math-top">1</span><span class="math-bot">n</span></span></span></span></b>  &nbsp; या &nbsp; <b style="background:#dbeafe; padding:5px 8px; border-radius:5px; display:inline-block; margin:5px 0;">α = <span class="math-frac"><span class="math-top">i - 1</span><span class="math-bot"><span class="math-frac"><span class="math-top">1</span><span class="math-bot">n</span></span> - 1</span></span></b><br>
+चूँकि कण घटते हैं, अतः संगुणन के लिए 'i' का मान हमेशा 1 से कम (i < 1) होता है।
+</div>
+        </div>
+        
+        <div class="qa-section-title" style="border-left-color: #8b5cf6; background: #faf5ff;">🟣 आंकिक प्रश्न (Numericals) - 5</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q1</span>
+                <div class="q-text">5.85g NaCl को 200 ml जल में घोला गया है। विलयन की मोलरता ज्ञात कीजिए। (Na=23, Cl=35.5)</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>हल:</b><br>दिया गया है:<br>NaCl का भार (W_B) = 5.85 g<br>विलयन का आयतन (V) = 200 ml<br>NaCl का मोलर द्रव्यमान (M_B) = (23 + 35.5) = 58.5 g/mol<br><br>मोलरता का सूत्र:<br>M = <span class='math-frac'><span class='math-top'>W_B × 1000</span><span class='math-bot'>M_B × V</span></span><br><br>M = <span class='math-frac'><span class='math-top'>5.85 × 1000</span><span class='math-bot'>58.5 × 200</span></span><br><br>M = <span class='math-frac'><span class='math-top'>5850</span><span class='math-bot'>11700</span></span> = <span class='math-frac'><span class='math-top'>1</span><span class='math-bot'>2</span></span> = <b>0.5 M</b><br><br>अतः विलयन की मोलरता 0.5 M (mol/L) होगी।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q2</span>
+                <div class="q-text">298 K पर 5% यूरिया (अणुभार=60) के जलीय विलयन का परासरण दाब ज्ञात कीजिए। (R=0.0821 L atm/K mol)</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>हल:</b><br>दिया गया है:<br>5% जलीय विलयन का अर्थ है: 100 ml विलयन में यूरिया का भार (W_B) = 5 g<br>विलयन का आयतन (V) = 100 ml = 0.1 L<br>यूरिया का अणुभार (M_B) = 60 g/mol<br>तापमान (T) = 298 K<br>गैस स्थिरांक (R) = 0.0821 L atm K⁻¹ mol⁻¹<br><br>वांटहॉफ समीकरण से परासरण दाब (π):<br>π = CRT  या  π = <span class='math-frac'><span class='math-top'>n</span><span class='math-bot'>V</span></span>RT  या  π = <span class='math-frac'><span class='math-top'>W_B</span><span class='math-bot'>M_B × V</span></span> × R × T<br><br>π = <span class='math-frac'><span class='math-top'>5</span><span class='math-bot'>60 × 0.1</span></span> × 0.0821 × 298<br><br>π = <span class='math-frac'><span class='math-top'>5</span><span class='math-bot'>6</span></span> × 24.4658<br><br>π = 0.8333 × 24.4658 = <b>20.38 atm</b><br><br>अतः परासरण दाब 20.38 atm होगा।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q3</span>
+                <div class="q-text">एक अवाष्पशील विलेय के 10g को 100g बेंजीन में घोलने पर क्वथनांक में 1°C की वृद्धि होती है। विलेय का अणुभार ज्ञात कीजिए। (K_b = 2.53)</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>हल:</b><br>दिया गया है:<br>विलेय का भार (W_B) = 10 g<br>विलायक (बेंजीन) का भार (W_A) = 100 g<br>क्वथनांक उन्नयन (∆T_b) = 1 °C<br>K_b (बेंजीन हेतु) = 2.53 K kg mol⁻¹<br><br>विलेय के अणुभार (M_B) का सूत्र:<br>M_B = <span class='math-frac'><span class='math-top'>1000 × K_b × W_B</span><span class='math-bot'>∆T_b × W_A</span></span><br><br>M_B = <span class='math-frac'><span class='math-top'>1000 × 2.53 × 10</span><span class='math-bot'>1 × 100</span></span><br><br>M_B = <span class='math-frac'><span class='math-top'>25300</span><span class='math-bot'>100</span></span> = <b>253 g/mol</b><br><br>अतः विलेय का अणुभार 253 g/mol है।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q4</span>
+                <div class="q-text">H2S एक विषैली गैस है, पानी में इसकी STP पर विलेयता 0.195m है। हेनरी स्थिरांक (K_H) की गणना कीजिए।</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>हल:</b><br>विलेयता = 0.195 m<br>इसका अर्थ है, 1000 ग्राम (1 kg) शुद्ध पानी में H₂S के मोल (n_H2S) = 0.195 मोल<br>पानी का भार = 1000 g, पानी का अणुभार = 18 g/mol<br>अतः पानी के मोल (n_H2O) = <span class='math-frac'><span class='math-top'>1000</span><span class='math-bot'>18</span></span> = 55.55 मोल<br><br>H₂S गैस का मोल अंश (X_H2S):<br>X_H2S = <span class='math-frac'><span class='math-top'>n_H2S</span><span class='math-bot'>n_H2S + n_H2O</span></span><br><br>X_H2S = <span class='math-frac'><span class='math-top'>0.195</span><span class='math-bot'>0.195 + 55.55</span></span> = <span class='math-frac'><span class='math-top'>0.195</span><span class='math-bot'>55.745</span></span> = <b>0.0035</b><br><br>STP पर मानक दाब (P) = 0.987 bar (कुछ पुस्तकों में 1 bar माना गया है)<br>हेनरी का नियम: P = K_H × X_H2S<br>अतः K_H = <span class='math-frac'><span class='math-top'>P</span><span class='math-bot'>X_H2S</span></span><br><br>K_H = <span class='math-frac'><span class='math-top'>0.987</span><span class='math-bot'>0.0035</span></span> = <b>282 bar</b><br><br>हेनरी स्थिरांक 282 bar है।</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q5</span>
+                <div class="q-text">1m NaCl विलयन के लिए वांटहॉफ गुणांक 1.9 है। इसके वियोजन की मात्रा (α) ज्ञात कीजिए।</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>हल:</b><br>दिया गया है: i = 1.9<br>NaCl एक प्रबल वैद्युत अपघट्य है जो जल में टूटकर दो आयन देता है:<br>NaCl ⟶ Na⁺  +  Cl⁻<br>अतः यहाँ n (कुल आयनों की संख्या) = 2<br><br>वियोजन की मात्रा (α) का सूत्र:<br>α = <span class='math-frac'><span class='math-top'>i - 1</span><span class='math-bot'>n - 1</span></span><br><br>मान रखने पर:<br>α = <span class='math-frac'><span class='math-top'>1.9 - 1</span><span class='math-bot'>2 - 1</span></span><br><br>α = <span class='math-frac'><span class='math-top'>0.9</span><span class='math-bot'>1</span></span> = <b>0.9</b><br><br>प्रतिशत में वियोजन की मात्रा (Percentage Dissociation):<br>α% = 0.9 × 100% = <b>90%</b><br><br>अतः NaCl विलयन में 90% तक वियोजित हुआ है।</div>
+        </div>
+        
+        <div class="qa-section-title" style="border-left-color: #f59e0b; background: #fffbeb;">🟠 गत वर्षों के प्रश्न (Board/PYQ Questions)</div>
+        <div class="q-card" style="border-color: #fcd34d;">
+
+            <div style="display:flex; align-items:flex-start; margin-bottom: 30px;">
+                <span class="q-num" style="background:#f59e0b;">B1</span>
+                <div>
+                    <div class="q-text">धनात्मक आंशिक विचलन दर्शाने वाले अनादर्श विलयन का एक उदाहरण लिखिए। <span style='color:#d97706; font-size:1.2rem;'>(RBSE 2019)</span></div>
+                    <div class="ans-text" style="color:#92400e; border-top:none; margin-top:5px; padding-top:0;"><b>उत्तर:</b> एथेनॉल तथा एसीटोन का विलयन (Ethanol + Acetone)। इस विलयन में A-B आकर्षण बल, A-A और B-B के आकर्षण बल से दुर्बल हो जाते हैं, जिससे उनका वाष्पदाब राउल्ट के नियम से अधिक हो जाता है।</div>
+                </div>
+            </div>
+        
+            <div style="display:flex; align-items:flex-start; margin-bottom: 30px;">
+                <span class="q-num" style="background:#f59e0b;">B2</span>
+                <div>
+                    <div class="q-text">समपरासरी विलयन किसे कहते हैं? <span style='color:#d97706; font-size:1.2rem;'>(RBSE 2020)</span></div>
+                    <div class="ans-text" style="color:#92400e; border-top:none; margin-top:5px; padding-top:0;"><b>उत्तर:</b> समपरासरी विलयन (Isotonic Solutions) ऐसे दो विलयन होते हैं जिनका समान ताप पर परासरण दाब (π) बिल्कुल समान होता है (π₁ = π₂)। जब इन्हें अर्द्धपारगम्य झिल्ली द्वारा अलग-अलग रखा जाता है, तो इनके बीच बिल्कुल कोई परासरण (Osmosis) की क्रिया नहीं होती है।</div>
+                </div>
+            </div>
+        
+            <div style="display:flex; align-items:flex-start; margin-bottom: 30px;">
+                <span class="q-num" style="background:#f59e0b;">B3</span>
+                <div>
+                    <div class="q-text">गोताखोरों के सिलेंडर में हीलियम क्यों मिलाई जाती है? <span style='color:#d97706; font-size:1.2rem;'>(RBSE 2022)</span></div>
+                    <div class="ans-text" style="color:#92400e; border-top:none; margin-top:5px; padding-top:0;"><b>उत्तर:</b> गहरे समुद्र में उच्च दाब पर नाइट्रोजन गैस गोताखोर के रक्त में बहुत अधिक मात्रा में घुल जाती है। जब गोताखोर तेजी से सतह पर वापस आता है तो दाब तेजी से घटता है, जिसके कारण नाइट्रोजन के बुलबुले रक्त कोशिकाओं में बन जाते हैं और ब्लॉकेज कर देते हैं, जिससे एक घातक पीड़ादायक स्थिति उत्पन्न होती है जिसे <b>'बेंड्स' (Bends)</b> कहते हैं। हीलियम की (उच्च दाब पर भी) रक्त में विलेयता अत्यधिक कम होती है, इसलिए सिलेंडर में हीलियम मिलाकर इस खतरे को खत्म किया जाता है।</div>
+                </div>
+            </div>
+                </div>
+
+    </div>
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn">🏠 Main Hub (होम)</a>
+    </div>
+</body>
+</html>

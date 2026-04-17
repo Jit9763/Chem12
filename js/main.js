@@ -46,20 +46,20 @@ function renderChapters(data) {
     if (chapter.id === 1) {
       hindiRoute = `ch1_parts/ch1_part1.html`;
       englishRoute = `ch1eng/ch1_part1.html`;
-      qaRoute = `coming_soon.html`;
-      mobileBtn = `
+      qaRoute = `ch1_parts/ch1_qa.html`;
+        mobileBtn = `
         <div style="margin-top: 20px;">
           <p style="color: var(--primary-dark); font-weight: 800; margin-bottom: 10px; font-size: 1.1rem;">📑 सीधा भाग चुनें (Select Part):</p>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
             <button class="btn-secondary" onclick="window.location.href='ch1_parts/ch1_part1.html'" style="font-size: 0.85rem; padding: 8px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P1</button>
             <button class="btn-secondary" onclick="window.location.href='ch1_parts/ch1_part2.html'" style="font-size: 0.85rem; padding: 8px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P2</button>
             <button class="btn-secondary" onclick="window.location.href='ch1_parts/ch1_part3.html'" style="font-size: 0.85rem; padding: 8px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P3</button>
             <button class="btn-secondary" onclick="window.location.href='ch1_parts/ch1_part4.html'" style="font-size: 0.85rem; padding: 8px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P4</button>
-            <button class="btn-secondary" onclick="window.location.href='ch1_parts/ch1_part5.html'" style="font-size: 0.85rem; padding: 8px; background: var(--primary); color: white;">P5 ✨</button>
+            <button class="btn-secondary" onclick="window.location.href='ch1_parts/ch1_part5.html'" style="font-size: 0.85rem; padding: 8px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P5</button>
             <button class="btn-secondary" onclick="window.location.href='ch1_parts/ch1_part6.html'" style="font-size: 0.85rem; padding: 8px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P6</button>
+            <button class="btn-secondary" onclick="window.location.href='ch1_parts/ch1_part7.html'" style="font-size: 0.85rem; padding: 8px; background: var(--primary); color: white; border: 1px solid var(--primary);">P7 ✨</button>
           </div>
         </div>
-        <button class="btn-secondary" onclick="window.location.href='${englishRoute}'" style="background: linear-gradient(135deg, #3b82f6, #2563eb); border-color: #60a5fa; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 15px;">🇬🇧 English Version</button>
       `;
     }
 
@@ -74,7 +74,7 @@ function renderChapters(data) {
       <div class="chapter-num">${String(chapter.id).padStart(2, '0')}</div>
       <h3 class="chapter-title">${chapter.title}</h3>
       <div class="chapter-actions" style="display:flex; gap:10px; flex-direction: column; margin-top:10px; position:relative; z-index:10;">
-        <button class="btn-secondary" onclick="window.location.href='${hindiRoute}'" style="background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #fcd34d; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">🇮🇳 Hindi Version (Premium)</button>
+        <button class="btn-secondary" onclick="window.location.href='${hindiRoute}'" style="background: linear-gradient(135deg, #10b981, #059669); border-color: #34d399; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">📖 अध्याय खोलें (Open Chapter)</button>
         ${mobileBtn}
         <button class="btn-secondary" onclick="window.location.href='${qaRoute}'" style="background: #8b5cf6; border-color: #7c3aed; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">❓ प्रश्न-उत्तर (Master Q&A)</button>
       </div>

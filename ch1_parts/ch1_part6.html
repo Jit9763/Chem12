@@ -488,21 +488,151 @@
             </div>
         </div>
 
+        <!-- Instructions for BP Simulator -->
+        <div style="background: white; border-radius: 20px; padding: 40px; margin: 0 auto 60px; max-width: 900px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 2px solid #e2e8f0; position: relative;">
+            <div style="position: absolute; top: -18px; left: 40px; background: var(--bp-red); color: white; padding: 8px 25px; border-radius: 30px; font-size: 1.3rem; font-weight: 800; box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);">💡 उपयोग कैसे करें (How to use)</div>
+            <ul style="margin: 0; padding-left: 25px; color: #334155; font-size: 1.6rem; line-height: 1.8; font-weight: 600;">
+                <li style="margin-bottom: 15px;"><b>Heating Control (स्लाइडर):</b> स्लाइडर को दायीं ओर खिसका कर तापमान बढ़ाएं और देखें कि शुद्ध विलायक (पानी) <b>100°C</b> पर कैसे उबलता है।</li>
+                <li style="margin-bottom: 15px;"><b>Add Salt (नमक डालें):</b> इस बटन पर क्लिक करके अवाष्पशील विलेय (नमक) मिलाएँ। लाल रंग के नमक के कण आपको पानी में घुलते हुए दिखेंगे।</li>
+                <li><b>नोट:</b> विलेय मिलाने के बाद स्लाइडर को फिर से घुमाएँ। आप देखेंगे कि अब पानी 100°C की बजाय <b>115°C</b> पर उबलता है। यही <b>क्वथनांक उन्नयन (Elevation in B.P.)</b> है!</li>
+            </ul>
+        </div>
+
 
         <!-- ==================== DEPRESSION OF FREEZING POINT ======================== -->
-        <h2 style="border-left-color: var(--fp-blue);">❖ हिमांक में अवनमन (Depression in F.P. - ΔT<sub>f</sub>)</h2>
+        <h2 style="border-left-color: var(--fp-blue);">❖ ३. हिमांक अवनमन (Depression in F.P. - ΔT<sub>f</sub>)</h2>
         <div class="content-card">
-            <p style="font-size: 1.7rem; color: #334155; line-height: 1.8;">
-                अवाष्पशील विलेय मिलाने पर विलायक का हिमांक कम हो जाता है, अर्थात विलयन शुद्ध विलायक के हिमांक से कम ताप पर जमता है। इसे ही <b>हिमांक में अवनमन</b> कहते हैं।
+            <p style="font-size: 1.8rem; color: #1e293b; line-height: 1.8; font-weight: 700;">
+                शुद्ध विलायक + अवाष्पशील विलेय युक्त विलयन का वाष्पदाब घटता है साथ ही मिश्रण का हिमांक भी कम हो जाता है। अतः विलयन, विलायक से कम ताप पर ही जम जायेगा। अर्थात विलयन का हिमांक शुद्ध विलायक के हिमांक से न्यून हो जाता है इसे <b>हिमांक अवनमन</b> कहते है।
             </p>
             
-            <div class="formula-box" style="border-color: var(--fp-blue);">
-                ΔT<sub>f</sub> = T<sub>f</sub>° (शुद्ध विलायक) – T<sub>f</sub> (विलयन)<br>
-                ΔT<sub>f</sub> ∝ m (मोललता)<br>
-                ΔT<sub>f</sub> = K<sub>f</sub> . m
+            <div style="background: #eff6ff; padding: 20px; border-radius: 20px; border: 2px dashed #93c5fd; margin: 30px 0; font-size: 1.4rem; color: #1e3a8a; font-weight: 700;">
+                (हिमांक – वह ताप जिस पर पदार्थ की ठोस व द्रव अवस्था का वाष्पदाब समान होता है।)
             </div>
-            
-            <p style="font-size: 1.5rem; color: #64748b;">यहाँ K<sub>f</sub> = मोलल अवनमन स्थिरांक (Cryoscopic Constant)</p>
+
+            <p style="font-size: 1.7rem; color: #1e293b; line-height: 1.8; margin-top: 20px; font-weight: 900; color: var(--fp-blue);">
+                तनु विलयन का हिमांक अवनमन (ΔT<sub>f</sub>) , विलयन में उपस्थित विलेय की मोलल सांद्रता (m) के समानुपाती होता है।
+            </p>
+
+            <div class="side-box" style="width: fit-content; max-width: 500px; background: white; border: 2px solid #000; padding: 25px; border-radius: 15px; margin: 30px auto; box-shadow: 10px 10px 0 rgba(0,0,0,0.05); font-weight: 700; float: right; margin-left: 30px;">
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.4rem; line-height: 2; color: #000;">
+                    <li>✓ यदि विलयन का हिमांक = T<sub>f</sub></li>
+                    <li>✓ शुद्ध विलायक का हिमांक = T<sub>f</sub>°</li>
+                    <li>✓ T<sub>f</sub>° > T<sub>f</sub></li>
+                    <li style="border-bottom: 2px solid #eee; margin: 15px 0;"></li>
+                    <li>✓ विलेय का भार व अणुभार क्रमशः = W<sub>2</sub> & M<sub>2</sub></li>
+                    <li>✓ विलायक का भार व अणुभार क्रमशः = W<sub>1</sub> & M<sub>1</sub></li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <div style="font-size: 1.8rem; color: #1e293b; line-height: 2.2; margin-bottom: 50px;">
+                    <p>ΔT<sub>f</sub> = T<sub>f</sub>° - T<sub>f</sub></p>
+                    <p>ΔT<sub>f</sub> ∝ m</p>
+                    <p>ΔT<sub>f</sub> = K<sub>f</sub> . m</p>
+                    <p>m = <span class="math-frac"><span class="math-top">W<sub>2</sub> × 1000</span><span class="math-bot">M<sub>2</sub> × W<sub>1</sub></span></span></p>
+                    <p>ΔT<sub>f</sub> = K<sub>f</sub> × <span class="math-frac"><span class="math-top">W<sub>2</sub> × 1000</span><span class="math-bot">M<sub>2</sub> × W<sub>1</sub></span></span></p>
+
+                    <div class="formula-box" style="background: var(--slate-900); color: #fff; margin-top: 50px; border-radius: 40px; border: 4px solid var(--fp-blue); padding: 25px; box-sizing: border-box; width: 100%; display: inline-block;">
+                        M<sub>2</sub> = <span class="math-frac"><span class="math-top">K<sub>f</sub> × W<sub>2</sub> × 1000</span><span class="math-bot">ΔT<sub>f</sub> × W<sub>1</sub></span></span>
+                    </div>
+
+                    <div style="margin-top: 40px; border-top: 2px solid #eee; padding-top: 20px;">
+                        <p style="font-weight: 800; color: #475569; font-size: 2rem; margin-bottom: 20px;">मोलल अवनमन / हिमांक अवनमन / क्रायोस्कोपिक स्थिरांक (K<sub>f</sub>) :</p>
+                        <p style="font-size: 1.6rem; background: #eff6ff; padding: 20px; border-radius: 15px; border-left: 8px solid var(--fp-blue);">
+                            1Kg विलायक यदि 1 मोल विलेय घुला हो तो विलयन का <b>ΔT<sub>f</sub> = K<sub>f</sub></b><br><br>
+                            K<sub>f</sub> की इकाई : K kg mol<sup>-1</sup>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+
+            <!-- INTERACTIVE SVG GRAPH + CONTROLS (FP) -->
+            <div style="background: white; padding: 25px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin: 40px auto; overflow: hidden;">
+                <h4 style="text-align: center; color: #64748b; margin-top: 0;">Vapour Pressure vs Temperature Graph (Freezing Point)</h4>
+                <div style="display: flex; gap: 25px; align-items: stretch; flex-wrap: wrap;">
+                    <!-- LEFT: SVG Graph -->
+                    <div style="flex: 1.5; min-width: 300px;">
+                        <svg viewBox="0 0 400 350" style="width: 100%; height: auto; font-family: sans-serif;">
+                            <line x1="50" y1="300" x2="350" y2="300" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+                            <line x1="50" y1="300" x2="50" y2="50" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+                            
+                            <!-- Solid Solvent curve (steep) points: (60, 210) to (150, 120) -->
+                            <path d="M 60 210 L 150 120" fill="none" stroke="#475569" stroke-width="3" />
+                            <text x="65" y="160" font-size="12" fill="#475569" font-weight="bold" transform="rotate(-45 65 160)">हिमकृत विलायक</text>
+
+                            <!-- Liquid Solvent curve points: (150, 120) to (320, 50) -->
+                            <path d="M 150 120 Q 230 110, 320 80" fill="none" stroke="#2563eb" stroke-width="3" />
+                            <text x="250" y="90" font-size="12" fill="#2563eb" font-weight="bold" transform="rotate(-15 250 90)">विलायक</text>
+                            
+                            <!-- Solution curve (Interactive) starting point is (x_sol, y_sol) defaults to m=1 -->
+                            <path id="graph_fp_solution_curve" d="M 150 180 Q 230 160, 320 130" fill="none" stroke="#ef4444" stroke-width="3" style="transition: 0.5s;" />
+                            <text id="graph_fp_solution_text" x="250" y="145" font-size="12" fill="#ef4444" font-weight="bold" transform="rotate(-15 250 145)" style="transition: 0.5s;">विलयन</text>
+                            
+                            <!-- Points B, A, D labels -->
+                            <text x="145" y="115" font-size="14" fill="#000" font-weight="bold">B</text>
+                            <text id="graph_fp_point_a" x="135" y="125" font-size="14" fill="#000" font-weight="bold" style="transition: 0.5s;">A</text>
+                            <text id="graph_fp_point_d" x="145" y="175" font-size="14" fill="#000" font-weight="bold" style="transition: 0.5s;">D</text>
+
+                            <line id="graph_fp_hz_line" x1="140" y1="130" x2="150" y2="130" stroke="#000" stroke-dasharray="3,3" style="transition: 0.5s;" />
+
+                            <!-- Intersections & Projections -->
+                            <line x1="150" y1="120" x2="150" y2="300" stroke="#000" stroke-dasharray="3,3" />
+                            <text x="145" y="320" font-size="14" font-weight="bold">T<sub>f</sub>°</text>
+                            
+                            <!-- Solution Intersection -->
+                            <line id="graph_fp_proj_line" x1="140" y1="130" x2="140" y2="300" stroke="#000" stroke-dasharray="3,3" style="transition: 0.5s;" />
+                            <text id="graph_fp_tf_label" x="130" y="320" font-size="14" font-weight="bold" style="transition: 0.5s;">T<sub>f</sub></text>
+                            
+                            <line id="graph_fp_delta_line" x1="140" y1="280" x2="150" y2="280" stroke="#000" stroke-width="1.5" marker-start="url(#dot)" marker-end="url(#dot)" style="transition: 0.5s;" />
+                            <text id="graph_fp_delta_text" x="135" y="275" font-size="14" font-weight="bold" style="transition: 0.5s;">ΔT<sub>f</sub></text>
+
+                            <text x="20" y="180" font-size="14" transform="rotate(-90 20 180)" font-weight="bold">वाष्प दाब (V.P.)</text>
+                            <text x="180" y="345" font-size="14" font-weight="bold">ताप (Temp in K)</text>
+                        </svg>
+                    </div>
+                    <!-- RIGHT: Controls Panel -->
+                    <div style="flex: 1; min-width: 200px; background: #f8fafc; padding: 25px; border-radius: 15px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; justify-content: center; gap: 15px;">
+                        <h5 style="margin: 0; color: #334155; font-size: 1.3rem; font-weight: 800; text-align: center;">📊 फार्मूला सिम्युलेटर</h5>
+                        <p style="text-align: center; color: #64748b; font-size: 0.9rem; margin: 0 0 10px 0;">मोललता (m) का मान बदलें और अवनमन देखें</p>
+                        
+                        <!-- Interactivity slider -->
+                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                            <label style="font-size: 1.1rem; font-weight: 800; color: var(--fp-blue);">मोललता (m): <span id="fp_graph_m_val" style="color: #0f172a;">1.0</span> mol/kg</label>
+                            <input type="range" id="fp_graph_slider" min="0" max="8" value="1" step="0.5" style="width: 100%; height: 8px; border-radius: 10px; accent-color: var(--fp-blue); cursor: pointer;">
+                        </div>
+
+                        <div style="background: white; padding: 12px; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center; margin-top: 15px;">
+                            <div style="color: #64748b; font-size: 0.85rem; font-weight: 700;">T<sub>f</sub>° (शुद्ध विलायक)</div>
+                            <div style="font-size: 1.8rem; color: #2563eb; font-weight: 900;">0.00°C</div>
+                        </div>
+                        <div style="background: white; padding: 12px; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center;">
+                            <div style="color: #64748b; font-size: 0.85rem; font-weight: 700;">T<sub>f</sub> (विलयन)</div>
+                            <div id="graph_fp_tf_value" style="font-size: 1.8rem; color: #ef4444; font-weight: 900;">-1.86°C</div>
+                        </div>
+                        <div style="background: white; padding: 12px; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center; background: #f0fdf4;">
+                            <div style="color: #065f46; font-size: 0.85rem; font-weight: 700;">ΔT<sub>f</sub> = K<sub>f</sub> × m</div>
+                            <div id="graph_fp_delta_value" style="font-size: 1.8rem; color: #059669; font-weight: 900;">1.86°C</div>
+                        </div>
+                        <div style="text-align: center; font-size: 0.85rem; color: #94a3b8; font-weight: 700;">(जल के लिए K<sub>f</sub> = 1.86 K kg/mol)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; border-top: 2px solid #eee; padding-top: 40px; margin-bottom: 20px;">
+                <p style="font-weight: 800; color: #475569; font-size: 1.8rem;">K<sub>f</sub> & K<sub>b</sub> का ΔH के साथ सम्बन्ध :</p>
+                <div style="display: flex; gap: 40px; flex-wrap: wrap; margin-top: 25px;">
+                    <div style="font-size: 1.6rem; padding: 25px; border: 1px solid #cbd5e1; border-radius: 15px; flex: 1; background: #fafafa; font-weight: 700;">
+                        K<sub>f</sub> = <span class="math-frac"><span class="math-top">R × M<sub>1</sub> × T<sub>f</sub><sup>2</sup></span><span class="math-bot">1000 × ΔH<sub>fus</sub></span></span>
+                    </div>
+                    <div style="font-size: 1.6rem; padding: 25px; border: 1px solid #cbd5e1; border-radius: 15px; flex: 1; background: #fafafa; font-weight: 700;">
+                        K<sub>b</sub> = <span class="math-frac"><span class="math-top">R × M<sub>1</sub> × T<sub>b</sub><sup>2</sup></span><span class="math-bot">1000 × ΔH<sub>vap</sub></span></span>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <h3 class="sim-header" style="border-left: 10px solid var(--fp-blue); color: var(--fp-blue); background: linear-gradient(to right, rgba(59, 130, 246, 0.1), transparent); padding: 15px 25px; border-radius: 0 15px 15px 0; font-size: 2.2rem;">Interactive Lab: Freezing Point Depressor</h3>
@@ -526,12 +656,386 @@
                 </div>
 
                 <!-- Right Visual Panel -->
-                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.2); border-radius: 35px; overflow: hidden;">
-                    <div id="fp_box" style="width: 200px; height: 200px; background: linear-gradient(135deg, #3b82f6, #2563eb); border: 8px solid rgba(255,255,255,0.1); border-radius: 40px; display: flex; align-items: center; justify-content: center; font-size: 7rem; transition: 1s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
-                        💧
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; background: rgba(0,0,0,0.2); border-radius: 35px; overflow: hidden; gap: 30px;">
+                    <!-- Thermometer for FP -->
+                    <div style="position: relative; width: 22px; height: 200px; background: #1e293b; border-radius: 15px; border: 3px solid #334155; overflow: hidden; box-shadow: inset 0 10px 20px rgba(0,0,0,0.5);">
+                        <div id="fp_mercury" style="position: absolute; bottom: 0; width: 100%; height: 80%; background: linear-gradient(to top, #3b82f6, #93c5fd); transition: height 0.5s; box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);"></div>
+                    </div>
+
+                    <div id="fp_box" style="position: relative; width: 180px; height: 180px; background: linear-gradient(135deg, #3b82f6, #2563eb); border: 8px solid rgba(255,255,255,0.1); border-radius: 40px; display: flex; align-items: center; justify-content: center; font-size: 6.5rem; transition: 1s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                        <span id="fp_emoji" style="transition: 0.3s; position: relative; z-index: 5;">💧</span>
+                        <div id="solute_in_fp" style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events: none; border-radius: 30px; overflow: hidden; z-index: 10;"></div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Instructions for FP Simulator -->
+        <div style="background: white; border-radius: 20px; padding: 40px; margin: 0 auto 60px; max-width: 900px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 2px solid #e2e8f0; position: relative;">
+            <div style="position: absolute; top: -18px; left: 40px; background: var(--fp-blue); color: white; padding: 8px 25px; border-radius: 30px; font-size: 1.3rem; font-weight: 800; box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);">💡 उपयोग कैसे करें (How to use)</div>
+            <ul style="margin: 0; padding-left: 25px; color: #334155; font-size: 1.6rem; line-height: 1.8; font-weight: 600;">
+                <li style="margin-bottom: 15px;"><b>Cooling Control (स्लाइडर):</b> स्लाइडर को बायीं ओर खिसका कर तापमान कम करें और देखें कि शुद्ध विलायक (पानी) <b>0°C</b> पर कैसे जमता (Freeze) है।</li>
+                <li style="margin-bottom: 15px;"><b>Add Salt (नमक डालें):</b> इस बटन पर क्लिक करके अवाष्पशील विलेय (नमक) मिलाएँ। लाल रंग के नमक के कण आपको पानी में घुलते हुए दिखेंगे।</li>
+                <li><b>नोट:</b> विलेय मिलाने के बाद स्लाइडर को फिर से घुमाएँ। आप देखेंगे कि अब विलयन 0°C की बजाय <b>-12°C</b> पर जमेगा (बर्फ 🧊 बनेगा)। यही <b>हिमांक अवनमन (Depression in F.P.)</b> है!</li>
+            </ul>
+        </div>
+
+        <!-- ==================== OSMOSIS & OSMOTIC PRESSURE ======================== -->
+        <h2 style="border-left-color: #8b5cf6;">❖ 4. परासरण एवं परासरण दाब (Osmosis & Osmotic Pressure - π)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.8rem; color: #1e293b; line-height: 1.8; font-weight: 700;">
+                <b style="color: #6b21a8;">परासरण (Osmosis) :</b> विलायक कणों का अर्धपारगम्य झिल्ली (spm) द्वारा निम्न सांद्रता से उच्च सांद्रता के विलयन की ओर प्रवाहित होना।
+            </p>
+            <p style="font-size: 1.8rem; color: #1e293b; line-height: 1.8; font-weight: 700; background: #faf5ff; padding: 20px; border-radius: 15px; border-left: 5px solid #d8b4fe;">
+                <b style="color: #6b21a8;">अर्धपारगम्य झिल्ली (spm) –</b> केवल विलायक के कणों का विनिमय (आदान-प्रदान) अनुमत करती है।<br>
+                <b>Ex :</b> सेलोफेन, पार्चमेन्ट पत्र या सुअर का ब्लेडर, सेल्युलोज एसीटेट, जांतव झिल्ली या चर्मपत्र।
+            </p>
+            <br>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div style="background: rgba(255,255,255,0.8); padding: 30px; border-radius: 20px; border: 2px solid #e2e8f0; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                    <h4 style="color: #6b21a8; font-size: 2rem; margin-top: 0;">अंत: परासरण</h4>
+                    <p style="font-size: 1.7rem; color: #475569; line-height: 1.6;">विलायक के कणों का spm युक्त संरचना के <b style="color: #1e293b;">अंदर</b> की ओर प्रवाहित होना, जैसे अण्डा, किशमिश, अंगूर एवं हरी सब्जिया को <b>पानी में रखना</b>।</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.8); padding: 30px; border-radius: 20px; border: 2px solid #e2e8f0; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                    <h4 style="color: #6b21a8; font-size: 2rem; margin-top: 0;">बाह्य परासरण</h4>
+                    <p style="font-size: 1.7rem; color: #475569; line-height: 1.6;">विलायक के कणों का spm युक्त संरचना से <b style="color: #1e293b;">बाहर</b> की ओर प्रवाहित होना, जैसे अंगूर को चाशनी में, अण्डा, किशमिश को <b>सांद्र नमक के घोल में</b> रखना।</p>
+                </div>
+            </div>
+
+            <!-- Thistle Funnel Simulator (Added here to illustrate simply Osmosis before Osmotic Pressure is explained) -->
+            <h3 class="sim-header" style="border-left: 10px solid #a855f7; color: #a855f7; background: linear-gradient(to right, rgba(168, 85, 247, 0.1), transparent); padding: 15px 25px; border-radius: 0 15px 15px 0; font-size: 2.2rem; margin-top: 40px;">Interactive Lab: Thistle Funnel Osmosis</h3>
+                    
+            <div class="sim-container" style="background: #1e1b4b; border-radius: 40px; border: 4px solid #312e81; padding: 30px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); margin: 30px 0;">
+                <div style="display: grid; grid-template-columns: 1fr 2.5fr; gap: 30px; align-items: center;">
+                    
+                    <!-- Left Control Panel -->
+                    <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: flex-start;">
+                        <h4 style="color: white; font-size: 1.8rem; margin-top: 0; margin-bottom: 20px; font-weight: 800;">Osmosis Control</h4>
+                        
+                        <div style="font-size: 1.4rem; color: #d8b4fe; font-weight: 700; margin-bottom: 10px;">Concentration (सांद्रता): <span id="tf_conc_val" style="color: white;">Low (कम)</span></div>
+                        <input type="range" id="tf_conc" min="1" max="10" value="2" style="width: 100%; height: 6px; background: #312e81; border-radius: 10px; accent-color: #a855f7; margin-bottom: 30px;">
+                        
+                        <button id="tf_start_btn" style="width: 100%; padding: 15px; border-radius: 15px; background: #8b5cf6; color: white; border: none; font-size: 1.4rem; font-weight: 900; cursor: pointer; transition: 0.3s; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);">Start Osmosis (परासरण) ▶</button>
+                        
+                        <div style="text-align: center; margin-top: 10px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 15px;">
+                            <div id="tf_status" style="font-size: 1.8rem; color: #d8b4fe; font-weight: 900; margin-bottom: 5px;">Equilibrium</div>
+                            <div id="tf_height" style="font-size: 1.4rem; color: #a5b4fc;">Level (h) = 0 mm</div>
+                        </div>
+                        
+                        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 15px; margin-top: 15px; text-align: center;">
+                            <div style="font-size: 1.3rem; color: #a5b4fc; margin-bottom: 5px; font-weight: 600;">Live Calculation</div>
+                            <div style="font-size: 1.5rem; color: #facc15; font-family: monospace; font-weight: bold; line-height: 1.4;">
+                                π = <span id="tf_live_c">2</span> × R × T
+                            </div>
+                            <div style="font-size: 1.6rem; color: #10b981; font-weight: 900; margin-top: 5px;">
+                                π ∝ <span id="tf_live_h">0</span> atm
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual Panel (Thistle Funnel in Beaker) -->
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.3); border-radius: 25px; overflow: hidden; padding: 20px; position: relative; min-height: 280px;">
+                        <div style="position: relative; width: 400px; height: 350px; display: flex; justify-content: center; transform: scale(0.85); transform-origin: center;">
+                            <!-- Funnel Stem runs from top to bulb -->
+                            <div style="position: absolute; top: 0; width: 40px; height: 200px; background: rgba(255,255,255,0.1); border-left: 4px solid rgba(255,255,255,0.5); border-right: 4px solid rgba(255,255,255,0.5); z-index: 5;">
+                                <div id="tf_fluid" style="position: absolute; bottom: 0; width: 100%; height: 10%; background: rgba(168, 85, 247, 0.8); transition: height 4s cubic-bezier(0.2, 0.8, 0.2, 1);"></div>
+                            </div>
+
+                            <!-- Funnel Bulb -->
+                            <div style="position: absolute; top: 195px; width: 100px; height: 100px; background: rgba(168, 85, 247, 0.6); border: 4px solid rgba(255,255,255,0.5); border-radius: 50%; z-index: 6; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;"></div>
+                            
+                            <!-- SPM dashes -->
+                            <div style="position:absolute; top: 290px; width: 60px; height: 10px; border-bottom: 6px dashed #fbff00; border-radius: 50%; z-index: 7;"></div>
+                            <!-- Label SPM -->
+                            <div style="position: absolute; top: 310px; z-index: 10; color: #fbff00; font-weight: bold; font-size: 1.3rem; width: 280px; text-align: center;">SPM (अर्धपारगम्य झिल्ली)</div>
+                            <div style="position: absolute; right: 0px; top: 205px; color: #d8b4fe; font-weight: bold; font-size: 1.5rem; z-index: 12;">← शर्करा विलयन</div>
+
+                            <!-- Beaker -->
+                            <div style="position: absolute; bottom: 40px; width: 280px; height: 180px; border: 6px solid rgba(255,255,255,0.2); border-top: none; border-radius: 0 0 40px 40px; overflow: hidden; z-index: 1;">
+                                <div style="position: absolute; bottom: 0; width: 100%; height: 80%; background: rgba(59, 130, 246, 0.4); border-top: 2px solid rgba(255,255,255,0.5);">
+                                    <div id="tf_water_particles" style="position:absolute; width:100%; height:100%;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Extra Label -->
+                            <div style="position: absolute; bottom: -20px; width: 100%; text-align: center; color: #93c5fd; font-weight: bold; font-size: 1.8rem; z-index: 10;">विलायक (जल)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <h3 style="color: #1e293b; font-size: 2.2rem;">4. परासरण दाब (π) -</h3>
+            <p style="font-size: 1.8rem; color: #475569; line-height: 1.8; margin-top: 10px;">
+                परासरण की क्रिया को रोकने के लिए विलयन पर लगाया गया आवश्यक न्यूनतम अतिरिक्त दाब <b>परासरण दाब (Osmotic Pressure)</b> कहलाता है।
+            </p>
+            <p style="font-size: 1.8rem; color: #475569; line-height: 1.8; margin-top: 10px; padding: 15px; border-left: 5px solid #8b5cf6; background: rgba(139, 92, 246, 0.05); border-radius: 10px;">
+                <b>अन्य परिभाषा:</b> विलयन की सतह पर लगने वाला वह द्रव स्थैतिक दाब जो विलायक कणों को spm द्वारा विलयन में प्रवाह रोकता(बाधित) है, <b>परासरण दाब</b> कहलाता है।
+            </p>
+
+            <!-- Derivation -->
+            <div class="formula-card vp-formula-pink" style="margin-top: 20px;">
+                <div style="font-size: 2.2rem; margin-bottom: 15px;"><b>π = CRT</b></div>
+                <div style="font-size: 1.8rem; line-height: 2;">
+                    <span>π = </span>
+                    <span class="math-frac">
+                        <span class="numerator">n₂</span>
+                        <span class="denominator">V</span>
+                    </span>
+                    <span> RT</span>
+                    <span style="font-size: 1.4rem; color: #7f1d1d; margin-left: 20px;">[ n₂ = W₂ / M₂ ]</span>
+                </div>
+                <div style="font-size: 1.8rem; line-height: 2; margin-top: 15px;">
+                    <span>πV = </span>
+                    <span class="math-frac">
+                        <span class="numerator">W₂ × RT</span>
+                        <span class="denominator">M₂</span>
+                    </span>
+                </div>
+                <div style="font-size: 1.8rem; line-height: 2; margin-top: 15px;">
+                    <span>M₂ = </span>
+                    <span class="math-frac">
+                        <span class="numerator">W₂ × RT</span>
+                        <span class="denominator">πV</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Examples -->
+            <div style="background: rgba(255,255,255,0.8); padding: 25px; border-radius: 20px; border: 2px solid #e2e8f0; margin-top: 20px;">
+                <p style="font-size: 1.7rem; color: #334155; margin-bottom: 15px; font-weight: 500;">
+                    <b>उदा० 1 :</b> 27° C ताप पर यूरिया के &nbsp;<span class="math-frac" style="vertical-align: middle;"><span class="numerator">M</span><span class="denominator">10</span></span>&nbsp; विलयन का परासरण दाब ज्ञात करो। (यदि R = 0.0821 atm lit K⁻¹mol⁻¹)
+                </p>
+                <div style="background: #f1f5f9; padding: 20px; border-radius: 10px; font-size: 1.6rem; color: #475569;">
+                    <b>उ० :</b> π = CRT ; &nbsp;&nbsp; C = <span class="math-frac"><span class="numerator">1</span><span class="denominator">10</span></span> M ; &nbsp;&nbsp; T = 27 + 273 = 300 K <br><br>
+                    π = <span class="math-frac"><span class="numerator">1</span><span class="denominator">10</span></span> × 0.0821 × 300 &nbsp;&nbsp; ➔ &nbsp;&nbsp; <b style="background: #e2e8f0; padding: 8px 12px; border-radius: 8px; color: #0f172a;">π = 2.46 atm</b>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.8); padding: 25px; border-radius: 20px; border: 2px solid #e2e8f0; margin-top: 20px;">
+                <p style="font-size: 1.7rem; color: #334155; margin-bottom: 15px; font-weight: 500;">
+                    <b>उदा० 2 :</b> 4% यूरिया विलयन अन्य कार्बनिक यौगिक A के 12% विलयन का समपरासरी है। A का अणुभार ज्ञात करो।
+                </p>
+                <div style="background: #f1f5f9; padding: 20px; border-radius: 10px; font-size: 1.6rem; color: #475569;">
+                    परासरण दाब π = <span class="math-frac"><span class="numerator">WRT</span><span class="denominator">MV</span></span> ; &nbsp;&nbsp; यूरिया का अणुभार = 60 gm<br><br>
+                    4% यूरिया विलयन का परासरण दाब : π₁ = <span class="math-frac"><span class="numerator">4RT</span><span class="denominator">60 × 100</span></span> × 1000 ............(i)<br><br>
+                    12% यौगिक A का परासरण दाब : π₂ = <span class="math-frac"><span class="numerator">12RT</span><span class="denominator">M × 100</span></span> × 1000 ............(ii)<br><br>
+                    चूंकि समपरासरी विलयन के परासरण दाब समान होते है। अतः <b style="color: #0f172a;">π₁ = π₂</b><br><br>
+                    <span class="math-frac"><span class="numerator">4RT</span><span class="denominator">60 × 100</span></span> × 1000 = <span class="math-frac"><span class="numerator">12RT</span><span class="denominator">M × 100</span></span> × 1000 &nbsp;&nbsp;➔&nbsp;&nbsp; <span class="math-frac"><span class="numerator">4</span><span class="denominator">60</span></span> = <span class="math-frac"><span class="numerator">12</span><span class="denominator">M</span></span><br><br>
+                    अतः यौगिक A का अणुभार <b style="background: #e2e8f0; padding: 8px 12px; border-radius: 8px; color: #0f172a;">M = 180 gm Ans</b>
+                </div>
+            </div>
+
+            <!-- Importance of Osmosis & Types of Solutions -->
+            <h4 style="font-size: 2.2rem; color: #4338ca; margin-top: 40px; margin-bottom: 15px;">परासरण का महत्व :</h4>
+            <ol style="font-size: 1.7rem; color: #475569; line-height: 1.8; margin-left: 25px;">
+                <li style="margin-bottom: 10px;">प्रोटीन, बहुलकों, जैव अणुओं में विलेय व अन्य वृहदणओं के मोलर द्रव्यमान ज्ञात करने में उपयोगी।</li>
+                <li style="margin-bottom: 10px;">पौधों में जड से पत्तियों तक जल का परिवहन परासरण के कारण होता है।</li>
+                <li style="margin-bottom: 10px;">मांस में लवण मिलाकर व फलों में शर्करा मिलाकर जीवाणु की वृद्धि रोकी जाती है क्योंकि परासरण से नमी में कमी से जीवाणु संकुचित होकर मर जाते है।</li>
+                <li style="margin-bottom: 10px;">जो लोग अधिक नमक या नमकिन भोजन लेते है उनमे उत्तक कोशिकाओं के अंतराकाशी स्थानों में जल धारण बढ़ जाता है एवं स्थूलता या सूजन होने लगती है इसे <b>शोफ या एडिमा (Edema)</b> कहते है।</li>
+            </ol>
+
+            <ul style="font-size: 1.7rem; color: #475569; line-height: 1.8; margin-left: 25px; list-style-type: disc; margin-top: 30px;">
+                <li style="margin-bottom: 10px;"><b style="color: #1e293b;">सम परासरी विलयन (Isotonic solution) –</b> spm द्वारा पृथक दो समान परासरण दाब वाले विलयन जो विलायक कणों का प्रवाह नही करते।</li>
+                <li style="margin-bottom: 10px;"><b style="color: #1e293b;">अति परासरी विलयन (Hypertonic solution) –</b> दो भिन्न परासरण दाब वाले विलयनों में से उच्च दाब वाला विलयन।</li>
+                <li style="margin-bottom: 10px;"><b style="color: #1e293b;">अल्प परासरी विलयन (Hypotonic solution) –</b> दो भिन्न परासरण दाब वाले विलयनों में से निम्न दाब वाला विलयन।</li>
+            </ul>
+        </div>
+
+        <h3 class="sim-header" style="border-left: 10px solid #8b5cf6; color: #8b5cf6; background: linear-gradient(to right, rgba(139, 92, 246, 0.1), transparent); padding: 15px 25px; border-radius: 0 15px 15px 0; font-size: 2.2rem;">Interactive Lab: Thistle Funnel Osmosis</h3>
+        
+        <div class="sim-container" style="background: #1e1b4b; border-radius: 40px; border: 4px solid #312e81; padding: 30px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); margin: 30px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 2.5fr; gap: 30px; align-items: stretch;">
+                
+                <!-- Left Control Panel -->
+                <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: flex-start;">
+                    <h4 style="color: white; font-size: 1.8rem; margin-top: 0; margin-bottom: 20px; font-weight: 800;">Osmosis Control</h4>
+                    
+                    <div style="font-size: 1.4rem; color: #d8b4fe; font-weight: 700; margin-bottom: 10px;">Concentration (सांद्रता): <span id="osm_conc_val" style="color: white;">Low (कम)</span></div>
+                    <input type="range" id="osm_conc" min="1" max="10" value="2" style="width: 100%; height: 6px; background: #312e81; border-radius: 10px; accent-color: #a855f7; margin-bottom: 30px;">
+                    
+                    <button id="osm_start_btn" style="width: 100%; padding: 15px; border-radius: 15px; background: #8b5cf6; color: white; border: none; font-size: 1.4rem; font-weight: 900; cursor: pointer; transition: 0.3s; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);">Start Osmosis (परासरण) ▶</button>
+                    
+                    <div style="text-align: center; margin-top: 10px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 15px;">
+                        <div id="osm_status" style="font-size: 1.8rem; color: #d8b4fe; font-weight: 900; margin-bottom: 5px;">Equilibrium</div>
+                    </div>
+                    
+                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 15px; margin-top: 15px; text-align: center;">
+                        <div style="font-size: 1.3rem; color: #a5b4fc; margin-bottom: 5px; font-weight: 600;">Live Calculation</div>
+                        <div style="font-size: 1.5rem; color: #facc15; font-family: monospace; font-weight: bold; line-height: 1.4;">
+                            π = <span id="osm_live_c">2</span> × R × T
+                        </div>
+                        <div style="font-size: 1.6rem; color: #10b981; font-weight: 900; margin-top: 5px;">
+                            π ∝ <span id="osm_live_h">0</span> atm
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Panel (Dual Chamber U-Tube) -->
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.3); border-radius: 25px; overflow: hidden; padding: 20px; position: relative; min-height: 280px;">
+                    
+                    <div style="position: relative; width: 440px; height: 220px; display: flex; justify-content: center; margin-top: 20px;">
+                        
+                        <!-- U-Tube Border Setup (Background lines) -->
+                        <div style="position: absolute; bottom: 0; left: 0; width: 440px; height: 120px; border: 4px solid rgba(255,255,255,0.4); border-top: none; border-radius: 0 0 10px 10px; z-index: 10; pointer-events: none;"></div>
+                        <!-- Left vertical walls -->
+                        <div style="position: absolute; bottom: 120px; left: 0; width: 4px; height: 80px; background: rgba(255,255,255,0.4); z-index: 10;"></div>
+                        <div style="position: absolute; bottom: 120px; left: 80px; width: 4px; height: 80px; background: rgba(255,255,255,0.4); z-index: 10;"></div>
+                        <!-- Right vertical walls -->
+                        <div style="position: absolute; bottom: 120px; right: 0; width: 4px; height: 80px; background: rgba(255,255,255,0.4); z-index: 10;"></div>
+                        <div style="position: absolute; bottom: 120px; right: 80px; width: 4px; height: 80px; background: rgba(255,255,255,0.4); z-index: 10;"></div>
+                        <!-- Horizontal connector lines -->
+                        <div style="position: absolute; bottom: 120px; left: 84px; width: 272px; height: 4px; background: rgba(255,255,255,0.4); z-index: 10;"></div>
+
+                        <!-- Fluid Containers Base -->
+                        <div style="position: absolute; bottom: 4px; left: 4px; width: 212px; height: 116px; background: rgba(59, 130, 246, 0.4); z-index: 2;"></div>
+                        <div style="position: absolute; bottom: 4px; right: 4px; width: 212px; height: 116px; background: rgba(168, 85, 247, 0.6); z-index: 2;"></div>
+                        
+                        <!-- Left Tower Fluid (Solvent) : Init height 40px -->
+                        <div id="fluid_left" style="position: absolute; bottom: 120px; left: 4px; width: 76px; height: 40px; background: rgba(59, 130, 246, 0.4); z-index: 2; transition: height 1.5s ease-in-out;"></div>
+                        <!-- Right Tower Fluid (Solution) : Init height 40px -->
+                        <div id="fluid_right" style="position: absolute; bottom: 120px; right: 4px; width: 76px; height: 40px; background: rgba(168, 85, 247, 0.6); z-index: 2; transition: height 1.5s ease-in-out;"></div>
+                        
+                        <!-- SPM (Semi-Permeable Membrane) -->
+                        <div style="position: absolute; bottom: 4px; left: 216px; width: 8px; height: 116px; background: transparent; border-left: 2px dashed #fbff00; border-right: 2px dashed #fbff00; z-index: 9; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
+                             <span style="color:#fbff00; font-size: 1.2rem; line-height: 1.2;">x</span>
+                             <span style="color:#fbff00; font-size: 1.2rem; line-height: 1.2;">x</span>
+                             <span style="color:#fbff00; font-size: 1.2rem; line-height: 1.2;">x</span>
+                             <span style="color:#fbff00; font-size: 1.2rem; line-height: 1.2;">x</span>
+                             <span style="color:#fbff00; font-size: 1.2rem; line-height: 1.2;">x</span>
+                        </div>
+                        <div style="position: absolute; bottom: -25px; left: 140px; z-index: 10; color: #fbff00; font-weight: bold; font-size: 1.2rem; width: 160px; text-align: center;">SPM (अर्धपारगम्य झिल्ली)</div>
+                        <div style="position: absolute; bottom: 6px; left: 220px; width: 2px; height: 20px; background: #fbff00;"></div>
+                        
+                        <!-- Pistons -->
+                        <div id="piston_left" style="position: absolute; bottom: 160px; left: 2px; width: 80px; height: 10px; background: #64748b; border: 2px solid #334155; border-radius: 2px; z-index: 11; transition: bottom 1.5s ease-in-out; display: flex; justify-content: center;">
+                            <div style="width: 4px; height: 40px; background: #94a3b8; position: absolute; bottom: 8px;"></div>
+                            <div style="position: absolute; bottom: 50px; color: white; font-weight: bold; font-size: 1.4rem;">P₁</div>
+                        </div>
+
+                        <div id="piston_right" style="position: absolute; bottom: 160px; right: 2px; width: 80px; height: 10px; background: #64748b; border: 2px solid #334155; border-radius: 2px; z-index: 11; transition: bottom 1.5s ease-in-out; display: flex; justify-content: center;">
+                            <div style="width: 4px; height: 40px; background: #94a3b8; position: absolute; bottom: 8px;"></div>
+                            <div style="position: absolute; bottom: 50px; color: white; font-weight: bold; font-size: 1.4rem;">P₂</div>
+                            <!-- Pi pressure arrow -->
+                            <div id="osm_pressure_arrow" style="position: absolute; bottom: 70px; color: #fbbf24; font-weight: bold; font-size: 1.8rem; transition: opacity 0.5s; opacity: 0; display:flex; flex-direction: column; align-items:center;">
+                                <span style="font-size:2.5rem; line-height:0.8;">↓</span> π 
+                            </div>
+                        </div>
+
+                        <!-- Direction Arrows inside fluid -->
+                        <div id="flow_arrow" style="position: absolute; bottom: 60px; left: 160px; color: white; font-size: 3rem; font-weight: bold; opacity: 0; transition: 0.5s; z-index: 12;">
+                            ⟶
+                        </div>
+
+                        <!-- Labels inside main area outside of fluids -->
+                        <div style="position: absolute; top: 120px; left: -100px; color: #93c5fd; font-weight: bold; font-size: 1.4rem; z-index: 10; text-align: right;">विलायक (A) <br><span style="font-size:2rem; vertical-align:middle; margin-right: -10px;">→</span></div>
+                        <div style="position: absolute; top: 120px; right: -100px; color: #d8b4fe; font-weight: bold; font-size: 1.4rem; z-index: 10; text-align: left;"><span style="font-size:2rem; vertical-align:middle; margin-left: -10px;">←</span><br> विलयन (B)</div>
+                        
+                        <div id="solute_particles_osmosis" style="position:absolute; bottom: 4px; right: 4px; width: 212px; height: 116px; z-index: 3;"></div>
+                        <div id="water_particles" style="position:absolute; bottom: 4px; left: 4px; width: 212px; height: 116px; z-index: 3;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions for Osmosis Simulator -->
+        <div style="background: white; border-radius: 20px; padding: 40px; margin: 0 auto 60px; max-width: 900px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 2px solid #e2e8f0; position: relative;">
+            <div style="position: absolute; top: -18px; left: 40px; background: #8b5cf6; color: white; padding: 8px 25px; border-radius: 30px; font-size: 1.3rem; font-weight: 800; box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);">💡 उपयोग कैसे करें (How to use)</div>
+            <ul style="margin: 0; padding-left: 25px; color: #334155; font-size: 1.6rem; line-height: 1.8; font-weight: 600;">
+                <li style="margin-bottom: 15px;"><b>Concentration Slider:</b> थिसल फनल (Thistle Funnel) के अंदर शर्करा (Sugar) विलयन की सांद्रता (Concentration) सेट करें। </li>
+                <li style="margin-bottom: 15px;"><b>Start Osmosis:</b> यह बटन दबाएं। आप देखेंगे कि बीकर का शुद्ध जल <b>अर्धपारगम्य झिल्ली (SPM)</b> द्वारा अंदर की ओर प्रवाहित होने लगता है।</li>
+                <li><b>Result:</b> जैसे-जैसे पानी अंदर जाएगा, ट्यूब में विलयन का स्तर (h) ऊपर उठेगा! सांद्रता जितनी ज्यादा होगी, <b>स्तर और परासरण दाब (π)</b> उतना ही अधिक होगा। </li>
+            </ul>
+        </div>
+
+        <!-- REVERSE OSMOSIS SECTION -->
+        <br><hr style="border: 0; border-bottom: 2px dashed #cbd5e1; margin: 40px 0;">
+        <h3 style="color: #1e293b; font-size: 2.2rem;">❖ प्रतिलोम या व्युत्क्रम परासरण(RO) -</h3>
+        <p style="font-size: 1.8rem; color: #475569; line-height: 1.8; margin-top: 10px;">
+            विलयन पर परासरण दाब से <b>उच्च बाह्य दाब(P<sub>ex</sub>)</b> लगाने पर विलायक के कण spm द्वारा उच्च सांद्रता से निम्न सांद्रता वाले विलयन की तरफ प्रवाहित होने लगते है इसे <b>प्रतिलोम परासरण</b> कहते है। <br>
+            <span class="highlight-box" style="display:inline-block; margin-top: 10px; padding: 10px 20px; background: rgba(139, 92, 246, 0.1); border-radius: 10px; color: #6b21a8; font-weight: bold; border-left: 5px solid #8b5cf6;">P<sub>ex</sub> &gt; π = Reverse Osmosis</span>
+        </p>
+        <p style="font-size: 1.8rem; color: #475569; line-height: 1.8; margin-top: 10px;">
+            <b>प्रक्रम में प्रयुक्त कृत्रिम अर्धपारगम्य झिल्ली :</b> सेल्युलोज ऐसीटेट की फिल्म <br>
+            <b>अनुप्रयोग :</b> समुद्री या लवणीय जल का विलवणीकरण अर्थात पीने योग्य बनाना
+        </p>
+
+        <!-- REVERSE OSMOSIS SIMULATOR -->
+        <h3 class="sim-header" style="border-left: 10px solid #e11d48; color: #e11d48; background: linear-gradient(to right, rgba(225, 29, 72, 0.1), transparent); padding: 15px 25px; border-radius: 0 15px 15px 0; font-size: 2.2rem; margin-top: 40px;">Interactive Lab: प्रतिलोम परासरण (RO)</h3>
+        
+        <div class="sim-container" style="background: #1e1b4b; border-radius: 40px; border: 4px solid #312e81; padding: 30px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); margin: 30px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 2.5fr; gap: 30px; align-items: stretch;">
+                
+                <!-- Left Control Panel -->
+                <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: flex-start;">
+                    <h4 style="color: white; font-size: 1.8rem; margin-top: 0; margin-bottom: 20px; font-weight: 800;">RO Pump Control (पंप नियंत्रण)</h4>
+                    
+                    <div style="font-size: 1.4rem; color: #d8b4fe; margin-bottom: 25px; font-weight: 600; line-height: 1.5;">शुद्ध जल का प्रवाह उलटने (Reverse) के लिए परासरण दाब (π) से अधिक बाह्य दाब (P<sub>ex</sub>) लगाएँ।</div>
+                    
+                    <button id="ro_start_btn" style="width: 100%; padding: 15px; border-radius: 15px; background: #e11d48; color: white; border: none; font-size: 1.4rem; font-weight: 900; cursor: pointer; transition: 0.3s; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(225, 29, 72, 0.4);">Apply P<sub>ex</sub> &gt; π (दाब लगाएँ)</button>
+                    
+                    <div style="text-align: center; margin-top: 10px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 15px;">
+                        <div id="ro_status" style="font-size: 1.8rem; color: #facc15; font-weight: 900; margin-bottom: 5px;">Standby (विश्राम)</div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Panel -->
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.3); border-radius: 25px; overflow: hidden; padding: 20px; position: relative; min-height: 280px;">
+                    
+                    <div style="position: relative; width: 460px; height: 160px; display: flex; justify-content: center; margin-top: 10px;">
+                        
+                        <!-- Main Tank Border -->
+                        <div style="position: absolute; bottom: 10px; left: 50px; width: 360px; height: 100px; border: 4px solid rgba(255,255,255,0.4); z-index: 10; pointer-events: none;"></div>
+                        
+                        <!-- SPM Center Divider -->
+                        <div style="position: absolute; bottom: 10px; left: 230px; width: 4px; height: 100px; background: repeating-linear-gradient(0deg, #fbff00, #fbff00 5px, transparent 5px, transparent 10px); z-index: 11;"></div>
+                        <div style="position: absolute; bottom: -15px; left: 190px; z-index: 10; color: #fbff00; font-weight: bold; font-size: 1.2rem; width: 100px; text-align: center;">SPM</div>
+                        
+                        <!-- Pure Water Chamber (Left) -->
+                        <div style="position: absolute; bottom: 14px; left: 54px; width: 176px; height: 92px; background: rgba(59, 130, 246, 0.4); z-index: 2;"></div>
+                        <!-- Salt Water Chamber (Right) -->
+                        <div style="position: absolute; bottom: 14px; right: 54px; width: 176px; height: 92px; background: rgba(168, 85, 247, 0.6); z-index: 2;"></div>
+                        
+                        <!-- Labels -->
+                        <div style="position: absolute; bottom: 50px; left: 90px; color: #93c5fd; font-weight: bold; font-size: 1.6rem; z-index: 10;">शुद्ध जल</div>
+                        <div style="position: absolute; bottom: 50px; right: 90px; color: #d8b4fe; font-weight: bold; font-size: 1.6rem; z-index: 10;">लवणीय जल</div>
+
+                        <!-- Right Inlet/Piston -->
+                        <div style="position: absolute; top: -10px; right: 80px; width: 30px; height: 60px; border-left: 4px solid rgba(255,255,255,0.4); border-right: 4px solid rgba(255,255,255,0.4); background: rgba(168, 85, 247, 0.6); z-index: 1;"></div>
+                        <!-- Piston object -->
+                        <div id="ro_piston" style="position: absolute; top: -10px; right: 78px; width: 34px; height: 10px; background: #64748b; border: 2px solid #334155; border-radius: 2px; z-index: 11; transition: top 0.5s ease-in-out;">
+                            <div style="width: 4px; height: 30px; background: #94a3b8; position: absolute; bottom: 10px; left: 13px;"></div>
+                        </div>
+                        <div id="ro_pressure_label" style="position: absolute; top: -30px; right: 60px; color: white; font-weight: bold; font-size: 1.2rem;">Piston</div>
+
+                        <!-- Left Outlet Pipe -->
+                        <div style="position: absolute; bottom: 50px; left: 10px; width: 40px; height: 16px; border-top: 4px solid rgba(255,255,255,0.4); border-bottom: 4px solid rgba(255,255,255,0.4); z-index: 5; background: rgba(59, 130, 246, 0.4);"></div>
+                        <div style="position: absolute; bottom: 34px; left: 10px; width: 16px; height: 20px; border-left: 4px solid rgba(255,255,255,0.4); border-right: 4px solid rgba(255,255,255,0.4); border-bottom: none; z-index: 5; background: rgba(59, 130, 246, 0.4);"></div>
+                        
+                        <!-- Water Drops Animation Container -->
+                        <div style="position: absolute; bottom: -10px; left: 14px; width: 8px; height: 44px; overflow: hidden; z-index: 12;">
+                            <div id="ro_drop" style="width: 8px; height: 12px; background: #93c5fd; border-radius: 50%; position: absolute; top: -15px; opacity: 0; filter: drop-shadow(0 0 5px #3b82f6);"></div>
+                        </div>
+                        
+                        <div style="position: absolute; bottom: -30px; left: 0px; z-index: 10; color: #93c5fd; font-weight: bold; font-size: 1.2rem; width: 60px; text-align: center;">जल निकास</div>
+
+                        <!-- Flow Arrow -->
+                        <div id="ro_flow_arrow" style="position: absolute; bottom: 55px; left: 215px; color: #10b981; font-size: 3rem; font-weight: bold; opacity: 0; transition: 0.3s; z-index: 12;">
+                            ⟵
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions for RO Simulator -->
+        <div style="background: white; border-radius: 20px; padding: 40px; margin: 0 auto 60px; max-width: 900px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 2px solid #e2e8f0; position: relative;">
+            <div style="position: absolute; top: -18px; left: 40px; background: #e11d48; color: white; padding: 8px 25px; border-radius: 30px; font-size: 1.3rem; font-weight: 800; box-shadow: 0 5px 15px rgba(225, 29, 72, 0.3);">💡 उपयोग कैसे करें (How to use)</div>
+            <ul style="margin: 0; padding-left: 25px; color: #334155; font-size: 1.6rem; line-height: 1.8; font-weight: 600;">
+                <li style="margin-bottom: 15px;"><b>Apply P<sub>ex</sub> > π:</b> यह बटन दबाकर लवणीय जल (Salt water) की तरफ से पिस्टन द्वारा <b>परासरण दाब (π) से अधिक भारी बाह्य दाब (P<sub>ex</sub>)</b> लगाएँ।</li>
+                <li style="margin-bottom: 15px;"><b>Reverse Flow (प्रतिलोम प्रवाह):</b> आप देखेंगे कि दाब पड़ने पर झिल्ली (SPM) के माध्यम से विलायक (शुद्ध जल) विपरीत दिशा में प्रवाहित होकर <b>जल निकास (Outlet)</b> से बाहर टपकने लगेगा।</li>
+                <li><b>Result:</b> इसी विधि का उपयोग समुद्री खारे जल को शुद्ध और पीने योग्य बनाने में किया जाता है जिसे हम घर में <b>RO (Reverse Osmosis) Water Purifier</b> कहते हैं!</li>
+            </ul>
         </div>
 
     </div>
@@ -680,36 +1184,63 @@
         const fpBox = document.getElementById('fp_box');
         const fpBtn = document.getElementById('add_solute_fp');
         const fpLimit = document.getElementById('fp_limit');
+        const fpEmoji = document.getElementById('fp_emoji');
+        const fpMercury = document.getElementById('fp_mercury');
 
         let isSaltedFP = false;
 
         function updateFP() {
+            if(!fpCooler) return;
             let temp = parseInt(fpCooler.value);
             fpTempDisp.innerText = temp;
+            
+            // FP Thermometer scale mapping: -20 to 30 (range 50)
+            if(fpMercury) {
+                fpMercury.style.height = ((temp + 20) / 50) * 100 + '%';
+                if(temp <= (isSaltedFP ? -12 : 0)) {
+                    fpMercury.style.background = "linear-gradient(to top, #94a3b8, #cbd5e1)";
+                    fpMercury.style.boxShadow = "none";
+                } else {
+                    fpMercury.style.background = "linear-gradient(to top, #3b82f6, #93c5fd)";
+                    fpMercury.style.boxShadow = "0 0 15px rgba(59, 130, 246, 0.5)";
+                }
+            }
             
             let limit = isSaltedFP ? -12 : 0;
             
             if(temp <= limit) {
                 fpStatus.innerText = "FROZEN ❄️";
                 fpStatus.style.color = "#bfdbfe";
-                fpBox.style.background = "#e2e8f0";
-                fpBox.innerText = "🧊";
-                fpBox.style.borderRadius = "10px";
+                fpBox.style.background = "linear-gradient(135deg, #e2e8f0, #cbd5e1)";
+                if(fpEmoji) fpEmoji.innerText = "🧊";
+                fpBox.style.borderRadius = "15px";
             } else {
                 fpStatus.innerText = "Liquid State";
                 fpStatus.style.color = "#93c5fd";
-                fpBox.style.background = "#3b82f6";
-                fpBox.innerText = "💧";
-                fpBox.style.borderRadius = "30px";
+                fpBox.style.background = "linear-gradient(135deg, #3b82f6, #2563eb)";
+                if(fpEmoji) fpEmoji.innerText = "💧";
+                fpBox.style.borderRadius = "40px";
             }
         }
 
         fpBtn.addEventListener('click', () => {
+            if(isSaltedFP) return; // Prevent multiple clicks
             isSaltedFP = true;
             fpBtn.innerText = "Salt Added (-ΔTf)";
             fpBtn.style.background = "#1e293b";
+            fpBtn.style.boxShadow = "none";
+            fpBtn.style.cursor = "default";
             fpLimit.innerText = "Solution F.P. = -12°C";
-            alert("Non-volatile solute added! Freezing point decreased to -12°C.");
+            
+            // Add visual solute particles
+            const soluteCont = document.getElementById('solute_in_fp');
+            if(soluteCont) {
+                for(let i=0; i<8; i++) {
+                    let p = document.createElement('div');
+                    p.style.cssText = `width: 8px; height: 8px; background: #ef4444; border-radius: 50%; border: 1px solid rgba(255,255,255,0.5); position: absolute; left: ${Math.random()*70 + 15}%; bottom: ${Math.random()*70 + 15}%; z-index: 10;`;
+                    soluteCont.appendChild(p);
+                }
+            }
             updateFP();
         });
 
@@ -812,8 +1343,381 @@
                 100% { transform: translateY(-160px) scale(0.5); opacity: 0; }
             }
         `;
+        // FP GRAPH LOGIC
+        const fpGraphSlider = document.getElementById('fp_graph_slider');
+        const fpmVal = document.getElementById('fp_graph_m_val');
+        const fpTfDisp = document.getElementById('graph_fp_tf_value');
+        const fpDeltaDisp = document.getElementById('graph_fp_delta_value');
+        
+        const fpHZLine = document.getElementById('graph_fp_hz_line');
+        const fpProjLine = document.getElementById('graph_fp_proj_line');
+        const fpDeltaLine = document.getElementById('graph_fp_delta_line');
+        const fpDeltaText = document.getElementById('graph_fp_delta_text');
+        const fptfLabel = document.getElementById('graph_fp_tf_label');
+        const fpSolCurve = document.getElementById('graph_fp_solution_curve');
+        const fpSolText = document.getElementById('graph_fp_solution_text');
+        
+        const fpPointA = document.getElementById('graph_fp_point_a');
+        const fpPointD = document.getElementById('graph_fp_point_d');
+
+        function updateFPGraph() {
+            if(!fpGraphSlider) return;
+            let m = parseFloat(fpGraphSlider.value);
+            fpmVal.innerText = m.toFixed(1);
+            
+            let deltaTf = 1.86 * m;
+            let currentTf = 0 - deltaTf;
+            
+            fpTfDisp.innerText = currentTf.toFixed(2) + "°C";
+            fpDeltaDisp.innerText = deltaTf.toFixed(2) + "°C";
+            
+            let offsetHeight = m * 7;
+            let y_liquid_b = 120;
+            let y_sol = y_liquid_b + offsetHeight; 
+            
+            let x_inter = 270 - y_sol;
+            
+            if (m === 0) {
+                fpSolCurve.setAttribute('d', `M 150 120 Q 230 110, 320 80`);
+                fpSolCurve.style.display = 'none';
+                fpSolText.style.display = 'none';
+                
+                fpPointD.style.display = 'none';
+                fpPointA.style.display = 'none';
+                fpHZLine.style.display = 'none';
+                
+                fpProjLine.setAttribute('x1', 150);
+                fpProjLine.setAttribute('x2', 150);
+                fptfLabel.setAttribute('x', 145);
+                
+                fpDeltaLine.style.display = 'none';
+                fpDeltaText.style.display = 'none';
+            } else {
+                fpSolCurve.style.display = 'block';
+                fpSolText.style.display = 'block';
+                fpPointD.style.display = 'block';
+                fpPointA.style.display = 'block';
+                fpHZLine.style.display = 'block';
+                fpDeltaLine.style.display = 'block';
+                fpDeltaText.style.display = 'block';
+
+                fpSolCurve.setAttribute('d', `M ${x_inter} ${y_sol} Q 230 ${y_sol - 20}, 320 ${y_sol - 50}`);
+                fpSolText.setAttribute('y', y_sol + 25);
+                fpSolText.setAttribute('transform', `rotate(-15 250 ${y_sol + 25})`);
+                
+                fpPointD.setAttribute('y', y_sol + 15);
+                fpPointA.setAttribute('x', x_inter - 10);
+                fpPointA.setAttribute('y', y_sol + 5);
+                
+                fpHZLine.setAttribute('x1', x_inter);
+                fpHZLine.setAttribute('y1', y_sol);
+                fpHZLine.setAttribute('x2', 150);
+                fpHZLine.setAttribute('y2', y_sol);
+                
+                fpProjLine.setAttribute('x1', x_inter);
+                fpProjLine.setAttribute('x2', x_inter);
+                
+                fpDeltaLine.setAttribute('x1', x_inter);
+                fpDeltaText.setAttribute('x', x_inter + (150 - x_inter)/2 - 10);
+                fptfLabel.setAttribute('x', x_inter - 10);
+            }
+        }
+
+        if(fpGraphSlider) {
+            fpGraphSlider.addEventListener('input', updateFPGraph);
+            updateFPGraph();
+        }
+
+
+        // SIM: OSMOSIS
+        const osmConcSlider = document.getElementById('osm_conc');
+        const osmConcVal = document.getElementById('osm_conc_val');
+        const osmStartBtn = document.getElementById('osm_start_btn');
+        const fluidLeft = document.getElementById('fluid_left');
+        const fluidRight = document.getElementById('fluid_right');
+        const pistonLeft = document.getElementById('piston_left');
+        const pistonRight = document.getElementById('piston_right');
+        const osmStatus = document.getElementById('osm_status');
+        const waterParticles = document.getElementById('water_particles');
+        const soluteParticles = document.getElementById('solute_particles_osmosis');
+        const osmPressureArrow = document.getElementById('osm_pressure_arrow');
+        const flowArrow = document.getElementById('flow_arrow');
+        const osmLiveC = document.getElementById('osm_live_c');
+        const osmLiveH = document.getElementById('osm_live_h');
+
+        let osmState = 0; // 0 = Equil, 1 = Flowing, 2 = Osmotic Pressure Applied
+        
+        // Setup initial dots
+        if(waterParticles) {
+            for(let i=0; i<30; i++) {
+                let p = document.createElement('div');
+                p.style.cssText = `width: 5px; height: 5px; background: rgba(255,255,255,0.6); border-radius: 50%; position: absolute; left: ${Math.random()*90}%; bottom: ${Math.random()*90}%;`;
+                waterParticles.appendChild(p);
+            }
+        }
+
+        function updateOsmosisSolute() {
+            if(!soluteParticles || !osmConcSlider) return;
+            soluteParticles.innerHTML = '';
+            let val = parseInt(osmConcSlider.value);
+            for(let i=0; i < val*8; i++) {
+                let p = document.createElement('div');
+                p.style.cssText = `width: 6px; height: 6px; background: rgba(239, 68, 68, 0.8); border-radius: 50%; position: absolute; left: ${Math.random()*90}%; bottom: ${Math.random()*90}%;`;
+                soluteParticles.appendChild(p);
+            }
+        }
+        
+        if(osmConcSlider) {
+            osmConcSlider.addEventListener('input', () => {
+                let val = parseInt(osmConcSlider.value);
+                if(val <= 3) osmConcVal.innerText = "Low (कम)";
+                else if(val <= 7) osmConcVal.innerText = "Medium (मध्यम)";
+                else osmConcVal.innerText = "High (उच्च)";
+                
+                if(osmLiveC) osmLiveC.innerText = val;
+                updateOsmosisSolute();
+                
+                if(osmState !== 0) {
+                    resetOsmosis();
+                }
+            });
+            updateOsmosisSolute();
+        }
+
+        function resetOsmosis() {
+            osmState = 0;
+            if(fluidLeft) fluidLeft.style.height = "40px";
+            if(pistonLeft) pistonLeft.style.bottom = "160px";
+            if(fluidRight) fluidRight.style.height = "40px";
+            if(pistonRight) pistonRight.style.bottom = "160px";
+            
+            if(osmStatus) osmStatus.innerText = "Equilibrium";
+            if(osmLiveH) osmLiveH.innerText = "0";
+            if(osmStartBtn) {
+                osmStartBtn.innerText = "Start Osmosis (परासरण) ▶";
+                osmStartBtn.style.background = "#8b5cf6";
+            }
+            if(osmPressureArrow) osmPressureArrow.style.opacity = "0";
+            if(flowArrow) flowArrow.style.opacity = "0";
+        }
+
+        if(osmStartBtn) {
+            osmStartBtn.addEventListener('click', () => {
+                if(osmState === 0) {
+                    // Start Osmosis
+                    osmState = 1;
+                    let val = parseInt(osmConcSlider.value);
+                    let deltaH = val * 3; // up to 30px change
+                    
+                    osmStartBtn.innerText = "Apply Pressure π (दाब लगाएँ)";
+                    osmStartBtn.style.background = "#ef4444";
+                    osmStatus.innerText = "Osmosis Occurring";
+                    
+                    fluidLeft.style.height = (40 - deltaH) + "px";
+                    pistonLeft.style.bottom = (160 - deltaH) + "px";
+                    
+                    fluidRight.style.height = (40 + deltaH) + "px";
+                    pistonRight.style.bottom = (160 + deltaH) + "px";
+                    
+                    flowArrow.style.opacity = "1";
+                    
+                    // Animate Live Pressure
+                    let currentVal = 0;
+                    let targetVal = val * 0.4;
+                    let step = targetVal / 30;
+                    let ticks = 0;
+                    if(window.osmInterval) clearInterval(window.osmInterval);
+                    window.osmInterval = setInterval(() => {
+                        currentVal += step;
+                        ticks++;
+                        if(osmLiveH) osmLiveH.innerText = currentVal.toFixed(2);
+                        if(ticks >= 30) {
+                            clearInterval(window.osmInterval);
+                            if(osmLiveH) osmLiveH.innerText = targetVal.toFixed(1);
+                        }
+                    }, 50);
+                    
+                } else if(osmState === 1) {
+                    // Apply Pressure Pi
+                    osmState = 2;
+                    
+                    osmStartBtn.innerText = "Reset Simulator ↺";
+                    osmStartBtn.style.background = "#64748b";
+                    osmStatus.innerText = "Osmotic Pressure Applied (π)";
+                    
+                    // Fluids return to original
+                    fluidLeft.style.height = "40px";
+                    pistonLeft.style.bottom = "160px";
+                    
+                    fluidRight.style.height = "40px";
+                    pistonRight.style.bottom = "160px";
+                    
+                    flowArrow.style.opacity = "0";
+                    osmPressureArrow.style.opacity = "1";
+                    
+                    let val = parseInt(osmConcSlider.value);
+                    if(osmLiveH) osmLiveH.innerText = (val * 0.4).toFixed(1);
+                    
+                } else {
+                    // Reset
+                    if(window.osmInterval) clearInterval(window.osmInterval);
+                    resetOsmosis();
+                }
+            });
+        }
+
+        // SIM: THISTLE FUNNEL (OSMOSIS VERIFICATION BEFORE PI)
+        const tfConcSlider = document.getElementById('tf_conc');
+        const tfConcVal = document.getElementById('tf_conc_val');
+        const tfStartBtn = document.getElementById('tf_start_btn');
+        const tfFluid = document.getElementById('tf_fluid');
+        const tfStatus = document.getElementById('tf_status');
+        const tfHeight = document.getElementById('tf_height');
+        const tfLiveC = document.getElementById('tf_live_c');
+        const tfLiveH = document.getElementById('tf_live_h');
+        const tfWaterParticles = document.getElementById('tf_water_particles');
+
+        let isTfRunning = false;
+        
+        if (tfWaterParticles) {
+            for(let i=0; i<40; i++) {
+                let p = document.createElement('div');
+                p.style.cssText = `width: 5px; height: 5px; background: rgba(255,255,255,0.5); border-radius: 50%; position: absolute; left: ${Math.random()*95}%; bottom: ${Math.random()*95}%;`;
+                tfWaterParticles.appendChild(p);
+            }
+        }
+
+        if (tfConcSlider) {
+            tfConcSlider.addEventListener('input', () => {
+                let val = parseInt(tfConcSlider.value);
+                if(val <= 3) tfConcVal.innerText = "Low (कम)";
+                else if(val <= 7) tfConcVal.innerText = "Medium (मध्यम)";
+                else tfConcVal.innerText = "High (उच्च)";
+                
+                if (tfLiveC) tfLiveC.innerText = val;
+
+                if (isTfRunning) {
+                    isTfRunning = false;
+                    tfFluid.style.height = "10%";
+                    tfStatus.innerText = "Equilibrium";
+                    tfHeight.innerText = "Level (h) = 0 mm";
+                    tfLiveH.innerText = "0";
+                    tfStartBtn.innerText = "Start Osmosis (परासरण) ▶";
+                    tfStartBtn.style.background = "#8b5cf6";
+                    tfStartBtn.onclick = null;
+                    tfStartBtn.addEventListener('click', startTFOsmosis);
+                }
+            });
+        }
+
+        function startTFOsmosis() {
+            if(isTfRunning) return;
+            isTfRunning = true;
+            tfStartBtn.innerText = "Osmosis in Progress...";
+            tfStartBtn.style.background = "#4f46e5";
+            tfStatus.innerText = "Fluid Rising ⬆";
+            
+            let val = parseInt(tfConcSlider.value);
+            let targetHeight = val * 9 + 10;
+            if(targetHeight > 100) targetHeight = 100;
+            
+            setTimeout(() => {
+                tfFluid.style.height = targetHeight + "%";
+                
+                let currentH = 0;
+                let maxH = val * 15;
+                let interval = setInterval(() => {
+                    currentH += 2;
+                    if(currentH >= maxH) {
+                        currentH = maxH;
+                        clearInterval(interval);
+                        tfStatus.innerText = "Max Level Reached";
+                        tfStartBtn.innerText = "Reset Simulator ↺";
+                        tfStartBtn.style.background = "#64748b";
+                        
+                        tfStartBtn.removeEventListener('click', startTFOsmosis);
+                        tfStartBtn.onclick = () => {
+                            isTfRunning = false;
+                            tfFluid.style.height = "10%";
+                            tfStatus.innerText = "Equilibrium";
+                            tfHeight.innerText = "Level (h) = 0 mm";
+                            tfLiveH.innerText = "0";
+                            tfStartBtn.innerText = "Start Osmosis (परासरण) ▶";
+                            tfStartBtn.style.background = "#8b5cf6";
+                            tfStartBtn.onclick = null;
+                            setTimeout(() => {
+                                tfStartBtn.addEventListener('click', startTFOsmosis);
+                            }, 50);
+                        };
+                    }
+                    tfHeight.innerText = `Level (h) = ${currentH} mm`;
+                    tfLiveH.innerText = (currentH * 0.05).toFixed(1);
+                }, 50);
+            }, 100);
+        }
+
+        if(tfStartBtn) tfStartBtn.addEventListener('click', startTFOsmosis);
+
+        // SIM: REVERSE OSMOSIS (RO)
+        const roStartBtn = document.getElementById('ro_start_btn');
+        const roPiston = document.getElementById('ro_piston');
+        const roStatus = document.getElementById('ro_status');
+        const roDrop = document.getElementById('ro_drop');
+        const roFlowArrow = document.getElementById('ro_flow_arrow');
+        const roPressureLabel = document.getElementById('ro_pressure_label');
+
+        let isRoRunning = false;
+        let roInterval = null;
+
+        if(roStartBtn) {
+            roStartBtn.addEventListener('click', () => {
+                if(!isRoRunning) {
+                    isRoRunning = true;
+                    roStartBtn.innerHTML = "Stop Pump (रोकें) 🛑";
+                    roStartBtn.style.background = "#64748b";
+                    roStatus.innerText = "Pex > π Applied! (दाब लगा)";
+                    roStatus.style.color = "#10b981";
+                    
+                    roPiston.style.top = "20px"; // Piston moves down hard
+                    roPressureLabel.innerText = "Pex > π";
+                    roPressureLabel.style.color = "#ef4444";
+                    
+                    roFlowArrow.style.opacity = "1";
+                    
+                    // Animate drops
+                    roDrop.style.opacity = "1";
+                    roDrop.style.transition = "top 0.5s cubic-bezier(0.5, 0, 1, 1)";
+                    
+                    roInterval = setInterval(() => {
+                        roDrop.style.transition = "none";
+                        roDrop.style.top = "-15px";
+                        setTimeout(() => {
+                            roDrop.style.transition = "top 0.4s cubic-bezier(0.5, 0, 1, 1)";
+                            roDrop.style.top = "40px";
+                        }, 50);
+                    }, 500);
+                    
+                } else {
+                    isRoRunning = false;
+                    roStartBtn.innerHTML = "Apply P<sub>ex</sub> &gt; π (दाब लगाएँ)";
+                    roStartBtn.style.background = "#e11d48";
+                    roStatus.innerText = "Standby (विश्राम)";
+                    roStatus.style.color = "#facc15";
+                    
+                    roPiston.style.top = "-10px"; // Piston returns
+                    roPressureLabel.innerText = "Piston";
+                    roPressureLabel.style.color = "white";
+                    
+                    roFlowArrow.style.opacity = "0";
+                    
+                    if(roInterval) clearInterval(roInterval);
+                    roDrop.style.opacity = "0";
+                }
+            });
+        }
+
         document.head.appendChild(simStyles);
-        document.head.appendChild(jitterStyle);
+        if (typeof jitterStyle !== 'undefined') document.head.appendChild(jitterStyle);
     </script>
 </body>
 </html>

@@ -12,10 +12,19 @@
     <!-- Animated Subtle Background -->
     <div class="bg-animation"></div>
 
-    <header class="hero">
+    <header class="hero" style="position: relative;">
+        <!-- LANGUAGE TOGGLE -->
+        <div style="position: absolute; top: 20px; right: 30px; display: flex; gap: 10px; background: rgba(0,0,0,0.3); padding: 5px; border-radius: 30px; z-index: 100;">
+            <button onclick="window.location.href='index.html'" style="background: #10b981; color: white; border: none; padding: 10px 20px; border-radius: 25px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.4);">🇮🇳 Hindi</button>
+            <button onclick="window.location.href='index_eng.html'" style="background: transparent; color: rgba(255,255,255,0.7); border: none; padding: 10px 20px; border-radius: 25px; font-weight: bold; cursor: pointer; transition: 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">🇬🇧 English</button>
+        </div>
+
         <div class="badge">प्रीमियम प्रोजेक्टर संस्करण (Class 12)</div>
         <h1>NCERT <span class="gradient-text">रसायन विज्ञान</span></h1>
         <p>संपूर्ण पाठ्यक्रम के लिए तैयार किए गए विस्तृत और उच्च गुणवत्ता वाले इंटरैक्टिव नोट्स।</p>
+        <p style="font-size: 1.1rem; color: #a7f3d0; margin-top: 15px; font-weight: 600; letter-spacing: 0.5px; background: rgba(0,0,0,0.2); padding: 8px 20px; border-radius: 20px; display: inline-block;">
+            ✨ विशेष सहयोग: ज्योत्सना मैम (Lecturer Chemistry), PM SHRI Govt. Sr. Sec. School, Devliya Kalan
+        </p>
     </header>
 
     <main class="container">

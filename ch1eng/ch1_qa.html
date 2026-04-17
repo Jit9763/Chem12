@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Master Q&A (English) - Chemistry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #059669;
+            --primary-dark: #064e3b;
+            --secondary: #10b981;
+            --accent: #8b5cf6;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --font-main: #000000;
+        }
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: var(--slate-50); color: var(--font-main); overflow-x: hidden; font-weight: 600; }
+        .header-banner { background: linear-gradient(135deg, var(--accent) 0%, #6d28d9 100%); color: white; padding: 60px 20px; text-align: center; border-radius: 0 0 60px 60px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .premium-badge { background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 100px; font-size: 1rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 15px; }
+        h1 { font-size: clamp(2rem, 6vw, 3.5rem); margin: 0; font-weight: 950; }
+        .part-container { padding: 50px 5vw; background: white; margin-top: -30px; border-radius: 60px 60px 0 0; box-shadow: 0 -20px 60px rgba(0,0,0,0.1); }
+        .qa-section-title { color: #1e293b; font-size: clamp(2rem, 5vw, 2.5rem); margin: 60px 0 30px 0; padding: 20px 30px; background: var(--slate-100); border-left: 15px solid var(--accent); border-radius: 0 30px 30px 0; font-weight: 900; }
+        .q-card { background: #ffffff; border: 2px solid #e2e8f0; border-radius: 20px; padding: 30px; margin-bottom: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
+        .q-num { background: var(--accent); color: white; padding: 5px 15px; border-radius: 10px; font-weight: 900; font-size: 1.2rem; margin-right: 15px; }
+        .q-text { font-size: 1.6rem; color: #0f172a; font-weight: 700; line-height: 1.6; margin-bottom: 10px; }
+        .ans-text { font-size: 1.5rem; color: #059669; font-weight: 600; margin-top: 15px; padding-top: 15px; border-top: 2px dashed #e2e8f0; }
+        
+        /* Math Fract Classes */
+        .math-frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-size: 0.9em; margin: 0 5px; font-weight: 850; line-height: 1.1; }
+        .math-top { border-bottom: 3px solid currentColor; padding: 0 5px 2px 5px; }
+        .math-bot { padding: 2px 5px 0 5px; }
+        
+        .mcq-options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .mcq-opt { background: #f8fafc; padding: 15px 20px; border-radius: 12px; border: 2px solid #cbd5e1; font-size: 1.4rem; font-weight: 600; transition: 0.3s; }
+        .mcq-opt.correct { background: #d1fae5; border-color: #10b981; color: #064e3b; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2); position:relative;}
+        .mcq-opt.correct::after { content: "✓ Correct"; position:absolute; right: 15px; background: #059669; color: white; padding: 2px 8px; border-radius: 10px; font-size: 1rem; }
+        .nav-buttons { display: flex; justify-content: center; padding: 40px; }
+        .nav-btn { background: #1e293b; color: white; padding: 20px 40px; border-radius: 100px; text-decoration: none; font-weight: 900; font-size: 1.4rem; }
+        
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <div class="premium-badge">Class 12 - Chapter 1</div>
+        <h1>Master Q&A Bank</h1>
+        <p style="font-size: 1.3rem; margin-top: 15px; font-weight: 600; opacity: 0.9;">Solutions - Board Exam Preparation</p>
+    </div>
+    <div class="part-container">
+
+        <div class="qa-section-title" style="border-left-color: #f43f5e; background: #fff1f2;">🔴 Multiple Choice Questions - 20</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q1</span>
+                <div class="q-text">The unit of Molarity is:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. mol/L</div><div class="mcq-opt ">B. mol/kg</div><div class="mcq-opt ">C. g/L</div><div class="mcq-opt ">D. mol</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q2</span>
+                <div class="q-text">Which concentration term is affected by Temperature?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. Molarity</div><div class="mcq-opt ">B. Molality</div><div class="mcq-opt ">C. Mole Fraction</div><div class="mcq-opt ">D. Mass Percentage</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q3</span>
+                <div class="q-text">Solutions that obey Raoult's Law are called:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. Ideal Solutions</div><div class="mcq-opt ">B. Non-ideal Solutions</div><div class="mcq-opt ">C. Supersaturated Solutions</div><div class="mcq-opt ">D. Colloidal Solutions</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q4</span>
+                <div class="q-text">Which of the following is NOT a colligative property?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. Osmotic Pressure</div><div class="mcq-opt ">B. Depression in Freezing Point</div><div class="mcq-opt correct">C. Vapour Pressure</div><div class="mcq-opt ">D. Elevation in Boiling Point</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q5</span>
+                <div class="q-text">The osmotic pressure of blood is equivalent to:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. 0.9% NaCl</div><div class="mcq-opt ">B. 0.1% NaCl</div><div class="mcq-opt ">C. 9.0% NaCl</div><div class="mcq-opt ">D. 1.0% NaCl</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q6</span>
+                <div class="q-text">The Van't Hoff factor (i) for NaCl in aqueous solution is approximately:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. 1</div><div class="mcq-opt correct">B. 2</div><div class="mcq-opt ">C. 0.5</div><div class="mcq-opt ">D. 3</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q7</span>
+                <div class="q-text">What is the vapour pressure of a solution compared to pure solvent?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. More than solvent</div><div class="mcq-opt correct">B. Less than solvent</div><div class="mcq-opt ">C. Equal to solvent</div><div class="mcq-opt ">D. Zero</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q8</span>
+                <div class="q-text">Henry's Law is related to:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. Solubility of gases in liquids</div><div class="mcq-opt ">B. Solubility of solids in liquids</div><div class="mcq-opt ">C. Solubility of liquids in liquids</div><div class="mcq-opt ">D. Vapour Pressure</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q9</span>
+                <div class="q-text">What will be the Van't Hoff factor of Acetic Acid in benzene?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. 1.0</div><div class="mcq-opt ">B. 2.0</div><div class="mcq-opt correct">C. 0.5</div><div class="mcq-opt ">D. 0.0</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q10</span>
+                <div class="q-text">Why is Helium added to scuba diver's cylinders?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. For taste</div><div class="mcq-opt correct">B. To reduce solubility of N2</div><div class="mcq-opt ">C. For color</div><div class="mcq-opt ">D. To increase pressure</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q11</span>
+                <div class="q-text">The formula for Mole Fraction of solute is:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. n/(n+N)</div><div class="mcq-opt ">B. N/(n+N)</div><div class="mcq-opt ">C. n/V</div><div class="mcq-opt ">D. W/M</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q12</span>
+                <div class="q-text">What is the molarity of pure water?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. 18 M</div><div class="mcq-opt ">B. 50 M</div><div class="mcq-opt correct">C. 55.5 M</div><div class="mcq-opt ">D. 100 M</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q13</span>
+                <div class="q-text">Colligative properties depend on:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. Nature of particles</div><div class="mcq-opt ">B. Size of particles</div><div class="mcq-opt correct">C. Number of particles</div><div class="mcq-opt ">D. Temperature</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q14</span>
+                <div class="q-text">In osmosis, what flows through the semipermeable membrane (SPM)?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. Solute particles</div><div class="mcq-opt correct">B. Solvent particles</div><div class="mcq-opt ">C. Complex ions</div><div class="mcq-opt ">D. Gas molecules</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q15</span>
+                <div class="q-text">The Van't Hoff factor for Urea is:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. 1</div><div class="mcq-opt ">B. 2</div><div class="mcq-opt ">C. 3</div><div class="mcq-opt ">D. 0.5</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q16</span>
+                <div class="q-text">Non-ideal solutions showing positive deviation have:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. ∆H mix > 0</div><div class="mcq-opt ">B. ∆H mix < 0</div><div class="mcq-opt ">C. ∆H mix = 0</div><div class="mcq-opt ">D. ∆V mix < 0</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q17</span>
+                <div class="q-text">The boiling point of an Azeotropic mixture is:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. Variable</div><div class="mcq-opt correct">B. Constant</div><div class="mcq-opt ">C. Zero</div><div class="mcq-opt ">D. Infinite</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q18</span>
+                <div class="q-text">The unit of Ebullioscopic constant (Kb) is:</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. K kg mol⁻¹</div><div class="mcq-opt ">B. K mol kg⁻¹</div><div class="mcq-opt ">C. K kg⁻¹ mol</div><div class="mcq-opt ">D. mol kg⁻¹</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q19</span>
+                <div class="q-text">Which will have maximum osmotic pressure (all 0.1M)?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt ">A. NaCl</div><div class="mcq-opt ">B. Glucose</div><div class="mcq-opt correct">C. BaCl₂</div><div class="mcq-opt ">D. Urea</div></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q20</span>
+                <div class="q-text">What is used to clear snow from roads in cold countries?</div>
+            </div>
+            <div class="mcq-options"><div class="mcq-opt correct">A. NaCl / CaCl₂</div><div class="mcq-opt ">B. Urea</div><div class="mcq-opt ">C. Glucose</div><div class="mcq-opt ">D. Aluminium</div></div>
+        </div>
+        
+        <div class="qa-section-title" style="border-left-color: #10b981; background: #ecfdf5;">🟢 Short Answer Questions - 10</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q1</span>
+                <div class="q-text">Between Molarity and Molality, which is affected by temperature and why?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Ans:</b> Molarity is affected by temperature because it depends on the Volume of the solution, which changes with temperature. Molality depends solely on the mass of the solvent, hence it remains completely independent of temperature changes.</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q2</span>
+                <div class="q-text">Write any two limitations of Henry's Law.</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Ans:</b> (1) The pressure of the gas should not be extremely high and the temperature should not be extremely low. (2) The gas should not undergo any chemical reaction or dissociation/association in the solvent (e.g., NH₃ in water forms NH₄OH, so Henry's law fails here).</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q3</span>
+                <div class="q-text">What are Colligative Properties?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Ans:</b> All physical properties of a solution that depend exclusively on the total number of solute particles (ions or molecules) present in the solution, and not on the chemical nature of the solute, are termed Colligative Properties.</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q4</span>
+                <div class="q-text">What is a Semipermeable Membrane (SPM)?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Ans:</b> It is a special selective membrane that allows only the small molecules of the solvent to pass through its pores, effectively preventing the passage of larger solute molecules. Example: Copper ferrocyanide (Cu₂[Fe(CN)₆]) artificial membrane.</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q5</span>
+                <div class="q-text">Define Van't Hoff factor (i).</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Ans:</b> The ratio of the experimentally observed value of a colligative property to the theoretically calculated value of that property is called the Van't Hoff factor. It is denoted by 'i'.<br><br> i = <span class='math-frac'><span class='math-top'>Observed Colligative Property</span><span class='math-bot'>Theoretical Colligative Property</span></span> &nbsp; or &nbsp; i = <span class='math-frac'><span class='math-top'>Normal Molar Mass</span><span class='math-bot'>Abnormal Molar Mass</span></span></div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q6</span>
+                <div class="q-text">What are Ideal Solutions?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Ans:</b> Solutions that strictly obey Raoult's Law across all ranges of temperature and concentration are termed Ideal Solutions. Upon the formation of an ideal solution, the enthalpy of mixing (∆H_mix) is zero and the volume of mixing (∆V_mix) is also zero.</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q7</span>
+                <div class="q-text">Write Raoult's Law.</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Ans:</b> According to Raoult's law, at a given constant temperature, for a solution containing volatile liquids, the partial vapour pressure of each liquid component in the solution is directly proportional to its mole fraction (P₁ = P₁° × X₁).</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q8</span>
+                <div class="q-text">Write the formula for Osmotic Pressure.</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Ans:</b> According to the Van't Hoff equation, the formula for Osmotic Pressure is: π = CRT. (Where π = Osmotic Pressure, C = Molar concentration of solution, R = Universal gas/solution constant, T = Absolute Temperature in Kelvin). If dissociation/association occurs, the formula is π = iCRT.</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q9</span>
+                <div class="q-text">What is Reverse Osmosis (RO)?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Ans:</b> If an external pressure greater than the osmotic pressure (π) is applied to the solution side (higher concentration), the solvent molecules start flowing in the reverse direction, i.e., from the solution into the pure solvent area. This phenomenon is called Reverse Osmosis. Its primary application is the desalination of seawater.</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q10</span>
+                <div class="q-text">What are Azeotropic mixtures?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Ans:</b> A liquid mixture composed of two or more distinct volatile liquids which has exactly the same composition in both liquid phase and vapour phase, and which boils at a constant, identical temperature without undergoing any fractional change is called an Azeotropic mixture.</div>
+        </div>
+        
+        <div class="qa-section-title" style="border-left-color: #3b82f6; background: #eff6ff;">🔵 Long Answer Questions - 5</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q1</span>
+                <div class="q-text">Explain Raoult's Law and differentiate between Ideal and Non-ideal solutions based on it.</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>Ans:</b> <br><br>
+<b>Raoult's Law:</b><br>
+French chemist Raoult formulated a law in 1886 for solutions of volatile liquids. According to this law — 'At a given temperature, for a solution of volatile liquids, the partial vapour pressure of each component in the solution is directly proportional to its mole fraction.'<br>
+If a solution contains two volatile components A and B, according to Raoult's law: <br>
+<span style="font-family:serif; font-size:1.9rem; font-weight:800; background:#f1f5f9; padding:5px 15px; border-radius:8px;">P_A ∝ X_A  ⟹  P_A = P_A° × X_A</span> <br>
+<span style="font-family:serif; font-size:1.9rem; font-weight:800; background:#f1f5f9; padding:5px 15px; border-radius:8px;">P_B ∝ X_B  ⟹  P_B = P_B° × X_B</span> <br>
+Where P_A° and P_B° are vapour pressures in the pure state. By Dalton's law of partial pressures, the total vapour pressure is P_total = P_A + P_B = P_A°X_A + P_B°X_B. <br><br>
+
+<b>Difference between Ideal and Non-Ideal Solutions:</b><br><br>
+<table border="1" cellspacing="0" cellpadding="10" style="width:100%; border-collapse:collapse; font-size:1.5rem; text-align:left;">
+  <tr style="background:#dbeafe; color:#1e3a8a;">
+    <th>Property</th>
+    <th>Ideal Solution</th>
+    <th>Non-Ideal Solution</th>
+  </tr>
+  <tr>
+    <td style="font-weight:bold;">1. Raoult's Law</td>
+    <td>Strictly obeys Raoult's law under all ranges of temperature and concentration (P_A = P_A°X_A).</td>
+    <td>Does NOT obey Raoult's law (P_A ≠ P_A°X_A).</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold;">2. Enthalpy Change (∆H)</td>
+    <td>Enthalpy of mixing is zero (∆H_mix = 0). No heat is absorbed or evolved.</td>
+    <td>Enthalpy of mixing is not zero (∆H_mix ≠ 0). Heat is either absorbed or evolved.</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold;">3. Volume Change (∆V)</td>
+    <td>Volume of mixing is zero (∆V_mix = 0).</td>
+    <td>Volume of mixing is not zero (∆V_mix ≠ 0). Volume expands or contracts.</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold;">4. Intermolecular forces</td>
+    <td>Attractive forces between A-A & B-B are perfectly identical to A-B forces.</td>
+    <td>Attractive forces between A-A & B-B are stronger/weaker than A-B forces.</td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold;">5. Examples</td>
+    <td>Benzene + Toluene, n-Hexane + n-Heptane</td>
+    <td>Ethanol + Acetone (Positive dev.), Chloroform + Acetone (Negative dev.)</td>
+  </tr>
+</table>
+</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q2</span>
+                <div class="q-text">What do you understand by Elevation in Boiling Point? Derive the formula to calculate molar mass of solute.</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>Ans:</b> <br><br>
+<b>Elevation in Boiling Point:</b><br>
+The boiling point of a liquid is the temperature at which its vapour pressure becomes precisely equal to the external atmospheric pressure (usually 1 atm). 
+When a non-volatile solute is added to a pure volatile solvent, the vapour pressure of the resultant solution always decreases compared to the pure solvent. 
+Because of this lowered vapour pressure, the solution must be heated to a significantly higher temperature so its vapour pressure can reach 1 atm. 
+Therefore, the boiling point of the solution is greater than that of the pure solvent. This specific increase in boiling point is called the <b>Elevation in Boiling Point (∆T_b)</b>.<br>
+<b>∆T_b = T_b (Boiling point of solution) – T_b° (Boiling point of pure solvent)</b><br><br>
+
+<b>Derivation of Molar Mass Formula:</b><br>
+Experimentally, it has been conclusively proven that for dilute solutions, the elevation in boiling point (∆T_b) is directly proportional to the molal concentration (molality, m) of the solute in the solution.<br>
+∆T_b ∝ m <br>
+<b style="color:#1d4ed8;">∆T_b = K_b × m</b> &nbsp;&nbsp; ......(Equation 1)<br>
+(Where K_b is the Ebullioscopic constant or molal elevation constant, and m is molality, which is moles of solute dissolved per 1000 g of solvent).<br><br>
+Molality (m) = <span class="math-frac"><span class="math-top">Mass of solute (W_B)</span><span class="math-bot">Molar Mass of solute (M_B)</span></span> × <span class="math-frac"><span class="math-top">1000</span><span class="math-bot">Mass of solvent (W_A)</span></span> <br><br>
+Substituting the value of molality (m) in Equation 1, we get:<br>
+∆T_b = K_b × <div class="math-frac"><div class="math-top">W_B × 1000</div><div class="math-bot">M_B × W_A</div></div> <br><br>
+Rearranging the formula to find the Molar Mass of the solute (M_B):<br>
+<div style="background:#bfdbfe; border: 2px solid #3b82f6; padding: 15px; border-radius:10px; font-weight:800; font-size:1.8rem; font-family:serif; display:inline-block; margin-top:10px;">
+  M_B = <div class="math-frac"><div class="math-top">1000 × K_b × W_B</div><div class="math-bot">∆T_b × W_A</div></div>
+</div>
+</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q3</span>
+                <div class="q-text">What is Osmotic Pressure? Describe the Berkeley-Hartley method.</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>Ans:</b> <br><br>
+<b>Osmotic Pressure:</b><br>
+When a solution is completely separated from its pure solvent by a Semipermeable Membrane (SPM), the solvent molecules intrinsically begin flowing through the membrane into the solution (Osmosis). 
+The <b>minimum excess external pressure</b> that must be applied precisely to the solution side in order to just stop this flow of solvent (stop osmosis) is defined as the Osmotic Pressure (π) of the solution.<br><br>
+
+<b>Berkeley-Hartley Method:</b><br>
+This is the most superior and modern laboratory method to precisely and safely measure osmotic pressure.<br>
+<b>Principle:</b> This method utilizes a robust artificial semipermeable membrane made of Copper Ferrocyanide (Cu₂[Fe(CN)₆]).<br>
+<b>Apparatus & Working:</b><br>
+1. The apparatus consists of a central porous tube containing the artificial copper ferrocyanide membrane deposited within its pores. This inner tube is filled completely with pure water (solvent).<br>
+2. One end of this porous tube is fitted with a water reservoir, and the other end is fitted with a fine capillary tube to observe the water level.<br>
+3. This inner tube is enclosed within an outer strong Gun-metal jacket/cylinder containing the solution whose osmotic pressure is to be determined. A pressure gauge and a mechanical pressure piston are connected to this outer jacket.<br>
+4. Initially, due to natural osmosis, water molecules from the inner tube flow outwards into the surrounding solution. As a result, the water level visibly drops in the capillary indicator tube.<br>
+5. Slowly, external pressure is strategically applied onto the solution via the piston. Pressure is increased just enough so that the falling water level in the capillary is forced back to its exact original initial mark, and becomes stationary.<br>
+6. This stationary level indicates that the external pressure applied has exactly counterbalanced and stopped the osmosis process. This pressure is read directly from the pressure gauge, giving the exact Osmotic Pressure of the solution.
+</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q4</span>
+                <div class="q-text">What is Depression in Freezing Point? How will you determine the molar mass of a non-volatile solute based on it?</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>Ans:</b> <br><br>
+<b>Depression in Freezing Point:</b><br>
+The freezing point of a substance is defined strictly as the temperature at which its liquid phase and solid phase exist together in dynamic equilibrium, meaning both phases have precisely the exact same vapour pressure.
+When a non-volatile solute is dissolved into a pure solvent, the vapour pressure of the resulting solution abruptly decreases.
+Due to this significant lowering of vapour pressure, the solution will now freeze at a noticeably lower temperature compared to the pure solvent. 
+This distinct decrease or drop in the freezing temperature is called the <b>Depression in Freezing Point (∆T_f)</b>.<br>
+<b>∆T_f = T_f° (Freezing Point of pure solvent) – T_f (Freezing point of solution)</b><br><br>
+
+<b>Determination of Molar Mass:</b><br>
+Experimentally and consistently with Raoult's Law, for very dilute solutions, this depression in freezing point is directly directly proportional to the molal concentration (molality, m) of the solute.<br>
+∆T_f ∝ m <br>
+<b style="color:#1d4ed8;">∆T_f = K_f × m</b> &nbsp;&nbsp; (Where K_f is the Cryoscopic constant or molal depression constant).<br><br>
+We know that Molality (m) = <span class="math-frac"><span class="math-top">W_B × 1000</span><span class="math-bot">M_B × W_A</span></span> <br>
+Substituting this value into the equation gives: <br>
+∆T_f = K_f × <span class="math-frac"><span class="math-top">W_B × 1000</span><span class="math-bot">M_B × W_A</span></span> <br><br>
+Rearranging for Molar mass of the non-volatile solute (M_B):<br>
+<div style="background:#bfdbfe; border: 2px solid #3b82f6; padding: 15px; border-radius:10px; font-weight:800; font-size:1.8rem; font-family:serif; display:inline-block; margin-top:10px;">
+  M_B = <div class="math-frac"><div class="math-top">1000 × K_f × W_B</div><div class="math-bot">∆T_f × W_A</div></div>
+</div>
+</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q5</span>
+                <div class="q-text">What is Abnormal Molar Mass? How is the degree of dissociation and association calculated using the Van't Hoff factor?</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>Ans:</b> <br><br>
+<b>Abnormal Molar Mass:</b><br>
+When a solute is dissolved into a solvent, and it either splits violently into multiple ions (Dissociation) or its molecules hydrogen-bond together to form larger dimers/polymers (Association), the total aggregate number of particles in the solution changes unpredictably.
+Since experimental Molar Mass is mathematically inversely proportional inversely to the number of particles (colligative properties), the experimentally observed molar mass of the solute turns out to be entirely different (either falsely higher or lower) from its true, normal expected molar mass.
+This drastically altered or incorrect molar mass is termed identically as 'Abnormal Molar Mass'.<br><br>
+
+<b>Van't Hoff Factor (i):</b><br>
+Dutch scientist Jacobus Henricus van 't Hoff elegantly introduced the factor 'i' to explicitly account for this extreme deviation.<br>
+i = <span class="math-frac"><span class="math-top">Total observed moles of particles after dissociation/association</span><span class="math-bot">Normal initial moles of particles before dissociation/association</span></span><br><br>
+
+<b>1. Calculating Degree of Dissociation (α):</b><br>
+If one molecule breaks apart entirely to yield 'n' ions (e.g., NaCl yields 2 ions, thus n=2):<br>
+Formula: <b style="background:#dbeafe; padding:5px 8px; border-radius:5px; display:inline-block; margin:5px 0;">α = <span class="math-frac"><span class="math-top">i - 1</span><span class="math-bot">n - 1</span></span></b><br>
+If the solute is 100% completely dissociated (strong electrolyte, α = 1), then fundamentally i = n.<br><br>
+
+<b>2. Calculating Degree of Association (α):</b><br>
+If 'n' discrete molecules bond together to form 1 single associated molecule (e.g., 2 Acetic acid molecules form 1 dimer, thus n=2):<br>
+Formula: <b style="background:#dbeafe; padding:5px 8px; border-radius:5px; display:inline-block; margin:5px 0;">α = <span class="math-frac"><span class="math-top">1 - i</span><span class="math-bot">1 - <span class="math-frac"><span class="math-top">1</span><span class="math-bot">n</span></span></span></span></b>  &nbsp; or &nbsp; <b style="background:#dbeafe; padding:5px 8px; border-radius:5px; display:inline-block; margin:5px 0;">α = <span class="math-frac"><span class="math-top">i - 1</span><span class="math-bot"><span class="math-frac"><span class="math-top">1</span><span class="math-bot">n</span></span> - 1</span></span></b><br>
+Because the total number of particles dramatically decreases, the value of 'i' for association is universally less than 1 (i < 1).
+</div>
+        </div>
+        
+        <div class="qa-section-title" style="border-left-color: #8b5cf6; background: #faf5ff;">🟣 Numericals - 5</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q1</span>
+                <div class="q-text">5.85g of NaCl is dissolved in 200 ml water. Calculate the Molarity of the solution. (Na=23, Cl=35.5)</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>Solution:</b><br>Given Data:<br>Mass of NaCl (W_B) = 5.85 g<br>Volume of Solution (V) = 200 ml<br>Molar Mass of NaCl (M_B) = (23 + 35.5) = 58.5 g/mol<br><br>Molarity Formula:<br>M = <span class='math-frac'><span class='math-top'>W_B × 1000</span><span class='math-bot'>M_B × V</span></span><br><br>M = <span class='math-frac'><span class='math-top'>5.85 × 1000</span><span class='math-bot'>58.5 × 200</span></span><br><br>M = <span class='math-frac'><span class='math-top'>5850</span><span class='math-bot'>11700</span></span> = <span class='math-frac'><span class='math-top'>1</span><span class='math-bot'>2</span></span> = <b>0.5 M</b><br><br>Therefore, the molarity of the solution is 0.5 M (mol/L).</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q2</span>
+                <div class="q-text">Calculate the osmotic pressure of 5% urea (M=60) aqueous solution at 298 K. (R=0.0821 L atm/K mol)</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>Solution:</b><br>Given Data:<br>5% aqueous solution implies: Mass of Urea (W_B) = 5 g in 100 ml solution.<br>Volume of Solution (V) = 100 ml = 0.1 L<br>Molar Mass of Urea (M_B) = 60 g/mol<br>Temperature (T) = 298 K<br>Universal Gas Constant (R) = 0.0821 L atm K⁻¹ mol⁻¹<br><br>Osmotic Pressure (π) from Van't Hoff Equation:<br>π = CRT  or  π = <span class='math-frac'><span class='math-top'>n</span><span class='math-bot'>V</span></span>RT  or  π = <span class='math-frac'><span class='math-top'>W_B</span><span class='math-bot'>M_B × V</span></span> × R × T<br><br>π = <span class='math-frac'><span class='math-top'>5</span><span class='math-bot'>60 × 0.1</span></span> × 0.0821 × 298<br><br>π = <span class='math-frac'><span class='math-top'>5</span><span class='math-bot'>6</span></span> × 24.4658<br><br>π = 0.8333 × 24.4658 = <b>20.38 atm</b><br><br>Thus, the osmotic pressure is firmly 20.38 atm.</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q3</span>
+                <div class="q-text">Dissolving 10g of a non-volatile solute in 100g benzene raises the boiling point by 1°C. Calculate the molar mass of the solute. (K_b = 2.53)</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>Solution:</b><br>Given Data:<br>Mass of Solute (W_B) = 10 g<br>Mass of Solvent, Benzene (W_A) = 100 g<br>Elevation in Boiling Point (∆T_b) = 1 °C<br>Molal Elevation Constant (K_b) = 2.53 K kg mol⁻¹<br><br>Formula for Molar Mass (M_B):<br>M_B = <span class='math-frac'><span class='math-top'>1000 × K_b × W_B</span><span class='math-bot'>∆T_b × W_A</span></span><br><br>M_B = <span class='math-frac'><span class='math-top'>1000 × 2.53 × 10</span><span class='math-bot'>1 × 100</span></span><br><br>M_B = <span class='math-frac'><span class='math-top'>25300</span><span class='math-bot'>100</span></span> = <b>253 g/mol</b><br><br>Therefore, the precise molar mass of the non-volatile solute is 253 g/mol.</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q4</span>
+                <div class="q-text">H2S is a toxic gas; its solubility in water at STP is 0.195m. Calculate Henry's constant (K_H).</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>Solution:</b><br>Solubility = 0.195 m (molal)<br>This essentially means there are 0.195 moles of H₂S gas (n_H2S) completely dissolved in 1000 grams (1 kg) of pure water.<br>Mass of water = 1000 g, Molar mass of water = 18 g/mol<br>Moles of water (n_H2O) = <span class='math-frac'><span class='math-top'>1000</span><span class='math-bot'>18</span></span> = 55.55 moles<br><br>Calculating Mole Fraction of H₂S (X_H2S):<br>X_H2S = <span class='math-frac'><span class='math-top'>n_H2S</span><span class='math-bot'>n_H2S + n_H2O</span></span><br><br>X_H2S = <span class='math-frac'><span class='math-top'>0.195</span><span class='math-bot'>0.195 + 55.55</span></span> = <span class='math-frac'><span class='math-top'>0.195</span><span class='math-bot'>55.745</span></span> = <b>0.0035</b><br><br>At STP conditions, standard pressure (P) = 0.987 bar (often approximated as 1 bar in textbooks)<br>Applying Henry's Law: P = K_H × X_H2S<br>Therefore, K_H = <span class='math-frac'><span class='math-top'>P</span><span class='math-bot'>X_H2S</span></span><br><br>K_H = <span class='math-frac'><span class='math-top'>0.987</span><span class='math-bot'>0.0035</span></span> = <b>282 bar</b><br><br>The calculated Henry's Law constant is 282 bar.</div>
+        </div>
+        
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q5</span>
+                <div class="q-text">The Van't Hoff factor for 1m NaCl solution is 1.9. Calculate its degree of dissociation (α).</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>Solution:</b><br>Given Data: i = 1.9<br>NaCl is a notoriously strong electrolyte that rapidly completely dissociates into exactly two distinct ions in water:<br>NaCl ⟶ Na⁺  +  Cl⁻<br>Thus, here 'n' (total number of discrete ions yielded) = 2<br><br>Formula for the Degree of Dissociation (α):<br>α = <span class='math-frac'><span class='math-top'>i - 1</span><span class='math-bot'>n - 1</span></span><br><br>Substituting the known values:<br>α = <span class='math-frac'><span class='math-top'>1.9 - 1</span><span class='math-bot'>2 - 1</span></span><br><br>α = <span class='math-frac'><span class='math-top'>0.9</span><span class='math-bot'>1</span></span> = <b>0.9</b><br><br>Converting to Percentage Dissociation:<br>α% = 0.9 × 100% = <b>90%</b><br><br>Therefore, the NaCl strongly dissociates by exactly 90% in this specific solution.</div>
+        </div>
+        
+        <div class="qa-section-title" style="border-left-color: #f59e0b; background: #fffbeb;">🟠 Board/PYQ Questions</div>
+        <div class="q-card" style="border-color: #fcd34d;">
+
+            <div style="display:flex; align-items:flex-start; margin-bottom: 30px;">
+                <span class="q-num" style="background:#f59e0b;">B1</span>
+                <div>
+                    <div class="q-text">Give an example of a non-ideal solution showing positive deviation. <span style='color:#d97706; font-size:1.2rem;'>(RBSE 2019)</span></div>
+                    <div class="ans-text" style="color:#92400e; border-top:none; margin-top:5px; padding-top:0;"><b>Ans:</b> A solution of Ethanol and Acetone perfectly exemplifies this. In this mixture, the new A-B intermolecular attractive forces become significantly weaker than the pure A-A and B-B forces, causing the molecules to escape easily and vapour pressure to rise above Raoult's prediction.</div>
+                </div>
+            </div>
+        
+            <div style="display:flex; align-items:flex-start; margin-bottom: 30px;">
+                <span class="q-num" style="background:#f59e0b;">B2</span>
+                <div>
+                    <div class="q-text">What are isotonic solutions? <span style='color:#d97706; font-size:1.2rem;'>(RBSE 2020)</span></div>
+                    <div class="ans-text" style="color:#92400e; border-top:none; margin-top:5px; padding-top:0;"><b>Ans:</b> Isotonic solutions are any two distinct solutions having exactly the same identical osmotic pressure (π₁ = π₂) at identically the same given temperature. Crucially, when these solutions are physically separated exclusively by a semipermeable membrane, absolutely no net osmosis flow occurs between them.</div>
+                </div>
+            </div>
+        
+            <div style="display:flex; align-items:flex-start; margin-bottom: 30px;">
+                <span class="q-num" style="background:#f59e0b;">B3</span>
+                <div>
+                    <div class="q-text">Why is Helium added to scuba diver's cylinders? <span style='color:#d97706; font-size:1.2rem;'>(RBSE 2022)</span></div>
+                    <div class="ans-text" style="color:#92400e; border-top:none; margin-top:5px; padding-top:0;"><b>Ans:</b> Deep underwater at extreme high pressure, nitrogen gas from regular air viciously dissolves into the diver's blood in massively massive quantities. When the diver ascends swiftly back to the surface, the atmospheric pressure violently plummets, causing the dissolved nitrogen to rapidly bubble out inside the blood capillaries. This severely blocks blood flow and triggers an intensely painful, agonizing, and potentially fatal medical condition famously known as the <b>'Bends'</b>. Because Helium maintains exceedingly low solubility in blood even under crushing underwater pressure, it is meticulously mixed into scuba cylinders to flawlessly eliminate this life-threatening risk.</div>
+                </div>
+            </div>
+                </div>
+
+    </div>
+    <div class="nav-buttons">
+        <a href="../index_eng.html" class="nav-btn">🏠 Main Hub</a>
+    </div>
+</body>
+</html>

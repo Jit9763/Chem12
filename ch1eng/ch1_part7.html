@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Part 7 - Chemistry (Class 12)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* EMERALD EARTH STYLE & MASTER PLAN SPECIFICATIONS */
+        :root {
+            --primary: #059669;
+            --primary-dark: #064e3b;
+            --secondary: #10b981;
+            --accent: #38bdf8;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --font-main: #000000;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Outfit', sans-serif; 
+            background: var(--slate-50); 
+            color: var(--font-main); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 600;
+        }
+
+        .header-banner { 
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #065f46 100%); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-radius: 0 0 60px 60px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .premium-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .header-banner h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            margin: 0; 
+            font-weight: 950; 
+            line-height: 1.1;
+        }
+
+        .part-container { 
+            width: 100%;
+            max-width: 100vw;
+            padding: 80px 6vw; 
+            box-sizing: border-box;
+            background: white; 
+            margin-top: -40px;
+            border-radius: 60px 60px 0 0;
+            box-shadow: 0 -20px 60px rgba(0,0,0,0.1);
+        }
+
+        h2 { 
+            color: var(--primary-dark); 
+            font-size: clamp(2rem, 5.5vw, 3.5rem); 
+            border-left: 20px solid var(--primary); 
+            padding: 25px 40px; 
+            background: linear-gradient(to right, #f0fdf4, transparent); 
+            border-radius: 0 40px 40px 0; 
+            margin: 100px 0 60px 0;
+            font-weight: 900;
+        }
+
+        h3 { 
+            color: var(--primary); 
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem); 
+            border-bottom: 6px solid #d1fae5; 
+            display: inline-block; 
+            padding-bottom: 15px; 
+            margin: 80px 0 40px 0; 
+            font-weight: 900;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 50px;
+            padding: 50px;
+            border: 3px solid var(--slate-100);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .formula-card {
+            background: #fffbfa;
+            border: 3px solid #ffe4e6;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin: 30px 0;
+            font-weight: 800;
+            color: #881337;
+        }
+
+        .sim-container {
+            background: #020617;
+            padding: 50px;
+            border-radius: 50px;
+            color: white;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+            margin-bottom: 80px;
+        }
+
+        .sim-header {
+            color: var(--accent);
+            font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+            margin: 60px 0 20px 0;
+            padding-left: 20px;
+            border-left: 10px solid var(--accent);
+            font-weight: 900;
+        }
+
+        .nav-buttons { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 60px 0vw 40px; 
+            background: transparent; 
+            margin-top: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-btn { 
+            background: var(--primary); 
+            color: white; 
+            padding: 22px 50px; 
+            border-radius: 100px; 
+            text-decoration: none; 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+            transition: 0.3s;
+        }
+
+        /* MATH FRACTION SYSTEM */
+        .math-frac {
+            display: inline-flex;
+            flex-direction: column;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 0.9em;
+            margin: 0 5px;
+            font-weight: 850;
+        }
+        .math-top { border-bottom: 2px solid currentColor; padding: 0 5px; }
+        .math-bot { padding: 0 5px; }
+
+        @media (max-width: 1000px) {
+            .part-container { padding: 40px 0; border-radius: 0; }
+            .content-card { border-radius: 0; border-left: none; border-right: none; }
+            .nav-buttons { justify-content: center; padding: 40px 20px; }
+            h2 { border-radius: 0; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <div class="premium-badge">प्रीमियम प्रोजेक्टर संस्करण (Premium Edition)</div>
+        <h1>Chapter 1: Solutions (Part 7)<br><span style="font-size: 0.5em; opacity: 0.8; font-weight: 800;">(Abnormal Molar Mass & Van't Hoff Factor)</span></h1>
+    </div>
+
+    <div class="part-container">
+        
+        <!-- TITLE HEADER -->
+        <h2 style="border-left-color: #f43f5e; margin-top: 0;">❖ Abnormal Molar Mass (Abnormal Molar Mass) -</h2>
+        <div class="content-card">
+            <ul style="font-size: 1.8rem; color: #1e293b; line-height: 1.8; margin-left: 20px;">
+                <li style="margin-bottom: 10px;">Solute + Solvent = Ionization/Association = Change in Number of Particles = Change in Colligative Properties</li>
+                <li style="margin-bottom: 10px;">Molecular mass of Solute is inversely proportional to Colligative Properties</li>
+                <li style="margin-bottom: 10px;">When the experimental Molar Mass is different (less/more) from the true Molar Mass, it is called <b style="color: #e11d48;">Abnormal Molar Mass</b> कहलाता है</li>
+            </ul>
+
+            <h3 style="color: #0f172a; font-size: 2.2rem; margin-top: 30px; border-bottom: 2px dashed #cbd5e1; padding-bottom: 10px;">(A) Dissociation of Solute Particles (वियोजन/आयनन) : &nbsp;&nbsp;&nbsp; <span style="font-family: serif; font-size: 2.5rem;">AB ⇌ A⁺ + B⁻</span></h3>
+            <p style="font-size: 1.8rem; color: #475569; line-height: 1.8;">
+                Ionic solutes dissolve in solvent and dissociate into two or more particles. Due to this, the number of particles increases, causing colligative properties to increase, which lowers the molecular mass.
+            </p>
+            <div style="background: rgba(244, 63, 94, 0.05); padding: 25px; border-radius: 20px; border: 2px solid #fda4af; margin-top: 20px;">
+                <p style="font-size: 1.7rem; color: #334155; line-height: 1.8; font-weight: 500;">
+                    <b>Example 1:</b> If 1 mole of NaCl, CaCl₂, or K₄[Fe(CN)₆] is dissolved in water with 100% ionization, what will be their observed molecular mass compared to actual molecular mass?
+                </p>
+                <div style="font-size: 1.7rem; color: #0f172a; margin-top: 15px; font-weight: 600;">
+                    <b>Ans (उत्तर) –</b> <br>
+                    <table style="width: 100%; max-width: 600px; font-size: 1.8rem; margin-top: 10px; font-family: serif;">
+                        <tr><td style="width: 25%;">NaCl</td><td style="width: 35%;">→ Na⁺ + Cl⁻</td><td>= 2 mole ions</td></tr>
+                        <tr><td>CaCl₂</td><td>→ Ca²⁺ + 2Cl⁻</td><td>= 3 mole ions</td></tr>
+                        <tr><td>K₄[Fe(CN)₆]</td><td>→ 4K⁺ + [Fe(CN)₆]⁴⁻</td><td>= 5 mole ions</td></tr>
+                    </table>
+                </div>
+                <p style="font-size: 1.7rem; color: #475569; line-height: 1.8; margin-top: 15px;">
+                    Since Colligative Property (number of ions) is inversely proportional to Molecular Mass. Colligative Property ∝ <span class="math-frac"><span class="math-top">1</span><span class="math-bot">Molecular Mass</span></span><br>
+                    Therefore, ratio of their observed to actual molecular masses will be respectively <b style="font-size: 2rem;">1/2 ; 1/3 ; 1/5</b> .
+                </p>
+            </div>
+
+            <h3 style="color: #0f172a; font-size: 2.2rem; margin-top: 40px; border-bottom: 2px dashed #cbd5e1; padding-bottom: 10px;">(B) Association of Solute Particles (संगुणन/संयोजन) : &nbsp;&nbsp;&nbsp; <span style="font-family: serif; font-size: 2.5rem;">nA ⇌ (A)ₙ</span></h3>
+            <p style="font-size: 1.8rem; color: #475569; line-height: 1.8;">
+                Two or more particles of a solute associate/join together to form larger molecules. This decreases the total number of particles, causing a decrease in colligative properties and an increase in molecular mass.
+            </p>
+
+            <div style="background: rgba(59, 130, 246, 0.05); padding: 25px; border-radius: 20px; border: 2px solid #93c5fd; margin-top: 20px;">
+                <p style="font-size: 1.7rem; color: #334155; line-height: 1.8; font-weight: 500;">
+                    <b>Example 2:</b> Why do Formic acid, Acetic acid, and Benzoic acid show double the molecular mass when dissolved in Benzene?
+                </p>
+                <p style="font-size: 1.7rem; color: #0f172a; line-height: 1.8; margin-top: 15px;">
+                    <b>उ० –</b> These carboxylic acids associate in Benzene (a low dielectric solvent) via Hydrogen bonding, forming a Dimer (द्विलक), which decreases the number of particles.
+                </p>
+                <p style="font-size: 1.7rem; color: #475569; line-height: 1.8; margin-top: 10px;">
+                    चूंकि अणुसंख्य गुण (कणों की संख्या) अणुभार के व्युत्क्रमानुपाती होते है। अणुसंख्यक गुणधर्म ∝ <span class="math-frac"><span class="math-top">1</span><span class="math-bot">Molecular Mass</span></span><br>
+                    Therefore, their observed molecular mass is doubled. E.g. <br>
+                    <b style="font-family: serif; font-size: 2.2rem; background:#eff6ff; padding: 10px 20px; display:inline-block; border-radius: 10px; margin-top: 10px;">2 CH₃COOH ⇌ ( CH₃COOH )₂</b>
+                </p>
+
+                <!-- Dimer Visual -->
+                <div style="position: relative; width: 400px; height: 160px; margin: 30px auto; font-family: serif; font-size: 2.4rem; font-weight: bold; color: #1e293b;">
+                    <style>
+                        .bond-slash { position: absolute; transform: rotate(-45deg); font-weight: 300; font-size: 2rem; color: #64748b;}
+                        .bond-backslash { position: absolute; transform: rotate(45deg); font-weight: 300; font-size: 2rem; color: #64748b;}
+                        .h-bond { position: absolute; border-bottom: 4px dashed #94a3b8; height: 0; }
+                    </style>
+                    <!-- Left Monomer -->
+                    <div style="position: absolute; left: 0; top: 60px;">CH₃ — C</div>
+                    <div class="bond-slash" style="left: 100px; top: 30px;">—</div>
+                    <div class="bond-backslash" style="left: 100px; top: 90px;">—</div>
+                    
+                    <div style="position: absolute; left: 130px; top: 10px;">O</div>
+                    <div style="position: absolute; left: 130px; top: 20px;">─</div>
+                    <div style="position: absolute; left: 125px; top: 110px;">O — H</div>
+
+                    <!-- Right Monomer -->
+                    <div style="position: absolute; right: 0; top: 60px;">C — CH₃</div>
+                    <div class="bond-backslash" style="right: 80px; top: 30px;">—</div>
+                    <div class="bond-slash" style="right: 80px; top: 90px;">—</div>
+
+                    <div style="position: absolute; right: 110px; top: 10px;">H — O</div>
+                    <div style="position: absolute; right: 105px; top: 110px;">O</div>
+                    <div style="position: absolute; right: 105px; top: 120px;">─</div>
+
+                    <!-- H Bonds -->
+                    <div class="h-bond" style="left: 160px; top: 33px; width: 90px;"></div>
+                    <div class="h-bond" style="left: 185px; top: 133px; width: 60px;"></div>
+
+                    <div style="position: absolute; left: 10px; top: 140px; font-size: 1.2rem; color: #94a3b8; font-family: 'Outfit'; border-top: 1px solid #e2e8f0; padding-top: 5px;">Monomer</div>
+                    <div style="position: absolute; right: -20px; top: 140px; font-size: 1.2rem; color: #94a3b8; font-family: 'Outfit'; border-top: 1px solid #e2e8f0; padding-top: 5px;">Dimer</div>
+                </div>
+                <div style="text-align: center; font-size: 1.8rem; font-weight: bold; color: #0f172a; margin-top: 40px; border-top: 2px dashed #93c5fd; padding-top: 20px;">Normal Mass = 60 amu &nbsp;&nbsp; ; &nbsp;&nbsp; Observed Mass = 120 amu</div>
+            </div>
+        </div>
+
+        <!-- NEW SIMULATOR OVER HERE -->
+        <h3 class="sim-header" style="border-left: 10px solid #f59e0b; color: #f59e0b; background: linear-gradient(to right, rgba(245, 158, 11, 0.1), transparent); padding: 15px 25px; border-radius: 0 15px 15px 0; font-size: 2.2rem; margin-top: 40px;">Interactive Lab: Van't Hoff Particle Physics Lab</h3>
+        
+        <div class="sim-container" style="background: #1e1b4b; border-radius: 40px; border: 4px solid #312e81; padding: 30px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); margin: 30px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 2.5fr; gap: 30px; align-items: stretch;">
+                
+                <!-- Left Control Panel -->
+                <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: flex-start;">
+                    <h4 style="color: white; font-size: 1.8rem; margin-top: 0; margin-bottom: 20px; font-weight: 800;">Solute Type</h4>
+                    
+                    <button class="solute-btn active" data-type="nacl" style="width: 100%; padding: 15px; border-radius: 15px; background: #fbbf24; color: #1e293b; border: 2px solid white; font-size: 1.4rem; font-weight: 900; cursor: pointer; transition: 0.3s; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);">NaCl (वियोजन)</button>
+                    
+                    <button class="solute-btn" data-type="acid" style="width: 100%; padding: 15px; border-radius: 15px; background: #3b82f6; color: white; border: 2px solid transparent; font-size: 1.4rem; font-weight: 900; cursor: pointer; transition: 0.3s; margin-bottom: 15px;">CH₃COOH (संगुणन)</button>
+                    
+                    <button class="solute-btn" data-type="urea" style="width: 100%; padding: 15px; border-radius: 15px; background: #10b981; color: white; border: 2px solid transparent; font-size: 1.4rem; font-weight: 900; cursor: pointer; transition: 0.3s; margin-bottom: 25px;">Urea (सामान्य)</button>
+
+                    <button id="add_solute_btn" style="width: 100%; padding: 20px; border-radius: 15px; background: #8b5cf6; color: white; border: none; font-size: 1.6rem; font-weight: 900; cursor: pointer; transition: 0.3s; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);">Add Solute (Add Particles) ↓</button>
+                    
+                    <div style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 15px; margin-top: 15px; text-align: left; color: white;">
+                        <div style="font-size: 1.5rem; margin-bottom: 10px; font-weight: 600;">van't Hoff Factor: <span id="vh_i_value" style="color:#fbbf24; font-size: 2rem; font-weight: 900;">2</span></div>
+                        <div style="font-size: 1.3rem; margin-bottom: 5px; color: #cbd5e1;">Particles: <span id="vh_part_status" style="color: white; font-weight:bold;">Doubled (दुगुना)</span></div>
+                        <div style="font-size: 1.3rem; color: #cbd5e1;">Molar Mass: <span id="vh_mm_status" style="color: white; font-weight:bold;">Halved (आधा)</span></div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Panel -->
+                <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: center; background: rgba(0,0,0,0.3); border-radius: 25px; overflow: hidden; padding: 20px; position: relative; min-height: 350px;">
+                    <!-- Drop Zone -->
+                    <div id="drop_zone" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; overflow: hidden;"></div>
+
+                    <div style="position: relative; width: 300px; height: 260px;">
+                        <!-- Beaker -->
+                        <div style="position: absolute; bottom: 0; width: 100%; height: 240px; border: 6px solid rgba(255,255,255,0.2); border-top: none; border-radius: 0 0 40px 40px; overflow: hidden; z-index: 1;">
+                            <div style="position: absolute; bottom: 0; width: 100%; height: 80%; background: rgba(59, 130, 246, 0.3); border-top: 2px solid rgba(255,255,255,0.5);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions for Simulator -->
+        <div style="background: white; border-radius: 20px; padding: 40px; margin: 0 auto 60px; max-width: 900px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 2px solid #e2e8f0; position: relative;">
+            <div style="position: absolute; top: -18px; left: 40px; background: #f59e0b; color: #1e293b; padding: 8px 25px; border-radius: 30px; font-size: 1.3rem; font-weight: 800; box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);">💡 How to use (How to use)</div>
+            <ul style="margin: 0; padding-left: 25px; color: #334155; font-size: 1.6rem; line-height: 1.8; font-weight: 600;">
+                <li style="margin-bottom: 15px;"><b>Solute Type (विलेय चुनें):</b> Select the Solute you want to dissolve in the solvent.</li>
+                <li style="margin-bottom: 15px;"><b>Add Solute:</b> Click this button! <br>
+                - <b>NaCl</b> dissociates in water so particles become <b>double</b> (i = 2). <br>
+                - <b>CH₃COOH</b> associates via H-bonding to form <b>one dimer</b> (i = 0.5).</li>
+            </ul>
+        </div>
+
+        <!-- VANT HOFF FACTOR THEORY & FORMULAS -->
+        <h2 style="border-left-color: #10b981;">❖ Van't Hoff Factor (i)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.8rem; color: #1e293b; line-height: 1.8; font-weight: 700;">
+                The factor used to determine the extent of dissociation or association is called the <b style="color: #059669;">Van't Hoff Factor (वांटहॉफ गुणांक)</b>.
+            </p>
+
+            <div class="formula-card vp-formula-pink" style="margin-top: 20px; background: #f0fdf4; border: 2px solid #6ee7b7; color: #064e3b; padding: 30px; border-radius: 30px;">
+                <div style="font-size: 1.8rem; line-height: 2.5; display: flex; flex-direction: column; gap: 20px; align-items: flex-start;">
+                    <div>
+                        <b style="font-size: 2rem;">i = &nbsp;</b>
+                        <span class="math-frac" style="vertical-align: middle;">
+                            <span class="math-top" style="border-bottom-color: #064e3b;">Normal Molar Mass</span>
+                            <span class="math-bot">Abnormal Molar Mass</span>
+                        </span>
+                        <b style="font-size: 2rem;">&nbsp; = &nbsp;</b>
+                        <span class="math-frac" style="vertical-align: middle;">
+                            <span class="math-top" style="border-bottom-color: #064e3b;">Observed Colligative Property</span>
+                            <span class="math-bot">Calculated Colligative Property</span>
+                        </span>
+                    </div>
+                    
+                    <div>
+                        <b style="font-size: 2rem;">i = &nbsp;</b>
+                        <span class="math-frac" style="vertical-align: middle;">
+                            <span class="math-top" style="border-bottom-color: #064e3b;">Observed Coll. Property</span>
+                            <span class="math-bot">Theoretical Coll. Property</span>
+                        </span>
+                    </div>
+
+                    <div>
+                        <b style="font-size: 2rem;">i = &nbsp;</b>
+                        <span class="math-frac" style="vertical-align: middle;">
+                            <span class="math-top" style="border-bottom-color: #064e3b;">Total Moles after Association/Dissociation</span>
+                            <span class="math-bot">Total Moles before Association/Dissociation</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size: 1.8rem; color: #475569; line-height: 1.8; margin-top: 30px;">
+                The value of <b>Van't Hoff Factor (i)</b> predicts the nature of the solute:
+            </p>
+            <ul style="font-size: 1.8rem; color: #1e293b; line-height: 2; margin-left: 20px; list-style-type: none;">
+                <li><span style="display:inline-block; width:50px;">यदि</span> <b>i = 1</b> No dissociation/association. The non-volatile solute behaves normally.</li>
+                <li><span style="display:inline-block; width:50px;"></span> <b>i > 1</b> Solute will undergo Dissociation (वियोजन) &nbsp;&nbsp;&nbsp; (KCl<sub>(aq)</sub> for i = 1.98)</li>
+                <li><span style="display:inline-block; width:50px;"></span> <b>i < 1</b> Solute will undergo Association (संगुणन) &nbsp;&nbsp;&nbsp; (बेंजीन में ऐथेनोइक अम्ल for i = 0.5)</li>
+            </ul>
+        </div>
+
+        <h2 style="border-left-color: #8b5cf6;">❖ Relation b/w Colligative Properties & Van't Hoff Factor :</h2>
+        <div class="content-card" style="background: #faf5ff; border: 2px solid #d8b4fe;">
+            <div style="font-size: 1.8rem; line-height: 2.5; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; color: #4c1d95; font-family: serif; font-weight: bold;">
+                <div>
+                    Relative Lowering of V.P. (RLVP), &nbsp;&nbsp;&nbsp;
+                    <span class="math-frac" style="vertical-align: middle;">
+                        <span class="math-top" style="border-bottom-color: #4c1d95;">P₁° - P₁</span>
+                        <span class="math-bot">P₁°</span>
+                    </span>
+                    &nbsp; = i × 
+                    <span class="math-frac" style="vertical-align: middle;">
+                        <span class="math-top" style="border-bottom-color: #4c1d95;">n₂</span>
+                        <span class="math-bot">n₁</span>
+                    </span>
+                </div>
+                <div>Elevation in B.P., &nbsp;&nbsp;&nbsp; ΔT<sub>b</sub> = i · K<sub>b</sub> · m</div>
+                <div>Depression in F.P., &nbsp;&nbsp;&nbsp; ΔT<sub>f</sub> = i · K<sub>f</sub> · m</div>
+                <div>
+                    Osmotic Pressure, &nbsp;&nbsp;&nbsp; π = 
+                    <span class="math-frac" style="vertical-align: middle;">
+                        <span class="math-top" style="border-bottom-color: #4c1d95;">i · n₂ · R · T</span>
+                        <span class="math-bot">V</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="border-left-color: #334155; margin-top: 50px;">Questions -</h2>
+        <div style="display: flex; flex-direction: column; gap: 25px; margin-bottom: 60px;">
+            <!-- Q1 -->
+            <div style="background: white; padding: 25px; border-radius: 15px; border: 1px solid #cbd5e1; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin: 0 6vw;">
+                <div style="font-size: 1.8rem; color: #0f172a; font-weight: 700; margin-bottom: 15px;">
+                    (1) NH₃, HCl, CO₂, SO₂ solubility in water is higher than H₂, O₂, N₂ 
+                </div>
+                <div style="font-size: 1.7rem; color: #475569; line-height: 1.6;">
+                    <b>Reason –</b> These gases are highly reactive and react with the solvent (water) to form ions. E.g:<br>
+                    <span style="font-family: serif; font-weight: 600; color: #1e293b; display: block; margin-top: 15px; background: #f8fafc; padding: 15px; border-radius: 8px;">
+                        NH₃ + H₂O → NH₄OH &nbsp;&nbsp;&nbsp; ; &nbsp;&nbsp;&nbsp; HCl<sub>(g)</sub> + H₂O → HCl<sub>(aq)</sub><br>
+                        CO₂ + H₂O → H₂CO₃ &nbsp;&nbsp;&nbsp; ; &nbsp;&nbsp;&nbsp; SO₂ + H₂O → H₂SO₄
+                    </span>
+                </div>
+            </div>
+
+            <!-- Q2 -->
+            <div style="background: white; padding: 25px; border-radius: 15px; border: 1px solid #cbd5e1; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin: 0 6vw;">
+                <div style="font-size: 1.8rem; color: #0f172a; font-weight: 700; margin-bottom: 15px;">
+                    (2) Oxygen dissolves faster in blood compared to water, why?
+                </div>
+                <div style="font-size: 1.7rem; color: #475569; line-height: 1.6;">
+                    <b>Reason –</b> O₂ reacts with Hb present in the blood to form highly active Oxyhemoglobin (HbO₂).
+                </div>
+            </div>
+
+            <!-- Q3 -->
+            <div style="background: white; padding: 25px; border-radius: 15px; border: 1px solid #cbd5e1; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin: 0 6vw;">
+                <div style="font-size: 1.8rem; color: #0f172a; font-weight: 700; margin-bottom: 15px;">
+                    (3) HCl is highly soluble in water but less soluble in benzene, why?
+                </div>
+                <div style="font-size: 1.7rem; color: #475569; line-height: 1.6;">
+                    <b>Reason –</b> "Like dissolves like". Both HCl and water are polar, whereas benzene is non-polar.
+                </div>
+            </div>
+
+            <!-- Q4 -->
+            <div style="background: white; padding: 25px; border-radius: 15px; border: 1px solid #cbd5e1; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin: 0 6vw;">
+                <div style="font-size: 1.8rem; color: #0f172a; font-weight: 700; margin-bottom: 15px;">
+                    (4) Solubility of gases in liquids is an exothermic process, how?
+                </div>
+                <div style="font-size: 1.7rem; color: #475569; line-height: 1.6;">
+                    <b>Reason –</b> According to Le Chatelier’s principle at constant pressure: Temp ↑ causes Kinetic Energy ↑ so Solubility ↓.<br><br>
+                    <b>Exception –</b> H₂ and He dissolution absorbs heat (Endothermic). Hence with Temp ↑, their solubility also ↑.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION CONFORMS TO FLOATING PILLS UI -->
+    <div class="nav-buttons">
+        <a href="../index_eng.html" class="nav-btn" style="background: #1e293b;">🏠 Hub</a>
+        <div style="display: flex; gap: 20px;">
+            <a href="../ch1eng/ch1_part6.html" class="nav-btn" style="background: #94a3b8;">⬅️ Part 6</a>
+            <a href="ch1_part8.html" class="nav-btn" style="background: #059669;">Part 8(EN) ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        
+        // VANT HOFF PARTICLE PHYSICS LAB LOGIC
+        const soluteBtns = document.querySelectorAll('.solute-btn');
+        const addSoluteBtn = document.getElementById('add_solute_btn');
+        const vhIValue = document.getElementById('vh_i_value');
+        const vhPartStatus = document.getElementById('vh_part_status');
+        const vhMmStatus = document.getElementById('vh_mm_status');
+        const dropZone = document.getElementById('drop_zone');
+        
+        let currentSolute = 'nacl'; // nacl, acid, urea
+        
+        soluteBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                soluteBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.style.border = "2px solid transparent";
+                    
+                    if(b.dataset.type === 'nacl') b.style.color = "#1e293b";
+                    else b.style.color = "white";
+                    
+                    if(b.dataset.type === 'nacl' && !b.classList.contains('active')) b.style.background = "#fbbf24";
+                });
+                btn.classList.add('active');
+                btn.style.border = "2px solid white";
+                btn.style.color = "#1e293b";
+                
+                if(btn.dataset.type !== 'nacl') {
+                    btn.style.color = "white";
+                }
+                
+                currentSolute = btn.dataset.type;
+                
+                // Update specific UI
+                if(currentSolute === 'nacl') {
+                    vhIValue.innerText = "2";
+                    vhPartStatus.innerText = "Doubled (दुगुना)";
+                    vhMmStatus.innerText = "Halved (आधा)";
+                    vhIValue.style.color = "#fbbf24";
+                } else if(currentSolute === 'acid') {
+                    vhIValue.innerText = "0.5";
+                    vhPartStatus.innerText = "Halved (आधा)";
+                    vhMmStatus.innerText = "Doubled (दुगुना)";
+                    vhIValue.style.color = "#8b5cf6"; // purple
+                } else {
+                    vhIValue.innerText = "1";
+                    vhPartStatus.innerText = "Same (समान)";
+                    vhMmStatus.innerText = "Normal (सामान्य)";
+                    vhIValue.style.color = "#10b981"; // green
+                }
+            });
+        });
+
+        const pStyle = document.createElement('style');
+        pStyle.innerHTML = `
+            @keyframes dropIn {
+                0% { transform: translate(-50%, -150px) scale(1); opacity: 1; }
+                80% { transform: translate(-50%, 150px) scale(1); opacity: 1; }
+                100% { transform: translate(-50%, 150px) scale(0); opacity: 0; }
+            }
+            @keyframes floatAround {
+                0% { transform: translate(0, 0); }
+                25% { transform: translate(10px, -15px); }
+                50% { transform: translate(-5px, 10px); }
+                75% { transform: translate(-15px, -5px); }
+                100% { transform: translate(0, 0); }
+            }
+            .vh-particle {
+                position: absolute;
+                border-radius: 50%;
+                font-weight: bold;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+                z-index: 5;
+            }
+            .h-dotted {
+                position: absolute;
+                width: 30px;
+                border-bottom: 4px dashed white;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+                opacity: 0;
+                transition: opacity 0.5s;
+                z-index: 4;
+            }
+        `;
+        document.head.appendChild(pStyle);
+
+        addSoluteBtn.addEventListener('click', () => {
+            dropZone.innerHTML = '';
+            
+            if(currentSolute === 'nacl') {
+                let dropObj = document.createElement('div');
+                dropObj.className = "vh-particle";
+                dropObj.style.cssText = `width: 50px; height: 50px; background: #fbbf24; left: 50%; top: 0; animation: dropIn 0.8s ease-in forwards; color: #1e293b;`;
+                dropObj.innerHTML = "NaCl";
+                dropZone.appendChild(dropObj);
+                
+                setTimeout(() => {
+                    let p1 = document.createElement('div');
+                    p1.className = "vh-particle";
+                    p1.style.cssText = `width: 40px; height: 40px; background: #3b82f6; left: 40%; bottom: 40px; animation: floatAround 3s infinite alternate; transition: bottom 0.5s;`;
+                    p1.innerHTML = "Na⁺";
+                    
+                    let p2 = document.createElement('div');
+                    p2.className = "vh-particle";
+                    p2.style.cssText = `width: 40px; height: 40px; background: #10b981; left: 60%; bottom: 60px; animation: floatAround 4s infinite alternate-reverse; transition: bottom 0.5s;`;
+                    p2.innerHTML = "Cl⁻";
+                    
+                    dropZone.appendChild(p1);
+                    dropZone.appendChild(p2);
+                    
+                    setTimeout(()=> {
+                        p1.style.bottom = "10px";
+                        p2.style.bottom = "20px";
+                    }, 50);
+                }, 750);
+                
+            } else if(currentSolute === 'acid') {
+                let drop1 = document.createElement('div');
+                drop1.className = "vh-particle";
+                drop1.style.cssText = `width: 40px; height: 40px; background: #ef4444; left: 40%; top: 0; animation: dropIn 0.8s ease-in forwards; font-size: 0.8rem;`;
+                drop1.innerHTML = "CH₃COOH";
+                
+                let drop2 = document.createElement('div');
+                drop2.className = "vh-particle";
+                drop2.style.cssText = `width: 40px; height: 40px; background: #ef4444; left: 60%; top: 0; animation: dropIn 0.8s ease-in forwards; font-size: 0.8rem;`;
+                drop2.innerHTML = "CH₃COOH";
+                
+                dropZone.appendChild(drop1);
+                dropZone.appendChild(drop2);
+                
+                setTimeout(() => {
+                    let container = document.createElement('div');
+                    container.style.cssText = `position: absolute; left: 50%; bottom: 100px; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; animation: floatAround 5s infinite; transition: bottom 1s; width: 120px; z-index: 5;`;
+                    
+                    let m1 = document.createElement('div');
+                    m1.className = "vh-particle";
+                    m1.style.cssText = `position: relative; width: 40px; height: 40px; background: #ef4444; font-size: 0.8rem;`;
+                    m1.innerHTML = "Acid";
+                    
+                    let m2 = document.createElement('div');
+                    m2.className = "vh-particle";
+                    m2.style.cssText = `position: relative; width: 40px; height: 40px; background: #ef4444; margin-left: 30px; font-size: 0.8rem;`;
+                    m2.innerHTML = "Acid";
+                    
+                    let bond = document.createElement('div');
+                    bond.className = "h-dotted";
+                    bond.style.opacity = "1";
+                    
+                    container.appendChild(m1);
+                    container.appendChild(bond);
+                    container.appendChild(m2);
+                    
+                    dropZone.appendChild(container);
+                    
+                    setTimeout(()=> {
+                        container.style.bottom = "20px";
+                    }, 50);
+                }, 750);
+                
+            } else {
+                let dropObj = document.createElement('div');
+                dropObj.className = "vh-particle";
+                dropObj.style.cssText = `width: 45px; height: 45px; background: #10b981; left: 50%; top: 0; animation: dropIn 0.8s ease-in forwards;`;
+                dropObj.innerHTML = "Urea";
+                dropZone.appendChild(dropObj);
+                
+                setTimeout(() => {
+                    let p1 = document.createElement('div');
+                    p1.className = "vh-particle";
+                    p1.style.cssText = `width: 45px; height: 45px; background: #10b981; left: 50%; transform: translateX(-50%); bottom: 80px; animation: floatAround 4s infinite; transition: bottom 0.5s;`;
+                    p1.innerHTML = "Urea";
+                    
+                    dropZone.appendChild(p1);
+                    
+                    setTimeout(()=> {
+                        p1.style.bottom = "15px";
+                    }, 50);
+                }, 750);
+            }
+        });
+
+    </script>
+</body>
+</html>

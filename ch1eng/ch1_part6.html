@@ -547,9 +547,323 @@
 
     </div>
 
+
+        <!-- ==================== OSMOSIS & OSMOTIC PRESSURE ======================== -->
+        <h2 style="border-left-color: #8b5cf6;">❖ 4. Osmosis & Osmotic Pressure (परासरण एवं परासरण दाब - π)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.8rem; color: #1e293b; line-height: 1.8; font-weight: 700;">
+                <b style="color: #6b21a8;">Osmosis (परासरण) :</b> The flow of solvent particles from a solution of lower concentration to a solution of higher concentration through a semi-permeable membrane (spm).
+            </p>
+            <p style="font-size: 1.8rem; color: #1e293b; line-height: 1.8; font-weight: 700; background: #faf5ff; padding: 20px; border-radius: 15px; border-left: 5px solid #d8b4fe;">
+                <b style="color: #6b21a8;">Semi-permeable Membrane (spm) –</b> A membrane that allows only solvent particles to pass through it.<br>
+                <b>Ex :</b> Cellophane, parchment paper, pig's bladder, cellulose acetate, animal membrane.
+            </p>
+            <br>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div style="background: rgba(255,255,255,0.8); padding: 30px; border-radius: 20px; border: 2px solid #e2e8f0; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                    <h4 style="color: #6b21a8; font-size: 2rem; margin-top: 0;">Endosmosis (अंत: परासरण)</h4>
+                    <p style="font-size: 1.7rem; color: #475569; line-height: 1.6;">The inward flow of solvent particles into a structure having spm. For example, placing an egg, raisins, grapes or green vegetables in <b>water</b>.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.8); padding: 30px; border-radius: 20px; border: 2px solid #e2e8f0; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                    <h4 style="color: #6b21a8; font-size: 2rem; margin-top: 0;">Exosmosis (बाह्य परासरण)</h4>
+                    <p style="font-size: 1.7rem; color: #475569; line-height: 1.6;">The outward flow of solvent particles from a structure having spm. For example, placing grapes in sugar syrup, or placing an egg/raisins in a <b>concentrated salt solution</b>.</p>
+                </div>
+            </div>
+
+            <!-- Thistle Funnel Simulator (Added here to illustrate simply Osmosis before Osmotic Pressure is explained) -->
+            <h3 class="sim-header" style="border-left: 10px solid #a855f7; color: #a855f7; background: linear-gradient(to right, rgba(168, 85, 247, 0.1), transparent); padding: 15px 25px; border-radius: 0 15px 15px 0; font-size: 2.2rem; margin-top: 40px;">Interactive Lab: Thistle Funnel Osmosis</h3>
+                    
+            <div class="sim-container" style="background: #1e1b4b; border-radius: 40px; border: 4px solid #312e81; padding: 30px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); margin: 30px 0;">
+                <div style="display: grid; grid-template-columns: 1fr 2.5fr; gap: 30px; align-items: center;">
+                    
+                    <!-- Left Control Panel -->
+                    <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: flex-start;">
+                        <h4 style="color: white; font-size: 1.8rem; margin-top: 0; margin-bottom: 20px; font-weight: 800;">Osmosis Control</h4>
+                        
+                        <div style="font-size: 1.4rem; color: #d8b4fe; font-weight: 700; margin-bottom: 10px;">Concentration (सांद्रता): <span id="tf_conc_val" style="color: white;">Low (कम)</span></div>
+                        <input type="range" id="tf_conc" min="1" max="10" value="2" style="width: 100%; height: 6px; background: #312e81; border-radius: 10px; accent-color: #a855f7; margin-bottom: 30px;">
+                        
+                        <button id="tf_start_btn" style="width: 100%; padding: 15px; border-radius: 15px; background: #8b5cf6; color: white; border: none; font-size: 1.4rem; font-weight: 900; cursor: pointer; transition: 0.3s; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);">Start Osmosis (परासरण) ▶</button>
+                        
+                        <div style="text-align: center; margin-top: 10px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 15px;">
+                            <div id="tf_status" style="font-size: 1.8rem; color: #d8b4fe; font-weight: 900; margin-bottom: 5px;">Equilibrium</div>
+                            <div id="tf_height" style="font-size: 1.4rem; color: #a5b4fc;">Level (h) = 0 mm</div>
+                        </div>
+                        
+                        <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 15px; margin-top: 15px; text-align: center;">
+                            <div style="font-size: 1.3rem; color: #a5b4fc; margin-bottom: 5px; font-weight: 600;">Live Calculation</div>
+                            <div style="font-size: 1.5rem; color: #facc15; font-family: monospace; font-weight: bold; line-height: 1.4;">
+                                π = <span id="tf_live_c">2</span> × R × T
+                            </div>
+                            <div style="font-size: 1.6rem; color: #10b981; font-weight: 900; margin-top: 5px;">
+                                π ∝ <span id="tf_live_h">0</span> atm
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual Panel (Thistle Funnel in Beaker) -->
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.3); border-radius: 25px; overflow: hidden; padding: 20px; position: relative; min-height: 280px;">
+                        <div style="position: relative; width: 400px; height: 350px; display: flex; justify-content: center; transform: scale(0.85); transform-origin: center;">
+                            <!-- Funnel Stem runs from top to bulb -->
+                            <div style="position: absolute; top: 0; width: 40px; height: 200px; background: rgba(255,255,255,0.1); border-left: 4px solid rgba(255,255,255,0.5); border-right: 4px solid rgba(255,255,255,0.5); z-index: 5;">
+                                <div id="tf_fluid" style="position: absolute; bottom: 0; width: 100%; height: 10%; background: rgba(168, 85, 247, 0.8); transition: height 4s cubic-bezier(0.2, 0.8, 0.2, 1);"></div>
+                            </div>
+
+                            <!-- Funnel Bulb -->
+                            <div style="position: absolute; top: 195px; width: 100px; height: 100px; background: rgba(168, 85, 247, 0.6); border: 4px solid rgba(255,255,255,0.5); border-radius: 50%; z-index: 6; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;"></div>
+                            
+                            <!-- SPM dashes -->
+                            <div style="position:absolute; top: 290px; width: 60px; height: 10px; border-bottom: 6px dashed #fbff00; border-radius: 50%; z-index: 7;"></div>
+                            <!-- Label SPM -->
+                            <div style="position: absolute; top: 310px; z-index: 10; color: #fbff00; font-weight: bold; font-size: 1.3rem; width: 280px; text-align: center;">SPM (अर्धपारगम्य झिल्ली)</div>
+                            <div style="position: absolute; right: 0px; top: 205px; color: #d8b4fe; font-weight: bold; font-size: 1.5rem; z-index: 12;">← Sugar Solution</div>
+
+                            <!-- Beaker -->
+                            <div style="position: absolute; bottom: 40px; width: 280px; height: 180px; border: 6px solid rgba(255,255,255,0.2); border-top: none; border-radius: 0 0 40px 40px; overflow: hidden; z-index: 1;">
+                                <div style="position: absolute; bottom: 0; width: 100%; height: 80%; background: rgba(59, 130, 246, 0.4); border-top: 2px solid rgba(255,255,255,0.5);">
+                                    <div id="tf_water_particles" style="position:absolute; width:100%; height:100%;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Extra Label -->
+                            <div style="position: absolute; bottom: -20px; width: 100%; text-align: center; color: #93c5fd; font-weight: bold; font-size: 1.8rem; z-index: 10;">Solvent (विलायक)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <h3 style="color: #1e293b; font-size: 2.2rem;">4. Osmotic Pressure (परासरण दाब - π)</h3>
+            <p style="font-size: 1.8rem; color: #475569; line-height: 1.8; margin-top: 10px;">
+                The minimum excess pressure that must be applied to a solution to prevent the process of osmosis is called <b>Osmotic Pressure</b>.
+            </p>
+            <p style="font-size: 1.8rem; color: #475569; line-height: 1.8; margin-top: 10px; padding: 15px; border-left: 5px solid #8b5cf6; background: rgba(139, 92, 246, 0.05); border-radius: 10px;">
+                <b>Alternative Definition:</b> The hydrostatic pressure developed on the surface of the solution that stops the flow of solvent particles into the solution through the spm is called <b>Osmotic Pressure</b>.
+            </p>
+
+            <!-- Derivation -->
+            <div class="formula-card vp-formula-pink" style="margin-top: 20px; background: #1e293b; padding: 30px; border-radius: 30px; color: white;">
+                <div style="font-size: 2.2rem; margin-bottom: 15px;"><b>π = CRT</b></div>
+                <div style="font-size: 1.8rem; line-height: 2;">
+                    <span>π = </span>
+                    <span class="math-frac">
+                        <span class="math-num">n₂</span>
+                        <span class="math-den">V</span>
+                    </span>
+                    <span> RT</span>
+                    <span style="font-size: 1.4rem; color: #94a3b8; margin-left: 20px;">[ n₂ = W₂ / M₂ ]</span>
+                </div>
+                <div style="font-size: 1.8rem; line-height: 2; margin-top: 15px;">
+                    <span>πV = </span>
+                    <span class="math-frac">
+                        <span class="math-num">W₂ × RT</span>
+                        <span class="math-den">M₂</span>
+                    </span>
+                </div>
+                <div style="font-size: 1.8rem; line-height: 2; margin-top: 15px;">
+                    <span>M₂ = </span>
+                    <span class="math-frac">
+                        <span class="math-num">W₂ × RT</span>
+                        <span class="math-den">πV</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Importance of Osmosis & Types of Solutions -->
+            <h4 style="font-size: 2.2rem; color: #4338ca; margin-top: 40px; margin-bottom: 15px;">Importance of Osmosis (परासरण का महत्व):</h4>
+            <ol style="font-size: 1.7rem; color: #475569; line-height: 1.8; margin-left: 25px;">
+                <li style="margin-bottom: 10px;">Useful in determining the molar mass of proteins, polymers, biomolecules, and other macromolecules.</li>
+                <li style="margin-bottom: 10px;">Transport of water from roots to leaves in plants occurs due to osmosis.</li>
+                <li style="margin-bottom: 10px;">Bacterial growth is stopped by adding salt to meat and sugar to fruits because bacteria lose water due to osmosis, shrink, and die.</li>
+                <li style="margin-bottom: 10px;">People who consume more salt or salty food retain water in tissue cells, causing swelling. This is called <b>Edema (एडिमा)</b>.</li>
+            </ol>
+
+            <ul style="font-size: 1.7rem; color: #475569; line-height: 1.8; margin-left: 25px; list-style-type: disc; margin-top: 30px;">
+                <li style="margin-bottom: 10px;"><b style="color: #1e293b;">Isotonic Solution (सम परासरी विलयन) –</b> Two solutions having the same osmotic pressure at a given temperature. No osmosis occurs between them.</li>
+                <li style="margin-bottom: 10px;"><b style="color: #1e293b;">Hypertonic Solution (अति परासरी विलयन) –</b> A solution with higher osmotic pressure compared to another.</li>
+                <li style="margin-bottom: 10px;"><b style="color: #1e293b;">Hypotonic Solution (अल्प परासरी विलयन) –</b> A solution with lower osmotic pressure compared to another.</li>
+            </ul>
+        </div>
+
+        <h3 class="sim-header" style="border-left: 10px solid #8b5cf6; color: #8b5cf6; background: linear-gradient(to right, rgba(139, 92, 246, 0.1), transparent); padding: 15px 25px; border-radius: 0 15px 15px 0; font-size: 2.2rem;">Interactive Lab: U-Tube Osmosis</h3>
+        
+        <div class="sim-container" style="background: #1e1b4b; border-radius: 40px; border: 4px solid #312e81; padding: 30px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); margin: 30px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 2.5fr; gap: 30px; align-items: stretch;">
+                
+                <!-- Left Control Panel -->
+                <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: flex-start;">
+                    <h4 style="color: white; font-size: 1.8rem; margin-top: 0; margin-bottom: 20px; font-weight: 800;">Osmosis Control</h4>
+                    
+                    <div style="font-size: 1.4rem; color: #d8b4fe; font-weight: 700; margin-bottom: 10px;">Concentration (सांद्रता): <span id="osm_conc_val" style="color: white;">Low (कम)</span></div>
+                    <input type="range" id="osm_conc" min="1" max="10" value="2" style="width: 100%; height: 6px; background: #312e81; border-radius: 10px; accent-color: #a855f7; margin-bottom: 30px;">
+                    
+                    <button id="osm_start_btn" style="width: 100%; padding: 15px; border-radius: 15px; background: #8b5cf6; color: white; border: none; font-size: 1.4rem; font-weight: 900; cursor: pointer; transition: 0.3s; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);">Start Osmosis (परासरण) ▶</button>
+                    
+                    <div style="text-align: center; margin-top: 10px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 15px;">
+                        <div id="osm_status" style="font-size: 1.8rem; color: #d8b4fe; font-weight: 900; margin-bottom: 5px;">Equilibrium</div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Panel (Dual Chamber U-Tube) -->
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.3); border-radius: 25px; overflow: hidden; padding: 20px; position: relative; min-height: 280px;">
+                    
+                    <div style="position: relative; width: 440px; height: 220px; display: flex; justify-content: center; margin-top: 20px;">
+                        
+                        <!-- U-Tube Border Setup (Background lines) -->
+                        <div style="position: absolute; bottom: 0; left: 0; width: 440px; height: 120px; border: 4px solid rgba(255,255,255,0.4); border-top: none; border-radius: 0 0 10px 10px; z-index: 10; pointer-events: none;"></div>
+                        <!-- Left vertical walls -->
+                        <div style="position: absolute; bottom: 120px; left: 0; width: 4px; height: 80px; background: rgba(255,255,255,0.4); z-index: 10;"></div>
+                        <div style="position: absolute; bottom: 120px; left: 80px; width: 4px; height: 80px; background: rgba(255,255,255,0.4); z-index: 10;"></div>
+                        <!-- Right vertical walls -->
+                        <div style="position: absolute; bottom: 120px; right: 0; width: 4px; height: 80px; background: rgba(255,255,255,0.4); z-index: 10;"></div>
+                        <div style="position: absolute; bottom: 120px; right: 80px; width: 4px; height: 80px; background: rgba(255,255,255,0.4); z-index: 10;"></div>
+                        <!-- Horizontal connector lines -->
+                        <div style="position: absolute; bottom: 120px; left: 84px; width: 272px; height: 4px; background: rgba(255,255,255,0.4); z-index: 10;"></div>
+
+                        <!-- Fluid Containers Base -->
+                        <div style="position: absolute; bottom: 4px; left: 4px; width: 212px; height: 116px; background: rgba(59, 130, 246, 0.4); z-index: 2;"></div>
+                        <div style="position: absolute; bottom: 4px; right: 4px; width: 212px; height: 116px; background: rgba(168, 85, 247, 0.6); z-index: 2;"></div>
+                        
+                        <!-- Left Tower Fluid (Solvent) : Init height 40px -->
+                        <div id="fluid_left" style="position: absolute; bottom: 120px; left: 4px; width: 76px; height: 40px; background: rgba(59, 130, 246, 0.4); z-index: 2; transition: height 1.5s ease-in-out;"></div>
+                        <!-- Right Tower Fluid (Solution) : Init height 40px -->
+                        <div id="fluid_right" style="position: absolute; bottom: 120px; right: 4px; width: 76px; height: 40px; background: rgba(168, 85, 247, 0.6); z-index: 2; transition: height 1.5s ease-in-out;"></div>
+                        
+                        <!-- SPM (Semi-Permeable Membrane) -->
+                        <div style="position: absolute; bottom: 4px; left: 216px; width: 8px; height: 116px; background: transparent; border-left: 2px dashed #fbff00; border-right: 2px dashed #fbff00; z-index: 9; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
+                             <span style="color:#fbff00; font-size: 1.2rem; line-height: 1.2;">x</span>
+                             <span style="color:#fbff00; font-size: 1.2rem; line-height: 1.2;">x</span>
+                             <span style="color:#fbff00; font-size: 1.2rem; line-height: 1.2;">x</span>
+                             <span style="color:#fbff00; font-size: 1.2rem; line-height: 1.2;">x</span>
+                             <span style="color:#fbff00; font-size: 1.2rem; line-height: 1.2;">x</span>
+                        </div>
+                        <div style="position: absolute; bottom: -25px; left: 140px; z-index: 10; color: #fbff00; font-weight: bold; font-size: 1.2rem; width: 160px; text-align: center;">SPM (अर्धपारगम्य झिल्ली)</div>
+                        <div style="position: absolute; bottom: 6px; left: 220px; width: 2px; height: 20px; background: #fbff00;"></div>
+                        
+                        <!-- Pistons -->
+                        <div id="piston_left" style="position: absolute; bottom: 160px; left: 2px; width: 80px; height: 10px; background: #64748b; border: 2px solid #334155; border-radius: 2px; z-index: 11; transition: bottom 1.5s ease-in-out; display: flex; justify-content: center;">
+                            <div style="width: 4px; height: 40px; background: #94a3b8; position: absolute; bottom: 8px;"></div>
+                            <div style="position: absolute; bottom: 50px; color: white; font-weight: bold; font-size: 1.4rem;">P₁</div>
+                        </div>
+
+                        <div id="piston_right" style="position: absolute; bottom: 160px; right: 2px; width: 80px; height: 10px; background: #64748b; border: 2px solid #334155; border-radius: 2px; z-index: 11; transition: bottom 1.5s ease-in-out; display: flex; justify-content: center;">
+                            <div style="width: 4px; height: 40px; background: #94a3b8; position: absolute; bottom: 8px;"></div>
+                            <div style="position: absolute; bottom: 50px; color: white; font-weight: bold; font-size: 1.4rem;">P₂</div>
+                            <!-- Pi pressure arrow -->
+                            <div id="osm_pressure_arrow" style="position: absolute; bottom: 70px; color: #fbbf24; font-weight: bold; font-size: 1.8rem; transition: opacity 0.5s; opacity: 0; display:flex; flex-direction: column; align-items:center;">
+                                <span style="font-size:2.5rem; line-height:0.8;">↓</span> π 
+                            </div>
+                        </div>
+
+                        <!-- Direction Arrows inside fluid -->
+                        <div id="flow_arrow" style="position: absolute; bottom: 60px; left: 160px; color: white; font-size: 3rem; font-weight: bold; opacity: 0; transition: 0.5s; z-index: 12;">
+                            ⟶
+                        </div>
+
+                        <!-- Labels inside main area outside of fluids -->
+                        <div style="position: absolute; top: 120px; left: -100px; color: #93c5fd; font-weight: bold; font-size: 1.4rem; z-index: 10; text-align: right;">Solvent (A) <br><span style="font-size:2rem; vertical-align:middle; margin-right: -10px;">→</span></div>
+                        <div style="position: absolute; top: 120px; right: -100px; color: #d8b4fe; font-weight: bold; font-size: 1.4rem; z-index: 10; text-align: left;"><span style="font-size:2rem; vertical-align:middle; margin-left: -10px;">←</span><br> Solution (B)</div>
+                        
+                        <div id="solute_particles_osmosis" style="position:absolute; bottom: 4px; right: 4px; width: 212px; height: 116px; z-index: 3;"></div>
+                        <div id="water_particles" style="position:absolute; bottom: 4px; left: 4px; width: 212px; height: 116px; z-index: 3;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REVERSE OSMOSIS SECTION -->
+        <br><hr style="border: 0; border-bottom: 2px dashed #cbd5e1; margin: 40px 0;">
+        <h3 style="color: #1e293b; font-size: 2.2rem;">❖ Reverse Osmosis (प्रतिलोम परासरण - RO)</h3>
+        <p style="font-size: 1.8rem; color: #475569; line-height: 1.8; margin-top: 10px;">
+            If a pressure greater than the osmotic pressure is applied to the solution side, the direction of osmosis is reversed. Pure solvent starts flowing out of the solution through the spm. This phenomenon is called <b>Reverse Osmosis (RO)</b>.<br>
+            <span class="highlight-box" style="display:inline-block; margin-top: 10px; padding: 10px 20px; background: rgba(139, 92, 246, 0.1); border-radius: 10px; color: #6b21a8; font-weight: bold; border-left: 5px solid #8b5cf6;">P<sub>ex</sub> &gt; π = Reverse Osmosis</span>
+        </p>
+        <p style="font-size: 1.8rem; color: #475569; line-height: 1.8; margin-top: 10px;">
+            <b>Artificial SPM used (कृत्रिम अर्धपारगम्य झिल्ली):</b> Cellulose acetate film.<br>
+            <b>Application (अनुप्रयोग):</b> Desalination of seawater to make it fit for drinking (समुद्री जल का विलवणीकरण).
+        </p>
+
+        <!-- REVERSE OSMOSIS SIMULATOR -->
+        <h3 class="sim-header" style="border-left: 10px solid #e11d48; color: #e11d48; background: linear-gradient(to right, rgba(225, 29, 72, 0.1), transparent); padding: 15px 25px; border-radius: 0 15px 15px 0; font-size: 2.2rem; margin-top: 40px;">Interactive Lab: Reverse Osmosis (RO)</h3>
+        
+        <div class="sim-container" style="background: #1e1b4b; border-radius: 40px; border: 4px solid #312e81; padding: 30px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); margin: 30px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 2.5fr; gap: 30px; align-items: stretch;">
+                
+                <!-- Left Control Panel -->
+                <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: flex-start;">
+                    <h4 style="color: white; font-size: 1.8rem; margin-top: 0; margin-bottom: 20px; font-weight: 800;">RO Pump Control (पंप नियंत्रण)</h4>
+                    
+                    <div style="font-size: 1.4rem; color: #d8b4fe; margin-bottom: 25px; font-weight: 600; line-height: 1.5;">Apply external pressure (P<sub>ex</sub>) greater than osmotic pressure (π) to reverse the flow of pure water.</div>
+                    
+                    <button id="ro_start_btn" style="width: 100%; padding: 15px; border-radius: 15px; background: #e11d48; color: white; border: none; font-size: 1.4rem; font-weight: 900; cursor: pointer; transition: 0.3s; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(225, 29, 72, 0.4);">Apply P<sub>ex</sub> &gt; π (दाब लगाएँ)</button>
+                    
+                    <div style="text-align: center; margin-top: 10px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 15px;">
+                        <div id="ro_status" style="font-size: 1.8rem; color: #facc15; font-weight: 900; margin-bottom: 5px;">Standby (विश्राम)</div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Panel -->
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.3); border-radius: 25px; overflow: hidden; padding: 20px; position: relative; min-height: 280px;">
+                    
+                    <div style="position: relative; width: 460px; height: 160px; display: flex; justify-content: center; margin-top: 10px;">
+                        
+                        <!-- Main Tank Border -->
+                        <div style="position: absolute; bottom: 10px; left: 50px; width: 360px; height: 100px; border: 4px solid rgba(255,255,255,0.4); z-index: 10; pointer-events: none;"></div>
+                        
+                        <!-- SPM Center Divider -->
+                        <div style="position: absolute; bottom: 10px; left: 230px; width: 4px; height: 100px; background: repeating-linear-gradient(0deg, #fbff00, #fbff00 5px, transparent 5px, transparent 10px); z-index: 11;"></div>
+                        <div style="position: absolute; bottom: -15px; left: 190px; z-index: 10; color: #fbff00; font-weight: bold; font-size: 1.2rem; width: 100px; text-align: center;">SPM</div>
+                        
+                        <!-- Pure Water Chamber (Left) -->
+                        <div style="position: absolute; bottom: 14px; left: 54px; width: 176px; height: 92px; background: rgba(59, 130, 246, 0.4); z-index: 2;"></div>
+                        <!-- Salt Water Chamber (Right) -->
+                        <div style="position: absolute; bottom: 14px; right: 54px; width: 176px; height: 92px; background: rgba(168, 85, 247, 0.6); z-index: 2;"></div>
+                        
+                        <!-- Labels -->
+                        <div style="position: absolute; bottom: 50px; left: 90px; color: #93c5fd; font-weight: bold; font-size: 1.6rem; z-index: 10;">Solvent</div>
+                        <div style="position: absolute; bottom: 50px; right: 90px; color: #d8b4fe; font-weight: bold; font-size: 1.6rem; z-index: 10;">Salt Water</div>
+
+                        <!-- Right Inlet/Piston -->
+                        <div style="position: absolute; top: -10px; right: 80px; width: 30px; height: 60px; border-left: 4px solid rgba(255,255,255,0.4); border-right: 4px solid rgba(255,255,255,0.4); background: rgba(168, 85, 247, 0.6); z-index: 1;"></div>
+                        <!-- Piston object -->
+                        <div id="ro_piston" style="position: absolute; top: -10px; right: 78px; width: 34px; height: 10px; background: #64748b; border: 2px solid #334155; border-radius: 2px; z-index: 11; transition: top 0.5s ease-in-out;">
+                            <div style="width: 4px; height: 30px; background: #94a3b8; position: absolute; bottom: 10px; left: 13px;"></div>
+                        </div>
+                        <div id="ro_pressure_label" style="position: absolute; top: -30px; right: 60px; color: white; font-weight: bold; font-size: 1.2rem;">Piston</div>
+
+                        <!-- Left Outlet Pipe -->
+                        <div style="position: absolute; bottom: 50px; left: 10px; width: 40px; height: 16px; border-top: 4px solid rgba(255,255,255,0.4); border-bottom: 4px solid rgba(255,255,255,0.4); z-index: 5; background: rgba(59, 130, 246, 0.4);"></div>
+                        <div style="position: absolute; bottom: 34px; left: 10px; width: 16px; height: 20px; border-left: 4px solid rgba(255,255,255,0.4); border-right: 4px solid rgba(255,255,255,0.4); border-bottom: none; z-index: 5; background: rgba(59, 130, 246, 0.4);"></div>
+                        
+                        <!-- Water Drops Animation Container -->
+                        <div style="position: absolute; bottom: -10px; left: 14px; width: 8px; height: 44px; overflow: hidden; z-index: 12;">
+                            <div id="ro_drop" style="width: 8px; height: 12px; background: #93c5fd; border-radius: 50%; position: absolute; top: -15px; opacity: 0; filter: drop-shadow(0 0 5px #3b82f6);"></div>
+                        </div>
+                        
+                        <div style="position: absolute; bottom: -30px; left: 0px; z-index: 10; color: #93c5fd; font-weight: bold; font-size: 1.2rem; width: 60px; text-align: center;">Outlet</div>
+
+                        <!-- Flow Arrow -->
+                        <div id="ro_flow_arrow" style="position: absolute; bottom: 55px; left: 215px; color: #10b981; font-size: 3rem; font-weight: bold; opacity: 0; transition: 0.3s; z-index: 12;">
+                            ⟵
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions for RO Simulator -->
+        <div style="background: white; border-radius: 20px; padding: 40px; margin: 0 auto 60px; max-width: 900px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 2px solid #e2e8f0; position: relative;">
+            <div style="position: absolute; top: -18px; left: 40px; background: #e11d48; color: white; padding: 8px 25px; border-radius: 30px; font-size: 1.3rem; font-weight: 800; box-shadow: 0 5px 15px rgba(225, 29, 72, 0.3);">💡 उपयोग कैसे करें (How to use)</div>
+            <ul style="margin: 0; padding-left: 25px; color: #334155; font-size: 1.6rem; line-height: 1.8; font-weight: 600;">
+                <li style="margin-bottom: 15px;"><b>Apply P<sub>ex</sub> > π:</b> Press this button to apply an external pressure (P<sub>ex</sub>) greater than osmotic pressure (π) using the piston on the Salt water side.</li>
+                <li style="margin-bottom: 15px;"><b>Reverse Flow (प्रतिलोम प्रवाह):</b> You will observe that due to this pressure, pure solvent flows in the reverse direction through the SPM and starts dripping out of the <b>Outlet</b>.</li>
+                <li><b>Result:</b> This technique is used for desalination of seawater to make it drinkable, commonly known as an <b>RO (Reverse Osmosis) Water Purifier</b> at home!</li>
+            </ul>
+        </div>
+
     <!-- NAVIGATION CONFORMS TO FLOATING PILLS UI -->
     <div class="nav-buttons">
-        <a href="../index.html" class="nav-btn" style="background: #1e293b;">🏠 Hub</a>
+        <a href="../index_eng.html" class="nav-btn" style="background: #1e293b;">🏠 Hub</a>
         <div style="display: flex; gap: 20px;">
             <a href="ch1_part5.html" class="nav-btn" style="background: #94a3b8;">⬅️ Part 5</a>
             <a href="ch1_part7.html" class="nav-btn" style="background: #059669;">Part 7 ➡️</a>
@@ -794,6 +1108,226 @@
             }
         `;
         document.head.appendChild(jitterStyle);
+    
+        const jitterStyle = document.createElement('style');
+        jitterStyle.innerHTML = `
+            @keyframes jitter { from { transform: translate(0,0); } to { transform: translate(2px, 2px); } }
+            @keyframes evaporate { 
+                0% { transform: translateY(0) scale(1); opacity: 0.8; }
+                100% { transform: translateY(-160px) scale(0.5); opacity: 0; }
+            }
+            .math-frac { display: inline-flex; flex-direction: column; vertical-align: middle; align-items: center; }
+            .math-num { border-bottom: 2px solid; padding: 0 5px; }
+            .math-den { padding: 0 5px; }
+        `;
+        document.head.appendChild(jitterStyle);
+
+        // THISTLE FUNNEL & U-TUBE OSMOSIS LOGIC
+        const tfConcSlider = document.getElementById('tf_conc');
+        const tfConcVal = document.getElementById('tf_conc_val');
+        const tfStartBtn = document.getElementById('tf_start_btn');
+        const tfFluid = document.getElementById('tf_fluid');
+        const tfStatus = document.getElementById('tf_status');
+        const tfLiveC = document.getElementById('tf_live_c');
+        const tfLiveH = document.getElementById('tf_live_h');
+        const tfHeightDisp = document.getElementById('tf_height');
+        const tfWaterParticles = document.getElementById('tf_water_particles');
+
+        let isTfRunning = false;
+        let tfInterval = null;
+
+        function updateTfConc() {
+            if(!tfConcSlider) return;
+            let val = parseInt(tfConcSlider.value);
+            tfLiveC.innerText = val;
+            if(val <= 3) tfConcVal.innerText = "Low (कम)";
+            else if(val <= 7) tfConcVal.innerText = "Medium (मध्यम)";
+            else tfConcVal.innerText = "High (उच्च)";
+            
+            tfWaterParticles.innerHTML = '';
+            for(let i=0; i<30; i++){
+                let p = document.createElement('div');
+                p.style.cssText = `width: 8px; height: 8px; background: #93c5fd; border-radius: 50%; position: absolute; left: ${Math.random()*90}%; bottom: ${Math.random()*90}%; opacity:0.6;`;
+                tfWaterParticles.appendChild(p);
+            }
+            if(!isTfRunning) {
+                tfStatus.innerText = "Equilibrium";
+                tfStatus.style.color = "#d8b4fe";
+                tfLiveH.innerText = "0";
+                tfHeightDisp.innerText = "Level (h) = 0 mm";
+            }
+        }
+        if(tfConcSlider) tfConcSlider.addEventListener('input', updateTfConc);
+
+        if(tfStartBtn) {
+            tfStartBtn.addEventListener('click', () => {
+                if(isTfRunning) {
+                    isTfRunning = false;
+                    tfFluid.style.height = "10%";
+                    tfStatus.innerText = "Equilibrium";
+                    tfStatus.style.color = "#d8b4fe";
+                    tfStartBtn.innerHTML = "Start Osmosis ▶";
+                    tfStartBtn.style.background = "#8b5cf6";
+                    clearInterval(tfInterval);
+                    tfLiveH.innerText = "0";
+                    tfHeightDisp.innerText = "Level (h) = 0 mm";
+                } else {
+                    isTfRunning = true;
+                    let c = parseInt(tfConcSlider.value);
+                    let targetHeight = 10 + (c * 8); 
+                    tfFluid.style.height = targetHeight + "%";
+                    tfStatus.innerText = "Osmosis occurring...";
+                    tfStatus.style.color = "#34d399";
+                    tfStartBtn.innerHTML = "Reset Simulator ↻";
+                    tfStartBtn.style.background = "#ef4444";
+                    
+                    let h = 0;
+                    let maxH = c * 15;
+                    tfInterval = setInterval(()=> {
+                        if(h < maxH) {
+                            h += Math.max(1, Math.floor((maxH - h)/10));
+                            tfLiveH.innerText = h;
+                            tfHeightDisp.innerText = "Level (h) = " + h + " mm";
+                        } else {
+                            clearInterval(tfInterval);
+                            tfStatus.innerText = "π ∝ h established!";
+                            tfStatus.style.color = "#facc15";
+                        }
+                    }, 100);
+                }
+            });
+        }
+
+        const osmConcSlider = document.getElementById('osm_conc');
+        const osmConcVal = document.getElementById('osm_conc_val');
+        const osmStartBtn = document.getElementById('osm_start_btn');
+        const osmStatus = document.getElementById('osm_status');
+        const fluidLeft = document.getElementById('fluid_left');
+        const fluidRight = document.getElementById('fluid_right');
+        const pistonLeft = document.getElementById('piston_left');
+        const pistonRight = document.getElementById('piston_right');
+        const pressureArrow = document.getElementById('osm_pressure_arrow');
+        const flowArrow = document.getElementById('flow_arrow');
+        const soluteParticlesOsmosis = document.getElementById('solute_particles_osmosis');
+        const waterParticlesOsmosis = document.getElementById('water_particles');
+
+        let osmState = 0; 
+        function updateOsmConc() {
+            if(!osmConcSlider) return;
+            let val = parseInt(osmConcSlider.value);
+            if(val <= 3) osmConcVal.innerText = "Low (कम)";
+            else if(val <= 7) osmConcVal.innerText = "Medium (मध्यम)";
+            else osmConcVal.innerText = "High (उच्च)";
+            
+            if(soluteParticlesOsmosis) {
+                soluteParticlesOsmosis.innerHTML = '';
+                waterParticlesOsmosis.innerHTML = '';
+                for(let i=0; i<val*5; i++){
+                    let p = document.createElement('div');
+                    p.style.cssText = `width: 8px; height: 8px; background: #e879f9; border-radius: 50%; border:1px solid #7e22ce; position: absolute; left: ${Math.random()*90}%; bottom: ${Math.random()*90}%; opacity:0.8;`;
+                    soluteParticlesOsmosis.appendChild(p);
+                }
+                for(let i=0; i<30; i++){
+                    let p = document.createElement('div');
+                    p.style.cssText = `width: 8px; height: 8px; background: #93c5fd; border-radius: 50%; border:1px solid #3b82f6; position: absolute; left: ${Math.random()*90}%; bottom: ${Math.random()*90}%; opacity:0.6;`;
+                    waterParticlesOsmosis.appendChild(p);
+                }
+            }
+        }
+        if(osmConcSlider) osmConcSlider.addEventListener('input', updateOsmConc);
+
+        if(osmStartBtn) {
+            osmStartBtn.addEventListener('click', () => {
+                let c = parseInt(osmConcSlider.value);
+                if(osmState === 0) {
+                    osmState = 1;
+                    osmStartBtn.innerHTML = "Apply π Pressure ↓";
+                    osmStartBtn.style.background = "#fbbf24";
+                    osmStartBtn.style.color = "#1e293b";
+                    osmStatus.innerText = "Osmosis Occurring (A → B)";
+                    osmStatus.style.color = "#34d399";
+                    let delta = c * 4; 
+                    fluidLeft.style.height = (40 - delta) + "px";
+                    pistonLeft.style.bottom = (160 - delta) + "px";
+                    fluidRight.style.height = (40 + delta) + "px";
+                    pistonRight.style.bottom = (160 + delta) + "px";
+                    flowArrow.style.opacity = "1";
+                    flowArrow.style.transform = "translateX(40px)";
+                } else if(osmState === 1) {
+                    osmState = 2;
+                    osmStartBtn.innerHTML = "Reset ↻";
+                    osmStartBtn.style.background = "#ef4444";
+                    osmStartBtn.style.color = "white";
+                    osmStatus.innerText = "π Applied = Osmosis Stopped!";
+                    osmStatus.style.color = "#fbbf24";
+                    fluidLeft.style.height = "40px";
+                    pistonLeft.style.bottom = "160px";
+                    fluidRight.style.height = "40px";
+                    pistonRight.style.bottom = "160px";
+                    flowArrow.style.opacity = "0";
+                    flowArrow.style.transform = "translateX(0px)";
+                    pressureArrow.style.opacity = "1";
+                } else if(osmState === 2) {
+                    osmState = 0;
+                    osmStartBtn.innerHTML = "Start Osmosis ▶";
+                    osmStartBtn.style.background = "#8b5cf6";
+                    osmStatus.innerText = "Equilibrium";
+                    osmStatus.style.color = "#d8b4fe";
+                    pressureArrow.style.opacity = "0";
+                }
+            });
+        }
+        
+        const roStartBtn = document.getElementById('ro_start_btn');
+        const roPiston = document.getElementById('ro_piston');
+        const roStatus = document.getElementById('ro_status');
+        const roDrop = document.getElementById('ro_drop');
+        const roFlowArrow = document.getElementById('ro_flow_arrow');
+        const roPressureLabel = document.getElementById('ro_pressure_label');
+
+        let isRoRunning = false;
+        let roInterval = null;
+
+        if(roStartBtn) {
+            roStartBtn.addEventListener('click', () => {
+                if(!isRoRunning) {
+                    isRoRunning = true;
+                    roStartBtn.innerHTML = "Stop Pump (रोकें) 🛑";
+                    roStartBtn.style.background = "#64748b";
+                    roStatus.innerText = "Pex > π Applied! (दाब लगा)";
+                    roStatus.style.color = "#10b981";
+                    roPiston.style.top = "20px";
+                    roPressureLabel.innerText = "Pex > π";
+                    roPressureLabel.style.color = "#ef4444";
+                    roFlowArrow.style.opacity = "1";
+                    roDrop.style.opacity = "1";
+                    roDrop.style.transition = "top 0.5s cubic-bezier(0.5, 0, 1, 1)";
+                    roInterval = setInterval(() => {
+                        roDrop.style.transition = "none";
+                        roDrop.style.top = "-15px";
+                        setTimeout(() => {
+                            roDrop.style.transition = "top 0.4s cubic-bezier(0.5, 0, 1, 1)";
+                            roDrop.style.top = "40px";
+                        }, 50);
+                    }, 500);
+                } else {
+                    isRoRunning = false;
+                    roStartBtn.innerHTML = "Apply P<sub>ex</sub> &gt; π (दाब लगाएँ)";
+                    roStartBtn.style.background = "#e11d48";
+                    roStatus.innerText = "Standby (विश्राम)";
+                    roStatus.style.color = "#facc15";
+                    roPiston.style.top = "-10px";
+                    roPressureLabel.innerText = "Piston";
+                    roPressureLabel.style.color = "white";
+                    roFlowArrow.style.opacity = "0";
+                    if(roInterval) clearInterval(roInterval);
+                    roDrop.style.opacity = "0";
+                }
+            });
+        }
+        updateTfConc();
+        updateOsmConc();
+
     </script>
 </body>
 </html>
