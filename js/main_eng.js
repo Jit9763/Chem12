@@ -64,8 +64,31 @@ function renderChapters(data) {
     }
 
     // Badge for coming soon chapters
+    
+    if (chapter.id === 2) {
+      hindiRoute = `ch2eng/ch2_part1.html`;
+      qaRoute = `ch2eng/ch2_qa.html`;
+      mobileBtn = `
+        <div style="margin-top: 20px;">
+          <p style="color: var(--primary-dark); font-weight: 800; margin-bottom: 10px; font-size: 1.1rem;">📑 Direct Parts (1-10):</p>
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
+            <button class="btn-secondary" onclick="window.location.href='ch2eng/ch2_part1.html'" style="font-size: 0.8rem; padding: 6px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P1</button>
+            <button class="btn-secondary" onclick="window.location.href='ch2eng/ch2_part2.html'" style="font-size: 0.8rem; padding: 6px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P2</button>
+            <button class="btn-secondary" onclick="window.location.href='ch2eng/ch2_part3.html'" style="font-size: 0.8rem; padding: 6px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P3</button>
+            <button class="btn-secondary" onclick="window.location.href='ch2eng/ch2_part4.html'" style="font-size: 0.8rem; padding: 6px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P4</button>
+            <button class="btn-secondary" onclick="window.location.href='ch2eng/ch2_part5.html'" style="font-size: 0.8rem; padding: 6px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P5</button>
+            <button class="btn-secondary" onclick="window.location.href='ch2eng/ch2_part6.html'" style="font-size: 0.8rem; padding: 6px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P6</button>
+            <button class="btn-secondary" onclick="window.location.href='ch2eng/ch2_part7.html'" style="font-size: 0.8rem; padding: 6px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P7</button>
+            <button class="btn-secondary" onclick="window.location.href='ch2eng/ch2_part8.html'" style="font-size: 0.8rem; padding: 6px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P8</button>
+            <button class="btn-secondary" onclick="window.location.href='ch2eng/ch2_part9.html'" style="font-size: 0.8rem; padding: 6px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P9</button>
+            <button class="btn-secondary" onclick="window.location.href='ch2eng/ch2_part10.html'" style="font-size: 0.8rem; padding: 6px; background: #f0fdf4; color: var(--primary-dark); border: 1px solid var(--primary);">P10</button>
+          </div>
+        </div>
+      `;
+    }
+
     let badge = '';
-    if (chapter.id > 1) {
+    if (chapter.id > 2) {
       badge = `<div style="position: absolute; top: 12px; right: 12px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; z-index: 5;">🔜 COMING SOON</div>`;
     }
 

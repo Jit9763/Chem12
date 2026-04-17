@@ -44,3 +44,16 @@ All stoichiometric and physical chemistry formulas MUST use the `.math-frac` fle
 ## 🔄 6. Translation Workflow
 - **Hindi Medium First**: Draft all content strictly in native Devanagari Hindi in the `chX_parts/` folder.
 - **English Sync**: Automatically sync a full English equivalent to `chXeng/` after.
+
+## 📊 7. Chapter Progress Tracking
+
+### Chapter 1: Solutions (विलयन) - [COMPLETED]
+- 7 Parts + Comprehensive Master Q&A Bank
+- Dual Language Architecture Built
+- UI/UX Polish Applied
+
+### Chapter 2: Electrochemistry (वैद्युतरसायन) - [IN PROGRESS]
+- 10 Part Architecture Instantiated
+- Base HTML files generated for Hindi/English
+- Main Hub routing operational
+- **Next Step:** Begin Part 1 content injection (Electrochemical Cells, Daniell Cell, Salt Bridge).
