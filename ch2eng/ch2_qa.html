@@ -3,28 +3,550 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Chapter 2: Master Q&A (English)</title>
+    <title>Chapter 2: Master Q&A (English) - Electrochemistry</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #059669;
+            --primary-dark: #064e3b;
             --secondary: #10b981;
-            --accent: #f59e0b;
+            --accent: #8b5cf6;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --font-main: #000000;
         }
-        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; font-weight: 600; text-align:center; }
-        .header-banner { background: linear-gradient(135deg, var(--accent) 0%, #d97706 100%); color: white; padding: 60px 20px; }
-        h1 { font-size: 3rem; margin:0; }
-        .nav-buttons { padding: 50px; }
-        .nav-btn { background: #1e293b; color: white; padding: 15px 40px; border-radius: 100px; text-decoration: none; font-size: 1.5rem; font-weight: 800; }
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: var(--slate-50); color: var(--font-main); overflow-x: hidden; font-weight: 600; }
+        .header-banner { background: linear-gradient(135deg, #059669 0%, #064e3b 100%); color: white; padding: 60px 20px; text-align: center; border-radius: 0 0 60px 60px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .premium-badge { background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 100px; font-size: 1rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 15px; }
+        h1 { font-size: clamp(2rem, 6vw, 3.5rem); margin: 0; font-weight: 950; }
+        .part-container { padding: 50px 5vw; background: white; margin-top: -30px; border-radius: 60px 60px 0 0; box-shadow: 0 -20px 60px rgba(0,0,0,0.1); }
+        .qa-section-title { color: #1e293b; font-size: clamp(2rem, 5vw, 2.5rem); margin: 60px 0 30px 0; padding: 20px 30px; background: var(--slate-100); border-left: 15px solid var(--accent); border-radius: 0 30px 30px 0; font-weight: 900; }
+        .q-card { background: #ffffff; border: 2px solid #e2e8f0; border-radius: 20px; padding: 30px; margin-bottom: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
+        .q-num { background: var(--slate-800); color: white; padding: 5px 15px; border-radius: 10px; font-weight: 900; font-size: 1.2rem; margin-right: 15px; }
+        .q-text { font-size: 1.6rem; color: #0f172a; font-weight: 700; line-height: 1.6; margin-bottom: 10px; }
+        .ans-text { font-size: 1.5rem; color: #059669; font-weight: 600; margin-top: 15px; padding-top: 15px; border-top: 2px dashed #e2e8f0; }
+        
+        .math-frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-size: 0.9em; margin: 0 5px; font-weight: 850; line-height: 1.1; }
+        .math-top { border-bottom: 3px solid currentColor; padding: 0 5px 2px 5px; }
+        .math-bot { padding: 2px 5px 0 5px; }
+        
+        .mcq-options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .mcq-opt { background: #f8fafc; padding: 15px 20px; border-radius: 12px; border: 2px solid #cbd5e1; font-size: 1.4rem; font-weight: 600; transition: 0.3s; }
+        .mcq-opt.correct { background: #d1fae5; border-color: #10b981; color: #064e3b; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2); position:relative;}
+        .mcq-opt.correct::after { content: "✓ Correct"; position:absolute; right: 15px; background: #059669; color: white; padding: 2px 8px; border-radius: 10px; font-size: 1rem; }
+        .nav-buttons { display: flex; justify-content: center; padding: 40px; gap: 20px; }
+        .nav-btn { background: #1e293b; color: white; padding: 20px 40px; border-radius: 100px; text-decoration: none; font-weight: 900; font-size: 1.4rem; }
     </style>
 </head>
 <body>
     <div class="header-banner">
-        <h1>Electrochemistry Q&A</h1>
-        <p style="font-size:1.5rem;">Q&A Engine Coming Soon...</p>
+        <div class="premium-badge">Class 12 - Chapter 2</div>
+        <h1>Master Q&A Bank</h1>
+        <p style="font-size: 1.3rem; margin-top: 15px; font-weight: 600; opacity: 0.9;">Electrochemistry - Board Exam Preparation</p>
     </div>
-    <div class="nav-buttons">
-        <a href="../index_eng.html" class="nav-btn">🏠 Main Hub</a>
+    <div class="part-container">
+
+        <div class="qa-section-title" style="border-left-color: #f43f5e; background: #fff1f2;">🔴 Multiple Choice Questions (MCQs) - 20</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q1</span>
+                <div class="q-text">What is the standard potential (E° cell) of a Daniel Cell?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. 1.0 V</div>
+                <div class="mcq-opt correct">B. 1.1 V</div>
+                <div class="mcq-opt">C. 2.0 V</div>
+                <div class="mcq-opt">D. 1.5 V</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q2</span>
+                <div class="q-text">The unit of Specific Conductance (κ) is:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt correct">A. S cm⁻¹</div>
+                <div class="mcq-opt">B. S cm² mol⁻¹</div>
+                <div class="mcq-opt">C. Ohm cm</div>
+                <div class="mcq-opt">D. S cm²</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q3</span>
+                <div class="q-text">In the rusting of iron, what happens at the Anode?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. Fe ➔ Fe³⁺ + 3e⁻</div>
+                <div class="mcq-opt correct">B. Fe ➔ Fe²⁺ + 2e⁻</div>
+                <div class="mcq-opt">C. O₂ ➔ H₂O</div>
+                <div class="mcq-opt">D. H⁺ ➔ H₂</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q4</span>
+                <div class="q-text">The potential of Standard Hydrogen Electrode (SHE) is assumed as:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. 1.0 V</div>
+                <div class="mcq-opt">B. 0.1 V</div>
+                <div class="mcq-opt correct">C. 0.0 V</div>
+                <div class="mcq-opt">D. -0.76 V</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q5</span>
+                <div class="q-text">What is used in a Salt Bridge?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. NaCl</div>
+                <div class="mcq-opt correct">B. KCl + Agar-Agar</div>
+                <div class="mcq-opt">C. H₂SO₄</div>
+                <div class="mcq-opt">D. NaOH</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q6</span>
+                <div class="q-text">In an electrolytic cell, the charge of the Anode is:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. Negative (-)</div>
+                <div class="mcq-opt correct">B. Positive (+)</div>
+                <div class="mcq-opt">C. Neutral</div>
+                <div class="mcq-opt">D. Uncertain</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q7</span>
+                <div class="q-text">The formula for Molar Conductivity (λm) is:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt correct">A. (κ × 1000) / M</div>
+                <div class="mcq-opt">B. (κ × 1000) / N</div>
+                <div class="mcq-opt">C. κ / M</div>
+                <div class="mcq-opt">D. κ × V</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q8</span>
+                <div class="q-text">What happens during the charging of a Lead Storage Battery?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. PbSO₄ precipitates</div>
+                <div class="mcq-opt correct">B. PbSO₄ converts back to Pb</div>
+                <div class="mcq-opt">C. H₂SO₄ is consumed</div>
+                <div class="mcq-opt">D. Cell becomes dead</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q9</span>
+                <div class="q-text">Efficiency of a Fuel Cell is approximately:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. 40%</div>
+                <div class="mcq-opt">B. 100%</div>
+                <div class="mcq-opt correct">C. 70-75%</div>
+                <div class="mcq-opt">D. 10%</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q10</span>
+                <div class="q-text">Effect of dilution on Specific Conductivity (κ):</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. Increases</div>
+                <div class="mcq-opt correct">B. Decreases</div>
+                <div class="mcq-opt">C. Remains constant</div>
+                <div class="mcq-opt">D. Becomes zero</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q11</span>
+                <div class="q-text">Faraday's First Law relates mass (W) correctly as:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt correct">A. Z × Q</div>
+                <div class="mcq-opt">B. E / F</div>
+                <div class="mcq-opt">C. V × I</div>
+                <div class="mcq-opt">D. m / V</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q12</span>
+                <div class="q-text">Voltage of a Dry Cell is:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. 2.0 V</div>
+                <div class="mcq-opt correct">B. 1.25 - 1.5 V</div>
+                <div class="mcq-opt">C. 1.1 V</div>
+                <div class="mcq-opt">D. 3.0 V</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q13</span>
+                <div class="q-text">Cathodic reaction during rusting in alkaline medium:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. Fe ➔ Fe²⁺</div>
+                <div class="mcq-opt correct">B. O₂ + 2H₂O + 4e⁻ ➔ 4OH⁻</div>
+                <div class="mcq-opt">C. H⁺ ➔ H₂</div>
+                <div class="mcq-opt">D. Pb ➔ PbSO₄</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q14</span>
+                <div class="q-text">The unit of Cell Constant (G*) is:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. Ohm cm</div>
+                <div class="mcq-opt">B. S cm⁻¹</div>
+                <div class="mcq-opt correct">C. cm⁻¹</div>
+                <div class="mcq-opt">D. cm²</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q15</span>
+                <div class="q-text">Ni-Cd cell is used in:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt correct">A. Electronic watches, calculators</div>
+                <div class="mcq-opt">B. Automobiles</div>
+                <div class="mcq-opt">C. Flashlights</div>
+                <div class="mcq-opt">D. Spacecraft</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q16</span>
+                <div class="q-text">Rule to determine molar conductivity at infinite dilution:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. Raoult's Law</div>
+                <div class="mcq-opt">B. Henry's Law</div>
+                <div class="mcq-opt correct">C. Kohlrausch Law</div>
+                <div class="mcq-opt">D. Ostwald Rule</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q17</span>
+                <div class="q-text">Value of 1 Faraday (F) is approximately:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. 10,000 C</div>
+                <div class="mcq-opt correct">B. 96,500 C</div>
+                <div class="mcq-opt">C. 1.6 × 10⁻¹⁹ C</div>
+                <div class="mcq-opt">D. 6.023 × 10²³ C</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q18</span>
+                <div class="q-text">Which of the following is a Primary Cell?</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. Lead Storage Battery</div>
+                <div class="mcq-opt correct">B. Mercury Cell</div>
+                <div class="mcq-opt">C. Ni-Cd Cell</div>
+                <div class="mcq-opt">D. Fuel Cell</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q19</span>
+                <div class="q-text">Nernst equation gives relationship between:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt correct">A. Potential and Concentration</div>
+                <div class="mcq-opt">B. Conductivity and Concentration</div>
+                <div class="mcq-opt">C. Pressure and Solubility</div>
+                <div class="mcq-opt">D. Temperature and Pressure</div>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num">Q20</span>
+                <div class="q-text">In Galvanization, iron is coated with:</div>
+            </div>
+            <div class="mcq-options">
+                <div class="mcq-opt">A. Copper</div>
+                <div class="mcq-opt">B. Silver</div>
+                <div class="mcq-opt correct">C. Zinc</div>
+                <div class="mcq-opt">D. Tin</div>
+            </div>
+        </div>
+
+        <div class="qa-section-title" style="border-left-color: #10b981; background: #ecfdf5;">🟢 Short Answer Questions - 10</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q1</span>
+                <div class="q-text">What is the function of Platinum in Standard Hydrogen Electrode (SHE)?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Answer:</b> Platinum electrode is an inert electrode that provides a surface for the exchange of electrons and aids in the adsorption of gas. It does not participate in the reaction itself.</div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q2</span>
+                <div class="q-text">State Kohlrausch's Law.</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Answer:</b> At infinite dilution, the molar conductivity of an electrolyte is equal to the sum of the individual molar conductivities of its cations and anions.</div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q3</span>
+                <div class="q-text">State Faraday's First Law of electrolysis.</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Answer:</b> The mass (W) of a substance deposited at an electrode is directly proportional to the quantity of electricity (Q) passed through the electrolyte. (W = ZQ = ZIt).</div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q4</span>
+                <div class="q-text">State two functions of a Salt Bridge.</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Answer:</b> (1) It completes the electrical circuit. (2) It maintains the electrical neutrality of the solutions in both half-cells.</div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q5</span>
+                <div class="q-text">What is Electrochemical Series (ECS)?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Answer:</b> A series obtained by arranging various elements in increasing order of their standard reduction potentials is called the electrochemical series.</div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q6</span>
+                <div class="q-text">Give relationship between specific conductivity (κ) and cell constant (G*).</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Answer:</b> Specific Conductivity (κ) = Conductance (G) × Cell Constant (G*). i.e., κ = (1/R) × (l/A).</div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q7</span>
+                <div class="q-text">Which fuel cell was used in the Apollo Space Program?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Answer:</b> The H₂-O₂ (hydrogen-oxygen) fuel cell was used in the Apollo space program to obtain electrical energy and drinking water.</div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q8</span>
+                <div class="q-text">Define Corrosion.</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Answer:</b> The gradual destruction of metals due to the formation of unwanted compounds (like oxides or sulfides) on their surface in the presence of air and moisture is called corrosion.</div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q9</span>
+                <div class="q-text">What is the formula for degree of dissociation (α) for weak electrolytes?</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Answer:</b> α = λc / λ∞ (where λc is molar conductivity at a given concentration and λ∞ is limiting molar conductivity).</div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#10b981;">Q10</span>
+                <div class="q-text">Write one main difference between Primary and Secondary cells.</div>
+            </div>
+            <div class="ans-text" style="color:#064e3b; background:#f0fdf4; padding: 15px; border-radius: 10px;"><b>Answer:</b> Primary cells cannot be recharged, whereas secondary cells (like lead storage batteries) can be recharged by passing an electric current through them.</div>
+        </div>
+
+        <div class="qa-section-title" style="border-left-color: #3b82f6; background: #eff6ff;">🔵 Long Answer Questions - 5</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q1</span>
+                <div class="q-text">Explain Nernst Equation and its relationship with Equilibrium Constant (Kc).</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>Answer:</b> <br><br>
+            Nernst Equation shows the dependence of electrode potential on the concentration of electrolytes and temperature.<br>
+            <b>Equation:</b> E = E° - <span class="math-frac"><span class="math-top">RT</span><span class="math-bot">nF</span></span> ln Q <br>
+            At 298K: <b>E = E° - <span class="math-frac"><span class="math-top">0.0591</span><span class="math-bot">n</span></span> log <span class="math-frac"><span class="math-top">[Oxidized]</span><span class="math-bot">[Reduced]</span></span></b><br><br>
+            <b>Relationship with Kc:</b><br>
+            At equilibrium, cell potential (E cell) becomes zero (0). Hence:<br>
+            0 = E° - <span class="math-frac"><span class="math-top">0.0591</span><span class="math-bot">n</span></span> log Kc <br>
+            ⟹ <b>log Kc = <span class="math-frac"><span class="math-top">n × E°</span><span class="math-bot">0.0591</span></span></b>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q2</span>
+                <div class="q-text">Describe the working of an Electrochemical cell (Daniel Cell) with a labeled diagram.</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>Answer:</b> <br>
+            A Daniel cell converts chemical energy into electrical energy.<br>
+            <b>Construction:</b> Zn rod immersed in ZnSO₄ solution and Cu rod in CuSO₄ solution.<br>
+            <b>1. Anode:</b> Zn undergoes oxidation (Zn ➔ Zn²⁺ + 2e⁻). It is the negative terminal.<br>
+            <b>2. Cathode:</b> Cu²⁺ undergoes reduction (Cu²⁺ + 2e⁻ ➔ Cu). It is the positive terminal.<br>
+            <b>3. Salt Bridge:</b> Maintains ionic balance.<br>
+            Electrons flow from Anode to Cathode, and current flows from Cathode to Anode.
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q3</span>
+                <div class="q-text">Explain the electrochemical mechanism of rusting of iron.</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>Answer:</b> <br>
+            Rusting is an electrochemical phenomenon.<br>
+            <b>1. Anodic area:</b> Pure iron gets oxidized (Fe ➔ Fe²⁺ + 2e⁻).<br>
+            <b>2. Cathodic area:</b> Oxygen is reduced in the presence of H⁺ (O₂ + 4H⁺ + 4e⁻ ➔ 2H₂O).<br>
+            <b>3. Hydration:</b> Fe²⁺ is further oxidized to Fe³⁺ which deposits as hydrated ferric oxide (Fe₂O₃ ⋅ xH₂O), known as rust.
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q4</span>
+                <div class="q-text">State and explain both of Faraday's laws of electrolysis.</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>Answer:</b> <br>
+            <b>First Law:</b> Mass deposited (W) ∝ quantity of electricity (Q) ⟹ W = ZIt.<br>
+            <b>Second Law:</b> When same quantity of electricity is passed through different electrolytes in series, the mass of substances deposited is proportional to their equivalent weights (W₁/W₂ = E₁/E₂).
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#3b82f6;">Q5</span>
+                <div class="q-text">Write chemical reactions occurring during discharging and charging of a Lead Storage Battery.</div>
+            </div>
+            <div class="ans-text" style="color:#1e3a8a; background:#eff6ff; padding: 20px; border-radius: 12px; line-height: 1.8;"><b>Answer:</b> <br>
+            <b>Discharging:</b><br>
+            Anode: Pb + SO₄²⁻ ➔ PbSO₄ + 2e⁻ <br>
+            Cathode: PbO₂ + SO₄²⁻ + 4H⁺ + 2e⁻ ➔ PbSO₄ + 2H₂O <br>
+            <b>Charging:</b> Applying external voltage reverses these reactions, converting PbSO₄ back to Pb and PbO₂.
+            </div>
+        </div>
+
+        <div class="qa-section-title" style="border-left-color: #8b5cf6; background: #f5f3ff;">🟣 Numericals - 5</div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q1</span>
+                <div class="q-text">A conductivity cell has a resistance of 100 Ohm. If cell constant is 1.25 cm⁻¹, find specific conductivity (κ).</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>Solution:</b><br>
+            Resistance (R) = 100 Ohm <br>
+            Cell Constant (G*) = 1.25 cm⁻¹ <br>
+            κ = <span class="math-frac"><span class="math-top">Cell Constant</span><span class="math-bot">Resistance</span></span> = <span class="math-frac"><span class="math-top">1.25</span><span class="math-bot">100</span></span> <br>
+            κ = <b>0.0125 S cm⁻¹</b>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q2</span>
+                <div class="q-text">Calculate the standard Gibbs free energy (∆G°) for a Daniel Cell. (E° = 1.1 V, F = 96500 C)</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>Solution:</b><br>
+            n = 2 (for Zn, Cu), E° = 1.1 V <br>
+            ∆G° = -nFE° <br>
+            ∆G° = -2 × 96500 × 1.1 <br>
+            ∆G° = <b>-212,300 J/mol = -212.3 kJ/mol</b>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q3</span>
+                <div class="q-text">Find the EMF of the following cell: Mg/Mg²⁺(0.1M) || Cu²⁺(0.01M)/Cu (E° cell = 2.71 V)</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>Solution:</b><br>
+            Using Nernst Equation:<br>
+            E = E° - <span class="math-frac"><span class="math-top">0.0591</span><span class="math-bot">2</span></span> log <span class="math-frac"><span class="math-top">0.1</span><span class="math-bot">0.01</span></span> <br>
+            E = 2.71 - 0.0295 × log 10 <br>
+            E = 2.71 - 0.0295 = <b>2.68 V</b>
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q4</span>
+                <div class="q-text">How many Faradays of charge are required to reduce 1 mole of Al³⁺ to Al?</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>Solution:</b><br>
+            Al³⁺ + 3e⁻ ➔ Al <br>
+            n = 3 moles of electrons <br>
+            Charge (Q) = nF = <b>3 F</b> (3 × 96500 C)
+            </div>
+        </div>
+
+        <div class="q-card">
+            <div style="display:flex; align-items:flex-start;">
+                <span class="q-num" style="background:#8b5cf6;">Q5</span>
+                <div class="q-text">Limiting molar conductivities of Mg²⁺ and SO₄²⁻ are 106 and 160 S cm² mol⁻¹ respectively. Calculate λ∞ for MgSO₄.</div>
+            </div>
+            <div class="ans-text" style="color:#5b21b6; background:#f5f3ff; padding: 20px; border-radius: 12px; line-height: 1.8; font-family:serif; font-size:1.7rem;"><b>Solution:</b><br>
+            λ∞(MgSO₄) = λ∞(Mg²⁺) + λ∞(SO₄²⁻) <br>
+            λ∞ = 106 + 160 = <b>266 S cm² mol⁻¹</b>
+            </div>
+        </div>
+
+        <div class="qa-section-title" style="border-left-color: #f59e0b; background: #fffbeb;">🟠 Board PYQ Questions</div>
+        <div class="q-card" style="border-color: #fcd34d;">
+            <div style="display:flex; align-items:flex-start; margin-bottom: 20px;">
+                <span class="q-num" style="background:#f59e0b;">B1</span>
+                <div>
+                    <div class="q-text">Name a metal used in the process of Galvanization to protect iron. <span style="font-size:1.1rem; color:#d97706;">(RBSE 2021)</span></div>
+                    <div class="ans-text" style="border:none; margin-top:5px; padding-top:0;"><b>Answer:</b> Zinc (Zn).</div>
+                </div>
+            </div>
+            <div style="display:flex; align-items:flex-start; margin-bottom: 20px;">
+                <span class="q-num" style="background:#f59e0b;">B2</span>
+                <div>
+                    <div class="q-text">What is the effect of dilution on specific conductance? <span style="font-size:1.1rem; color:#d97706;">(RBSE 2018)</span></div>
+                    <div class="ans-text" style="border:none; margin-top:5px; padding-top:0;"><b>Answer:</b> Specific conductance (κ) decreases on dilution because the number of ions per unit volume (cm³) decreases.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="ch2_part10.html" class="nav-btn">⬅️ Back (Notes)</a>
+            <a href="../index_eng.html" class="nav-btn">🏠 Main Hub</a>
+        </div>
     </div>
 </body>
 </html>

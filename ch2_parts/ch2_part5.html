@@ -3,52 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Chapter 2 - Part 5 (Hindi)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>अध्याय 2 - भाग 5 (विलयनों का चालकत्व)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #059669;
             --primary-dark: #064e3b;
-            --secondary: #10b981;
             --accent: #8b5cf6;
             --slate-50: #f8fafc;
             --slate-100: #f1f5f9;
             --slate-800: #1e293b;
             --font-main: #000000;
         }
-        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: var(--slate-50); color: var(--font-main); overflow-x: hidden; font-weight: 600; display:flex; flex-direction:column; min-height:100vh; }
-        .header-banner { background: linear-gradient(135deg, var(--accent) 0%, #6d28d9 100%); color: white; padding: 40px 20px; text-align: center; border-radius: 0 0 40px 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        .premium-badge { background: rgba(255,255,255,0.2); padding: 6px 15px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 10px; }
-        h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin: 0; font-weight: 900; }
+        body { margin: 0; padding: 0; font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; background: var(--slate-50); color: var(--font-main); overflow-x: hidden; font-weight: 600; display:flex; flex-direction:column; min-height:100vh; }
         
-        .content-container { flex:1; padding: 40px 5vw; max-width: 1200px; margin: 0 auto; width: 100%; box-sizing:border-box; }
-        
-        .topic-card { background: white; border: 2px dashed var(--secondary); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        .topic-title { font-size: 2rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; }
-        .topic-desc { font-size: 1.5rem; color: var(--slate-800); }
+        /* Edge-to-Edge Container */
+        .header-banner { background: linear-gradient(135deg, #059669 0%, #064e3b 100%); color: white; padding: 50px 20px; text-align: center; border-radius: 0 0 50px 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .premium-badge { background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 100px; font-size: 1rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 15px; }
+        h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0; font-weight: 900; }
 
-        .nav-buttons { display: flex; justify-content: center; padding: 30px; background:white; border-top:1px solid #e2e8f0; }
-        .nav-btn { background: #1e293b; color: white; padding: 15px 35px; border-radius: 100px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: 0.3s; }
-        .nav-btn:hover { background: var(--primary); transform: translateY(-3px); }
+        .content-container { flex:1; padding: 30px 0; width: 100%; box-sizing:border-box; margin: 0; }
+        
+        .note-card { background: white; border-radius: 0px; padding: 40px; margin-bottom: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.06); border-left: 15px solid var(--primary); width: 100%; box-sizing: border-box; }
+        .note-title { font-size: 2.4rem; color: var(--primary-dark); font-weight: 900; margin-bottom: 25px; border-bottom: 4px solid var(--slate-100); padding-bottom: 15px; display: flex; align-items: center; gap: 15px; }
+        
+        .explanation-box { background: #f0fdf4; border: 3px dashed #86efac; border-radius: 20px; padding: 25px; margin: 25px 0; font-size: 2rem; color: #166534; }
+        .concept-tag { background: #1e293b; color: white; padding: 5px 15px; border-radius: 8px; font-size: 1.2rem; vertical-align: middle; margin-right: 10px; font-weight: 900; }
+
+        .note-list { font-size: 2.22rem; color: var(--slate-800); line-height: 1.6; list-style: none; padding: 0; }
+        .note-list li { margin-bottom: 25px; position: relative; padding-left: 55px; font-weight: 800; }
+        .note-list li::before { content: "➔"; position: absolute; left: 0; color: var(--primary); font-weight: 950; }
+
+        /* Premium Math Formatting */
+        .math-box { background: #fdfdfd; color: #1e293b; padding: 30px; border-radius: 20px; font-family: 'Cambria Math', serif; font-size: 2.5rem; text-align: center; margin: 30px 0; border: 3px solid #e2e8f0; box-shadow: inset 0 0 20px rgba(0,0,0,0.02); }
+        .math-frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-size: 0.95em; margin: 0 5px; line-height: 1.2; font-weight: bold; }
+        .math-top { border-bottom: 3px solid currentColor; padding: 0 6px 2px 6px; }
+        .math-bot { padding: 2px 6px 0 6px; }
+
+        /* Classification Grid */
+        .class-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 25px; }
+        .class-item { background: var(--slate-50); padding: 25px; border-radius: 15px; border-top: 8px solid var(--accent); }
+        .class-item h3 { margin: 0 0 15px 0; font-size: 1.8rem; color: var(--slate-800); }
+
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 50px 20px; border-top: 3px solid #e2e8f0; }
+        .nav-btn { display: flex; align-items: center; gap: 15px; padding: 20px 45px; border-radius: 100px; text-decoration: none; font-weight: 900; font-size: 1.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-home { background: #1e293b; color: white; }
+        .btn-prev { background: #94a3b8; color: white; }
+        .btn-next { background: #059669; color: white; }
+        .nav-btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
     </style>
+    <!-- MathJax for rendering equations -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
 </head>
 <body>
     <div class="header-banner">
         <div class="premium-badge">Class 12 - Chapter 2</div>
-        <h1>वैद्युतरसायन (Electrochemistry)</h1>
-        <p style="font-size: 1.2rem; margin-top: 10px; font-weight: 600; opacity: 0.9;">Part 5</p>
+        <h1>वैद्युत अपघटनी विलयनों का चालकत्व</h1>
+        <p style="font-size: 1.5rem; margin-top: 15px; font-weight: 700; opacity: 0.9;">Part 5: चालकता और पदार्थों का वर्गीकरण</p>
     </div>
 
     <div class="content-container">
-        <div class="topic-card">
-            <div class="topic-title">📚 Topic to cover in this section:</div>
-            <div class="topic-desc">साम्य स्थिरांक तथा गिब्स मुक्त ऊर्जा</div>
-        </div>
-        <!-- Write actual content corresponding to the topic here -->
-    </div>
+        
+        <!-- Resistance Section -->
+        <div class="note-card" style="border-left-color: #f59e0b;">
+            <div class="note-title">⚡ 1. विद्युत प्रतिरोध (Electrical Resistance - R)</div>
+            <p style="font-size: 1.7rem; line-height: 1.8;">
+                विद्युत धारा के मार्ग में उत्पन्न होने वाली किसी भी प्रकार की बाधा को <b>विद्युत प्रतिरोध</b> कहते हैं। 
+            </p>
+            
+            <div class="explanation-box" style="background: #fffbeb; border-color: #fcd34d;">
+                <span class="concept-tag" style="background: #d97706;">Concept Analogy</span>
+                इसे एक पानी के पाइप की तरह समझें: 
+                <br>• यदि पाइप <b>लम्बा ($l$)</b> है, तो पानी को निकलने में अधिक बाधा आएगी (प्रतिरोध बढ़ेगा)।
+                <br>• यदि पाइप <b>चौड़ा ($A$)</b> है, तो पानी आसानी से बहेगा (प्रतिरोध घटेगा)।
+            </div>
 
-    <div class="nav-buttons">
-        <a href="../index.html" class="nav-btn">🏠 Main Hub (होम)</a>
+            <ul class="note-list">
+                <li>चालक का प्रतिरोध उसकी लम्बाई ($l$) के <b>समानुपाती</b> होता है ($R \propto l$)।</li>
+                <li>प्रतिरोध उसके अनुप्रस्थ काट क्षेत्रफल ($A$) के <b>व्युत्क्रमानुपाती</b> होता है ($R \propto 1/A$)।</li>
+            </ul>
+
+            <div class="math-box">
+                R ∝ <span class="math-frac"><span class="math-top">l</span><span class="math-bot">A</span></span> 
+                <span style="margin: 0 20px;">➔</span> 
+                R = ρ <span class="math-frac"><span class="math-top">l</span><span class="math-bot">A</span></span>
+            </div>
+
+            <div class="explanation-box">
+                <span class="concept-tag">Teacher's Note</span>
+                <b>ध्यान दें:</b> यहाँ $\rho$ (rho) एक नियतांक (Constant) है जिसे विशिष्ट प्रतिरोध कहते हैं। $R$ का मान तापमान बदलने पर भी बदल जाता है।
+                <br><br><b>मात्रक:</b> ओम (Ohm, Ω)
+            </div>
+        </div>
+
+        <!-- Resistivity Section -->
+        <div class="note-card" style="border-left-color: #10b981;">
+            <div class="note-title">🧪 2. विशिष्ट प्रतिरोध / प्रतिरोधकता (Resistivity - ρ)</div>
+            <p style="font-size: 1.7rem; line-height: 1.8;">
+                यह किसी पदार्थ का <b>आंतरिक गुण (Intrinsic Property)</b> है। यह चालक की लम्बाई या चौड़ाई पर निर्भर नहीं करता, बल्कि केवल <b>पदार्थ की प्रकृति</b> और <b>तापमान</b> पर निर्भर करता है।
+            </p>
+
+            <div class="explanation-box" style="background: #f0fdf4; border-color: #86efac;">
+                <b>परिभाषा:</b> "1 मीटर लम्बे और 1 वर्ग मीटर क्षेत्रफल वाले चालक के प्रतिरोध को ही उसकी प्रतिरोधकता कहते हैं।"
+            </div>
+
+            <div class="math-box">
+                ρ = R × <span class="math-frac"><span class="math-top">A</span><span class="math-bot">l</span></span>
+            </div>
+
+            <div class="explanation-box">
+                <span class="concept-tag" style="background: #059669;">Identity of Matter</span>
+                सोने (Gold) की प्रतिरोधकता हमेशा एक जैसी रहेगी, चाहे आप 1 ग्राम सोना लें या 1 किलो। यही इसे $R$ से अलग बनाता है।
+                <br><br><b>मात्रक:</b> ओम-मीटर (Ω·m)
+            </div>
+        </div>
+
+        <!-- Conductance Section -->
+        <div class="note-card" style="border-left-color: #8b5cf6;">
+            <div class="note-title">💡 3. चालकत्व (Conductance - G or C)</div>
+            <p style="font-size: 1.7rem;">
+                यह प्रतिरोध का ठीक उल्टा (Reciprocal) है। यह बताता है कि कोई विलयन विद्युत धारा को कितनी <b>आसानी (Ease)</b> से बहने देता है।
+            </p>
+            <div class="math-box">
+                G = <span class="math-frac"><span class="math-top">1</span><span class="math-bot">R</span></span>
+            </div>
+            <div class="explanation-box">
+                <b>मात्रक:</b> ohm⁻¹ , mho, या <b>सीमेन्स (Siemens, S)</b>। 
+                <br>आधुनिक रसायन विज्ञान में <b>S</b> का ही उपयोग होता है।
+            </div>
+        </div>
+
+        <!-- Conductivity Section -->
+        <div class="note-card" style="border-left-color: #ec4899;">
+            <div class="note-title">🔍 4. विशिष्ट चालकत्व या चालकता (Conductivity - κ)</div>
+            <p style="font-size: 2.22rem; line-height: 1.6; font-weight: 800;">
+                प्रतिरोधकता ($\rho$) के व्युत्क्रम को <b>विशिष्ट चालकता (Kappa)</b> कहते हैं। 
+                <br><b>सरल शब्दों में:</b> यह 1 घन सेंटीमीटर ($1 cm^{3}$) विलयन की चालकता है।
+            </p>
+            
+            <div class="math-box">
+                κ = <span class="math-frac"><span class="math-top">1</span><span class="math-bot">ρ</span></span> = G × <span class="math-frac"><span class="math-top">l</span><span class="math-bot">A</span></span>
+            </div>
+
+            <div class="explanation-box" style="background: #fdf2f8; border-color: #f9a8d4; font-size: 2.22rem;">
+                <span class="concept-tag" style="background: #be185d; font-size: 1.4rem;">Pro Tip</span>
+                <br>यहाँ $\frac{l}{A}$ को <b>सेल नियतांक (Cell Constant - G*)</b> कहते हैं। 
+                <br><br>अतः: <b>चालकता = चालकत्व × सेल नियतांक</b>
+                <br><br><b>मात्रक:</b> S·m⁻¹ या S·cm⁻¹
+            </div>
+        </div>
+
+
+        <!-- Classification Deep Dive -->
+        <div class="note-card" style="border-left-color: #3b82f6;">
+            <div class="note-title">📑 पदार्थों का वर्गीकरण (Classification)</div>
+            
+            <p style="font-size: 2.22rem; font-weight: 850; color: #1e293b; margin-bottom: 20px;">
+                चालकता के आधार पर पदार्थ तीन प्रकार के होते हैं -
+            </p>
+
+            <div class="explanation-box" style="background: #f8fafc; border-color: #3b82f6; border-style: solid; border-width: 4px; font-size: 2.22rem;">
+                <b style="font-size: 2.4rem; color: #1d4ed8;">1) चालक (Conductor):</b><br>
+                वे पदार्थ जिसमें आसानी से वैद्युत धारा का प्रवाह हो चालक कहलाते हैं।
+            </div>
+
+            <div class="explanation-box" style="background: #fdf2f2; border-color: #ef4444; border-style: solid; border-width: 4px; font-size: 2.22rem; margin-top: 20px;">
+                <b style="font-size: 2.4rem; color: #b91c1c;">2) कुचालक:</b><br>
+                वे पदार्थ जिनमें वैद्युत धारा का प्रवाह नहीं हो, कुचालक कहलाते हैं।
+                <br><b>Example:</b> रबर, लकड़ी, सीसा etc.
+            </div>
+
+            <div class="explanation-box" style="background: #fffbeb; border-color: #f59e0b; border-style: solid; border-width: 4px; font-size: 2.22rem; margin-top: 20px;">
+                <b style="font-size: 2.4rem; color: #b45309;">3) अर्द्धचालक:</b><br>
+                वे पदार्थ जिनकी चालकता, चालकों से कम व कुचालकों से अधिक हो, अर्द्धचालक कहलाते हैं।
+                <br><b>Ex:</b> वर्ग-13, वर्ग-14, वर्ग-15 के तत्व
+            </div>
+
+            
+            <div class="explanation-box" style="background: #eff6ff; border-color: #93c5fd; font-size: 2.22rem;">
+                <b>1. धात्विक चालक:</b> इनमें धारा इलेक्ट्रॉनों के कारण बहती है (जैसे कॉपर)। इसमें पदार्थ का स्थानांतरण नहीं होता।
+                <br><br><b>2. वैद्युत अपघटनीय चालक:</b> इनमें धारा <b>आयनों (Ions)</b> के कारण बहती है। इसमें पदार्थ का स्थानांतरण होता है।
+            </div>
+
+            <div style="background: #f8fafc; padding: 30px; border-radius: 20px; border: 2px solid #e2e8f0;">
+                <h3 style="font-size: 2.5rem; color: #1e40af; border-bottom: 3px solid #bfdbfe; padding-bottom: 15px; font-weight: 950;">वैद्युत अपघट्य के प्रकार (Types of Electrolytes)</h3>
+                
+                <div class="class-grid">
+                    <div class="class-item" style="border-color: #059669;">
+                        <h4 style="margin-top:0; color: #059669; font-size: 2.6rem; font-weight: 950;">प्रबल अपघट्य (Strong)</h4>
+                        <p style="font-size: 2.2rem; font-weight: 800;">जो जल में पूरी तरह घुल जाते हैं (100% आयनन)।</p>
+                        <b style="font-size: 2.2rem; color: #064e3b;">Ex: NaCl, HCl, NaOH, KNO₃</b>
+                    </div>
+                    <div class="class-item" style="border-color: #f59e0b;">
+                        <h4 style="margin-top:0; color: #d97706; font-size: 2.6rem; font-weight: 950;">दुर्बल अपघट्य (Weak)</h4>
+                        <p style="font-size: 2.2rem; font-weight: 800;">जो बहुत कम घुलते हैं (आंशिक आयनन)।</p>
+                        <b style="font-size: 2.2rem; color: #9a3412;">Ex: CH₃COOH, NH₄OH, H₂CO₃</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Factors from Notebook -->
+        <div class="note-card" style="border-left-color: #0f172a; background: #fafafa;">
+            <div class="note-title">🧪 चालकता को प्रभावित करने वाले कारक</div>
+            
+            <div style="font-size: 2.2rem; color: #334155; line-height: 1.6; font-weight: 800;">
+                <p style="text-decoration: underline; color: #1e293b; font-size: 2.4rem; font-weight: 900;">1) वैद्युत अपघटय की प्रकृति -</p>
+                <ul style="list-style-type: '➔'; padding-left: 30px;">
+                    <li>यदि वैद्युत अपघट्य प्रबल प्रकृति का होता है तो विलयन में उसका पूर्णतः वियोजन हो जाता है। अतः आयनों की संख्या बढ़ने पर चालकता के मान में वृद्धि होती है।</li>
+                    <li style="margin-top: 20px;">यदि वैद्युत अपघट्य दुर्बल प्रकृति का होता है तो उसका विलयन में पूर्णतः वियोजन नहीं होता है व आयनों की संख्या में कमी होती है जिससे चालकता का मान घट जाता है।</li>
+                </ul>
+
+                <p style="text-decoration: underline; color: #1e293b; font-size: 2.4rem; font-weight: 900; margin-top: 40px;">2) विलायक की प्रकृति -</p>
+                <ul style="list-style-type: '➔'; padding-left: 30px;">
+                    <li>यदि विलायक ध्रुवीय प्रकृति का होता है तो उसमें वैद्युत अपघट्य आसानी से वियोजित हो जाता है व चालकता के मान में वृद्धि होती है।</li>
+                    <li style="margin-top: 20px;">यदि विलायक अध्रुवीय प्रकृति का होता है तो उसमें वैद्युत अपघट्य आसानी से वियोजित नहीं होता है अतः चालकता में कमी आती है।</li>
+                </ul>
+
+                <p style="text-decoration: underline; color: #1e293b; font-size: 2.4rem; font-weight: 900; margin-top: 40px;">3) तनुता -</p>
+                <p>➔ किसी विलयन की तनुता बढ़ने के साथ-साथ एकांक आयतन में उपस्थित आयनों की संख्या में कमी होती जाती है। अतः तनुता बढ़ने के साथ-2 चालकता के मान में कमी होती है।</p>
+
+                <p style="text-decoration: underline; color: #1e293b; font-size: 2.4rem; font-weight: 900; margin-top: 40px;">4) ताप -</p>
+                <p>➔ ताप बढ़ाने के साथ-साथ विलयन में उपस्थित आयनों की गतिज ऊर्जा में वृद्धि होती है। अतः चालकता के मान में भी वृद्धि होती है।</p>
+            </div>
+        </div>
+
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <a href="ch2_part4.html" class="nav-btn btn-prev">⬅️ Part 4</a>
+            <a href="../index.html" class="nav-btn btn-home">🏠 Home</a>
+            <a href="ch2_part6.html" class="nav-btn btn-next">Part 6 ➡️</a>
+        </div>
+
     </div>
 </body>
 </html>

@@ -21,7 +21,7 @@
         .premium-badge { background: rgba(255,255,255,0.2); padding: 6px 15px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 10px; }
         h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin: 0; font-weight: 900; }
         
-        .content-container { flex:1; padding: 40px 5vw; max-width: 1200px; margin: 0 auto; width: 100%; box-sizing:border-box; }
+        .content-container { flex:1; padding: 40px 0; width: 100%; box-sizing:border-box; }
         
         .topic-card { background: white; border: 2px dashed var(--secondary); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
         .topic-title { font-size: 2rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; }
@@ -39,16 +39,143 @@
         <p style="font-size: 1.2rem; margin-top: 10px; font-weight: 600; opacity: 0.9;">Part 8</p>
     </div>
 
+    <style>
+        .content-container { flex:1; padding: 20px 0; width: 100%; box-sizing:border-box; }
+        .math-box { background: #f8fafc; padding: 30px; border-radius: 20px; border: 2px solid #e2e8f0; font-family: 'Cambria Math', serif; font-size: 2.22rem; font-weight: 900; margin: 20px 0; display: inline-block; }
+        .math-frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; }
+        .math-top { border-bottom: 3px solid currentColor; padding: 0 10px; }
+        .math-bot { font-size: 0.8em; padding: 5px 0; }
+    </style>
+
     <div class="content-container">
-        <div class="topic-card">
-            <div class="topic-title">📚 Topic to cover in this section:</div>
-            <div class="topic-desc">Electrolysis and Faraday's Laws</div>
+        <!-- Faraday's Laws Header -->
+        <div style="background: white; border-radius: 20px; border: 4px solid var(--accent); padding: 50px; margin-bottom: 50px;">
+            <h2 style="font-size: 3rem; font-weight: 950; color: #1e293b; margin-bottom: 40px;">➔ Faraday's Laws of Electrolysis -</h2>
+            
+            <div style="font-size: 2.22rem; line-height: 1.8; font-weight: 800; color: #000;">
+                <div style="margin-bottom: 30px;">
+                    <span style="font-size: 2.5rem; background: #f3f4f6; padding: 10px 20px; border-radius: 10px; border-bottom: 4px solid var(--accent);">1⟩ Faraday's First Law</span>
+                </div>
+                
+                <p>➔ According to Faraday's First Law, the mass of a substance deposited at an electrode in an electrolyte solution is directly proportional to the charge passed through that solution.</p>
+
+                <div style="display: flex; align-items: center; justify-content: space-around; margin: 40px 0; background: #fff; padding: 30px; border: 2px solid #e2e8f0; border-radius: 20px;">
+                    <div style="font-size: 3rem; font-weight: 950; font-family: 'Cambria Math', serif;">
+                        W ∝ Q <br>
+                        <div style="border: 3px solid black; padding: 10px 20px; display: inline-block; margin-top: 10px;">W = ZQ</div> — ①
+                    </div>
+                    <div style="font-size: 1.6rem; color: #475569;">
+                        Q — Charge passed <br>
+                        W — amount of substance deposited <br>
+                        Z — Electro-chemical equivalent
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; border-top: 2px dashed #cbd5e1; padding-top: 40px;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <span style="font-size: 2.5rem; font-family: 'Cambria Math', serif;">Q = I t</span><br>
+                        <div style="border: 3px solid black; padding: 10px 20px; display: inline-block; margin-top: 10px;">W = Z I t</div> — ②
+                    </div>
+                    
+                    <p>If &nbsp;&nbsp; I = 1 Amp. &nbsp;&nbsp; t = 1 sec &nbsp;&nbsp; then &nbsp;&nbsp; W = Z</p>
+                    <p style="background: #fdf2f8; padding: 30px; border-radius: 20px; border: 2px solid #f9a8d4; margin: 30px 0;">
+                        "If 1 Amp current is passed for 1 sec in an electrolyte solution, then the mass of substance deposited on electrodes is called its Electro-chemical equivalent."
+                    </p>
+                </div>
+
+                <div style="margin-top: 50px;">
+                    <p>➔ The ratio of the equivalent weight of a substance and the number of electrons lost or gained in the solution is called the 'Electro-chemical equivalent'.</p>
+                    
+                    <div style="text-align: center; margin: 40px 0;">
+                        <div style="border: 3px solid black; padding: 20px 40px; display: inline-block; font-size: 3rem; font-family: 'Cambria Math', serif;">
+                            Z = <div class="math-frac" style="display: inline-flex; vertical-align: middle; margin: 0 10px;">
+                                <span class="math-top" style="border-bottom: 3px solid black; padding: 0 15px;">E</span>
+                                <span class="math-bot">nf</span>
+                            </div>
+                        </div> — ③
+                    </div>
+
+                    <p style="font-weight: 950; color: #1e40af; font-size: 2rem;">On putting eq (③) in eq (②)-</p>
+                    <div style="text-align: center; margin: 40px 0;">
+                        <div style="border: 3px solid black; padding: 20px 40px; display: inline-block; font-size: 3.5rem; font-family: 'Cambria Math', serif; background: #f8fafc;">
+                            W = <div class="math-frac" style="display: inline-flex; vertical-align: middle; margin: 0 10px;">
+                                <span class="math-top" style="border-bottom: 3px solid black; padding: 0 15px;">E</span>
+                                <span class="math-bot">nf</span>
+                            </div> × I t
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Write actual content corresponding to the topic here -->
+
+        <!-- Faraday Simulator -->
+        <div style="background: #0f172a; border-radius: 40px; padding: 50px; margin-bottom: 50px; box-shadow: 0 30px 60px rgba(0,0,0,0.3);">
+            <h3 style="border-left: 10px solid #fbbf24; color: #fbbf24; background: linear-gradient(to right, rgba(251, 191, 36, 0.1), transparent); padding: 15px 25px; font-size: 2rem; font-weight: 800; margin-bottom: 40px;">
+                🕹️ Faraday Calculator (W = ZIt Activity)
+            </h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+                <!-- Controls -->
+                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="margin-bottom: 30px;">
+                        <label style="display: block; color: #fbbf24; font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">Current (I) [Amperes]</label>
+                        <input type="range" id="sim8-i-e" min="0" max="10" step="0.1" value="2" oninput="updateSim8E()" style="width: 100%; height: 15px; border-radius: 10px; cursor: pointer;">
+                        <span id="sim8-i-val-e" style="color: white; font-size: 2.5rem; font-weight: 950;">2.0</span> <span style="color: #94a3b8; font-size: 1.2rem;">A</span>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <label style="display: block; color: #fbbf24; font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">Time (t) [Seconds]</label>
+                        <input type="range" id="sim8-t-e" min="1" max="60" step="1" value="10" oninput="updateSim8E()" style="width: 100%; height: 15px; border-radius: 10px; cursor: pointer;">
+                        <span id="sim8-t-val-e" style="color: white; font-size: 2.5rem; font-weight: 950;">10</span> <span style="color: #94a3b8; font-size: 1.2rem;">s</span>
+                    </div>
+
+                    <div style="background: #1e293b; padding: 20px; border-radius: 15px; color: #e2e8f0; font-size: 1.4rem;">
+                        Constant Z (for Ag): <b>0.001118</b> g/C
+                    </div>
+                </div>
+
+                <!-- Result & Graphic -->
+                <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="background: #1e1b4b; padding: 40px; border-radius: 30px; text-align: center; border: 3px solid #fbbf24;">
+                        <div style="color: #94a3b8; font-size: 1.4rem; text-transform: uppercase;">Deposited Mass (W)</div>
+                        <div id="sim8-w-e" style="color: #fbbf24; font-size: 4rem; font-weight: 950; margin: 20px 0;">0.02236 g</div>
+                        <div style="color: white; font-size: 1.2rem; font-family: monospace;">W = 0.001118 × <span id="sim8-calc-i-e">2</span> × <span id="sim8-calc-t-e">10</span></div>
+                    </div>
+
+                    <div style="flex-grow: 1; display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+                        <!-- Visualization of depositing electrode -->
+                        <div id="electrode-visual-e" style="width: 60px; height: 100px; background: #94a3b8; border: 4px solid #475569; position: relative;">
+                            <div id="metal-layer-e" style="position: absolute; top:0; left:0; right:0; bottom:0; border: 0 solid #fbbf24; transition: all 0.3s; opacity: 0.6;"></div>
+                            <p style="color: white; position: absolute; bottom: -40px; width: 150px; left:-45px; font-size: 1.2rem; text-align: center;">CATHODE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function updateSim8E() {
+                    const i = parseFloat(document.getElementById('sim8-i-e').value);
+                    const t = parseFloat(document.getElementById('sim8-t-e').value);
+                    const z = 0.001118; // Ag equivalence
+                    const w = z * i * t;
+                    
+                    document.getElementById('sim8-i-val-e').innerText = i.toFixed(1);
+                    document.getElementById('sim8-t-val-e').innerText = t;
+                    document.getElementById('sim8-calc-i-e').innerText = i.toFixed(1);
+                    document.getElementById('sim8-calc-t-e').innerText = t;
+                    document.getElementById('sim8-w-e').innerText = w.toFixed(5) + " g";
+                    
+                    const thickness = Math.min(20, w * 400); 
+                    document.getElementById('metal-layer-e').style.borderWidth = thickness + "px";
+                }
+                updateSim8E();
+            </script>
+        </div>
     </div>
 
     <div class="nav-buttons">
-        <a href="../index_eng.html" class="nav-btn">🏠 Main Hub</a>
+        <a href="ch2_part7.html" class="nav-btn" style="background: #475569;">⬅️ Prev (Part 7)</a>
+        <a href="../index_eng.html" class="nav-btn">🏠 Hub</a>
+        <a href="ch2_part9.html" class="nav-btn" style="background: var(--primary);">Next (Part 9) ➡️</a>
     </div>
 </body>
 </html>

@@ -21,15 +21,18 @@
         .premium-badge { background: rgba(255,255,255,0.2); padding: 6px 15px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 10px; }
         h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin: 0; font-weight: 900; }
         
-        .content-container { flex:1; padding: 40px 5vw; max-width: 1200px; margin: 0 auto; width: 100%; box-sizing:border-box; }
+        .content-container { flex:1; padding: 40px 20px; width: 100%; box-sizing:border-box; max-width: 100%; margin: 0; overflow-x: hidden; }
         
         .topic-card { background: white; border: 2px dashed var(--secondary); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
         .topic-title { font-size: 2rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; }
         .topic-desc { font-size: 1.5rem; color: var(--slate-800); }
 
-        .nav-buttons { display: flex; justify-content: center; padding: 30px; background:white; border-top:1px solid #e2e8f0; }
-        .nav-btn { background: #1e293b; color: white; padding: 15px 35px; border-radius: 100px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: 0.3s; }
-        .nav-btn:hover { background: var(--primary); transform: translateY(-3px); }
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; background: transparent; margin-top: 50px; border-top: 2px solid #e2e8f0; }
+        .nav-btn { display: flex; align-items: center; gap: 10px; padding: 15px 35px; border-radius: 100px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .nav-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .btn-home { background: #1e293b; color: white; }
+        .btn-prev { background: #94a3b8; color: white; pointer-events: none; opacity: 0.6; }
+        .btn-next { background: #059669; color: white; }
     </style>
 </head>
 <body>
@@ -39,16 +42,243 @@
         <p style="font-size: 1.2rem; margin-top: 10px; font-weight: 600; opacity: 0.9;">Part 1</p>
     </div>
 
+    <style>
+        .note-card { background: white; border-radius: 20px; padding: 30px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-left: 8px solid var(--primary); }
+        .note-title { font-size: 2rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 20px; border-bottom: 2px solid var(--slate-100); padding-bottom: 10px; }
+        .sub-heading { font-size: 1.5rem; color: var(--accent); font-weight: 700; margin-top: 20px; margin-bottom: 10px; }
+        .note-list { font-size: 1.5rem; color: var(--slate-800); line-height: 1.6; padding-left: 30px; }
+        .note-list li { margin-bottom: 15px; }
+        .highlight-box { background: rgba(139, 92, 246, 0.1); border-left: 5px solid var(--accent); padding: 15px 20px; border-radius: 0 15px 15px 0; font-size: 1.4rem; color: var(--slate-800); margin: 20px 0; }
+        .equation-box { background: var(--slate-800); color: white; padding: 20px; border-radius: 15px; font-family: 'Courier New', Courier, monospace; font-size: 1.6rem; font-weight: 700; text-align: center; margin: 20px 0; letter-spacing: 1px; }
+
+        /* Simulator Styles (Projector Rule: #1e1b4b background) */
+        .sim-container { background: #1e1b4b; border: 4px solid #312e81; border-radius: 20px; padding: 30px; margin-top: 40px; color: white; display: flex; flex-direction: column; align-items: center; }
+        .sim-header { border-left: 10px solid #a855f7; color: #a855f7; background: linear-gradient(to right, rgba(168, 85, 247, 0.1), transparent); padding: 15px 25px; margin-bottom: 30px; border-radius: 0 15px 15px 0; font-size: 2rem; font-weight: 800; width: 100%; box-sizing: border-box; }
+        
+        .sim-main { display: flex; flex-direction: row; gap: 40px; justify-content: center; align-items: flex-end; position: relative; margin-top: 50px; }
+        
+        .beaker-wrap { display: flex; flex-direction: column; align-items: center; }
+        .beaker { width: 180px; height: 220px; border: 4px solid rgba(255,255,255,0.3); border-top: none; border-radius: 0 0 20px 20px; position: relative; background: rgba(255,255,255,0.05); overflow: hidden; display: flex; justify-content: center; align-items: flex-end; }
+        .solution { width: 100%; position: absolute; bottom: 0; left: 0; transition: height 2s ease; z-index: 1; }
+        .sol-zn { background: rgba(200, 210, 220, 0.4); height: 160px; }
+        .sol-cu { background: rgba(59, 130, 246, 0.7); height: 160px; }
+        
+        .electrode { width: 40px; height: 180px; position: absolute; bottom: 20px; z-index: 2; border-radius: 5px; transition: all 2s ease; display:flex; justify-content:center; align-items:center; font-weight:bold; color:black;}
+        .elec-zn { background: #94a3b8; border: 2px solid #64748b; }
+        .elec-cu { background: #b45309; border: 2px solid #78350f; }
+        
+        /* Interactive changes */
+        .sim-active .elec-zn { width: 30px; height: 160px; background: #64748b; border: 2px dashed #475569; } /* Dissolves */
+        .sim-active .elec-cu { width: 50px; height: 190px; border-radius: 8px; border: 4px solid #b45309; } /* Deposits */
+
+        /* Particle Animation */
+        .particle { position: absolute; font-size: 0.9rem; font-weight: 800; color: white; display: flex; justify-content: center; align-items: center; z-index: 5; pointer-events: none; border-radius: 5px; padding: 2px 4px;}
+        .zn-ion { background: #0284c7; border: 1px solid #0369a1; animation: dissolveZn 2s ease-out forwards; }
+        .cu-ion { background: #b45309; border: 1px solid #78350f; animation: depositCu 2s ease-in forwards; }
+
+        @keyframes dissolveZn {
+            0% { transform: translate(0, 0) scale(0.8); opacity: 1; }
+            100% { transform: translate(calc(-40px + 80px * var(--randX)), calc(20px + 40px * var(--randY))) scale(1.2); opacity: 0; }
+        }
+        @keyframes depositCu {
+            0% { transform: translate(calc(-40px + 80px * var(--randX)), calc(20px + 40px * var(--randY))) scale(1.2); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translate(0, 0) scale(0.8); opacity: 0; }
+        }
+        
+        .wire { position: absolute; top: -80px; left: 90px; width: 220px; height: 80px; border: 4px solid #a855f7; border-bottom: none; border-radius: 20px 20px 0 0; z-index: 0; }
+        .voltmeter { position: absolute; top: -110px; left: 50%; transform: translateX(-50%); width: 80px; height: 80px; background: #0f172a; border: 4px solid #38bdf8; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #38bdf8; font-weight: 900; font-size: 1.2rem; z-index: 3; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
+        
+        .salt-bridge { position: absolute; top: -30px; left: 130px; width: 140px; height: 120px; border: 20px solid rgba(255,255,255,0.8); border-bottom: none; border-radius: 40px 40px 0 0; z-index: 4; }
+        
+        .electron-flow { position: absolute; top: -95px; left: 140px; color: #fbbf24; font-weight: 800; font-size: 1.5rem; opacity: 0; transition: opacity 0.3s; }
+        .sim-active .electron-flow { opacity: 1; animation: moveE 2s linear infinite; }
+        @keyframes moveE { 0% { left: 120px; } 100% { left: 260px; } }
+
+        .btn-start { background: #8b5cf6; color: white; border: none; padding: 15px 40px; font-size: 1.5rem; font-weight: 800; border-radius: 100px; cursor: pointer; margin-top: 40px; transition: 0.3s; box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4); text-transform: uppercase; letter-spacing: 2px;}
+        .btn-start:hover { background: #ef4444; transform: scale(1.05); }
+
+        .labels { display: flex; width: 100%; justify-content: space-around; margin-top: 15px; font-size: 1.3rem; font-weight: 700; color: #cbd5e1; }
+        
+        .reaction-panel { margin-top: 30px; background: rgba(0,0,0,0.3); width: 100%; padding: 20px; border-radius: 15px; text-align: center; }
+        .reaction-text { font-size: 1.4rem; color: #10b981; font-family: monospace; display: none; }
+        .sim-active .reaction-text { display: block; animation: fadeIn 1s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    </style>
+
     <div class="content-container">
-        <div class="topic-card">
-            <div class="topic-title">📚 Topic to cover in this section:</div>
-            <div class="topic-desc">Electrochemical Cells, Daniell Cell, Function of Salt Bridge</div>
+        <!-- Text Content Extracted from PDF -->
+        <div class="note-card">
+            <div class="note-title">Electrochemistry</div>
+            <ul class="note-list">
+                <li><b>Electrochemistry -</b> The branch of chemistry that studies the production of electricity from the energy released during spontaneous chemical reactions, and the use of electrical energy to bring about non-spontaneous chemical transformations, is called electrochemistry.</li>
+                <li>It studies the relationship between electrical and chemical energy and their interconversion.</li>
+                <li>Electrochemistry primarily involves Redox reactions.</li>
+            </ul>
         </div>
-        <!-- Write actual content corresponding to the topic here -->
+
+        <div class="note-card">
+            <div class="note-title">Electrochemical Cells</div>
+            <ul class="note-list">
+                <li>An electrochemical cell is a device by which chemical energy is converted into electrical energy.</li>
+                <li>These are also called Voltaic or Galvanic cells.</li>
+            </ul>
+            
+            <div class="sub-heading">Galvanic Cell:</div>
+            <ul class="note-list">
+                <li>By this, chemical energy is changed into electrical energy.</li>
+                <li>A spontaneous redox reaction occurs in a galvanic cell.</li>
+                <li>In a galvanic cell, the electrode with higher potential is the Anode and the electrode with lower potential is the Cathode.</li>
+                <li>Oxidation takes place at the Anode and Reduction takes place at the Cathode.</li>
+                <li>In a galvanic cell, the Anode is the negative electrode and the Cathode is the positive electrode.</li>
+                <li>In a galvanic cell, electrons (e⁻) flow from Anode to Cathode in the external circuit, and from Cathode to Anode in the internal circuit.</li>
+            </ul>
+        </div>
+
+        <div class="note-card">
+            <div class="note-title">Construction of a Galvanic Cell</div>
+            <ul class="note-list">
+                <li>To construct this cell, a Zn metal rod is placed in a ZnSO₄ solution and a Cu rod is placed in a CuSO₄ solution, and both are connected by a salt bridge.</li>
+                <li>One half-cell of this cell is the Zn electrode and the other half-cell is the Cu electrode; joining these two half-cells with a KCl salt bridge forms a complete cell.</li>
+                <li>Upon connecting with a metallic wire, the flow of e⁻ occurs from the Zn electrode to the Cu electrode through the external circuit.</li>
+                <li>Zn atoms of the Zn electrode lose e⁻ and enter the solution as Zn⁺² ions, and Cu⁺² ions from the solution start depositing as Cu. By this device, chemical energy is converted into electrical energy.</li>
+            </ul>
+            
+            <div class="sub-heading">Mechanism:</div>
+            <div class="equation-box">
+                At Anode: Zn<sub>(s)</sub> <span style="font-size: 1.2rem;">(oxidation)</span> ➔ Zn<sup>+2</sup><sub>(aq)</sub> + 2e⁻<br><br>
+                At Cathode: Cu<sup>+2</sup><sub>(aq)</sub> + 2e⁻ <span style="font-size: 1.2rem;">(Reduction)</span> ➔ Cu<sub>(s)</sub>
+            </div>
+        </div>
+
+        <div class="note-card">
+            <div class="note-title">Electrode Potential</div>
+            <ul class="note-list">
+                <li>The galvanic cell reaction is a spontaneous redox reaction, meaning the value of Gibbs energy is negative.</li>
+                <li>Upon connecting both electrodes of a galvanic cell, an oxidation reaction occurs at one electrode, called the anode, and a reduction reaction occurs at the other electrode, called the cathode.</li>
+            </ul>
+            <div class="equation-box" style="margin-bottom: 30px;">
+                <b>Net cell Rex<sup>n</sup>:</b> Zn + Cu<sup>+2</sup> ➔ Zn<sup>+2</sup> + Cu
+            </div>
+            
+            <div class="sub-heading">Oxidation Potential -</div>
+            <ul class="note-list">
+                <li>The tendency of an electrode to lose e⁻ into the solution is called oxidation potential.</li>
+                <li>The electrode with a higher tendency to lose e⁻ will have a higher oxidation potential.</li>
+            </ul>
+            <div class="equation-box" style="margin-bottom: 30px; background: rgba(5, 150, 105, 0.1); color: var(--slate-800); border: 2px dashed var(--primary);">
+                Zn ➔ Zn<sup>+2</sup> + 2e⁻<br>
+                Zn/Zn<sup>+2</sup> = + 0.76 V
+            </div>
+            
+            <div class="sub-heading">Reduction Potential -</div>
+            <ul class="note-list">
+                <li>The measure of the tendency of an electrode to gain e⁻ from the solution is called reduction potential.</li>
+            </ul>
+            <div class="equation-box" style="margin-bottom: 30px; background: rgba(5, 150, 105, 0.1); color: var(--slate-800); border: 2px dashed var(--primary);">
+                Cu<sup>+2</sup> + 2e⁻ ➔ Cu<br>
+                Cu<sup>+2</sup>/Cu = + 0.34 V
+            </div>
+
+            <div class="sub-heading">Electrode Potential -</div>
+            <ul class="note-list">
+                <li>The potential resulting from the separation of charges between a metal electrode and its ion solution is called 'electrode potential'.</li>
+            </ul>
+        </div>
+
+        <!-- Interactive Simulator -->
+        <div class="sim-container" id="galvanic_sim_box">
+            <h3 class="sim-header">🔬 Interactive Lab: Galvanic Cell (Zn-Cu Cell)</h3>
+            
+            <div class="sim-main">
+                <div class="wire"></div>
+                <div class="voltmeter" id="voltmeter_reading">0.00 V</div>
+                <div class="salt-bridge"></div>
+                <div class="electron-flow">e⁻ ➔</div>
+                
+                <div class="beaker-wrap">
+                    <div class="beaker">
+                        <div class="solution sol-zn"></div>
+                        <div class="electrode elec-zn">Zn</div>
+                    </div>
+                </div>
+                
+                <div class="beaker-wrap">
+                    <div class="beaker">
+                        <div class="solution sol-cu"></div>
+                        <div class="electrode elec-cu">Cu</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="labels">
+                <div>Anode (-) [Oxidation]</div>
+                <div>Cathode (+) [Reduction]</div>
+            </div>
+
+            <div class="reaction-panel">
+                <div class="reaction-text" id="live_rxn">Zn₍s₎ ➔ Zn²⁺₍aq₎ + 2e⁻ &nbsp;&nbsp; | &nbsp;&nbsp; Cu²⁺₍aq₎ + 2e⁻ ➔ Cu₍s₎</div>
+                <div style="color: #94a3b8; font-size: 1.2rem; margin-top:10px;">The zinc rod is dissolving and copper is depositing on the copper rod.</div>
+            </div>
+
+            <button class="btn-start" id="galvanic_start_btn" onclick="startGalvanicSim()">Begin Reaction</button>
+        </div>
+
     </div>
 
+    <script>
+        let simInterval;
+        function startGalvanicSim() {
+            const simBox = document.getElementById('galvanic_sim_box');
+            if(simBox.classList.contains('sim-active')) return;
+            
+            const reading = document.getElementById('voltmeter_reading');
+            const btn = document.getElementById('galvanic_start_btn');
+            
+            simBox.classList.add('sim-active');
+            btn.style.display = 'none';
+            reading.innerText = '1.10 V';
+            
+            // Particle generation
+            simInterval = setInterval(() => {
+                // Zn Dissolve
+                const znBeaker = document.querySelector('.elec-zn').parentElement;
+                const znParticle = document.createElement('div');
+                znParticle.className = 'particle zn-ion';
+                znParticle.innerText = 'Zn²⁺';
+                znParticle.style.bottom = (40 + Math.random() * 60) + 'px';
+                znParticle.style.left = '70px'; // Centered (180/2 - 20)
+                znParticle.style.setProperty('--randX', Math.random());
+                znParticle.style.setProperty('--randY', Math.random());
+                znBeaker.appendChild(znParticle);
+                
+                // Cu Deposit
+                const cuBeaker = document.querySelector('.elec-cu').parentElement;
+                const cuParticle = document.createElement('div');
+                cuParticle.className = 'particle cu-ion';
+                cuParticle.innerText = 'Cu²⁺';
+                cuParticle.style.bottom = (40 + Math.random() * 60) + 'px';
+                cuParticle.style.left = '70px';
+                cuParticle.style.setProperty('--randX', Math.random());
+                cuParticle.style.setProperty('--randY', Math.random());
+                cuBeaker.appendChild(cuParticle);
+                
+                // Cleanup
+                setTimeout(() => {
+                    if(znParticle.parentElement) znParticle.remove();
+                    if(cuParticle.parentElement) cuParticle.remove();
+                }, 1900);
+            }, 600);
+        }
+    </script>
+
     <div class="nav-buttons">
-        <a href="../index_eng.html" class="nav-btn">🏠 Main Hub</a>
+        <a href="../index_eng.html" class="nav-btn btn-home">🏠 Main Hub</a>
+        <div style="display: flex; gap: 15px;">
+            <a href="#" class="nav-btn btn-prev">⬅️ Previous</a>
+            <a href="ch2_part2.html" class="nav-btn btn-next">Next Part ➡️</a>
+        </div>
     </div>
 </body>
 </html>

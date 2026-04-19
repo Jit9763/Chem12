@@ -21,34 +21,685 @@
         .premium-badge { background: rgba(255,255,255,0.2); padding: 6px 15px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 10px; }
         h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin: 0; font-weight: 900; }
         
-        .content-container { flex:1; padding: 40px 5vw; max-width: 1200px; margin: 0 auto; width: 100%; box-sizing:border-box; }
+        .content-container { flex:1; padding: 20px 0; width: 100%; box-sizing:border-box; margin: 0; overflow-x: hidden; }
         
-        .topic-card { background: white; border: 2px dashed var(--secondary); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        .topic-title { font-size: 2rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; }
-        .topic-desc { font-size: 1.5rem; color: var(--slate-800); }
+        .note-card { background: white; border-radius: 0px; padding: 40px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-left: 15px solid var(--primary); width: 100%; box-sizing: border-box; }
+        .note-title { font-size: 2rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 20px; border-bottom: 2px solid var(--slate-100); padding-bottom: 10px; }
+        .sub-heading { font-size: 1.5rem; color: var(--accent); font-weight: 700; margin-top: 20px; margin-bottom: 10px; }
+        .note-list { font-size: 1.5rem; color: var(--slate-800); line-height: 1.6; padding-left: 30px; }
+        .note-list li { margin-bottom: 15px; }
+        
+        .math-box { background: #fdfdfd; color: #1e293b; padding: 20px 30px; border-radius: 15px; font-family: 'Cambria Math', 'Times New Roman', serif; font-size: 2.2rem; text-align: center; margin: 20px 0; border: 2px dashed #cbd5e1; box-shadow: inset 0 0 20px rgba(0,0,0,0.02); }
+        .math-box sub { font-size: 0.6em; vertical-align: baseline; position: relative; bottom: -0.2em; font-family: 'Cambria Math', serif; }
+        .math-box sup { font-size: 0.6em; vertical-align: baseline; position: relative; top: -0.4em; font-family: 'Cambria Math', serif; }
+        .math-box .op { margin: 0 10px; color: #64748b; }
+        
+        .math-frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-size: 0.95em; margin: 0 2px; line-height: 1.1; font-weight: bold; font-family: 'Cambria Math', serif;}
+        .math-top { border-bottom: 2px solid currentColor; padding: 0 4px 1px 4px; }
+        .math-bot { padding: 1px 4px 0 4px; }
 
-        .nav-buttons { display: flex; justify-content: center; padding: 30px; background:white; border-top:1px solid #e2e8f0; }
-        .nav-btn { background: #1e293b; color: white; padding: 15px 35px; border-radius: 100px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: 0.3s; }
-        .nav-btn:hover { background: var(--primary); transform: translateY(-3px); }
+        /* Simulator Styles */
+        .nernst-sim-container { background: #98FB98; border: none; border-radius: 15px; padding: 40px; margin: 40px auto; color: #1e293b; display: flex; flex-direction: column; align-items: center; box-shadow: 0 20px 50px rgba(0,0,0,0.15); width: 95%; max-width: 900px; box-sizing: border-box; border: 2px solid rgba(0, 0, 0, 0.1); }
+        .sim-main { display: flex; flex-direction: row; gap: 80px; justify-content: center; align-items: flex-end; position: relative; margin-top: 100px; width: 100%; padding-bottom: 20px; }
+        
+        .beaker-wrap { display: flex; flex-direction: column; align-items: center; z-index: 2; width: 160px; }
+        .beaker { width: 150px; height: 180px; border: 4px solid #334155; border-top: none; border-radius: 0 0 20px 20px; position: relative; background: rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: flex-end; }
+        .solution { width: 100%; position: absolute; bottom: 0; left: 0; transition: all 0.5s ease; z-index: 1; border-radius: 0 0 15px 15px; }
+        .solution.zn { background: linear-gradient(180deg, #e2e8f0, #94a3b8); box-shadow: inset 0 10px 30px rgba(255, 255, 255, 0.5); border-top: 2px solid rgba(255,255,255,0.8); }
+        .solution.cu { background: linear-gradient(180deg, rgba(59, 130, 246, 0.4), rgba(37, 99, 235, 0.8)); box-shadow: inset 0 10px 20px rgba(59, 130, 246, 0.4); }
+        
+        .electrode { width: 35px; height: 140px; border-radius: 5px; position: absolute; bottom: 20px; z-index: 3; display: flex; justify-content: center; align-items: center; font-weight: 950; color: #000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); border: 2px solid rgba(0,0,0,0.2); }
+        .wire { position: absolute; top: -85px; left: 50%; width: 250px; height: 130px; border: 8px solid #1e293b; border-bottom: none; border-radius: 30px 30px 0 0; z-index: 1; transform: translateX(-50%); }
+        .voltmeter { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 100px; height: 100px; background: #fff; border: 4px solid #0891b2; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #0f172a; font-weight: 950; font-size: 1.3rem; z-index: 15; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .salt-bridge { position: absolute; top: -30px; left: 50%; width: 140px; height: 120px; border: 15px solid #475569; border-bottom: none; border-radius: 40px 40px 0 0; z-index: 5; transform: translateX(-50%); opacity: 0.95; }
+        
+        .controls { margin-top: 40px; width: 100%; display: flex; gap: 40px; justify-content: center; background: rgba(0,0,0,0.05); padding: 20px; border-radius: 15px; }
+        .control-group { display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; }
+        .control-label { font-weight: 800; font-size: 1.1rem; color: #1e293b; }
+        input[type=range] { width: 100%; height: 8px; border-radius: 5px; background: #cbd5e1; outline: none; }
+        
+        .formula-display { margin-top: 20px; font-family: 'Cambria Math', serif; font-size: 1.4rem; color: #0f172a; background: white; padding: 15px 25px; border-radius: 10px; border: 2px solid #0891b2; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; background: transparent; margin-top: 50px; border-top: 2px solid #e2e8f0; }
+        .nav-btn { display: flex; align-items: center; gap: 10px; padding: 15px 35px; border-radius: 100px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .nav-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .btn-home { background: #1e293b; color: white; }
+        .btn-prev { background: #94a3b8; color: white; }
+        .btn-next { background: #059669; color: white; }
+
+        /* ECS Table Styles */
+        .ecs-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 25px 0; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 3px solid #1a3c1a; background: white; }
+        .ecs-table th { background: #1a3c1a; color: white; padding: 18px; font-size: 1.3rem; text-align: left; text-transform: uppercase; letter-spacing: 1px; }
+        .ecs-table td { padding: 14px 18px; border-bottom: 1px solid #e2e8f0; font-size: 1.2rem; color: #1e293b; font-weight: 700; }
+        .ecs-table tr:nth-child(even) { background: #f0fdf4; }
+        .ecs-table tr:hover { background: #dcfce7; transform: scale(1.01); transition: 0.2s; }
+        .mne-text { color: #8b5cf6; font-weight: 800; font-size: 1rem; display: block; margin-top: 4px; }
+        .val-neg { color: #dc2626; font-weight: 950; font-size: 1.3rem; }
+        .val-pos { color: #2563eb; font-weight: 950; font-size: 1.3rem; }
+        
+        .q-card { background: white; border: 3px solid #cbd5e1; border-radius: 20px; padding: 25px; margin-bottom: 25px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .q-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .q-text { color: #1e293b; font-weight: 900; font-size: 1.4rem; margin-bottom: 15px; display: block; border-left: 8px solid #ef4444; padding-left: 15px; }
+        .a-text { color: #334155; font-size: 1.3rem; line-height: 1.8; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px dashed #94a3b8; }
+        .word-word-badge { background: #f59e0b; color: #000; padding: 5px 12px; border-radius: 5px; font-size: 0.8rem; font-weight: 900; vertical-align: middle; margin-left: 10px; }
+        
+        /* Cell Construction Layout */
+        .cell-diagram-box { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 20px; padding: 30px; margin: 20px 0; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .cell-parts { display: flex; gap: 50px; align-items: flex-end; position: relative; margin-top: 50px; }
+        .beaker-cell { width: 120px; height: 140px; border: 3px solid #475569; border-top: none; border-radius: 0 0 15px 15px; position: relative; background: rgba(255,255,255,0.5); }
+        .solution-cell { width: 100%; height: 70%; position: absolute; bottom: 0; background: rgba(59, 130, 246, 0.2); border-radius: 0 0 12px 12px; }
+        .electrode-cell { width: 20px; height: 110px; position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: #94a3b8; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 900; }
+        .salt-bridge-cell { width: 100px; height: 60px; border: 12px solid #64748b; border-bottom: none; border-radius: 20px 20px 0 0; position: absolute; top: -35px; left: 60px; z-index: 10; }
+        .wire-cell { position: absolute; top: -65px; left: 60px; width: 105px; height: 35px; border: 3px solid #1e293b; border-bottom: none; border-radius: 10px 10px 0 0; }
+        .meter-cell { position: absolute; top: -85px; left: 50%; transform: translateX(-50%); background: white; border: 2px solid #0891b2; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.9rem; z-index: 5; }
+        .label-cell { font-size: 0.9rem; font-weight: 800; color: #1e293b; margin-top: 10px; }
     </style>
 </head>
 <body>
     <div class="header-banner">
         <div class="premium-badge">Class 12 - Chapter 2</div>
         <h1>Electrochemistry</h1>
-        <p style="font-size: 1.2rem; margin-top: 10px; font-weight: 600; opacity: 0.9;">Part 3</p>
+        <p style="font-size: 1.2rem; margin-top: 10px; font-weight: 600; opacity: 0.9;">Part 3: Nernst Equation & Electrochemical Series</p>
     </div>
 
     <div class="content-container">
-        <div class="topic-card">
-            <div class="topic-title">📚 Topic to cover in this section:</div>
-            <div class="topic-desc">Electrochemical Series & EMF Calculation</div>
+        
+        <!-- Electrochemical Series (Word-to-Word from Notes) -->
+        <div class="note-card" style="border-left-color: #2d5a27; background: #f0fdf4;">
+            <div class="note-title" style="color: #1a3c1a; border-bottom-color: #2d5a27;">
+                ➡️ Electrochemical Series (विद्युत रासायनिक श्रेणी)
+            </div>
+            <p style="font-size: 1.4rem; color: #1e293b; line-height: 1.8;">
+                If various electrodes are arranged in the increasing order of their <b>Standard Reduction Potential (SRP)</b> (negative to positive), we obtain a series known as the <b>Electrochemical Series</b>.
+            </p>
+
+            <table class="ecs-table">
+                <thead>
+                    <tr>
+                        <th>Element</th>
+                        <th>Electrode</th>
+                        <th>Reduction Reaction</th>
+                        <th>Potential (SRP)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Li <span class="mne-text">(Li)</span></td><td>Li⁺/Li</td><td>Li⁺ + e⁻ ➔ Li</td><td class="val-neg">-3.05 V</td></tr>
+                    <tr><td>K <span class="mne-text">(K)</span></td><td>K⁺/K</td><td>K⁺ + e⁻ ➔ K</td><td class="val-neg">-2.93 V</td></tr>
+                    <tr><td>Ba <span class="mne-text">(Ba)</span></td><td>Ba²⁺/Ba</td><td>Ba²⁺ + 2e⁻ ➔ Ba</td><td class="val-neg">-2.91 V</td></tr>
+                    <tr><td>Sr <span class="mne-text">(Sr)</span></td><td>Sr²⁺/Sr</td><td>Sr²⁺ + 2e⁻ ➔ Sr</td><td class="val-neg">-2.87 V</td></tr>
+                    <tr><td>Ca <span class="mne-text">(Ca)</span></td><td>Ca²⁺/Ca</td><td>Ca²⁺ + 2e⁻ ➔ Ca</td><td class="val-neg">-2.85 V</td></tr>
+                    <tr><td>Na <span class="mne-text">(Na)</span></td><td>Na⁺/Na</td><td>Na⁺ + e⁻ ➔ Na</td><td class="val-neg">-2.71 V</td></tr>
+                    <tr style="background: #e0f2fe;"><td>Mg <span class="mne-text">(Mg)</span></td><td>Mg²⁺/Mg</td><td>Mg²⁺ + 2e⁻ ➔ Mg</td><td class="val-neg">-2.36 V</td></tr>
+                    <tr><td>Al <span class="mne-text">(Al)</span></td><td>Al³⁺/Al</td><td>Al³⁺ + 3e⁻ ➔ Al</td><td class="val-neg">-1.66 V</td></tr>
+                    <tr><td>Mn <span class="mne-text">(Mn)</span></td><td>Mn²⁺/Mn</td><td>Mn²⁺ + 2e⁻ ➔ Mn</td><td class="val-neg">-1.18 V</td></tr>
+                    <tr><td>Zn <span class="mne-text">(Zn)</span></td><td>Zn²⁺/Zn</td><td>Zn²⁺ + 2e⁻ ➔ Zn</td><td class="val-neg">-0.76 V</td></tr>
+                    <tr><td>Cr <span class="mne-text">(Cr)</span></td><td>Cr³⁺/Cr</td><td>Cr³⁺ + 3e⁻ ➔ Cr</td><td class="val-neg">-0.74 V</td></tr>
+                    <tr><td>Fe <span class="mne-text">(Fe)</span></td><td>Fe²⁺/Fe</td><td>Fe²⁺ + 2e⁻ ➔ Fe</td><td class="val-neg">-0.44 V</td></tr>
+                    <tr><td>Cd <span class="mne-text">(Cd)</span></td><td>Cd²⁺/Cd</td><td>Cd²⁺ + 2e⁻ ➔ Cd</td><td class="val-neg">-0.40 V</td></tr>
+                    <tr><td>Co <span class="mne-text">(Co)</span></td><td>Co²⁺/Co</td><td>Co²⁺ + 2e⁻ ➔ Co</td><td class="val-neg">-0.28 V</td></tr>
+                    <tr><td>Ni <span class="mne-text">(Ni)</span></td><td>Ni²⁺/Ni</td><td>Ni²⁺ + 2e⁻ ➔ Ni</td><td class="val-neg">-0.25 V</td></tr>
+                    <tr><td>Sn <span class="mne-text">(Sn)</span></td><td>Sn²⁺/Sn</td><td>Sn²⁺ + 2e⁻ ➔ Sn</td><td class="val-neg">-0.14 V</td></tr>
+                    <tr><td>Pb <span class="mne-text">(Pb)</span></td><td>Pb²⁺/Pb</td><td>Pb²⁺ + 2e⁻ ➔ Pb</td><td class="val-neg">-0.13 V</td></tr>
+                    <tr style="background: #fdf2f8; outline: 3px solid var(--accent);"><td>H₂ <span class="mne-text">(H₂)</span></td><td>2H⁺/H₂</td><td>2H⁺ + 2e⁻ ➔ H₂</td><td style="font-weight:950;">± 0.00 V</td></tr>
+                    <tr><td>Cu <span class="mne-text">(Cu)</span></td><td>Cu²⁺/Cu</td><td>Cu²⁺ + 2e⁻ ➔ Cu</td><td class="val-pos">+0.34 V</td></tr>
+                    <tr><td>Hg <span class="mne-text">(Hg)</span></td><td>Hg²⁺/Hg</td><td>Hg²⁺ + 2e⁻ ➔ Hg</td><td class="val-pos">+0.78 V</td></tr>
+                    <tr><td>Ag <span class="mne-text">(Ag)</span></td><td>Ag⁺/Ag</td><td>Ag⁺ + e⁻ ➔ Ag</td><td class="val-pos">+0.80 V</td></tr>
+                    <tr><td>Pt <span class="mne-text">(Pt)</span></td><td>Pt²⁺/Pt</td><td>Pt²⁺ + 2e⁻ ➔ Pt</td><td class="val-pos">+0.85 V</td></tr>
+                    <tr><td>Au <span class="mne-text">(Au)</span></td><td>Au³⁺/Au</td><td>Au³⁺ + 3e⁻ ➔ Au</td><td class="val-pos">+1.50 V</td></tr>
+                    <tr><td>F₂ <span class="mne-text">(F₂)</span></td><td>F₂/2F⁻</td><td>F₂ + 2e⁻ ➔ 2F⁻</td><td class="val-pos">+2.87 V</td></tr>
+                </tbody>
+            </table>
+
+            <div class="sub-heading" style="color: #c026d3;">💡 Key Characteristics (ECS Points):</div>
+            <ul class="note-list">
+                <li>In the ECS, moving from <b>top to bottom</b> increases the <b>oxidizing power</b> while decreasing the <b>reducing power</b>.
+                    <p style="margin-top: 10px; font-size: 1.2rem; background: #fff; padding: 10px; border-radius: 10px; border: 1px solid #ddd;">
+                        Li⁺ = Strongest Reducing Agent (प्रबल अपचायक)<br>
+                        F₂ = Strongest Oxidizing Agent (प्रबल ऑक्सीकारक)
+                    </p>
+                </li>
+                <li>Metal <b>at the top</b> of the ECS can displace a metal located below it from its salt solution.
+                    <p style="text-align: center; font-weight: 800; font-size: 1.3rem; color: var(--primary-dark);">Zn + CuSO₄ ➔ ZnSO₄ + Cu</p>
+                </li>
+                <li>All metals located <b>above H₂</b> in the ECS react with acids to liberate H₂ gas.</li>
+                <li>In a galvanic cell, the metal that appears <b>higher</b> in the series acts as the <b>Anode (-)</b> and the one lower acts as the <b>Cathode (+)</b>.</li>
+                <li>The metal <b>lower</b> in the ECS precipitates first during electrolysis.
+                    <p style="text-align: center; color: var(--accent); font-weight: 900;">Ag⁺ > Cu²⁺ > H⁺ > Zn²⁺</p>
+                </li>
+                <li>The oxides of metals located lower in the ECS have higher <b>Thermal Stability</b>.
+                    <p style="text-align: center; color: #b45309; font-weight: 900;">Ag₂O > CuO > ZnO</p>
+                </li>
+            </ul>
         </div>
-        <!-- Write actual content corresponding to the topic here -->
+
+        <div class="note-card" style="border-left-color: #ef4444;">
+            <div class="note-title" style="color: #b91c1c;">📝 Important Q&A <span class="word-word-badge">Word-to-Word</span></div>
+            
+            <!-- Question 1: Mg-SHE Cell -->
+            <div class="q-card">
+                <span class="q-text">Q: Construct a cell by connecting Mg electrode with SHE. Explain the following.</span>
+                <p class="a-text">
+                    <b>A. Cell Potential:</b><br>
+                    E°<sub>cell</sub> = E°<sub>c</sub> - E°<sub>a</sub><br>
+                    E°<sub>cell</sub> = -2.36 + 0 = <b>-2.36 Volt</b><br><br>
+                    
+                    <b>B. Direction of Electrons & Current:</b><br>
+                    Electrons flow from Anode (-) to Cathode (+), whereas current flows from Cathode to Anode.<br><br>
+                    
+                    <b>C. Half and Net Cell Reactions:</b><br>
+                    At Anode: H₂ ➔ 2H⁺ + 2e⁻<br>
+                    At Cathode: Mg²⁺ + 2e⁻ ➔ Mg<br>
+                    Net cell Reaction: <b>H₂ + Mg²⁺ ➔ 2H⁺ + Mg</b>
+                </p>
+
+                <div class="cell-diagram-box">
+                    <div style="font-weight: 800; color: #64748b; margin-bottom: 5px;">Cell Diagram</div>
+                    <div class="cell-parts">
+                        <!-- Mg (Anode) -->
+                        <div style="display:flex; flex-direction:column; align-items:center;">
+                            <div class="beaker-cell">
+                                <div class="solution-cell" style="background: rgba(59, 130, 246, 0.2);"></div>
+                                <div class="electrode-cell" style="background: #94a3b8; width: 15px;">Mg</div>
+                            </div>
+                            <div class="label-cell">Mg (Anode)</div>
+                            <div style="font-size: 0.8rem; color:#64748b;">(MgSO₄)</div>
+                        </div>
+
+                        <div class="wire-cell"></div>
+                        <div class="meter-cell">V</div>
+                        <div class="salt-bridge-cell">
+                            <span style="position:absolute; top: 15px; left: 20px; font-size: 0.6rem; color: white;">Salt Bridge</span>
+                        </div>
+
+                        <!-- SHE (Cathode) -->
+                        <div style="display:flex; flex-direction:column; align-items:center;">
+                            <div class="beaker-cell">
+                                <div class="solution-cell" style="background: rgba(34, 211, 238, 0.2);"></div>
+                                <div class="electrode-cell" style="background: #1e293b; color: white; width: 8px;"></div>
+                                <div style="position: absolute; bottom: 85px; right: -10px; font-size: 0.7rem; font-weight: 900; background: white; padding: 2px;">➔ H₂ gas</div>
+                            </div>
+                            <div class="label-cell">Pt (Cathode)</div>
+                            <div style="font-size: 0.8rem; color:#64748b;">(HCl)</div>
+                        </div>
+
+                        <!-- Flow indicators -->
+                        <div style="position:absolute; top: -85px; left: 30px; font-size: 0.8rem; font-weight: 900; color: #dc2626;">e⁻ ➔</div>
+                        <div style="position:absolute; top: -85px; right: 30px; font-size: 0.8rem; font-weight: 900; color: #2563eb;">⬅ I</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2: Mg SRP -->
+            <div class="q-card">
+                <span class="q-text">Q: How would you determine the Standard Electrode Potential (SRP) of Mg²⁺ | Mg system?</span>
+                <div class="a-text">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>To determine the SRP of Mg²⁺ | Mg, connect it with the Standard Hydrogen Electrode (SHE) and measure the cell's EMF.</li>
+                        <li>A voltmeter or potentiometer is used to measure the EMF.</li>
+                        <li>Since the potential of SHE is zero, the cell's EMF will be equal to the SRP (reduction potential) of the other half-cell (Mg²⁺|Mg).</li>
+                        <li style="margin-top: 10px; color: #059669; font-weight: 800;">Here, we take Mg²⁺|Mg as the Anode (Since its SRP is negative).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Question 3: Zn in CuSO4 -->
+            <div class="q-card">
+                <span class="q-text">Q: Why does the blue color of CuSO₄ disappear when stored in a Zinc container?</span>
+                <p class="a-text"><b>Ans:</b> CuSO₄ + Zn ➔ ZnSO₄ + Cu<br>Zinc is more reactive than copper and displaces it from the solution, causing the blue color to fade.</p>
+            </div>
+
+            <!-- Question 4: NiSO4 in Fe -->
+            <div class="q-card">
+                <span class="q-text">Q: Can Nickel Sulphate (NiSO₄) solution be stored in an Iron (Fe) container? Explain.</span>
+                <p class="a-text"><b>Ans:</b> No. Because Iron (Fe) is more reactive than Nickel (Ni). It will displace nickel from its salt solution, damaging the container.<br><b>Fe + NiSO₄ ➔ FeSO₄ + Ni</b></p>
+            </div>
+
+            <!-- Elaborated Question Section -->
+            <div class="note-card" style="border-left-color: #f59e0b;">
+                <div class="note-title" style="color: #b45309;">🔍 Elaborated Explanation</div>
+                <div class="q-card">
+                    <span class="q-text">Q: By inspecting the SRP table, name three substances that can oxidize Ferrous ions (Fe²⁺) under suitable conditions.</span>
+                    <div class="a-text">
+                        <b>Detailed Answer:</b> <br>
+                        Oxidizing Fe²⁺ means converting it to Fe³⁺: <br>
+                        <div style="text-align: center; background: #fff; padding: 10px; border-radius: 10px; margin: 10px 0; border: 1px solid #ddd;">
+                            Fe²⁺ ➔ Fe³⁺ + e⁻  (E°<sub>red</sub> = 0.77 V)
+                        </div>
+                        <b>Rule:</b> Any substance whose standard reduction potential (E°) is <b>greater than 0.77 V</b> can oxidize Fe²⁺. <br><br>
+                        According to the table, three major substances are:
+                        
+                        <ul style="margin-top: 15px;">
+                            <li><b>1. Chlorine (Cl₂):</b> E° = 1.36 V. Since it is greater than 0.77 V, it oxidized Fe²⁺ easily.
+                                <br><small>Cl₂ + 2Fe²⁺ ➔ 2Cl⁻ + 2Fe³⁺</small>
+                            </li>
+                            <li style="margin-top: 10px;"><b>2. Dichromate ion (Cr₂O₇²⁻):</b> In acidic medium, E° = 1.33 V, which is $> 0.77 \text{ V}$.
+                                <br><small>Cr₂O₇²⁻ + 14H⁺ + 6Fe²⁺ ➔ 2Cr³⁺ + 7H₂O + 6Fe³⁺</small>
+                            </li>
+                            <li style="margin-top: 10px;"><b>3. Permanganate ion (MnO₄⁻):</b> In acidic medium, E° = 1.51 V. It is a very strong oxidizing agent.
+                                <br><small>MnO₄⁻ + 8H⁺ + 5Fe²⁺ ➔ Mn²⁺ + 4H₂O + 5Fe³⁺</small>
+                            </li>
+                        </ul>
+                        <div class="highlight-box" style="margin-top: 20px;">
+                            <b>Conclusion:</b> If E°<sub>substance</sub> > E°<sub>Fe³⁺/Fe²⁺</sub> (0.77V), it will oxidize Fe²⁺.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+            
+        <div class="note-card">
+            <div class="note-title">➡️ Nernst Equation — Detailed Derivation</div>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;">
+                <div style="flex: 1; min-width: 300px;">
+                    <p class="note-list">
+                        Nernst provided an equation to measure the electrode potential at any concentration and temperature relative to the NHE, called the <b>Nernst Equation</b>.
+                    </p>
+                    
+                    <p class="sub-heading">Consider a reversible reaction in a cell:</p>
+                    <div class="math-box" style="font-size: 2.5rem; position: relative; padding: 40px 20px;">
+                        aA + bB <span class="op">⇌</span> cC + dD
+                        <div style="position: absolute; top: 10px; left: 20px; font-size: 0.9rem; color: #8b5cf6;">(Stoichiometric coefficient) ↖</div>
+                        <div style="position: absolute; bottom: 5px; left: 120px; font-size: 0.9rem; color: #0891b2;">(Molecule / Atom / Ion) ↑</div>
+                    </div>
+
+                    <p class="note-list"><b>According to Thermodynamics:</b></p>
+                    <div class="math-box">
+                        ΔG = ΔG° + RT ln θ &nbsp;&nbsp;&nbsp; --- ①
+                    </div>
+                </div>
+
+                <!-- Terms Glossary Box -->
+                <div style="flex: 0 0 320px; background: #f0fdf4; border: 2px solid #10b981; border-radius: 15px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div style="font-weight: 900; color: #064e3b; border-bottom: 2px solid #10b981; margin-bottom: 12px; padding-bottom: 5px; text-transform: uppercase; font-size: 1.1rem;">Symbols & Constant Values</div>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.1rem; color: #064e3b; line-height: 1.7;">
+                        <li>🔹 <b>ΔG</b> = Gibbs Energy</li>
+                        <li>🔹 <b>ΔG°</b> = Standard Gibbs Energy</li>
+                        <li>🔹 <b>F</b> = Faraday's Constant</li>
+                        <li>🔹 <b>1F</b> = 96500 C/mol</li>
+                        <li>🔹 <b>E</b> = Cell Potential</li>
+                        <li>🔹 <b>E°</b> = Standard Cell Potential</li>
+                        <li>🔹 <b>R</b> = Gas Constant</li>
+                        <li>🔹 <b>R</b> = 8.314 J/K mol</li>
+                        <li>🔹 <b>T</b> = 298 K (Temperature)</li>
+                        <li style="border-top: 1px solid #10b981; margin-top: 10px; padding-top: 10px;">🔹 <b>θ</b> = <span class="math-frac"><span class="math-top">[C]<sup>c</sup> [D]<sup>d</sup></span><span class="math-bot">[A]<sup>a</sup> [B]<sup>b</sup></span></span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <p class="note-list">We know that:</p>
+                <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px;">
+                    <div class="math-box" style="flex: 1;">ΔG = -nFE &nbsp;&nbsp;&nbsp; --- ②</div>
+                    <div class="math-box" style="flex: 1;">ΔG° = -nFE° &nbsp;&nbsp;&nbsp; --- ③</div>
+                </div>
+
+                <p class="note-list">Substituting eq. ② and ③ in eq. ①:</p>
+                <div class="math-box" style="background: #1e293b; color: white;">
+                    -nFE = -nFE° + RT ln θ
+                </div>
+
+                <p class="note-list">Dividing the entire equation by <b>-nF</b>:</p>
+                <div class="math-box">
+                    <span class="math-frac"><span class="math-top">-nFE</span><span class="math-bot">-nF</span></span> = <span class="math-frac"><span class="math-top">-nFE°</span><span class="math-bot">-nF</span></span> + <span class="math-frac"><span class="math-top">RT ln θ</span><span class="math-bot">-nF</span></span>
+                </div>
+
+                <p class="note-list">After simplification:</p>
+                <div class="math-box" style="border: 3px solid #8b5cf6;">
+                    E = E° - <span class="math-frac"><span class="math-top">RT</span><span class="math-bot">nF</span></span> ln θ
+                </div>
+
+                <p class="note-list">Substituting the values of Constants:</p>
+                <div class="math-box">
+                    E = E° - <span class="math-frac"><span class="math-top">8.314 × 298</span><span class="math-bot">n × 96500</span></span> ln θ
+                </div>
+
+                <p class="note-list">Converting Natural Log (ln) to Log₁₀ (ln x = 2.303 log x):</p>
+                <div class="math-box">
+                    E = E° - <span class="math-frac"><span class="math-top">8.314 × 298 × 2.303</span><span class="math-bot">96500</span></span> × <span class="math-frac"><span class="math-top">log θ</span><span class="math-bot">n</span></span>
+                </div>
+
+                <div class="math-box" style="background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%); border: 5px double #db2777; font-weight: 950; font-size: 2.8rem; padding: 40px;">
+                    E = E° - <span class="math-frac"><span class="math-top">0.0591</span><span class="math-bot">n</span></span> log θ
+                </div>
+                <div style="text-align: right; font-weight: 900; color: #db2777; font-size: 1.5rem; margin-top: 10px;">— Nernst Equation</div>
+            </div>
+        </div>
+
+        <div class="note-card" style="border-left-color: #8b5cf6; background: #faf5ff;">
+            <div class="note-title" style="background: #8b5cf6;">➡️ Nernst Equation for Daniell Cell —</div>
+            
+            <p class="sub-heading">Representation of Daniell Cell:</p>
+            <div class="math-box" style="font-size: 2.2rem; background: #fff;">
+                Zn<sub>(s)</sub> / Zn<sup>+2</sup><sub>(aq)</sub> || Cu<sup>2+</sup><sub>(aq)</sub> / Cu<sub>(s)</sub>
+            </div>
+
+            <p class="sub-heading">Net Cell Reaction:</p>
+            <div class="math-box" style="font-size: 2.2rem;">
+                Zn<sub>(s)</sub> + Cu<sup>2+</sup><sub>(aq)</sub> <span class="op">⇌</span> Zn<sup>2+</sup><sub>(aq)</sub> + Cu<sub>(s)</sub>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; margin-top: 30px;">
+                <div style="flex: 1; min-width: 300px;">
+                    <p class="note-list"><b>According to Nernst Equation:</b></p>
+                    <div class="math-box">
+                        E = E° - <span class="math-frac"><span class="math-top">RT</span><span class="math-bot">nF</span></span> ln <span class="math-frac"><span class="math-top">[P]</span><span class="math-bot">[R]</span></span>
+                    </div>
+
+                    <div class="math-box">
+                        E = E° - <span class="math-frac"><span class="math-top">0.0591</span><span class="math-bot">n</span></span> log<sub>10</sub> <span class="math-frac"><span class="math-top">[P]</span><span class="math-bot">[R]</span></span>
+                    </div>
+
+                    <p class="note-list">For Daniell Cell (n = 2):</p>
+                    <div class="math-box">
+                        E = E° - <span class="math-frac"><span class="math-top">0.0591</span><span class="math-bot">2</span></span> log<sub>10</sub> <span class="math-frac"><span class="math-top">[Zn<sup>2+</sup>] [Cu]</span><span class="math-bot">[Zn] [Cu<sup>2+</sup>]</span></span>
+                    </div>
+                </div>
+
+                <!-- Theory Note Box -->
+                <div style="flex: 0 0 320px; background: #fff7ed; border: 2px dashed #f97316; border-radius: 15px; padding: 20px;">
+                    <div style="font-weight: 900; color: #9a3412; border-bottom: 2px solid #f97316; margin-bottom: 12px; padding-bottom: 5px; font-size: 1.1rem;">📝 Special Note</div>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.1rem; color: #9a3412; line-height: 1.7;">
+                        <li>🔹 For Daniell Cell <b>n = 2</b></li>
+                        <li style="margin-top: 10px; padding: 10px; background: #fff1f2; border-radius: 8px; border: 1px solid #fda4af;">
+                            💡 The **activity of pure liquid or solid** substances is always **1**.
+                        </li>
+                        <li style="text-align: center; margin-top: 10px; font-weight: 900; font-size: 1.3rem;">
+                            [Zn] = [Cu] = 1
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <p class="note-list">Substituting the value (1) for solids:</p>
+                <div class="math-box" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 4px solid #16a34a; font-weight: 950; font-size: 2.8rem; padding: 40px;">
+                    E = E° - <span class="math-frac"><span class="math-top">0.0591</span><span class="math-bot">2</span></span> log<sub>10</sub> <span class="math-frac"><span class="math-top">[Zn<sup>2+</sup>]</span><span class="math-bot">[Cu<sup>2+</sup>]</span></span>
+                </div>
+                <div style="text-align: right; font-weight: 900; color: #16a34a; font-size: 1.3rem; margin-top: 10px;">This equation is the Nernst Equation for the Daniell Cell.</div>
+            </div>
+        </div>
+
+        <!-- Interactive simulator -->
+        <div class="nernst-sim-container">
+            <div style="font-size: 1.8rem; font-weight: 900; color: #1e293b; margin-bottom: 30px; border-left: 10px solid #8b5cf6; padding-left: 15px; width: 100%;">Nernst Equation Live Predictor (Zn-Cu Cell)</div>
+            
+            <div class="sim-main">
+                <div class="wire"></div>
+                <div class="voltmeter">
+                    <span id="v-val" style="font-size: 1.4rem;">1.10 V</span>
+                    <span style="font-size: 0.7rem; color: #64748b;">LIVE EMF</span>
+                </div>
+                <div class="salt-bridge"></div>
+
+                <!-- Zn Anode -->
+                <div class="beaker-wrap">
+                    <div class="beaker">
+                        <div id="zn-sol" class="solution zn" style="height: 140px; opacity: 0.5;"></div>
+                        <div class="electrode" style="background: #94a3b8;">Zn</div>
+                    </div>
+                    <div style="color:#1e293b; font-weight:bold; margin-top:20px; font-size:1.1rem;">Zn (Anode)</div>
+                    <div id="zn-conc-label" style="color:#475569; font-size:1rem;">[Zn²⁺] = 1.0 M</div>
+                </div>
+
+                <!-- Cu Cathode -->
+                <div class="beaker-wrap">
+                    <div class="beaker">
+                        <div id="cu-sol" class="solution cu" style="height: 140px; opacity: 1;"></div>
+                        <div class="electrode" style="background: #b45309;">Cu</div>
+                    </div>
+                    <div style="color:#1e293b; font-weight:bold; margin-top:20px; font-size:1.1rem;">Cu (Cathode)</div>
+                    <div id="cu-conc-label" style="color:#475569; font-size:1rem;">[Cu²⁺] = 1.0 M</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label class="control-label">Zn²⁺ Concentration (M)</label>
+                    <input type="range" id="zn-slider" min="-3" max="1" step="0.1" value="0">
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Cu²⁺ Concentration (M)</label>
+                    <input type="range" id="cu-slider" min="-3" max="1" step="0.1" value="0">
+                </div>
+            </div>
+
+            <div class="formula-display" id="live-formula">
+                E = 1.10 - (0.0591 / 2) log (1.00 / 1.00) = 1.10 V
+            </div>
+        </div>
+
+        <div style="background: #fdfcfb; padding: 25px; border-radius: 15px; margin-top: 20px; font-size:1.3rem; color: #475569; border: 2px solid #e2e8f0; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div style="font-weight: 900; color: #1e293b; margin-bottom: 10px; font-size: 1.5rem;">📖 Simulator Guide</div>
+            Use sliders to change molar **Concentration**. Notice how increasing **Anode ([Zn²⁺])** or decreasing **Cathode ([Cu²⁺])** reduces the Cell potential (EMF).
+        </div>
+
+        <!-- Electrochemical Series Notes -->
+        <div class="note-card" style="margin-top: 40px; border-left: 10px solid #059669;">
+            <div class="note-title" style="background: #059669; font-size: 1.8rem;">Electrochemical Series (विद्युतरासायनिक श्रेणी)        <div class="note-card" style="border-left-color: #0ea5e9; background: #f0f9ff; border-left-width: 10px;">
+            <div class="note-title" style="background: #0ea5e9; font-size: 1.8rem;">➡️ Calculation of Equilibrium Constant (K) —</div>
+            
+            <p class="note-list" style="font-size: 1.6rem; font-weight: 700; color: #0369a1; margin-bottom: 25px;">Complete Step-by-Step Derivation at Equilibrium:</p>
+
+            <!-- Step 1 -->
+            <div style="background: #fff; padding: 25px; border-radius: 12px; border: 2px solid #bae6fd; margin-bottom: 25px;">
+                <div style="font-weight: 800; color: #0369a1; font-size: 1.6rem; margin-bottom: 10px;">According to Thermodynamics:</div>
+                <div class="math-box" style="background: #f8fafc; font-size: 2.8rem; padding: 30px;">ΔG = ΔG° + RT ln θ</div>
+            </div>
+
+            <!-- Equilibrium Box -->
+            <div style="background: #fff; padding: 25px; border-radius: 12px; border: 2px solid #bae6fd; margin-bottom: 25px; border-left: 10px solid #0369a1;">
+                <div style="font-weight: 900; color: #0369a1; font-size: 1.6rem; margin-bottom: 15px;">At Equilibrium:</div>
+                <ul class="note-list" style="font-size: 1.6rem; font-weight: 700; line-height: 2;">
+                    <li>1. <b>ΔG = 0</b> (No change in free energy)</li>
+                    <li>2. <b>E<sub>cell</sub> = 0</b> (Cell potential is zero)</li>
+                    <li>3. <b>θ = K</b> (Equilibrium constant)</li>
+                </ul>
+            </div>
+
+            <!-- Detailed Steps -->
+            <div style="background: #fff; padding: 25px; border-radius: 12px; border: 2px solid #bae6fd; margin-bottom: 25px;">
+                <div style="font-weight: 800; color: #0369a1; font-size: 1.5rem; margin-bottom: 10px;">Substituting these values:</div>
+                <div class="math-box" style="font-size: 2.6rem; padding: 20px;">0 = ΔG° + RT ln K</div>
+                <div class="math-box" style="font-size: 2.6rem; padding: 20px;">RT ln K = -ΔG°</div>
+                
+                <div style="font-weight: 800; color: #0369a1; font-size: 1.5rem; margin: 20px 0 10px 0;">Dividing by RT:</div>
+                <div class="math-box" style="font-size: 2.8rem; padding: 25px; background: #f0f9ff;">ln K = <span class="math-frac"><span class="math-top">-ΔG°</span><span class="math-bot">RT</span></span></div>
+
+                <div style="font-weight: 800; color: #0369a1; font-size: 1.5rem; margin: 20px 0 10px 0;">Converting to log₁₀ (Multiply by 2.303):</div>
+                <div class="math-box" style="font-size: 2.8rem; padding: 25px;">2.303 log K = <span class="math-frac"><span class="math-top">-ΔG°</span><span class="math-bot">RT</span></span></div>
+                
+                <div class="math-box" style="background: #0ea5e9; color: white; font-size: 3rem; padding: 30px; border: 4px solid #0369a1;">
+                    log K = <span class="math-frac"><span class="math-top">-ΔG°</span><span class="math-bot">2.303 RT</span></span>
+                </div>
+            </div>
+
+            <!-- Antilog Step -->
+            <div style="background: #fff; padding: 25px; border-radius: 12px; border: 2px solid #bae6fd; margin-bottom: 25px;">
+                <div style="font-weight: 800; color: #0369a1; font-size: 1.6rem; margin-bottom: 10px;">Equilibrium Constant (K) in Antilog form:</div>
+                <div class="math-box" style="font-size: 2.8rem; padding: 25px; border-color: #0ea5e9;">
+                    K = antilog <span style="font-size: 2.5rem; vertical-align: middle;">(</span> <span class="math-frac"><span class="math-top">-ΔG°</span><span class="math-bot">2.303 RT</span></span> <span style="font-size: 2.5rem; vertical-align: middle;">)</span>
+                </div>
+            </div>
+
+            <!-- Final nE Step -->
+            <div style="background: #fff; padding: 25px; border-radius: 12px; border: 2px solid #bae6fd; margin-bottom: 25px;">
+                <div style="font-weight: 800; color: #0369a1; font-size: 1.6rem; margin-bottom: 10px;">Substituting <b>ΔG° = -nFE°</b>:</div>
+                <div class="math-box" style="background: #1e293b; color: white; border: 6px solid #0ea5e9; font-size: 4rem; padding: 40px; font-weight: 950;">
+                    log K = <span class="math-frac"><span class="math-top">nE°</span><span class="math-bot">0.0591</span></span>
+                </div>
+            </div>
+
+            <!-- Spontaneity Rules (From Note) -->
+            <div class="highlight-box" style="margin-top: 40px; background: #fff; border-color: #0ea5e9; padding: 30px;">
+                <div style="font-weight: 950; color: #0369a1; font-size: 1.8rem; margin-bottom: 15px; border-bottom: 3px solid #bae6fd;">Note - Determination of Cell Spontaneity:</div>
+                <p style="font-size: 1.6rem; font-weight: 700; margin-bottom: 15px;">Since <b>ΔG = -nFE</b>, based on the signs:</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 15px;">
+                    <div style="padding: 20px; border: 3px solid #16a34a; border-radius: 15px; background: #f0fdf4; font-size: 1.6rem; font-weight: 900; color: #16a34a;">
+                        ➔ E<sub>cell</sub> = +Ve (Spontaneous)
+                    </div>
+                    <div style="padding: 20px; border: 3px solid #dc2626; border-radius: 15px; background: #fef2f2; font-size: 1.6rem; font-weight: 900; color: #dc2626;">
+                        ➔ E<sub>cell</sub> = -Ve (Non-Spontaneous)
+                    </div>
+                </div>
+            </div>
+
+            <p class="sub-heading" style="margin-top: 40px; color: #0369a1; font-size: 2rem;">➡️ Relation between Gibbs Free Energy and Equilibrium Constant:</p>
+            <div class="math-box" style="background: linear-gradient(135deg, #0ea5e9, #0369a1); color: white; font-size: 3.2rem; display: inline-block; padding: 30px 60px; border-radius: 20px;">
+                ΔG° = -RT ln K
+            </div>
+        </div>
+center;">
+                        ✅ E<sub>cell</sub> = +Ve <br> (Spontaneous)
+                    </div>
+                    <div style="padding: 20px; border: 3px solid #dc2626; border-radius: 15px; background: #fef2f2; font-size: 1.6rem; font-weight: 900; color: #dc2626; text-align: center;">
+                        ❌ E<sub>cell</sub> = -Ve <br> (Non-Spontaneous)
+                    </div>
+                </div>
+            </div>
+
+            <p class="sub-heading" style="margin-top: 40px; color: #0369a1; font-size: 2rem;">⚡ Vital Gibbs Energy Relation:</p>
+            <div class="math-box" style="background: linear-gradient(135deg, #0ea5e9, #0369a1); color: white; font-size: 3rem; display: inline-block; padding: 30px 60px; border-radius: 20px;">
+                ΔG° = -RT ln K
+            </div>
+        </div>
+
+        <div class="note-card" style="border-left-color: #db2777; background: #fff1f2; margin-top: 60px;">
+            <div class="note-title" style="background: #db2777;">🎓 Practice Question Bank</div>
+            
+            <!-- Question 1: Mg/Ag EMF -->
+            <!-- Question 1: Mg/Ag EMF -->
+            <div class="q-card" style="background: #fff; margin-bottom: 30px; border: 2px solid #db2777;">
+                <span class="q-text" style="font-size: 1.6rem; font-weight: 800; color: #db2777;">Q1: Represent the cell for the following reaction and calculate its E<sub>cell</sub>:</span>
+                <div class="math-box" style="background: #fff5f7; margin: 15px 0; border: 1px dashed #db2777; font-size: 1.8rem;">
+                    Mg<sub>(s)</sub> + 2Ag<sup>+</sup><sub>(0.0001M)</sub> ➔ Mg<sup>2+</sup><sub>(0.130M)</sub> + 2Ag<sub>(s)</sub> 
+                    <br><small>(Given: E°<sub>cell</sub> = 3.17 V)</small>
+                </div>
+                <div class="a-text" style="font-size: 1.5rem; line-height: 1.8;">
+                    <b style="color: #db2777; font-size: 1.7rem;">Ans —</b> <br>
+                    <b>i) Cell Notation:</b> <br>
+                    <div class="math-box" style="font-size: 1.8rem; background: #fff;">Mg | Mg<sup>2+</sup>(0.130M) || Ag<sup>+</sup>(0.0001M) | Ag</div>
+                    
+                    <b>ii) Calculation via Nernst Equation:</b> <br>
+                    <div class="math-box">E = E° - <span class="math-frac"><span class="math-top">RT</span><span class="math-bot">nF</span></span> ln <span class="math-frac"><span class="math-top">[Mg<sup>2+</sup>]</span><span class="math-bot">[Ag<sup>+</sup>]<sup>2</sup></span></span></div>
+                    
+                    <div class="math-box">E = E° - <span class="math-frac"><span class="math-top">0.0591</span><span class="math-bot">n</span></span> log <span class="math-frac"><span class="math-top">[Mg<sup>2+</sup>]</span><span class="math-bot">[Ag<sup>+</sup>]<sup>2</sup></span></span></div>
+                    
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 10px; margin: 10px 0; border: 1px solid #ddd;">
+                        Parameters: E° = 3.17V, [Mg<sup>2+</sup>] = 0.130, [Ag<sup>+</sup>] = 0.0001, <b>n = 2</b>
+                    </div>
+
+                    <div class="math-box">E = 3.17 - <span class="math-frac"><span class="math-top">0.0591</span><span class="math-bot">2</span></span> log <span class="math-frac"><span class="math-top">0.130</span><span class="math-bot">(0.0001)<sup>2</sup></span></span></div>
+                    
+                    <div class="math-box">E = 3.17 - 0.0295 log (1.3 × 10<sup>7</sup>)</div>
+                    
+                    <div class="math-box" style="background: #db2777; color: white; border: none; font-size: 2.2rem; padding: 20px;">
+                        E = 2.96 Volt
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2: Equilibrium Constant -->
+            <div class="q-card" style="background: #fff; margin-bottom: 30px; border: 2px solid #db2777;">
+                <span class="q-text" style="font-size: 1.6rem; font-weight: 800; color: #db2777;">Q2: Calculate the equilibrium constant (K<sub>c</sub>) for the following reaction:</span>
+                <div class="math-box" style="background: #fff5f7; margin: 15px 0; border: 1px dashed #db2777;">
+                    Cu<sub>(s)</sub> + 2Ag<sup>+</sup><sub>(aq)</sub> ➔ Cu<sup>2+</sup><sub>(aq)</sub> + 2Ag<sub>(s)</sub>
+                    <br><small>(E° = 0.46 V, n = 2)</small>
+                </div>
+                <div class="a-text" style="font-size: 1.5rem;">
+                    <b style="color: #db2777; font-size: 1.7rem;">Ans —</b> <br>
+                    <div class="math-box">log K<sub>c</sub> = <span class="math-frac"><span class="math-top">nE°</span><span class="math-bot">0.0591</span></span></div>
+                    
+                    <div class="math-box">log K<sub>c</sub> = <span class="math-frac"><span class="math-top">2 × 0.46</span><span class="math-bot">0.0591</span></span></div>
+                    
+                    <div class="math-box">log K<sub>c</sub> = 15.5932</div>
+                    
+                    <div class="math-box" style="border-color: #db2777;">
+                        K<sub>c</sub> = Antilog 15.5932 = <b>3.919 × 10<sup>15</sup></b>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3: Gibbs Energy -->
+            <div class="q-card" style="background: #fff; border: 2px solid #db2777;">
+                <span class="q-text" style="font-size: 1.6rem; font-weight: 800; color: #db2777;">Q3: The standard electrode potential for the Daniell cell is 1.1 V. Calculate standard Gibbs energy (ΔG°) for the reaction:</span>
+                <div class="math-box" style="background: #fff5f7; margin: 15px 0; border: 1px dashed #db2777;">
+                    Zn<sub>(s)</sub> + Cu<sup>2+</sup><sub>(aq)</sub> ➔ Zn<sup>2+</sup><sub>(aq)</sub> + Cu<sub>(s)</sub>
+                </div>
+                <div class="a-text" style="font-size: 1.5rem;">
+                    <b style="color: #db2777; font-size: 1.7rem;">Ans —</b> <br>
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 10px; margin: 10px 0; border: 1px solid #ddd;">
+                        Parameters: n = 2, F = 96500 C/mol, E°<sub>cell</sub> = 1.1 Volt
+                    </div>
+                    
+                    <div class="math-box">ΔG° = -nFE°<sub>cell</sub></div>
+                    
+                    <div class="math-box">ΔG° = -2 × 1.1 × 96500</div>
+                    
+                    <div class="math-box" style="background: #1e293b; color: white; font-size: 2.2rem; padding: 25px;">
+                        ΔG° = -212.27 kJ/mol
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4: Ni/Ag EMF -->
+            <div class="q-card" style="background: #fff; border-top: 1px dashed #ddd;">
+                <span class="q-text">Q4: Find the EMF of Ni-Ag cell (Ni + 2Ag⁺(0.002M) ➔ Ni²⁺(0.160M) + 2Ag) if E° = 1.05 V.</span>
+                <div class="a-text">
+                    <b>Answer:</b> Here n = 2. <br>
+                    E = 1.05 - (0.0591/2) log [0.160 / (0.002)²] = <b>0.91 V</b> (Approx)
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script>
+        const znSlider = document.getElementById('zn-slider');
+        const cuSlider = document.getElementById('cu-slider');
+        const vVal = document.getElementById('v-val');
+        const formulaDiv = document.getElementById('live-formula');
+        const znLabel = document.getElementById('zn-conc-label');
+        const cuLabel = document.getElementById('cu-conc-label');
+        const znSol = document.getElementById('zn-sol');
+        const cuSol = document.getElementById('cu-sol');
+
+        function updateNernst() {
+            const znConc = Math.pow(10, parseFloat(znSlider.value));
+            const cuConc = Math.pow(10, parseFloat(cuSlider.value));
+            
+            const n = 2;
+            const E0 = 1.10;
+            
+            const E = E0 - (0.0592 / n) * Math.log10(znConc / cuConc);
+            
+            vVal.innerText = E.toFixed(3) + ' V';
+            znLabel.innerText = '[Zn²⁺] = ' + znConc.toFixed(3) + ' M';
+            cuLabel.innerText = '[Cu²⁺] = ' + cuConc.toFixed(3) + ' M';
+            
+            znSol.style.opacity = 0.2 + (znConc * 0.4);
+            cuSol.style.opacity = 0.2 + (cuConc * 0.4);
+            
+            formulaDiv.innerHTML = `E = 1.10 - (0.0591 / 2) log (${znConc.toFixed(2)} / ${cuConc.toFixed(2)}) = <b>${E.toFixed(3)} V</b>`;
+            
+            if (E < 1.0) {
+                document.querySelector('.voltmeter').style.borderColor = "#ef4444";
+            } else {
+                document.querySelector('.voltmeter').style.borderColor = "#0891b2";
+            }
+        }
+
+        znSlider.addEventListener('input', updateNernst);
+        cuSlider.addEventListener('input', updateNernst);
+        updateNernst();
+    </script>
+
     <div class="nav-buttons">
-        <a href="../index_eng.html" class="nav-btn">🏠 Main Hub</a>
+        <a href="../index_eng.html" class="nav-btn btn-home">🏠 Main Hub</a>
+        <div style="display: flex; gap: 15px;">
+            <a href="ch2_part2.html" class="nav-btn btn-prev">⬅️ Previous</a>
+            <a href="ch2_part4.html" class="nav-btn btn-next">Next Part ➡️</a>
+        </div>
     </div>
 </body>
 </html>

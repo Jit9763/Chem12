@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Chapter 2 - Part 4 (Hindi)</title>
+    <title>Chapter 2 - Part 4 (Fuel Cells)</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #059669;
             --primary-dark: #064e3b;
-            --secondary: #10b981;
             --accent: #8b5cf6;
             --slate-50: #f8fafc;
             --slate-100: #f1f5f9;
@@ -17,38 +16,279 @@
             --font-main: #000000;
         }
         body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: var(--slate-50); color: var(--font-main); overflow-x: hidden; font-weight: 600; display:flex; flex-direction:column; min-height:100vh; }
-        .header-banner { background: linear-gradient(135deg, var(--accent) 0%, #6d28d9 100%); color: white; padding: 40px 20px; text-align: center; border-radius: 0 0 40px 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .header-banner { background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%); color: white; padding: 40px 20px; text-align: center; border-radius: 0 0 40px 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .premium-badge { background: rgba(255,255,255,0.2); padding: 6px 15px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 10px; }
         h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin: 0; font-weight: 900; }
         
-        .content-container { flex:1; padding: 40px 5vw; max-width: 1200px; margin: 0 auto; width: 100%; box-sizing:border-box; }
+        .content-container { flex:1; padding: 20px 0; width: 100%; box-sizing:border-box; margin: 0; }
         
-        .topic-card { background: white; border: 2px dashed var(--secondary); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        .topic-title { font-size: 2rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; }
-        .topic-desc { font-size: 1.5rem; color: var(--slate-800); }
+        .note-card { background: white; border-radius: 0px; padding: 40px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-left: 15px solid var(--primary); width: 100%; box-sizing: border-box; }
+        .note-title { font-size: 2.2rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 20px; border-bottom: 3px solid var(--slate-100); padding-bottom: 10px; }
+        .note-list { font-size: 1.6rem; color: var(--slate-800); line-height: 1.6; list-style: none; padding: 0; }
+        .note-list li { margin-bottom: 20px; position: relative; padding-left: 35px; }
+        .note-list li::before { content: "➔"; position: absolute; left: 0; color: var(--primary); font-weight: 900; }
 
-        .nav-buttons { display: flex; justify-content: center; padding: 30px; background:white; border-top:1px solid #e2e8f0; }
-        .nav-btn { background: #1e293b; color: white; padding: 15px 35px; border-radius: 100px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: 0.3s; }
-        .nav-btn:hover { background: var(--primary); transform: translateY(-3px); }
+        /* Fuel Cell Diagram Styles */
+        .fuel-cell-diagram { background: #f0f9ff; border-radius: 25px; padding: 40px; margin: 30px 0; border: 2px solid #bae6fd; display: flex; flex-direction: column; align-items: center; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .cell-viz { position: relative; width: 350px; height: 300px; background: #fff; border: 4px solid #334155; border-radius: 10px; padding: 20px; box-sizing: content-box; overflow: visible; margin-top: 40px; }
+        
+        .inlet { position: absolute; width: 60px; height: 15px; background: #64748b; font-size: 0.9rem; color: white; display: flex; align-items: center; justify-content: center; font-weight: 900; }
+        .inlet-h2 { left: -64px; top: 40px; border-radius: 5px 0 0 5px; }
+        .inlet-o2 { right: -64px; top: 40px; border-radius: 0 5px 5px 0; }
+        
+        /* Porous Electrodes */
+        .electrode-p { position: absolute; width: 30px; height: 260px; top: 20px; border-radius: 5px; background: #334155; box-shadow: 0 0 15px rgba(0,0,0,0.3); z-index: 5; background-image: radial-gradient(#64748b 1px, transparent 1px); background-size: 4px 4px; border: 2px solid #000; }
+        .anode-p { left: 40px; }
+        .cathode-p { right: 40px; }
+        
+        /* Electrolyte Middle */
+        .electrolyte-box { position: absolute; left: 70px; right: 70px; top: 20px; bottom: 20px; background: rgba(56, 189, 248, 0.2); z-index: 1; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #0369a1; text-align: center; border: 2px dashed #bae6fd; font-weight: 800; }
+        
+        .label-tag { position: absolute; font-size: 1.1rem; font-weight: 900; color: #1e293b; background: white; padding: 2px 10px; border: 2px solid #cbd5e1; border-radius: 5px; white-space: nowrap; }
+        
+        /* Math Fraction Styles */
+        .math-frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-size: 0.95em; margin: 0 2px; line-height: 1.1; font-weight: bold; }
+        .math-top { border-bottom: 2px solid currentColor; padding: 0 4px 1px 4px; }
+        .math-bot { padding: 1px 4px 0 4px; }
+        .math-box { background: #f8fafc; color: #1e293b; padding: 25px; border-radius: 15px; font-size: 2.2rem; text-align: center; margin: 20px 0; border: 3px solid #e2e8f0; font-family: serif; font-weight: 950; }
+
+        .highlight-box { background: #fef2f2; border: 3px solid #fee2e2; border-radius: 15px; padding: 20px; margin: 20px 0; font-size: 1.4rem; color: #991b1b; }
+        
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; margin-top: 50px; border-top: 2px solid #e2e8f0; }
+        .nav-btn { display: flex; align-items: center; gap: 10px; padding: 15px 35px; border-radius: 100px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: all 0.3s ease; }
+        .btn-home { background: #1e293b; color: white; }
+        .btn-prev { background: #94a3b8; color: white; }
+        .btn-next { background: #059669; color: white; }
     </style>
 </head>
 <body>
     <div class="header-banner">
         <div class="premium-badge">Class 12 - Chapter 2</div>
-        <h1>वैद्युतरसायन (Electrochemistry)</h1>
-        <p style="font-size: 1.2rem; margin-top: 10px; font-weight: 600; opacity: 0.9;">Part 4</p>
+        <h1>ईंधन सेल (Fuel Cells)</h1>
+        <p style="font-size: 1.3rem; margin-top: 10px; font-weight: 600; opacity: 0.9;">Part 4: उर्जा का आधुनिक स्रोत</p>
     </div>
 
     <div class="content-container">
-        <div class="topic-card">
-            <div class="topic-title">📚 Topic to cover in this section:</div>
-            <div class="topic-desc">नेर्न्स्ट समीकरण</div>
-        </div>
-        <!-- Write actual content corresponding to the topic here -->
-    </div>
+        
+        <!-- Definition -->
+        <div class="note-card" style="border-left-color: #0ea5e9;">
+            <div class="note-title">📖 ईंधन सेल (Fuel Cells) क्या है?</div>
+            <p style="font-size: 1.6rem; line-height: 1.8; color: #1e293b;">
+                "ईंधन सेल एक प्रकार के वैद्युत रसायन सेल हो        <!-- H2-O2 Cell Simulator (Ultra High Visibility) -->
+        <div class="note-card" style="border-left-color: #8b5cf6; padding: 0; overflow: hidden;">
+            <div class="note-title" style="padding: 30px; margin-bottom: 0; background: #fdf2f8;">🧪 H₂-O₂ ईंधन सेल: लाइव लैब सिम्युलेटर</div>
+            
+            <div class="fuel-cell-sim-container" style="background: #e0f2fe; padding: 40px 20px; border-radius: 0; border: none; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center;">
+                <div class="sim-header" style="text-align: center; margin-bottom: 40px;">
+                    <span style="background: #0369a1; color: white; padding: 10px 25px; border-radius: 50px; font-size: 1.5rem; font-weight: 900; box-shadow: 0 5px 15px rgba(3,105,161,0.3); letter-spacing: 1px;">HIGH-CONTRAST LAB</span>
+                </div>
 
-    <div class="nav-buttons">
-        <a href="../index.html" class="nav-btn">🏠 Main Hub (होम)</a>
+                <div class="cell-viz" style="width: min(90vw, 550px); height: 400px; background: white; border: 6px solid #1e293b; border-radius: 20px; position: relative; box-shadow: 0 40px 80px rgba(0,0,0,0.15); margin-top: 60px;">
+                    <!-- Voltmeter (TOP) -->
+                    <div id="fuel-voltmeter" style="position: absolute; top: -85px; left: 50%; transform: translateX(-50%); width: 150px; height: 150px; background: white; border: 10px solid #059669; border-radius: 50%; z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 15px 35px rgba(0,0,0,0.25);">
+                        <span style="font-size: 1rem; font-weight: 900; color: #64748b;">VOLTAGE</span>
+                        <div id="v-display" style="font-size: 2.5rem; font-weight: 950; color: #1e293b;">1.23 V</div>
+                    </div>
+
+                    <!-- Connection Wires -->
+                    <div style="position: absolute; top: -45px; left: 80px; width: calc(100% - 160px); height: 80px; border: 10px solid #334155; border-bottom: none; border-radius: 25px 25px 0 0; z-index: 10;"></div>
+
+                    <!-- Inlets -->
+                    <div class="inlet-pipe" style="position: absolute; left: -80px; top: 80px; width: 80px; height: 40px; background: #475569; border-radius: 10px 0 0 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 950; z-index: 5; font-size: 1.2rem;">H₂</div>
+                    <div class="inlet-pipe" style="position: absolute; right: -80px; top: 80px; width: 80px; height: 40px; background: #475569; border-radius: 0 10px 10px 0; display: flex; align-items: center; justify-content: center; color: white; font-weight: 950; z-index: 5; font-size: 1.2rem;">O₂</div>
+
+                    <!-- Water Outlet -->
+                    <div class="outlet-pipe" style="position: absolute; right: -80px; bottom: 80px; width: 80px; height: 40px; background: #0284c7; border-radius: 0 10px 10px 0; display: flex; align-items: center; justify-content: center; color: white; font-weight: 950; font-size: 1rem; z-index: 5;">H₂O</div>
+                    <div id="water-outlet-area" style="position: absolute; right: -85px; bottom: 40px; width: 80px; height: 50px; z-index: 4; pointer-events: none;"></div>
+
+                    <!-- Electrodes -->
+                    <div id="anode-electrode" style="position: absolute; left: 60px; top: 25px; bottom: 25px; width: 50px; background: #111827; border: 4px solid #000; border-radius: 5px; z-index: 50; box-shadow: 0 0 20px rgba(0,0,0,0.5);"></div>
+                    <div id="cathode-electrode" style="position: absolute; right: 60px; top: 25px; bottom: 25px; width: 50px; background: #111827; border: 4px solid #000; border-radius: 5px; z-index: 50; box-shadow: 0 0 20px rgba(0,0,0,0.5);"></div>
+
+                    <!-- Electrolyte (DARK BLUE Background as requested) -->
+                    <div style="position: absolute; left: 110px; right: 110px; top: 25px; bottom: 25px; background: #075985; border: 3px solid #0c4a6e; z-index: 5; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 30px rgba(0,0,0,0.3);">
+                        <span style="font-weight: 950; font-size: 1.6rem; color: #bae6fd; text-align: center; text-shadow: 0 2px 5px rgba(0,0,0,0.5);">NaOH / KOH<br>Electrolyte</span>
+                    </div>
+
+                    <!-- Bubble Flow Areas -->
+                    <div id="h2-bubbles" style="position: absolute; left: 110px; top: 25px; bottom: 25px; width: 50px; pointer-events: none; z-index: 100; overflow: hidden;"></div>
+                    <div id="o2-bubbles" style="position: absolute; right: 110px; top: 25px; bottom: 25px; width: 50px; pointer-events: none; z-index: 100; overflow: hidden;"></div>
+
+                    <!-- Labels visibility fixes -->
+                    <div style="position: absolute; left: -180px; top: 130px; width: 160px; background: white; border: 4px solid #1e293b; padding: 12px; border-radius: 12px; text-align: center; font-weight: 950; box-shadow: 0 8px 20px rgba(0,0,0,0.2); font-size: 1.2rem; z-index: 200;">
+                        सरन्ध्र एनोड<br><small style="color: #64748b; font-size: 0.9rem;">(Porous Anode)</small>
+                    </div>
+                    <div style="position: absolute; right: -180px; top: 130px; width: 160px; background: white; border: 4px solid #334155; padding: 12px; border-radius: 12px; text-align: center; font-weight: 950; box-shadow: 0 8px 20px rgba(0,0,0,0.2); font-size: 1.2rem; z-index: 200;">
+                        सरन्ध्र कैथोड<br><small style="color: #64748b; font-size: 0.9rem;">(Porous Cathode)</small>
+                    </div>
+                </div>
+
+                <!-- Controls Layout -->
+                <div class="sim-controls" style="margin-top: 80px; background: white; padding: 40px; border-radius: 25px; display: flex; gap: 50px; width: min(95%, 900px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 2px solid #e2e8f0;">
+                    <div class="control-box" style="flex: 1; text-align: center;">
+                        <label style="display: block; font-weight: 950; font-size: 1.5rem; color: #1e293b; margin-bottom: 20px;">H₂ Flow Rate (Efficiency)</label>
+                        <input type="range" id="h2-flow" min="0" max="100" value="50" style="width: 100%; height: 12px; border-radius: 10px; appearance: none; background: #e2e8f0; outline: none; cursor: pointer;">
+                        <div style="font-size: 1.2rem; font-weight: 700; color: #64748b; margin-top: 10px;">Low ← Pressure → High</div>
+                    </div>
+                    <div class="control-box" style="flex: 1; text-align: center;">
+                        <label style="display: block; font-weight: 950; font-size: 1.5rem; color: #1e293b; margin-bottom: 20px;">O₂ Flow Rate (Power)</label>
+                        <input type="range" id="o2-flow" min="0" max="100" value="50" style="width: 100%; height: 12px; border-radius: 10px; appearance: none; background: #e2e8f0; outline: none; cursor: pointer;">
+                        <div style="font-size: 1.2rem; font-weight: 700; color: #64748b; margin-top: 10px;">Low ← Supply → High</div>
+                    </div>
+                </div>
+
+                <!-- How to use box -->
+                <div class="usage-guide" style="background: #0f172a; color: white; width: 100%; margin-top: 60px; padding: 50px; box-sizing: border-box; border-top: 10px solid #10b981; box-shadow: 0 -20px 40px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2rem; font-weight: 950; color: #10b981; margin-bottom: 25px; display: flex; align-items: center; gap: 20px;">
+                        <span style="background: #10b981; color: #000; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">🔬</span>
+                        <span>सिम्युलेटर का उपयोग कैसे करें? (User Guide)</span>
+                    </div>
+                    <ul class="note-list" style="color: #cbd5e1; font-size: 1.5rem; border-left: 4px solid #334155; padding-left: 30px;">
+                        <li style="margin-bottom: 25px;"><b>1. गैस का प्रवाह बढ़ाएँ:</b> H₂ और O₂ के स्लाइडर्स को बढ़ाकर 'गैस प्रेशर' सक्रिय करें।</li>
+                        <li><b>2. चमकदार बुलबुले (Glowing Bubbles):</b> जब गैस प्रवाहित होगी, तो आपको <b>सफेद चमकते हुए बुलबुले</b> नीले इलेक्ट्रोलाइट में दिखेंगे।</li>
+                        <li><b>3. जल का निर्माण (Water Out):</b> क्रिया के दौरान कैथोड की 'H₂O Outlet' से पानी की बूंदें गिरती हुई दिखाई देंगी।</li>
+                        <li><b>4. वोल्टेज की निगरानी:</b> सही अनुपात में गैस होने पर वोल्टमीटर 1.23 V का अधिकतम मान दिखाएगा।</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const h2Slider = document.getElementById('h2-flow');
+            const o2Slider = document.getElementById('o2-flow');
+            const vDisplay = document.getElementById('v-display');
+            const h2BubbleContainer = document.getElementById('h2-bubbles');
+            const o2BubbleContainer = document.getElementById('o2-bubbles');
+            const waterOutletArea = document.getElementById('water-outlet-area');
+
+            function createVividBubble(container) {
+                const bubble = document.createElement('div');
+                const size = Math.random() * 10 + 8; // 8px to 18px
+                bubble.style.position = 'absolute';
+                bubble.style.width = size + 'px';
+                bubble.style.height = size + 'px';
+                bubble.style.borderRadius = '50%';
+                bubble.style.background = '#ffffff'; // Solid White
+                bubble.style.boxShadow = '0 0 12px 2px rgba(255, 255, 255, 0.9)'; // White Glow
+                bubble.style.left = Math.random() * 80 + 10 + '%';
+                bubble.style.bottom = '-20px';
+                bubble.style.opacity = '1';
+                bubble.style.transition = `all ${Math.random() * 1.5 + 1}s cubic-bezier(0.4, 0, 0.2, 1)`;
+                
+                container.appendChild(bubble);
+
+                setTimeout(() => {
+                    bubble.style.bottom = '110%';
+                    bubble.style.opacity = '0';
+                    setTimeout(() => bubble.remove(), 2500);
+                }, 10);
+            }
+
+            function createWaterDrop() {
+                const drop = document.createElement('div');
+                drop.style.position = 'absolute';
+                drop.style.width = '12px';
+                drop.style.height = '18px';
+                drop.style.background = '#0ea5e9';
+                drop.style.borderRadius = '50% 50% 50% 50% / 10% 10% 90% 90%';
+                drop.style.left = '40px';
+                drop.style.top = '10px';
+                drop.style.opacity = '1';
+                drop.style.boxShadow = '0 0 5px rgba(14, 165, 233, 0.5)';
+                drop.style.transition = 'all 1.2s cubic-bezier(0.5, 0, 1, 0.5)';
+                
+                waterOutletArea.appendChild(drop);
+
+                setTimeout(() => {
+                    drop.style.top = '100px';
+                    drop.style.opacity = '0';
+                    setTimeout(() => drop.remove(), 1300);
+                }, 50);
+            }
+
+            function updateFuelCell() {
+                const h2 = parseInt(h2Slider.value);
+                const o2 = parseInt(o2Slider.value);
+                const minVal = Math.min(h2, o2);
+                
+                const voltage = (minVal > 0) ? (0.85 + (minVal/100) * 0.38).toFixed(2) : "0.00";
+                vDisplay.innerText = voltage + " V";
+                
+                const meter = document.getElementById('fuel-voltmeter');
+                if (minVal > 80) meter.style.borderColor = "#10b981";
+                else if (minVal > 30) meter.style.borderColor = "#f59e0b";
+                else meter.style.borderColor = "#ef4444";
+            }
+
+            // High frequency loops for vivid visibility
+            setInterval(() => {
+                const h2Force = Math.floor(h2Slider.value / 15);
+                for(let i=0; i<h2Force; i++) createVividBubble(h2BubbleContainer);
+                
+                const o2Force = Math.floor(o2Slider.value / 15);
+                for(let i=0; i<o2Force; i++) createVividBubble(o2BubbleContainer);
+
+                // Water drops proportional to reaction force
+                if (Math.min(h2Slider.value, o2Slider.value) > 20 && Math.random() < (Math.min(h2Slider.value, o2Slider.value)/100)) {
+                    createWaterDrop();
+                }
+            }, 250);
+
+            h2Slider.addEventListener('input', updateFuelCell);
+            o2Slider.addEventListener('input', updateFuelCell);
+            updateFuelCell();
+        </script>
+
+        <!-- Mechanism -->
+        <div class="note-card" style="border-left-color: #f59e0b;">
+            <div class="note-title">⚙️ क्रियाविधि (Mechanism)</div>
+            
+            <div style="margin: 20px 0; font-size: 1.6rem;">
+                <b style="color: #ea580c;">एनोड पर:</b>
+                <div class="math-box">2H₂ ➔ 4H⁺ + 4e⁻</div>
+                
+                <b style="color: #ea580c;">कैथोड पर:</b>
+                <div class="math-box">O₂ + 4e⁻ + 4H⁺ ➔ 2H₂O</div>
+                
+                <hr style="border: 2px solid #e2e8f0; margin: 25px 0;">
+                
+                <b style="color: #059669;">Net रासायनिक अभिक्रिया:</b>
+                <div class="math-box" style="background: #ecfdf5; border-color: #059669;">2H₂(g) + O₂(g) ➔ 2H₂O(l)</div>
+            </div>
+        </div>
+
+        <!-- Efficiency -->
+        <div class="note-card" style="border-left-color: #db2777;">
+            <div class="note-title">⭐ ईंधन सेल की दक्षता (Efficiency)</div>
+            <p style="font-size: 1.5rem; font-weight: 700;">ईंधन सेल की दक्षता का सूत्र निम्न है:</p>
+            <div class="math-box" style="font-size: 3rem; color: #db2777;">
+                η = <span class="math-frac"><span class="math-top">ΔG</span><span class="math-bot">ΔH</span></span> × 100%
+            </div>
+            
+            <ul class="note-list" style="margin-top: 25px;">
+                <li><b>(i)</b> H₂-O₂ ईंधन सेल की दक्षता = <b>83%</b></li>
+                <li><b>(ii)</b> हाइड्रोकार्बन-O₂ ईंधन सेल की दक्षता = <b>92%</b></li>
+                <li><b>(iii)</b> ठोस कोल-O₂ ईंधन सेल की दक्षता = <b>12%</b></li>
+            </ul>
+        </div>
+
+        <!-- Uses -->
+        <div class="note-card" style="border-left-color: #1e293b;">
+            <div class="note-title">🚀 उपयोग (Uses)</div>
+            <ul class="note-list">
+                <li>अंतरिक्ष यानों (जैसे Apollo Mission) में विद्युत ऊर्जा के लिए।</li>
+                <li>आधुनिक इलेक्ट्रिक कारों में।</li>
+                <li>अन्य अत्याधुनिक सेना और वैज्ञानिक तकनीकों में।</li>
+            </ul>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-buttons" style="padding: 40px 20px;">
+            <a href="ch2_part3.html" class="nav-btn btn-prev">⬅️ Part 3</a>
+            <a href="../index.html" class="nav-btn btn-home">🏠 Home</a>
+            <a href="ch2_part5.html" class="nav-btn btn-next">Next Part ➡️</a>
+        </div>
+
     </div>
 </body>
 </html>

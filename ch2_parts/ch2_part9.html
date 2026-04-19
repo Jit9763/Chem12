@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -16,22 +17,102 @@
             --slate-800: #1e293b;
             --font-main: #000000;
         }
-        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: var(--slate-50); color: var(--font-main); overflow-x: hidden; font-weight: 600; display:flex; flex-direction:column; min-height:100vh; }
-        .header-banner { background: linear-gradient(135deg, var(--accent) 0%, #6d28d9 100%); color: white; padding: 40px 20px; text-align: center; border-radius: 0 0 40px 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        .premium-badge { background: rgba(255,255,255,0.2); padding: 6px 15px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 10px; }
-        h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin: 0; font-weight: 900; }
-        
-        .content-container { flex:1; padding: 40px 5vw; max-width: 1200px; margin: 0 auto; width: 100%; box-sizing:border-box; }
-        
-        .topic-card { background: white; border: 2px dashed var(--secondary); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        .topic-title { font-size: 2rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; }
-        .topic-desc { font-size: 1.5rem; color: var(--slate-800); }
 
-        .nav-buttons { display: flex; justify-content: center; padding: 30px; background:white; border-top:1px solid #e2e8f0; }
-        .nav-btn { background: #1e293b; color: white; padding: 15px 35px; border-radius: 100px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: 0.3s; }
-        .nav-btn:hover { background: var(--primary); transform: translateY(-3px); }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            background: var(--slate-50);
+            color: var(--font-main);
+            overflow-x: hidden;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header-banner {
+            background: linear-gradient(135deg, var(--accent) 0%, #6d28d9 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .premium-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 15px;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin: 0;
+            font-weight: 900;
+        }
+
+        .content-container {
+            flex: 1;
+            padding: 40px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .topic-card {
+            background: white;
+            border: 2px dashed var(--secondary);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .topic-title {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .topic-desc {
+            font-size: 1.5rem;
+            color: var(--slate-800);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .nav-btn {
+            background: #1e293b;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
     </style>
 </head>
+
 <body>
     <div class="header-banner">
         <div class="premium-badge">Class 12 - Chapter 2</div>
@@ -39,16 +120,522 @@
         <p style="font-size: 1.2rem; margin-top: 10px; font-weight: 600; opacity: 0.9;">Part 9</p>
     </div>
 
+    <style>
+        .content-container {
+            flex: 1;
+            padding: 20px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .math-box {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #e2e8f0;
+            font-family: 'Cambria Math', serif;
+            font-size: 2.22rem;
+            font-weight: 900;
+            margin: 20px 0;
+            display: inline-block;
+        }
+
+        .math-frac {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            vertical-align: middle;
+        }
+
+        .math-top {
+            border-bottom: 3px solid currentColor;
+            padding: 0 10px;
+        }
+
+        .math-bot {
+            font-size: 0.8em;
+            padding: 5px 0;
+        }
+    </style>
+
     <div class="content-container">
-        <div class="topic-card">
-            <div class="topic-title">📚 Topic to cover in this section:</div>
-            <div class="topic-desc">व्यावसायिक बैटरियां - प्राथमिक एवं द्वितीयक सेल</div>
+        <!-- Faraday's Second Law Main Card -->
+        <div
+            style="background: white; border-radius: 20px; border: 4px solid #10b981; padding: 50px; margin-bottom: 50px;">
+            <div style="margin-bottom: 30px;">
+                <span
+                    style="font-size: 2.5rem; background: #ecfdf5; padding: 10px 20px; border-radius: 10px; border-bottom: 4px solid #10b981; font-weight: 800;">2⟩
+                    फैराडे का द्वितीय नियम -</span>
+            </div>
+
+            <div
+                style="font-size: 2.22rem; line-height: 1.8; font-weight: 800; color: #000; background: #f0fdf4; padding: 40px; border-left: 15px solid #10b981; border-radius: 0 30px 30px 0;">
+                <p>➔ फैराडे के द्वितीय नियमानुसार- <b>"विभिन्न वैद्युत अपघट्यों के विलयन में निश्चित समय तक निश्चित आवेश
+                        प्रवाहित होने पर इलेक्ट्रोडों पर निक्षेपित पदार्थ की मात्रा, उसके तुल्यांकी भारों के समानुपाती
+                        होती है।"</b></p>
+            </div>
+
+            <div style="font-size: 2.2rem; margin-top: 40px; color: #1e293b;">
+                i.e. &nbsp;&nbsp; <b>W ∝ E</b> <br>
+                <div
+                    style="border: 3px solid black; padding: 10px 20px; display: inline-block; margin: 20px 0; font-family: 'Cambria Math', serif;">
+                    <div class="math-frac" style="display: inline-flex;">
+                        <span class="math-top">W</span>
+                        <span class="math-bot">E</span>
+                    </div> = constant
+                </div>
+
+                <p style="margin-top: 30px; font-weight: 950;">दो भिन्न विद्युत अपघट्यों के लिए-</p>
+                <div
+                    style="display: flex; align-items: center; justify-content: space-around; background: #f8fafc; padding: 30px; border-radius: 20px; border: 1px solid #e2e8f0; font-family: 'Cambria Math', serif;">
+                    <div>
+                        <div class="math-frac">
+                            <span class="math-top">W₁</span>
+                            <span class="math-bot">E₁</span>
+                        </div> = constant
+                    </div>
+                    <span>तथा</span>
+                    <div>
+                        <div class="math-frac">
+                            <span class="math-top">W₂</span>
+                            <span class="math-bot">E₂</span>
+                        </div> = constant
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px; border-top: 2px dashed #cbd5e1; padding-top: 30px;">
+                    अतः &nbsp;&nbsp;
+                    <div
+                        style="display: inline-block; border: 3px solid #10b981; padding: 20px 40px; border-radius: 15px; font-size: 3rem;">
+                        <div class="math-frac">
+                            <span class="math-top">W₁</span>
+                            <span class="math-bot">E₁</span>
+                        </div> =
+                        <div class="math-frac">
+                            <span class="math-top">W₂</span>
+                            <span class="math-bot">E₂</span>
+                        </div>
+                        &nbsp;&nbsp;➔&nbsp;&nbsp;
+                        <div class="math-frac">
+                            <span class="math-top">W₁</span>
+                            <span class="math-bot">W₂</span>
+                        </div> =
+                        <div class="math-frac">
+                            <span class="math-top">E₁</span>
+                            <span class="math-bot">E₂</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Write actual content corresponding to the topic here -->
+
+        <!-- Connection to First Law -->
+        <div
+            style="background: white; border-radius: 40px; border: 4px solid var(--accent); padding: 50px; margin-bottom: 50px;">
+            <p style="font-size: 2.28rem; font-weight: 950; margin-bottom: 30px;">➔ फैराडे के प्रथम नियम से -</p>
+            <p style="font-size: 2.22rem;">W = Z I t &nbsp;&nbsp;➔&nbsp;&nbsp; W ∝ Z & W ∝ E</p>
+
+            <div style="display: flex; gap: 40px; margin-top: 40px; align-items: center;">
+                <div style="flex: 1; border: 4px solid #000; padding: 30px; text-align: center; background: #f8fafc;">
+                    अतः &nbsp;
+                    <div
+                        style="font-size: 3.5rem; font-family: 'Cambria Math', serif; font-weight: 950; display: inline-block; vertical-align: middle;">
+                        <div class="math-frac">
+                            <span class="math-top">W₁</span>
+                            <span class="math-bot">W₂</span>
+                        </div> =
+                        <div class="math-frac">
+                            <span class="math-top">Z₁</span>
+                            <span class="math-bot">Z₂</span>
+                        </div> =
+                        <div class="math-frac">
+                            <span class="math-top">E₁</span>
+                            <span class="math-bot">E₂</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1; font-size: 2.2rem; line-height: 2;">
+                    अतः &nbsp; E ∝ Z <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E = F Z <br>
+                    <span style="background: #f3f4f6; padding: 5px 15px; border-radius: 10px;">F = नियतांक
+                        (फैराडे)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Series Comparison Simulator -->
+        <div style="background: #0f172a; border-radius: 40px; padding: 50px; margin-bottom: 50px; color: white;">
+            <h3
+                style="color: #6ee7b7; font-size: 2rem; font-weight: 800; margin-bottom: 40px; border-left: 10px solid #6ee7b7; padding-left: 20px;">
+                🕹️ सीरीज सेल सिम्युलेटर (श्रेणीक्रम सेल लैब)
+            </h3>
+
+            <p style="color: #94a3b8; font-size: 1.4rem; margin-bottom: 30px;">जब दो सेल श्रेणीक्रम में होते हैं, तो
+                आवेश (Q) समान होता है। देखें कि द्रव्यमान कैसे बदलता है:</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <!-- Beaker 1: Silver -->
+                <div
+                    style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 30px; border: 2px solid #94a3b8; text-align: center;">
+                    <div style="color: #94a3b8; font-weight: 950; font-size: 1.5rem; margin-bottom: 15px;">इलेक्ट्रोड 1:
+                        Silver (Ag)</div>
+                    <div style="font-size: 1.2rem; color: #64748b; margin-bottom: 20px;">तुल्यांकी भार (E₁) = 108</div>
+                    <div
+                        style="width: 50px; height: 120px; background: #e2e8f0; margin: 0 auto; position: relative; border: 4px solid #64748b;">
+                        <div id="silver-layer"
+                            style="position: absolute; inset: 0; border: 0 solid #cbd5e1; transition: 0.3s; opacity: 0.7;">
+                        </div>
+                    </div>
+                    <div id="w1-display" style="font-size: 2.5rem; font-weight: 950; color: #cbd5e1; margin-top: 20px;">
+                        0.000 g</div>
+                </div>
+
+                <!-- Beaker 2: Copper -->
+                <div
+                    style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 30px; border: 2px solid #b45309; text-align: center;">
+                    <div style="color: #fb923c; font-weight: 950; font-size: 1.5rem; margin-bottom: 15px;">इलेक्ट्रोड 2:
+                        Copper (Cu)</div>
+                    <div style="font-size: 1.2rem; color: #7c2d12; margin-bottom: 20px;">तुल्यांकी भार (E₂) = 31.75
+                    </div>
+                    <div
+                        style="width: 50px; height: 120px; background: #ea580c; margin: 0 auto; position: relative; border: 4px solid #7c2d12;">
+                        <div id="copper-layer"
+                            style="position: absolute; inset: 0; border: 0 solid #fbbf24; transition: 0.3s; opacity: 0.7;">
+                        </div>
+                    </div>
+                    <div id="w2-display" style="font-size: 2.5rem; font-weight: 950; color: #fb923c; margin-top: 20px;">
+                        0.000 g</div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div style="margin-top: 40px; background: rgba(0,0,0,0.3); padding: 30px; border-radius: 20px;">
+                <label
+                    style="display: block; font-size: 1.5rem; color: #6ee7b7; margin-bottom: 15px; font-weight: 800;">प्रवाहित
+                    आवेश (Charge - Q) [Coulombs]</label>
+                <input type="range" id="charge-slider" min="0" max="1000" step="1" value="0" oninput="runPart9Sim()"
+                    style="width: 100%; height: 20px; border-radius: 100px; appearance: none; background: #1e293b; cursor: pointer;">
+                <div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.5rem;">
+                    <span>Q = <span id="q-val-display" style="font-weight: 950; color: #6ee7b7;">0</span> C</span>
+                    <span style="font-weight: 800; color: #fbbf24;">समान आवेश (Q) ➔ समान समय</span>
+                </div>
+
+                <div id="comparison-formula"
+                    style="margin-top: 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 1.8rem; font-family: 'Cambria Math', serif;">
+                    <span id="final-ratio-display">W₁/W₂ = E₁/E₂ = 3.40</span>
+                </div>
+            </div>
+
+            <script>
+                function runPart9Sim() {
+                    const q = parseFloat(document.getElementById('charge-slider').value);
+                    const eAg = 108;
+                    const eCu = 31.75;
+                    const f = 96500;
+
+                    const w1 = (eAg * q) / f;
+                    const w2 = (eCu * q) / f;
+
+                    document.getElementById('q-val-display').innerText = q;
+                    document.getElementById('w1-display').innerText = w1.toFixed(4) + " g";
+                    document.getElementById('w2-display').innerText = w2.toFixed(4) + " g";
+
+                    // Update visuals: Silver (lighter grey layer), Copper (Goldish/Orange layer)
+                    document.getElementById('silver-layer').style.borderWidth = Math.min(22, w1 * 12) + "px";
+                    document.getElementById('copper-layer').style.borderWidth = Math.min(22, w2 * 12) + "px";
+
+                    const ratio = w1 > 0 ? (w1 / w2).toFixed(2) : "3.40";
+                    document.getElementById('final-ratio-display').innerText = `W₁/W₂ = ${w1.toFixed(4)} / ${w2.toFixed(4)} = ${ratio} (Exact E₁/E₂ Ratio)`;
+                }
+                runPart9Sim();
+            </script>
+        </div>
+
+        <!-- Note - 1 Faraday Card -->
+        <div
+            style="background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: 40px; padding: 60px; color: white; border: 5px solid #fbbf24; margin-bottom: 50px;">
+            <div
+                style="background: #fbbf24; color: #000; padding: 10px 30px; border-radius: 100px; display: inline-block; font-size: 1.5rem; font-weight: 900; margin-bottom: 30px;">
+                Note -</div>
+            <h3 style="font-size: 2.8rem; font-weight: 950; margin-bottom: 40px;">➔ 1 फैराडे (1 Faraday) -</h3>
+
+            <div style="font-size: 2.22rem; line-height: 1.8; color: #f1f5f9;">
+                <p
+                    style="background: rgba(251, 191, 36, 0.1); padding: 30px; border-radius: 20px; border-left: 10px solid #fbbf24;">
+                    "एक मोल इलेक्ट्रॉन पर उपस्थित आवेश, <b>एक फैराडे</b> कहलाता है।"
+                </p>
+
+                <div
+                    style="margin-top: 40px; font-family: 'Cambria Math', serif; font-size: 2.5rem; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 30px; text-align: center;">
+                    1 फैराडे = (6.023 × 10²³) × (1.6 × 10⁻¹⁹) <br>
+                    <span
+                        style="color: #fbbf24; font-size: 3.5rem; font-weight: 950; margin-top: 20px; display: block;">
+                        1 फैराडे = 96487 C ≈ 96500 C
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Numericals Hub (Added as per Image 34) -->
+        <div
+            style="background: white; border-radius: 40px; border: 4px solid #334155; padding: 50px; margin-bottom: 50px;">
+            <h2
+                style="font-size: 3rem; font-weight: 950; color: #1e293b; margin-bottom: 40px; border-bottom: 4px solid #334155; padding-bottom: 10px;">
+                ➔ अंकिक प्रश्न (Numerical Problems)</h2>
+
+            <!-- Problem 1 -->
+            <div
+                style="background: #f8fafc; padding: 40px; border-radius: 30px; border: 2px solid #e2e8f0; margin-bottom: 40px;">
+                <p style="font-size: 2.2rem; font-weight: 900; color: #000; margin-bottom: 25px;">प्रश्न- CuSO₄ के विलयन
+                    को 1.5 Amp की धारा को 10 min तक वैद्युत अपघटित किया गया, कैथोड पर निक्षेपित Cu का द्रव्यमान क्या
+                    होगा?</p>
+                <div style="font-size: 2rem; line-height: 1.8; color: #334155;">
+                    <b>Ans.</b> <br>
+                    t = 10 min = 10 × 60 = 600 sec <br>
+                    I = 1.5 Amp. <br>
+                    f = 96500 C <br>
+                    n = 2 <br>
+                    E = 63 <br>
+                    <div
+                        style="margin-top: 20px; background: white; padding: 25px; border: 1px solid #cbd5e1; border-radius: 15px;">
+                        <span style="font-weight: 800;">अभिक्रिया:</span> Cu²⁺(aq) + 2e⁻ ➔ Cu(s) <br><br>
+                        W = <div class="math-frac" style="display: inline-flex; vertical-align: middle;">
+                            <span class="math-top">E</span>
+                            <span class="math-bot">nf</span>
+                        </div> × I t <br><br>
+                        W = <div class="math-frac" style="display: inline-flex; vertical-align: middle;">
+                            <span class="math-top">63 × 1.5 × 600</span>
+                            <span class="math-bot">2 × 96500</span>
+                        </div> <br><br>
+                        <b style="color: #059669; font-size: 2.5rem;">W = 0.2938 gm.</b>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 2 -->
+            <div
+                style="background: #fdf2f8; padding: 40px; border-radius: 30px; border: 2px solid #f9a8d4; margin-bottom: 40px;">
+                <p style="font-size: 2.2rem; font-weight: 900; color: #000; margin-bottom: 25px;">प्रश्न- यदि एक धात्विक
+                    तार में 0.5 Amp की धारा 2 Hrs के लिए प्रवाहित होती है तो तार में से कितने e⁻ प्रवाहित होंगे?</p>
+                <div style="font-size: 2rem; line-height: 1.8; color: #334155;">
+                    <b>Ans.</b> <br>
+                    I = 0.5 Amp. <br>
+                    t = 2 × 3600 sec <br>
+                    Q = It <br>
+                    Q = 3600 C <br>
+                    Q = ne <br>
+                    n = ? <br>
+                    <div
+                        style="margin-top: 20px; background: white; padding: 25px; border: 1px solid #f9a8d4; border-radius: 15px;">
+                        Q = It = 0.5 × 2 × 3600 = 3600 C <br><br>
+                        n = <div class="math-frac" style="display: inline-flex; vertical-align: middle;">
+                            <span class="math-top">Q</span>
+                            <span class="math-bot">e</span>
+                        </div> =
+                        <div class="math-frac" style="display: inline-flex; vertical-align: middle;">
+                            <span class="math-top">3600</span>
+                            <span class="math-bot">1.6 × 10⁻¹⁹</span>
+                        </div> <br><br>
+                        n = <div class="math-frac" style="display: inline-flex; vertical-align: middle;">
+                            <span class="math-top">36000 × 10⁺¹⁹</span>
+                            <span class="math-bot">16</span>
+                        </div> <br><br>
+                        <b style="color: #db2777; font-size: 2.5rem;">n = 2.25 × 10²²</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Calculators Section -->
+        <div style="background: #0f172a; border-radius: 40px; padding: 50px; margin-bottom: 50px; color: white;">
+            <h2 style="font-size: 3rem; font-weight: 950; color: #6ee7b7; margin-bottom: 50px; text-align: center; border-bottom: 1px solid rgba(110, 231, 183, 0.2); padding-bottom: 20px;">
+                🚀 स्मार्ट 'लाइव' न्यूमेरिकल सॉल्वर (Real-Time Solver)
+            </h2>
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 60px;">
+                
+                <!-- Calculator 1: Mass Deposition -->
+                <div style="background: rgba(255,255,255,0.03); padding: 50px; border-radius: 40px; border: 3px solid #059669; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; right: 0; background: #059669; color: white; padding: 10px 30px; border-bottom-left-radius: 20px; font-weight: 800; font-size: 1.2rem;">CALCULATOR 01</div>
+                    <h3 style="font-size: 2.2rem; color: #6ee7b7; margin-bottom: 40px;">➔ द्रव्यमान (W) निक्षेपण की गणना</h3>
+                    
+                    <!-- Input Dashboard -->
+                    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px;">
+                        <!-- Left: Parameters -->
+                        <div style="display: grid; gap: 20px; background: rgba(0,0,0,0.2); padding: 25px; border-radius: 20px;">
+                            <div>
+                                <label style="display: block; font-size: 1.1rem; color: #94a3b8; margin-bottom: 5px;">धारा (I) - Amp</label>
+                                <input type="number" id="m-i" value="1.5" step="0.1" oninput="liveSolveW()" style="width: 100%; height: 60px; background: #1e293b; border: 2px solid #334155; border-radius: 12px; color: white; font-size: 2rem; font-weight: 950; padding: 0 15px; outline: none; transition: 0.3s;" onfocus="this.style.borderColor='#6ee7b7'">
+                            </div>
+                            <div style="display: flex; gap: 15px;">
+                                <div style="flex: 1;">
+                                    <label style="display: block; font-size: 1.1rem; color: #94a3b8; margin-bottom: 5px;">भार (M)</label>
+                                    <input type="number" id="m-m" value="63" step="0.1" oninput="liveSolveW()" style="width: 100%; height: 60px; background: #1e293b; border: 2px solid #334155; border-radius: 12px; color: white; font-size: 2rem; font-weight: 950; padding: 0 15px; outline: none;">
+                                </div>
+                                <div style="flex: 1;">
+                                    <label style="display: block; font-size: 1.1rem; color: #94a3b8; margin-bottom: 5px;">संयोजकता (n)</label>
+                                    <input type="number" id="m-n" value="2" step="1" oninput="liveSolveW()" style="width: 100%; height: 60px; background: #1e293b; border: 2px solid #334155; border-radius: 12px; color: white; font-size: 2rem; font-weight: 950; padding: 0 15px; outline: none;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Multi-Unit Time -->
+                        <div style="background: rgba(255,191,36,0.05); padding: 25px; border-radius: 20px; border: 1px solid rgba(251,191,36,0.2);">
+                            <p style="color: #fbbf24; font-weight: 900; font-size: 1.2rem; margin-bottom: 15px;">⏱️ समय (Time Input)</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                                <div>
+                                    <label style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px;">Hours</label>
+                                    <input type="number" id="m-th" value="0" step="1" oninput="liveSolveW()" style="width: 100%; height: 50px; background: #0f172a; border: 2px solid #fbbf24; border-radius: 12px; color: white; font-size: 1.8rem; font-weight: 950; text-align: center; outline: none;">
+                                </div>
+                                <div>
+                                    <label style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px;">Min</label>
+                                    <input type="number" id="m-tm" value="10" step="1" oninput="liveSolveW()" style="width: 100%; height: 50px; background: #0f172a; border: 2px solid #fbbf24; border-radius: 12px; color: white; font-size: 1.8rem; font-weight: 950; text-align: center; outline: none;">
+                                </div>
+                                <div>
+                                    <label style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px;">Sec</label>
+                                    <input type="number" id="m-ts" value="0" step="1" oninput="liveSolveW()" style="width: 100%; height: 50px; background: #0f172a; border: 2px solid #fbbf24; border-radius: 12px; color: white; font-size: 1.8rem; font-weight: 950; text-align: center; outline: none;">
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; background: #fbbf24; color: #000; padding: 10px; border-radius: 10px; text-align: center; font-weight: 900;">
+                                कुल सेकंड: <span id="m-total-sec" style="font-size: 1.5rem;">600</span> s
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Formula Section -->
+                    <div style="margin-top: 50px; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 30px; text-align: center;">
+                        <p style="color: #6ee7b7; font-size: 1.5rem; margin-bottom: 20px; font-weight: 800;">📝 लाइव हल (Live Working):</p>
+                        <div style="font-size: 3rem; font-family: 'Cambria Math', serif; color: #e2e8f0; line-height: 2;">
+                            W = 
+                            <div class="math-frac" style="display: inline-flex; vertical-align: middle;">
+                                <span class="math-top" style="border-bottom-width: 4px;"><span id="step-m" style="color: #6ee7b7;">63</span> × <span id="step-i" style="color: #6ee7b7;">1.5</span> × <span id="step-t-total" style="color: #fbbf24;">600</span></span>
+                                <span class="math-bot"><span id="step-n" style="color: #6ee7b7;">2</span> × 96500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Final Answer -->
+                    <div style="margin-top: 40px; text-align: center;">
+                        <span style="font-size: 1.5rem; color: #94a3b8; display: block; margin-bottom: 10px;">अंतिम परिणाम (Final Mass)</span>
+                        <div id="m-result" style="font-size: 5rem; font-weight: 950; color: #059669; text-shadow: 0 0 20px rgba(5, 150, 105, 0.3);">0.2938 gm.</div>
+                    </div>
+                </div>
+
+                <!-- Calculator 2: Electron Flow -->
+                <div style="background: rgba(255,255,255,0.03); padding: 50px; border-radius: 40px; border: 3px solid #d946ef; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; right: 0; background: #d946ef; color: white; padding: 10px 30px; border-bottom-left-radius: 20px; font-weight: 800; font-size: 1.2rem;">CALCULATOR 02</div>
+                    <h3 style="font-size: 2.2rem; color: #f5d0fe; margin-bottom: 40px;">➔ इलेक्ट्रॉन प्रवाह की गणना</h3>
+
+                    <!-- Input Dashboard -->
+                    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px;">
+                        <div style="background: rgba(0,0,0,0.2); padding: 30px; border-radius: 20px;">
+                            <label style="display: block; font-size: 1.2rem; color: #e879f9; margin-bottom: 10px;">धारा (I) - Amp</label>
+                            <input type="number" id="e-i" value="0.5" step="0.1" oninput="liveSolveE()" style="width: 100%; height: 70px; background: #1e293b; border: 2px solid #334155; border-radius: 12px; color: white; font-size: 2.5rem; font-weight: 950; padding: 0 20px; outline: none; transition: 0.3s;" onfocus="this.style.borderColor='#d946ef'">
+                        </div>
+
+                        <!-- Right: Multi-Unit Time -->
+                        <div style="background: rgba(255,191,36,0.05); padding: 25px; border-radius: 20px; border: 1px solid rgba(251,191,36,0.2);">
+                            <p style="color: #fbbf24; font-weight: 900; font-size: 1.2rem; margin-bottom: 15px;">⏱️ समय (Time Input)</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                                <div>
+                                    <label style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px;">Hours</label>
+                                    <input type="number" id="e-th" value="2" step="1" oninput="liveSolveE()" style="width: 100%; height: 50px; background: #0f172a; border: 2px solid #fbbf24; border-radius: 12px; color: white; font-size: 1.8rem; font-weight: 950; text-align: center; outline: none;">
+                                </div>
+                                <div>
+                                    <label style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px;">Min</label>
+                                    <input type="number" id="e-tm" value="0" step="1" oninput="liveSolveE()" style="width: 100%; height: 50px; background: #0f172a; border: 2px solid #fbbf24; border-radius: 12px; color: white; font-size: 1.8rem; font-weight: 950; text-align: center; outline: none;">
+                                </div>
+                                <div>
+                                    <label style="display: block; font-size: 0.8rem; color: #94a3b8; margin-bottom: 5px;">Sec</label>
+                                    <input type="number" id="e-ts" value="0" step="1" oninput="liveSolveE()" style="width: 100%; height: 50px; background: #0f172a; border: 2px solid #fbbf24; border-radius: 12px; color: white; font-size: 1.8rem; font-weight: 950; text-align: center; outline: none;">
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; background: #fbbf24; color: #000; padding: 10px; border-radius: 10px; text-align: center; font-weight: 900;">
+                                कुल सेकंड: <span id="e-total-sec" style="font-size: 1.5rem;">7200</span> s
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Formula Section -->
+                    <div style="margin-top: 50px; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 30px; text-align: center;">
+                        <p style="color: #e879f9; font-size: 1.5rem; margin-bottom: 20px; font-weight: 800;">📝 लाइव हल (Value Plugging):</p>
+                        <div style="font-size: 3rem; font-family: 'Cambria Math', serif; color: #e2e8f0; line-height: 2;">
+                            n = 
+                            <div class="math-frac" style="display: inline-flex; vertical-align: middle;">
+                                <span class="math-top" style="border-bottom-width: 4px;">(<span id="step-e-i" style="color: #e879f9;">0.5</span> × <span id="step-e-t-total" style="color: #fbbf24;">7200</span>)</span>
+                                <span class="math-bot">1.6 × 10⁻¹⁹</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Final Answer -->
+                    <div style="margin-top: 40px; text-align: center;">
+                        <span style="font-size: 1.5rem; color: #94a3b8; display: block; margin-bottom: 10px;">इलेक्ट्रॉनों की संख्या (Total Electrons)</span>
+                        <div id="e-result" style="font-size: 4.5rem; font-weight: 950; color: #d946ef; text-shadow: 0 0 20px rgba(217, 70, 239, 0.3);">2.25 × 10²²</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <script>
+                function liveSolveW() {
+                    const i = parseFloat(document.getElementById('m-i').value) || 0;
+                    const h = parseFloat(document.getElementById('m-th').value) || 0;
+                    const min = parseFloat(document.getElementById('m-tm').value) || 0;
+                    const sec = parseFloat(document.getElementById('m-ts').value) || 0;
+                    const m = parseFloat(document.getElementById('m-m').value) || 0;
+                    const n = parseFloat(document.getElementById('m-n').value) || 1;
+                    
+                    const total_t = (h * 3600) + (min * 60) + sec;
+                    const result = (m * i * total_t) / (n * 96500);
+                    
+                    document.getElementById('m-total-sec').innerText = total_t;
+                    document.getElementById('step-i').innerText = i;
+                    document.getElementById('step-t-total').innerText = total_t;
+                    document.getElementById('step-m').innerText = m;
+                    document.getElementById('step-n').innerText = n;
+                    
+                    document.getElementById('m-result').innerText = result.toFixed(4) + " gm.";
+                }
+
+                function liveSolveE() {
+                    const i = parseFloat(document.getElementById('e-i').value) || 0;
+                    const h = parseFloat(document.getElementById('e-th').value) || 0;
+                    const min = parseFloat(document.getElementById('e-tm').value) || 0;
+                    const sec = parseFloat(document.getElementById('e-ts').value) || 0;
+                    
+                    const total_t = (h * 3600) + (min * 60) + sec;
+                    const q = i * total_t;
+                    const n_electrons = q / 1.6e-19;
+                    
+                    document.getElementById('e-total-sec').innerText = total_t;
+                    document.getElementById('step-e-i').innerText = i;
+                    document.getElementById('step-e-t-total').innerText = total_t;
+                    
+                    if(n_electrons === 0) {
+                        document.getElementById('e-result').innerText = "0";
+                    } else {
+                        const exponent = Math.floor(Math.log10(n_electrons));
+                        const mantissa = (n_electrons / Math.pow(10, exponent)).toFixed(2);
+                        document.getElementById('e-result').innerText = mantissa + " × 10" + getSuperNumeric(exponent);
+                    }
+                }
+
+                function getSuperNumeric(num) {
+                    const map = {"0":"⁰","1":"¹","2":"²","3":"³","4":"⁴","5":"⁵","6":"⁶","7":"⁷","8":"⁸","9":"⁹"};
+                    return String(num).split("").map(c => map[c] || c).join("");
+                }
+
+                liveSolveW(); liveSolveE();
+            </script>
+        </div>
     </div>
 
     <div class="nav-buttons">
-        <a href="../index.html" class="nav-btn">🏠 Main Hub (होम)</a>
+        <a href="ch2_part8.html" class="nav-btn" style="background: #475569;">⬅️ पिछला (Part 8)</a>
+        <a href="../index.html" class="nav-btn">🏠 मुख्य हब</a>
+        <a href="ch2_part10.html" class="nav-btn" style="background: var(--primary);">अगला (Part 10) ➡️</a>
     </div>
 </body>
+
 </html>

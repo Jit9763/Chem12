@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Chapter 2 - Part 5 (English)</title>
+    <title>Chapter 2 - Part 5 (Conductance of Solutions)</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #059669;
             --primary-dark: #064e3b;
-            --secondary: #10b981;
             --accent: #8b5cf6;
             --slate-50: #f8fafc;
             --slate-100: #f1f5f9;
@@ -17,38 +16,243 @@
             --font-main: #000000;
         }
         body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: var(--slate-50); color: var(--font-main); overflow-x: hidden; font-weight: 600; display:flex; flex-direction:column; min-height:100vh; }
-        .header-banner { background: linear-gradient(135deg, var(--accent) 0%, #6d28d9 100%); color: white; padding: 40px 20px; text-align: center; border-radius: 0 0 40px 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        .premium-badge { background: rgba(255,255,255,0.2); padding: 6px 15px; border-radius: 100px; font-size: 0.9rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 10px; }
-        h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin: 0; font-weight: 900; }
         
-        .content-container { flex:1; padding: 40px 5vw; max-width: 1200px; margin: 0 auto; width: 100%; box-sizing:border-box; }
-        
-        .topic-card { background: white; border: 2px dashed var(--secondary); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        .topic-title { font-size: 2rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; }
-        .topic-desc { font-size: 1.5rem; color: var(--slate-800); }
+        /* Edge-to-Edge Container */
+        .header-banner { background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%); color: white; padding: 50px 20px; text-align: center; border-radius: 0 0 50px 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .premium-badge { background: rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 100px; font-size: 1rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.4); display: inline-block; margin-bottom: 15px; }
+        h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0; font-weight: 900; }
 
-        .nav-buttons { display: flex; justify-content: center; padding: 30px; background:white; border-top:1px solid #e2e8f0; }
-        .nav-btn { background: #1e293b; color: white; padding: 15px 35px; border-radius: 100px; text-decoration: none; font-weight: 800; font-size: 1.2rem; transition: 0.3s; }
-        .nav-btn:hover { background: var(--primary); transform: translateY(-3px); }
+        .content-container { flex:1; padding: 30px 0; width: 100%; box-sizing:border-box; margin: 0; }
+        
+        .note-card { background: white; border-radius: 0px; padding: 40px; margin-bottom: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.06); border-left: 15px solid var(--primary); width: 100%; box-sizing: border-box; }
+        .note-title { font-size: 2.4rem; color: var(--primary-dark); font-weight: 900; margin-bottom: 25px; border-bottom: 4px solid var(--slate-100); padding-bottom: 15px; display: flex; align-items: center; gap: 15px; }
+        
+        .explanation-box { background: #eff6ff; border: 3px dashed #93c5fd; border-radius: 20px; padding: 25px; margin: 25px 0; font-size: 2rem; color: #1e40af; }
+        .concept-tag { background: #1e293b; color: white; padding: 5px 15px; border-radius: 8px; font-size: 1.2rem; vertical-align: middle; margin-right: 10px; font-weight: 900; }
+
+        .note-list { font-size: 2.22rem; color: var(--slate-800); line-height: 1.6; list-style: none; padding: 0; }
+        .note-list li { margin-bottom: 25px; position: relative; padding-left: 55px; font-weight: 800; }
+        .note-list li::before { content: "➔"; position: absolute; left: 0; color: var(--primary); font-weight: 950; }
+
+        /* Premium Math Formatting */
+        .math-box { background: #fdfdfd; color: #1e293b; padding: 30px; border-radius: 20px; font-family: serif; font-size: 2.5rem; text-align: center; margin: 30px 0; border: 3px solid #e2e8f0; font-weight: 950; }
+        .math-frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; font-size: 0.95em; margin: 0 5px; line-height: 1.2; }
+        .math-top { border-bottom: 3px solid currentColor; padding: 0 6px 2px 6px; }
+        .math-bot { padding: 2px 6px 0 6px; }
+
+        /* Classification Grid */
+        .class-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 25px; }
+        .class-item { background: var(--slate-50); padding: 25px; border-radius: 15px; border-top: 8px solid var(--accent); }
+        .class-item h3 { margin: 0 0 15px 0; font-size: 1.8rem; color: var(--slate-800); }
+
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 50px 20px; border-top: 3px solid #e2e8f0; }
+        .nav-btn { display: flex; align-items: center; gap: 15px; padding: 20px 45px; border-radius: 100px; text-decoration: none; font-weight: 900; font-size: 1.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-home { background: #1e293b; color: white; }
+        .btn-prev { background: #94a3b8; color: white; }
+        .btn-next { background: #059669; color: white; }
+        .nav-btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
     </style>
+    <!-- MathJax for rendering equations -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
 </head>
 <body>
     <div class="header-banner">
         <div class="premium-badge">Class 12 - Chapter 2</div>
-        <h1>Electrochemistry</h1>
-        <p style="font-size: 1.2rem; margin-top: 10px; font-weight: 600; opacity: 0.9;">Part 5</p>
+        <h1>Conductance of Electrolytic Solutions</h1>
+        <p style="font-size: 1.5rem; margin-top: 15px; font-weight: 700; opacity: 0.9;">Part 5: Conductivity & Classification of Matter</p>
     </div>
 
     <div class="content-container">
-        <div class="topic-card">
-            <div class="topic-title">📚 Topic to cover in this section:</div>
-            <div class="topic-desc">Relation between Nernst Eq, Equilibrium Constant & Gibbs Free Energy</div>
-        </div>
-        <!-- Write actual content corresponding to the topic here -->
-    </div>
+        
+        <!-- Resistance Section -->
+        <div class="note-card" style="border-left-color: #f59e0b;">
+            <div class="note-title">⚡ 1. Electrical Resistance (R)</div>
+            <p style="font-size: 2.22rem; line-height: 1.6; font-weight: 800;">
+                The obstruction offered by any conductor or solution to the flow of electric current is called <b>Resistance</b>.
+            </p>
+            
+            <div class="explanation-box" style="background: #fffbeb; border-color: #fcd34d; color: #92400e; font-size: 2rem;">
+                <span class="concept-tag" style="background: #d97706; font-size: 1.4rem;">Concept Analogy</span>
+                <br>Think of it like water flowing through a pipe: 
+                <br>• <b>Long pipe ($l$)</b> = More friction, making it harder for water to flow (Higher Resistance).
+                <br>• <b>Wide pipe ($A$)</b> = More space, making it easier for water to flow (Lower Resistance).
+            </div>
 
-    <div class="nav-buttons">
-        <a href="../index_eng.html" class="nav-btn">🏠 Main Hub</a>
+
+            <ul class="note-list">
+                <li>Resistance is <b>directly proportional</b> to length ($R \propto l$).</li>
+                <li>Resistance is <b>inversely proportional</b> to area ($R \propto 1/A$).</li>
+            </ul>
+
+            <div class="math-box">
+                R ∝ <span class="math-frac"><span class="math-top">l</span><span class="math-bot">A</span></span> 
+                <span style="margin: 0 20px;">➔</span> 
+                R = ρ <span class="math-frac"><span class="math-top">l</span><span class="math-bot">A</span></span>
+            </div>
+
+            <div class="explanation-box">
+                <span class="concept-tag" style="background: #1e293b;">Teacher's Desk</span>
+                In this formula, $\rho$ (rho) is a constant called <b>Resistivity</b>. Note that $R$ also depends on the nature of material and temperature.
+                <br><br><b>Unit:</b> Ohm (Ω)
+            </div>
+        </div>
+
+        <!-- Resistivity Section -->
+        <div class="note-card" style="border-left-color: #10b981;">
+            <div class="note-title">🧪 2. Resistivity / Specific Resistance (ρ)</div>
+            <p style="font-size: 2.22rem; line-height: 1.6; font-weight: 800;">
+                Unlike resistance, resistivity is an <b>Intrinsic Property</b> of matter. It does not depend on the shape or size of the conductor, only on its <b>Nature</b> and <b>Temperature</b>.
+            </p>
+
+            <div class="explanation-box" style="background: #f0fdf4; border-color: #86efac; color: #166534; font-size: 2rem;">
+                <b>Definition:</b> "It is the resistance of a conductor that is 1 meter long and has a cross-sectional area of 1 square meter."
+            </div>
+
+
+            <div class="math-box">
+                ρ = R × <span class="math-frac"><span class="math-top">A</span><span class="math-bot">l</span></span>
+            </div>
+
+            <div class="explanation-box">
+                <span class="concept-tag" style="background: #059669;">Identity of Matter</span>
+                1 gram of copper and 1 ton of copper have different Resistance ($R$), but they have the same **Resistivity ($\rho$)** because the material's nature remains unchanged!
+                <br><br><b>Unit:</b> Ohm-meter (Ω·m)
+            </div>
+        </div>
+
+        <!-- Conductance Section -->
+        <div class="note-card" style="border-left-color: #8b5cf6;">
+            <div class="note-title">💡 3. Conductance (G or C)</div>
+            <p style="font-size: 2.22rem; line-height: 1.6; font-weight: 800;">
+                Conductance is simply the reciprocal of resistance. It represents the <b>ease</b> with which current flows through a conductor or solution.
+            </p>
+            <div class="math-box">
+                G = <span class="math-frac"><span class="math-top">1</span><span class="math-bot">R</span></span>
+            </div>
+            <div class="explanation-box" style="font-size: 2rem;">
+                <b>Unit:</b> ohm⁻¹ , mho, or <b>Siemens (S)</b>. 
+                <br>In modern electrolytic chemistry, <b>S</b> is the standard unit.
+            </div>
+        </div>
+
+
+        <!-- Conductivity Section -->
+        <div class="note-card" style="border-left-color: #ec4899;">
+            <div class="note-title">🔍 4. Conductivity / Specific Conductance (κ)</div>
+            <p style="font-size: 2.22rem; line-height: 1.6; font-weight: 800;">
+                The reciprocal of resistivity ($\rho$) is called <b>Conductivity (Kappa)</b>. 
+                <br><b>In physical terms:</b> It is the conductance of exactly <b>1 cubic centimeter ($1 cm^{3}$)</b> of an electrolytic solution.
+            </p>
+            
+            <div class="math-box">
+                κ = <span class="math-frac"><span class="math-top">1</span><span class="math-bot">ρ</span></span> = G × <span class="math-frac"><span class="math-top">l</span><span class="math-bot">A</span></span>
+            </div>
+
+            <div class="explanation-box" style="background: #fdf2f8; border-color: #f9a8d4; color: #be185d; font-size: 2.22rem;">
+                <span class="concept-tag" style="background: #be185d; font-size: 1.4rem;">Core Insight</span>
+                <br>The ratio $\frac{l}{A}$ is known as the <b>Cell Constant (G*)</b>. 
+                <br><br>Formula: <b>Conductivity = Conductance × Cell Constant</b>
+                <br><br><b>Unit:</b> S·m⁻¹ or S·cm⁻¹
+            </div>
+        </div>
+
+
+        <!-- Classification Deep Dive -->
+        <div class="note-card" style="border-left-color: #3b82f6;">
+            <div class="note-title">📑 Classification according to Conductivity</div>
+            
+            <p style="font-size: 2.22rem; font-weight: 850; color: #1e293b; margin-bottom: 20px;">
+                Based on conductivity, substances are of three types -
+            </p>
+
+            <div class="explanation-box" style="background: #f8fafc; border-color: #3b82f6; border-style: solid; border-width: 4px; font-size: 2.22rem;">
+                <b style="font-size: 2.4rem; color: #1d4ed8;">1) Conductors:</b><br>
+                Substances that allow electricity to flow through them easily are called conductors.
+            </div>
+
+            <div class="explanation-box" style="background: #fdf2f2; border-color: #ef4444; border-style: solid; border-width: 4px; font-size: 2.22rem; margin-top: 20px;">
+                <b style="font-size: 2.4rem; color: #b91c1c;">2) Insulators:</b><br>
+                Substances that do not allow electric current to flow are called insulators.
+                <br><b>Example:</b> Rubber, Wood, Glass etc.
+            </div>
+
+            <div class="explanation-box" style="background: #fffbeb; border-color: #f59e0b; border-style: solid; border-width: 4px; font-size: 2.22rem; margin-top: 20px;">
+                <b style="font-size: 2.4rem; color: #b45309;">3) Semiconductors:</b><br>
+                Substances whose conductivity lies between conductors and insulators are called semiconductors.
+                <br><b>Ex:</b> Group-13, Group-14, Group-15 elements
+            </div>
+
+            
+            <div class="explanation-box" style="background: #eff6ff; border-color: #93c5fd; color: #1e40af; font-size: 2.22rem;">
+                <b>1. Metallic Conductors:</b> Flow of electrons through a metal lattice (e.g., Copper wire). No mass transfer occurs.
+                <br><br><b>2. Electrolytic Conductors:</b> Flow of <b>Ions</b> through a liquid or solution. Involves the actual movement of particles.
+            </div>
+
+            <div style="background: #f8fafc; padding: 30px; border-radius: 20px; border: 2px solid #e2e8f0;">
+                <h3 style="font-size: 2.5rem; color: #1e40af; border-bottom: 3px solid #bfdbfe; padding-bottom: 15px; font-weight: 950;">Types of Electrolytes</h3>
+                
+                <div class="class-grid">
+                    <div class="class-item" style="border-color: #059669;">
+                        <h4 style="margin-top:0; color: #059669; font-size: 2.6rem; font-weight: 950;">Strong Electrolytes</h4>
+                        <p style="font-size: 2.2rem; font-weight: 800;">Substances that dissociate completely into ions (~100%).</p>
+                        <b style="font-size: 2.2rem; color: #064e3b;">Ex: NaCl, HCl, NaOH, KNO₃</b>
+                    </div>
+                    <div class="class-item" style="border-color: #f59e0b;">
+                        <h4 style="margin-top:0; color: #d97706; font-size: 2.6rem; font-weight: 950;">Weak Electrolytes</h4>
+                        <p style="font-size: 2.2rem; font-weight: 800;">Substances that partially dissociate into ions.</p>
+                        <b style="font-size: 2.2rem; color: #9a3412;">Ex: CH₃COOH, NH₄OH, H₂CO₃</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Factors from Notebook (English) -->
+        <div class="note-card" style="border-left-color: #1e293b; background: #fafafa;">
+            <div class="note-title">🏛️ Factors Affecting Conductivity</div>
+            
+            <div style="font-size: 2.22rem; color: #334155; line-height: 1.6; font-weight: 800;">
+                <p style="text-decoration: underline; color: #1e293b; font-size: 2.4rem; font-weight: 900;">1) Nature of Electrolyte -</p>
+                <ul style="list-style-type: '➔'; padding-left: 30px;">
+                    <li>If the electrolyte is **Strong**, it dissociates completely in solution. Hence, as the number of ions increases, conductivity also increases.</li>
+                    <li style="margin-top: 20px;">If the electrolyte is **Weak**, it does not dissociate completely in solution, leading to fewer ions and lower conductivity.</li>
+                </ul>
+
+                <p style="text-decoration: underline; color: #1e293b; font-size: 2.4rem; font-weight: 900; margin-top: 40px;">2) Nature of Solvent -</p>
+                <ul style="list-style-type: '➔'; padding-left: 30px;">
+                    <li>In a **Polar solvent**, electrolytes dissociate easily, leading to an increase in conductivity values.</li>
+                    <li style="margin-top: 20px;">In a **Non-polar solvent**, electrolytes do not dissociate easily, resulting in a decrease in conductivity.</li>
+                </ul>
+
+                <p style="text-decoration: underline; color: #1e293b; font-size: 2.4rem; font-weight: 900; margin-top: 40px;">3) Dilution -</p>
+                <p>➔ As the dilution of a solution increases, the number of ions per unit volume decreases. Therefore, conductivity (κ) decreases with an increase in dilution.</p>
+
+                <p style="text-decoration: underline; color: #1e293b; font-size: 2.4rem; font-weight: 900; margin-top: 40px;">4) Temperature -</p>
+                <p>➔ As temperature increases, the kinetic energy of the ions in the solution increases. Therefore, the value of conductivity also increases.</p>
+            </div>
+        </div>
+
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <a href="ch2_part4.html" class="nav-btn btn-prev">⬅️ Part 4</a>
+            <a href="../index.html" class="nav-btn btn-home">🏠 Home</a>
+            <a href="ch2_part6.html" class="nav-btn btn-next">Part 6 ➡️</a>
+        </div>
+
     </div>
 </body>
 </html>

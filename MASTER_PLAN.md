@@ -27,22 +27,28 @@ All simulator headers and interactive elements utilize high-contrast gradients:
 - Container Backgrounds: `#1e1b4b` (Deep Indigo) with `#312e81` borders.
 - Buttons should transition color upon activation (e.g., `#8b5cf6` to `#ef4444` when applying pressure).
 
-## 🧪 4. Mathematical Rendering (Vertical Fractions)
-All stoichiometric and physical chemistry formulas MUST use the `.math-frac` flexbox system. DO NOT use inline slashes.
+## 🧪 4. Mathematical Rendering (Premium Math & Vertical Fractions)
+- **Mathematical Equations (.math-box):** Chemical equations and formulas must use the `.math-box` class with serif fonts (`Cambria Math`, `Times New Roman`) and appropriately sized `sub`/`sup` tags to mimic NCERT textbook professionalism.
+- **Vertical Fractions (.math-frac):** All stoichiometric and physical chemistry fractions (including subscripts like $E$ ) MUST use the `.math-frac` flexbox system. DO NOT use inline slashes.
 ```html
 <div class="math-frac">
-    <span class="math-num">Numerator</span>
-    <span class="math-den">Denominator</span>
+    <span class="math-top">Numerator</span>
+    <span class="math-bot">Denominator</span>
 </div>
 ```
 
-## 🕹️ 5. Interactive Simulator Mechanics
-- **ID Scoping**: Always prefix IDs specific to that simulator (e.g., `tf_start_btn`, `osm_start_btn`) to prevent conflicting states when multiple simulators exist on one page.
-- **CSS Transitions**: Rely on `transition` rules coupled with JS DOM updates for fluid changes rather than expensive `setInterval` DOM loops whenever possible. 
-- **States**: Every physical property shown in a simulator MUST have a corresponding textual/live output readout.
+## 🕹️ 5. Interactive Simulator Mechanics & 3D Projector Optimization
+## 🕹️ 5. Interactive Simulator Mechanics & 3D Projector Optimization
+- **Sleek Dark UI:** Simulators MUST employ a **Sleek Deep Dark Theme** (e.g., `#1e1b4b` background, no borders) with **neon light accents** (e.g., cyan glow around voltmeter `#06b6d4`, purple headers `#a855f7`) to mirror the benchmark "Galvanic Cell" reference image.
+- **Glass & Beakers:** Beakers must have thin bright semi-transparent borders with invisible or dark backgrounds, allowing vibrant solutions to stand out without washing out.
+- **Labels:** Device labels (e.g., Anode, Cathode) should be clean `white` bold text without colorful bounding boxes to maintain a highly professional look against the dark container.
+- **Play/Pause Controls:** Animations should not run continuously by default. Use an explicit `.sim-btn` (Purple to Violet neon pill button) to toggle CSS animations via the `.is-playing` class.
+- **Didactic Context:** Every simulator must have a dedicated explanation box underneath explaining "🚀 How it works (ये काम कैसे करता है)" and "⚙️ How to use (कैसे उपयोग करें)".
+- **ID Scoping**: Always prefix IDs specific to that simulator (e.g., `sim1`, `sim2`) to prevent conflicting states.
 
-## 🔄 6. Translation Workflow
+## 🔄 6. Translation Workflow & Bilingual Hybrid Vocabulary
 - **Hindi Medium First**: Draft all content strictly in native Devanagari Hindi in the `chX_parts/` folder.
+- **Bilingual Hybrid English**: The English version (`chXeng/`) must encapsulate core technical terms with Hindi translations in parentheses (e.g. `Salt Bridge (लवण सेतु)`) to assist students transitioning their vocabulary.
 - **English Sync**: Automatically sync a full English equivalent to `chXeng/` after.
 
 ## 📊 7. Chapter Progress Tracking
@@ -56,4 +62,4 @@ All stoichiometric and physical chemistry formulas MUST use the `.math-frac` fle
 - 10 Part Architecture Instantiated
 - Base HTML files generated for Hindi/English
 - Main Hub routing operational
-- **Next Step:** Begin Part 1 content injection (Electrochemical Cells, Daniell Cell, Salt Bridge).
+- Part 2 (SHE) completed with premium 3D math and simulators.
